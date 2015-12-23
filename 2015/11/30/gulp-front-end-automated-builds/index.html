@@ -1,0 +1,891 @@
+<!doctype html>
+<html class="theme-next  theme-next-mist">
+<head>
+  
+
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5"/>
+
+
+
+  
+    <link href='//fonts.lug.ustc.edu.cn/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+  
+
+
+<link rel="stylesheet" type="text/css" href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" />
+
+<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.5.2"/>
+
+
+    <meta name="description" content="前端技术博客，致力于前端开发" />
+
+
+
+  <meta name="keywords" content="AMD,gulp,前端构建," />
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Giscafer's blog" type="application/atom+xml" />
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.2" />
+
+
+<meta name="description" content="如果你是搞前端开发的，或者你每天都在写CSS、JavaScript等前端编程语言代码，如果你不知道什么叫前端自动化构建，那一般只有两种情况：
+
+你在传统软件行业，用着4、5年前网页开发方式工作;
+你并不是一个真正的Front End Software Engineer；
+
+什么是前端构建工具？前端构建工具——实现前端代码的编译（sass、less）、压缩、测试；图片的压缩以及浏览器自动刷新等等功能">
+<meta property="og:type" content="article">
+<meta property="og:title" content="什么，你还不懂前端自动化构建？">
+<meta property="og:url" content="http://giscafer.com/2015/11/30/gulp-front-end-automated-builds/index.html">
+<meta property="og:site_name" content="Giscafer's blog">
+<meta property="og:description" content="如果你是搞前端开发的，或者你每天都在写CSS、JavaScript等前端编程语言代码，如果你不知道什么叫前端自动化构建，那一般只有两种情况：
+
+你在传统软件行业，用着4、5年前网页开发方式工作;
+你并不是一个真正的Front End Software Engineer；
+
+什么是前端构建工具？前端构建工具——实现前端代码的编译（sass、less）、压缩、测试；图片的压缩以及浏览器自动刷新等等功能">
+<meta property="og:image" content="http://giscafer.com/static/img/gulp-intro1.png">
+<meta property="og:image" content="http://giscafer.com/static/img/gulp-intro2.png">
+<meta property="og:image" content="http://giscafer.com/static/img/gulp-intro0.png">
+<meta property="og:updated_time" content="2015-12-02T12:14:30.638Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="什么，你还不懂前端自动化构建？">
+<meta name="twitter:description" content="如果你是搞前端开发的，或者你每天都在写CSS、JavaScript等前端编程语言代码，如果你不知道什么叫前端自动化构建，那一般只有两种情况：
+
+你在传统软件行业，用着4、5年前网页开发方式工作;
+你并不是一个真正的Front End Software Engineer；
+
+什么是前端构建工具？前端构建工具——实现前端代码的编译（sass、less）、压缩、测试；图片的压缩以及浏览器自动刷新等等功能">
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: 'post'
+  };
+</script>
+
+
+
+  <title> 什么，你还不懂前端自动化构建？ | Giscafer's blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  <!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?884febd8d9c6636d92a0d12669fe4e03";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <div class="container one-column page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Giscafer's blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">Day Day Study，Good Good Up</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu menu-left">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tools">
+          <a href="/tools" rel="section">
+            
+              <i class="menu-item-icon fa fa-question-circle"></i> <br />
+            
+            工具
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/aboutme" rel="section">
+            
+              <i class="menu-item-icon fa fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <form class="site-search-form">
+    <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
+  </form>
+
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install', 'ZfmnF1vBkUFHkfhgCvjA','2.0.0');
+</script>
+
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content"> 
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                什么，你还不懂前端自动化构建？
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            发表于
+            <time itemprop="dateCreated" datetime="2015-11-30T22:29:09+08:00" content="2015-11-30">
+              2015-11-30
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; 分类于
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/AMD/" itemprop="url" rel="index">
+                    <span itemprop="name">AMD</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/11/30/gulp-front-end-automated-builds/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/11/30/gulp-front-end-automated-builds/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        <span itemprop="articleBody"><p>如果你是搞前端开发的，或者你每天都在写CSS、JavaScript等前端编程语言代码，如果你不知道什么叫前端自动化构建，那一般只有两种情况：</p>
+<ol>
+<li>你在传统软件行业，用着4、5年前网页开发方式工作;</li>
+<li>你并不是一个真正的Front End Software Engineer；</li>
+</ol>
+<h3 id="什么是前端构建工具？">什么是前端构建工具？</h3><p>前端构建工具——实现前端代码的编译（sass、less）、压缩、测试；图片的压缩以及浏览器自动刷新等等功能。</p>
+<p>目前流行的三大前端构建工具<code>grunt</code>、<code>gulp</code>、<code>fis3</code>，他们都是基于Node.js的插件工具。前两个是国外出品，fis3是百度国产。fis3听说还不错，但是还没使用过，之前学习NodeJS使用的是grunt,感觉这东西挺牛。智能、前端自动化。听说<code>gulp</code>比<code>grunt</code>好用些，所以就研究一下吧。</p>
+<a id="more"></a>
+<p>以下是学习笔记，官方gulp工具介绍见<a href="https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md" target="_blank" rel="external">github</a></p>
+<h3 id="一、安装gulp工具到全局环境">一、安装gulp工具到全局环境</h3><p><code>（前提安装了NodeJS和NPM）</code></p>
+<pre><code>$  <span class="built_in">npm</span> install --<span class="built_in">global</span> gulp
+</code></pre><h3 id="二、接着进入项目根目录下，安装gulp开发依赖环境">二、接着进入项目根目录下，安装gulp开发依赖环境</h3><p><code>如果项目下没有package.json文件，请阅读下边步骤再继续此步骤</code></p>
+<pre><code>$  npm install --<span class="built_in">save</span>-<span class="built_in">dev</span> gulp
+</code></pre><h3 id="（二）生成package-json">（二）生成package.json</h3><pre><code><span class="built_in">npm</span> init
+</code></pre><p>输入<code>npm init</code>，回车回车即可生成</p>
+<h3 id="三、安装必要的Gulp插件">三、安装必要的Gulp插件</h3><ul>
+<li>压缩css（gulp-minify-css）</li>
+<li>js代码校验（gulp-jshint）</li>
+<li>合并js文件（gulp-concat）</li>
+<li>压缩js代码（gulp-uglify）</li>
+<li>压缩图片（gulp-imagemin）</li>
+<li>文件重命名 （gulp-rename）</li>
+<li>自动刷新页面（gulp-livereload）</li>
+<li>更改提醒（gulp-notify）</li>
+<li>合并js顺序（gulp-order）（<a href="https://github.com/sirlantis/gulp-order）" target="_blank" rel="external">https://github.com/sirlantis/gulp-order）</a></li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$  npm <span class="operator"><span class="keyword">install</span> gulp-minify-css gulp-jshint gulp-<span class="keyword">concat</span> gulp-uglify gulp-imagemin gulp-notify gulp-livereload gulp-rename <span class="comment">--save-dev</span></span></span><br></pre></td></tr></table></figure>
+<p>安装完后 package.json文件内容如下：</p>
+<pre><code>  {
+"<span class="attribute">name</span>": <span class="value"><span class="string">"goodgis"</span></span>,
+"<span class="attribute">version</span>": <span class="value"><span class="string">"1.0.0"</span></span>,
+"<span class="attribute">description</span>": <span class="value"><span class="string">""</span></span>,
+"<span class="attribute">main</span>": <span class="value"><span class="string">"main.js"</span></span>,
+"<span class="attribute">directories</span>": <span class="value">{
+  "<span class="attribute">test</span>": <span class="value"><span class="string">"test"</span>
+</span>}</span>,
+"<span class="attribute">dependencies</span>": <span class="value">{
+  "<span class="attribute">gulp</span>": <span class="value"><span class="string">"^3.9.0"</span>
+</span>}</span>,
+"<span class="attribute">devDependencies</span>": <span class="value">{
+  "<span class="attribute">gulp</span>": <span class="value"><span class="string">"^3.9.0"</span></span>,
+  "<span class="attribute">gulp-concat</span>": <span class="value"><span class="string">"^2.6.0"</span></span>,
+  "<span class="attribute">gulp-imagemin</span>": <span class="value"><span class="string">"^2.4.0"</span></span>,
+  "<span class="attribute">gulp-jshint</span>": <span class="value"><span class="string">"^2.0.0"</span></span>,
+  "<span class="attribute">gulp-livereload</span>": <span class="value"><span class="string">"^3.8.1"</span></span>,
+  "<span class="attribute">gulp-minify-css</span>": <span class="value"><span class="string">"^1.2.1"</span></span>,
+  "<span class="attribute">gulp-notify</span>": <span class="value"><span class="string">"^2.2.0"</span></span>,
+  "<span class="attribute">gulp-rename</span>": <span class="value"><span class="string">"^1.2.2"</span></span>,
+  "<span class="attribute">gulp-uglify</span>": <span class="value"><span class="string">"^1.5.1"</span></span>,
+  "<span class="attribute">jshint</span>": <span class="value"><span class="string">"^2.8.0"</span>
+</span>}</span>,
+"<span class="attribute">scripts</span>": <span class="value">{
+  "<span class="attribute">test</span>": <span class="value"><span class="string">"echo \"Error: no test specified\" &amp;&amp; exit 1"</span>
+</span>}</span>,
+"<span class="attribute">author</span>": <span class="value"><span class="string">""</span></span>,
+"<span class="attribute">license</span>": <span class="value"><span class="string">"ISC"</span>
+  </span>}
+</code></pre><h3 id="四、根目录下创建gulpfile-js文件">四、根目录下创建gulpfile.js文件</h3><p>代码如下，作用看注释</p>
+<pre><code><span class="comment">//引入插件</span>
+   <span class="keyword">var</span> gulp = <span class="built_in">require</span>(<span class="string">'gulp'</span>),
+       <span class="comment">// minifycss = require('gulp-minify-css'),</span>
+       jshint = <span class="built_in">require</span>(<span class="string">'gulp-jshint'</span>), <span class="comment">//代码验证检查</span>
+       uglify = <span class="built_in">require</span>(<span class="string">'gulp-uglify'</span>), <span class="comment">//压缩js代码</span>
+       rename = <span class="built_in">require</span>(<span class="string">'gulp-rename'</span>), <span class="comment">//文件重命名</span>
+       concat = <span class="built_in">require</span>(<span class="string">'gulp-concat'</span>), <span class="comment">//合并js文件</span>
+       notify = <span class="built_in">require</span>(<span class="string">'gulp-notify'</span>), <span class="comment">//更改提醒</span>
+       livereload = <span class="built_in">require</span>(<span class="string">'gulp-livereload'</span>); <span class="comment">//自动刷新页面</span>
+
+   <span class="comment">//js代码校验、合并和压缩（类似jquery的链式操作，牛）</span>
+   gulp.task(<span class="string">'scripts'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
+       <span class="keyword">return</span> gulp.src(<span class="string">'src/**/*.js'</span>) <span class="comment">//源文件</span>
+           .pipe(jshint(<span class="string">'.jshintrc'</span>)) <span class="comment">//1、校验JS文件，jshint校验规则</span>
+           .pipe(jshint.reporter(<span class="string">'default'</span>)) 
+           .pipe(concat(<span class="string">'goodgis.js'</span>))  <span class="comment">//2、合并js文件，goodgis.js为合并的文件名称</span>
+           .pipe(gulp.dest(<span class="string">'dist'</span>))  <span class="comment">//合并后文件存放位置</span>
+           .pipe(rename({
+               suffix: <span class="string">'.min'</span>
+           }))
+           .pipe(uglify())         <span class="comment">//3、执行压缩任务</span>
+           .pipe(gulp.dest(<span class="string">'dist'</span>))  <span class="comment">//压缩后文件存放位置</span>
+           .pipe(notify({    <span class="comment">//4、操作结束后提示</span>
+               message: <span class="string">'Scripts task complete'</span>
+           }));
+   });
+   <span class="comment">// 默认任务，这里完全可以是多个任务，比如压缩CSS，压缩图片，压缩js等</span>
+   gulp.task(<span class="string">'default'</span>,[<span class="string">'watch'</span>], <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
+       gulp.start(<span class="string">'scripts'</span>);
+   });
+   <span class="comment">// 监听（前端自动化的情怀）</span>
+   gulp.task(<span class="string">'watch'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
+       <span class="comment">// 监听 .js文件改动，一旦改动就会自动压缩合并</span>
+       gulp.watch(<span class="string">'src/**/*.js'</span>, [<span class="string">'scripts'</span>]);
+       <span class="comment">// Create LiveReload server（用来自动刷新浏览器）</span>
+       livereload.listen();
+       <span class="comment">// Watch any files in dist/, reload on change</span>
+       gulp.watch([<span class="string">'dist/**'</span>]).on(<span class="string">'change'</span>, livereload.changed);
+   });
+</code></pre><h3 id="五、执行gulp">五、执行gulp</h3><pre><code><span class="variable">$ </span>gulp
+</code></pre><p>只需要gulp一下，之后一切都如此自动化，可以自动压缩CSS，JavaScript，图片，自动刷新浏览器等等。并且，能做的并不只有这些，另外，你还可以自己写插件。</p>
+<p><img src="http://giscafer.com/static/img/gulp-intro1.png" alt="新增了dist文件夹"></p>
+<p><img src="http://giscafer.com/static/img/gulp-intro2.png" alt="里边就是合并压缩的文件"></p>
+<p>原src下很多文件夹，文件夹下很多js文件，如图：</p>
+<p><img src="http://giscafer.com/static/img/gulp-intro0.png" alt="src文件夹"></p>
+<p>不管怎么修改，会自动将整个src文件夹中的js文件（<code>src/**/*.js</code>）压缩合并到dist目录下的<code>goodgis.js</code>(合并未压缩)和<code>goodgis.mini.js</code>(合并且压缩)。</p>
+<h3 id="六、总结">六、总结</h3><p>个人觉得，确实gulp会比grunt好用一点，方便；看使用场景和个人爱好吧，了解NodeJS的话就不会觉得有任何难度了。</p>
+<hr>
+<p><code>Unauthorized use tool that lets you work more efficiently</code></p>
+<ul>
+<li>构建工具官网：<a href="http://gruntjs.com/" target="_blank" rel="external">grunt</a>  、  <a href="http://gulpjs.com/" target="_blank" rel="external">gulp</a>   、 <a href="http://fis.baidu.com/" target="_blank" rel="external">fis3</a></li>
+<li>livereload(浏览器自动刷新):<a href="http://feedback.livereload.com/" target="_blank" rel="external">http://feedback.livereload.com/</a>    或参考<a href="http://feedback.livereload.com/knowledgebase/articles/86180-how-do-i-add-the-script-tag-manually-" target="_blank" rel="external">方法二</a></li>
+</ul>
+<hr>
+</span>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/AMD/" rel="tag">#AMD</a>
+          
+            <a href="/tags/gulp/" rel="tag">#gulp</a>
+          
+            <a href="/tags/前端构建/" rel="tag">#前端构建</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/10/30/jfinal-setbaseview/" rel="next" title="JFinal设置基础路径为WEB-INF">
+                <i class="fa fa-chevron-left"></i> JFinal设置基础路径为WEB-INF
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/12/02/amd-optimize-gulp/" rel="prev" title="AMD构建（gulp插件amd-optimize的使用）">
+                AMD构建（gulp插件amd-optimize的使用） <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+ </div>
+
+        
+
+        
+          <div class="comments" id="comments">
+            
+              <div class="ds-thread" data-thread-key="2015/11/30/gulp-front-end-automated-builds/"
+                   data-title="什么，你还不懂前端自动化构建？" data-url="http://giscafer.com/2015/11/30/gulp-front-end-automated-builds/">
+              </div>
+            
+          </div>
+        
+      </div>
+
+      
+        
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" src="https://avatars0.githubusercontent.com/u/8676711?v=3&s=460" alt="giscafer" itemprop="image"/>
+          <p class="site-author-name" itemprop="name">giscafer</p>
+        </div>
+        <p class="site-description motion-element" itemprop="description">Day Day Study，Good Good Up</p>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">17</span>
+              <span class="site-state-item-name">文章</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            <a href="/categories">
+              <span class="site-state-item-count">9</span>
+              <span class="site-state-item-name">分类</span>
+              </a>
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/tags">
+              <span class="site-state-item-count">19</span>
+              <span class="site-state-item-name">标签</span>
+              </a>
+          </div>
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="menu-item-icon icon-next-feed"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/giscafer" target="_blank">
+                  <i class="fa fa-github"></i> github
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/laohoubin" target="_blank">
+                  <i class="fa fa-weibo"></i> weibo
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/giscafer" target="_blank">
+                  <i class="fa fa-zhihu"></i> zhihu
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+            <p class="site-author-name">Links</p>
+            
+              <span class="links-of-author-item">
+                <a href="http://gis520.com/" target="_blank">GIS520</a>
+              </span>
+            
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator"></div>
+          <div class="post-toc">
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是前端构建工具？"><span class="nav-number">1.</span> <span class="nav-text">什么是前端构建工具？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#一、安装gulp工具到全局环境"><span class="nav-number">2.</span> <span class="nav-text">一、安装gulp工具到全局环境</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、接着进入项目根目录下，安装gulp开发依赖环境"><span class="nav-number">3.</span> <span class="nav-text">二、接着进入项目根目录下，安装gulp开发依赖环境</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#（二）生成package-json"><span class="nav-number">4.</span> <span class="nav-text">（二）生成package.json</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、安装必要的Gulp插件"><span class="nav-number">5.</span> <span class="nav-text">三、安装必要的Gulp插件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四、根目录下创建gulpfile-js文件"><span class="nav-number">6.</span> <span class="nav-text">四、根目录下创建gulpfile.js文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#五、执行gulp"><span class="nav-number">7.</span> <span class="nav-text">五、执行gulp</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#六、总结"><span class="nav-number">8.</span> <span class="nav-text">六、总结</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator"></div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+      
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner"> <div class="copyright" >
+  
+  &copy;  2014 - 
+  <span itemprop="copyrightYear">2015</span>
+  <span class="with-love">
+    <i class="icon-next-heart fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">giscafer</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+ </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+  
+    
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"giscafe"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+    
+     
+
+
+    
+  
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.2"></script>
+
+
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.2"></script>
+  
+
+  <script type="text/javascript" src="/js/motion_fallback.js?v=0.4.5.2" id="motion.fallback"></script>
+
+
+
+
+  <script type="text/javascript" src="/js/nav-toggle.js?v=0.4.5.2"></script>
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.2" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 0.4 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    var $tocContent = $('.post-toc-content');
+    if (isDesktop() && CONFIG.sidebar === 'post') {
+      if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+        displaySidebar();
+      }
+    }
+  });
+</script>
+
+
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      if (CONFIG.sidebar === 'always') {
+        displaySidebar();
+      }
+      if (isMobile()) {
+        FastClick.attach(document.body);
+      }
+
+      motionIntegrator.bootstrap();
+    });
+  </script>
+
+  
+  
+
+  
+  
+
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"slide":{"type":"slide","bdImg":"3","bdPos":"left","bdTop":"250"}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+  
+  <script type="text/javascript" src="/js/lazyload.js"></script>
+  <script type="text/javascript">
+    $(function () {
+      $("#posts").find('img').lazyload({
+        placeholder: "/images/loading.gif",
+        effect: "fadeIn"
+      });
+    });
+  </script>
+</body>
+</html>

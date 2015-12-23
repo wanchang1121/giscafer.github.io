@@ -1,0 +1,762 @@
+<!doctype html>
+<html class="theme-next  theme-next-mist">
+<head>
+  
+
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5"/>
+
+
+
+  
+    <link href='//fonts.lug.ustc.edu.cn/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+  
+
+
+<link rel="stylesheet" type="text/css" href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" />
+
+<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.5.2"/>
+
+
+    <meta name="description" content="前端技术博客，致力于前端开发" />
+
+
+
+  <meta name="keywords" content="GeoTools," />
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Giscafer's blog" type="application/atom+xml" />
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.2" />
+
+
+<meta name="description" content="GIS项目开发中用到的一个工具类（依赖jar文件为gt-opengis-8.0-M0.jar、jsr-275-1.0-beta-2.jar更高版本不限定）">
+<meta property="og:type" content="article">
+<meta property="og:title" content="GeoTools使用之JTSFactoryFinder接口demo">
+<meta property="og:url" content="http://giscafer.com/2015/09/09/jst-JSTFactoryFinder-geometry/index.html">
+<meta property="og:site_name" content="Giscafer's blog">
+<meta property="og:description" content="GIS项目开发中用到的一个工具类（依赖jar文件为gt-opengis-8.0-M0.jar、jsr-275-1.0-beta-2.jar更高版本不限定）">
+<meta property="og:updated_time" content="2015-10-15T15:33:25.562Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="GeoTools使用之JTSFactoryFinder接口demo">
+<meta name="twitter:description" content="GIS项目开发中用到的一个工具类（依赖jar文件为gt-opengis-8.0-M0.jar、jsr-275-1.0-beta-2.jar更高版本不限定）">
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: 'post'
+  };
+</script>
+
+
+
+  <title> GeoTools使用之JTSFactoryFinder接口demo | Giscafer's blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  <!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?884febd8d9c6636d92a0d12669fe4e03";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <div class="container one-column page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Giscafer's blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">Day Day Study，Good Good Up</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu menu-left">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tools">
+          <a href="/tools" rel="section">
+            
+              <i class="menu-item-icon fa fa-question-circle"></i> <br />
+            
+            工具
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/aboutme" rel="section">
+            
+              <i class="menu-item-icon fa fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <form class="site-search-form">
+    <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
+  </form>
+
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install', 'ZfmnF1vBkUFHkfhgCvjA','2.0.0');
+</script>
+
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content"> 
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                GeoTools使用之JTSFactoryFinder接口demo
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            发表于
+            <time itemprop="dateCreated" datetime="2015-09-09T13:07:04+08:00" content="2015-09-09">
+              2015-09-09
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; 分类于
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/GeoTools/" itemprop="url" rel="index">
+                    <span itemprop="name">GeoTools</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/09/09/jst-JSTFactoryFinder-geometry/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/09/jst-JSTFactoryFinder-geometry/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        <span itemprop="articleBody"><p>GIS项目开发中用到的一个工具类<br>（依赖jar文件为<code>gt-opengis-8.0-M0.jar</code>、<code>jsr-275-1.0-beta-2.jar</code>更高版本不限定）</p>
+<a id="more"></a>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.giscafer.geometry;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.geotools.factory.Hints;</span><br><span class="line"><span class="keyword">import</span> org.geotools.geometry.GeneralDirectPosition;</span><br><span class="line"><span class="keyword">import</span> org.geotools.geometry.jts.JTSFactoryFinder;</span><br><span class="line"><span class="keyword">import</span> org.geotools.referencing.ReferencingFactoryFinder;</span><br><span class="line"><span class="keyword">import</span> org.opengis.geometry.DirectPosition;</span><br><span class="line"><span class="keyword">import</span> org.opengis.geometry.MismatchedDimensionException;</span><br><span class="line"><span class="keyword">import</span> org.opengis.referencing.FactoryException;</span><br><span class="line"><span class="keyword">import</span> org.opengis.referencing.crs.CRSFactory;</span><br><span class="line"><span class="keyword">import</span> org.opengis.referencing.crs.CoordinateReferenceSystem;</span><br><span class="line"><span class="keyword">import</span> org.opengis.referencing.operation.CoordinateOperation;</span><br><span class="line"><span class="keyword">import</span> org.opengis.referencing.operation.CoordinateOperationFactory;</span><br><span class="line"><span class="keyword">import</span> org.opengis.referencing.operation.MathTransform;</span><br><span class="line"><span class="keyword">import</span> org.opengis.referencing.operation.TransformException;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.vividsolutions.jts.geom.Coordinate;</span><br><span class="line"><span class="keyword">import</span> com.vividsolutions.jts.geom.Geometry;</span><br><span class="line"><span class="keyword">import</span> com.vividsolutions.jts.geom.GeometryFactory;</span><br><span class="line"><span class="keyword">import</span> com.vividsolutions.jts.geom.LineString;</span><br><span class="line"><span class="keyword">import</span> com.vividsolutions.jts.geom.LinearRing;</span><br><span class="line"><span class="keyword">import</span> com.vividsolutions.jts.geom.Point;</span><br><span class="line"><span class="keyword">import</span> com.vividsolutions.jts.geom.Polygon;</span><br><span class="line"><span class="keyword">import</span> com.vividsolutions.jts.io.ParseException;</span><br><span class="line"><span class="keyword">import</span> com.vividsolutions.jts.io.WKTReader;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">GeometryUtil</span> </span>&#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> GeometryFactory geometryFactory = JTSFactoryFinder.getGeometryFactory( <span class="keyword">null</span> ); </span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> CRSFactory crsFactory = ReferencingFactoryFinder.getCRSFactory(<span class="keyword">null</span>); </span><br><span class="line">	<span class="comment">//WGS2000经纬度坐标系</span></span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> String GCS_China_2000 = <span class="string">"GEOGCS[\"GCS_China_Geodetic_Coordinate_System_2000\",DATUM[\"D_China_2000\",SPHEROID[\"CGCS2000\",6378137.0,298.257222101]],PRIMEM[\"Greenwich\",0.0],UNIT[\"Degree\",0.0174532925199433]]"</span>;</span><br><span class="line">    <span class="comment">//墨卡托平面坐标系，用距离计算、面积计算</span></span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> String Mercator_XY_WKT = <span class="string">"PROJCS[\"WGS_1984_Web_Mercator\",GEOGCS[\"GCS_WGS_1984_Major_Auxiliary_Sphere\",DATUM[\"D_WGS_1984_Major_Auxiliary_Sphere\",SPHEROID[\"WGS_1984_Major_Auxiliary_Sphere\",6378137.0,0.0]],PRIMEM[\"Greenwich\",0.0],UNIT[\"Degree\",0.0174532925199433]],PROJECTION[\"Mercator\"],PARAMETER[\"False_Easting\",0.0],PARAMETER[\"False_Northing\",0.0],PARAMETER[\"Central_Meridian\",0.0],PARAMETER[\"Standard_Parallel_1\",0.0],UNIT[\"Meter\",1.0]]"</span>;</span><br><span class="line">	<span class="comment">//坐标转换对象</span></span><br><span class="line">	</span><br><span class="line">	<span class="comment">/** </span><br><span class="line">     * create a Point </span><br><span class="line">     * <span class="doctag">@param</span> x </span><br><span class="line">     * <span class="doctag">@param</span> y </span><br><span class="line">     * <span class="doctag">@return</span> </span><br><span class="line">     */</span>  </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Coordinate <span class="title">createPoint</span><span class="params">(<span class="keyword">double</span> x,<span class="keyword">double</span> y)</span></span>&#123; </span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> Coordinate(x,y);  </span><br><span class="line">    &#125; </span><br><span class="line">    <span class="comment">/**</span><br><span class="line">	 * create a point</span><br><span class="line">	 * <span class="doctag">@return</span> Geometry</span><br><span class="line">	 */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Point <span class="title">createGeoPoint</span><span class="params">(<span class="keyword">double</span> x,<span class="keyword">double</span> y)</span></span>&#123;</span><br><span class="line">		Coordinate coord = <span class="keyword">new</span> Coordinate(x, y);</span><br><span class="line">		Point point = geometryFactory.createPoint( coord );</span><br><span class="line">		<span class="keyword">return</span> point;</span><br><span class="line">	&#125;</span><br><span class="line">    <span class="comment">/**</span><br><span class="line">     * 通过读取WKT字符串创建空间对象 </span><br><span class="line">     * <span class="doctag">@param</span> geomWKT</span><br><span class="line">     * <span class="doctag">@return</span></span><br><span class="line">     * <span class="doctag">@throws</span> ParseException</span><br><span class="line">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Geometry <span class="title">createPointByWKT</span><span class="params">(String geomWKT)</span> <span class="keyword">throws</span> ParseException</span>&#123;  </span><br><span class="line">        WKTReader reader = <span class="keyword">new</span> WKTReader( geometryFactory );  </span><br><span class="line">        Geometry geom =reader.read(geomWKT);  </span><br><span class="line">        <span class="keyword">return</span> geom;  </span><br><span class="line">    &#125;  </span><br><span class="line">      </span><br><span class="line">  </span><br><span class="line">    <span class="comment">/** </span><br><span class="line">     * create a line </span><br><span class="line">     * <span class="doctag">@return</span> </span><br><span class="line">     */</span>  </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> LineString <span class="title">createLine</span><span class="params">(List&lt;Coordinate&gt; points)</span></span>&#123;</span><br><span class="line">    	<span class="keyword">if</span>(points.size()&lt;<span class="number">2</span>)&#123;</span><br><span class="line">    		points.add(points.get(<span class="number">0</span>));</span><br><span class="line">    	&#125;</span><br><span class="line">        Coordinate[] coords  = (Coordinate[]) points.toArray(<span class="keyword">new</span> Coordinate[points.size()]);  </span><br><span class="line">        LineString line = geometryFactory.createLineString(coords);  </span><br><span class="line">        <span class="keyword">return</span> line;  </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/**</span><br><span class="line">     * 根据点串创建多边形</span><br><span class="line">     * <span class="doctag">@param</span> points</span><br><span class="line">     * <span class="doctag">@return</span></span><br><span class="line">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Polygon <span class="title">createPolygon</span><span class="params">(List&lt;Coordinate&gt; points)</span></span>&#123;</span><br><span class="line">    	Coordinate[] coords  = (Coordinate[]) points.toArray(<span class="keyword">new</span> Coordinate[points.size()]);  </span><br><span class="line">    	Polygon polygon=geometryFactory.createPolygon(coords);</span><br><span class="line">    	<span class="keyword">return</span> polygon;</span><br><span class="line">    &#125;</span><br><span class="line">      </span><br><span class="line">    <span class="comment">/** </span><br><span class="line">     * 返回(A)与(B)中距离最近的两个点的距离 </span><br><span class="line">     * <span class="doctag">@param</span> a </span><br><span class="line">     * <span class="doctag">@param</span> b </span><br><span class="line">     * <span class="doctag">@return</span> </span><br><span class="line">     */</span>  </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">double</span> <span class="title">distanceGeo</span><span class="params">(Geometry a,Geometry b)</span></span>&#123;  </span><br><span class="line">        <span class="keyword">return</span> a.distance(b);  </span><br><span class="line">    &#125;  </span><br><span class="line">      </span><br><span class="line">    <span class="comment">/** </span><br><span class="line">     * 两个几何对象的交集 </span><br><span class="line">     * <span class="doctag">@param</span> a </span><br><span class="line">     * <span class="doctag">@param</span> b </span><br><span class="line">     * <span class="doctag">@return</span> </span><br><span class="line">     */</span>  </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Geometry <span class="title">intersectionGeo</span><span class="params">(Geometry a,Geometry b)</span></span>&#123;  </span><br><span class="line">        <span class="keyword">return</span> a.intersection(b);  </span><br><span class="line">    &#125;  </span><br><span class="line">      </span><br><span class="line">    <span class="comment">/** </span><br><span class="line">     * 几何对象合并 </span><br><span class="line">     * <span class="doctag">@param</span> a </span><br><span class="line">     * <span class="doctag">@param</span> b </span><br><span class="line">     * <span class="doctag">@return</span> </span><br><span class="line">     */</span>  </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Geometry <span class="title">unionGeo</span><span class="params">(Geometry a,Geometry b)</span></span>&#123;  </span><br><span class="line">        <span class="keyword">return</span> a.union(b);  </span><br><span class="line">    &#125;  </span><br><span class="line">      </span><br><span class="line">    <span class="comment">/** </span><br><span class="line">     * 在A几何对象中有的，但是B几何对象中没有 </span><br><span class="line">     * <span class="doctag">@param</span> a </span><br><span class="line">     * <span class="doctag">@param</span> b </span><br><span class="line">     * <span class="doctag">@return</span> </span><br><span class="line">     */</span>  </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Geometry <span class="title">differenceGeo</span><span class="params">(Geometry a,Geometry b)</span></span>&#123;  </span><br><span class="line">        <span class="keyword">return</span> a.difference(b);  </span><br><span class="line">    &#125; </span><br><span class="line">    </span><br><span class="line">    <span class="comment">/**</span><br><span class="line">     * 获取线的长度，默认坐标为：坐标值为北京2000坐标系</span><br><span class="line">     * <span class="doctag">@param</span> line</span><br><span class="line">     * <span class="doctag">@return</span></span><br><span class="line">     * <span class="doctag">@throws</span> TransformException </span><br><span class="line">     * <span class="doctag">@throws</span> FactoryException </span><br><span class="line">     * <span class="doctag">@throws</span> MismatchedDimensionException </span><br><span class="line">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">double</span> <span class="title">getLengthLonLat</span><span class="params">(LineString line)</span> <span class="keyword">throws</span> MismatchedDimensionException, FactoryException, TransformException</span>&#123;</span><br><span class="line">    	Coordinate []points=line.getCoordinates();</span><br><span class="line">    	List&lt;Coordinate&gt; pointsList=<span class="keyword">new</span> ArrayList&lt;Coordinate&gt;();</span><br><span class="line">    	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;points.length;i++)&#123;</span><br><span class="line">    		Coordinate point=lonLatToXY(points[i]);</span><br><span class="line">    		pointsList.add(point);</span><br><span class="line">    	&#125;</span><br><span class="line">    	LineString lineXY=createLine(pointsList);</span><br><span class="line">    	<span class="keyword">return</span> lineXY.getLength();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/**</span><br><span class="line">     * 获取线的长度，默认坐标为平面坐标系</span><br><span class="line">     * <span class="doctag">@param</span> line</span><br><span class="line">     * <span class="doctag">@return</span></span><br><span class="line">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">double</span> <span class="title">getLengthXY</span><span class="params">(LineString line)</span></span>&#123;</span><br><span class="line">    	<span class="keyword">return</span> line.getLength();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/**</span><br><span class="line">     * 获取多边形面积，输入坐标系为北京2000经纬度坐标系</span><br><span class="line">     * <span class="doctag">@param</span> polygon</span><br><span class="line">     * <span class="doctag">@return</span></span><br><span class="line">     * <span class="doctag">@throws</span> MismatchedDimensionException</span><br><span class="line">     * <span class="doctag">@throws</span> FactoryException</span><br><span class="line">     * <span class="doctag">@throws</span> TransformException</span><br><span class="line">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">double</span> <span class="title">getAreaLonLat</span><span class="params">(Polygon polygon)</span> <span class="keyword">throws</span> MismatchedDimensionException, FactoryException, TransformException</span>&#123;</span><br><span class="line">    	Coordinate []points=polygon.getCoordinates();</span><br><span class="line">    	List&lt;Coordinate&gt; pointsList=<span class="keyword">new</span> ArrayList&lt;Coordinate&gt;();</span><br><span class="line">    	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;points.length;i++)&#123;</span><br><span class="line">    		Coordinate point=lonLatToXY(points[i]);</span><br><span class="line">    		pointsList.add(point);</span><br><span class="line">    	&#125;</span><br><span class="line">    	Polygon lineXY=createPolygon(pointsList);</span><br><span class="line">    	<span class="keyword">return</span> lineXY.getArea();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/**</span><br><span class="line">   	 * create a Circle  创建一个圆，圆心(x,y) 半径RADIUS</span><br><span class="line">   	 * <span class="doctag">@param</span> x</span><br><span class="line">   	 * <span class="doctag">@param</span> y</span><br><span class="line">   	 * <span class="doctag">@param</span> RADIUS 单位（米）</span><br><span class="line">   	 * <span class="doctag">@return</span></span><br><span class="line">   	 */</span></span><br><span class="line">   	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Polygon <span class="title">createCircle</span><span class="params">(<span class="keyword">double</span> x, <span class="keyword">double</span> y, <span class="keyword">final</span> <span class="keyword">double</span> RADIUS)</span></span>&#123;</span><br><span class="line">   		<span class="keyword">final</span> <span class="keyword">int</span> SIDES = <span class="number">32</span>;<span class="comment">//圆上面的点个数</span></span><br><span class="line">   		<span class="comment">//距离转度</span></span><br><span class="line">   		<span class="keyword">double</span> degree = RADIUS / (<span class="number">2</span> * Math.PI * <span class="number">6378137.0</span>) * <span class="number">360</span>;</span><br><span class="line"><span class="comment">//   		System.out.println("度："+degree);</span></span><br><span class="line">   	    Coordinate coords[] = <span class="keyword">new</span> Coordinate[SIDES+<span class="number">1</span>];</span><br><span class="line">   	    <span class="keyword">for</span>( <span class="keyword">int</span> i = <span class="number">0</span>; i &lt; SIDES; i++)&#123;</span><br><span class="line">   	        <span class="keyword">double</span> angle = ((<span class="keyword">double</span>) i / (<span class="keyword">double</span>) SIDES) * Math.PI * <span class="number">2.0</span>;</span><br><span class="line">   	        <span class="keyword">double</span> dx = Math.cos( angle ) * degree;</span><br><span class="line">   	        <span class="keyword">double</span> dy = Math.sin( angle ) * degree;</span><br><span class="line">   	        coords[i] = <span class="keyword">new</span> Coordinate( (<span class="keyword">double</span>) x + dx, (<span class="keyword">double</span>) y + dy );</span><br><span class="line">   	    &#125;</span><br><span class="line">   	    coords[SIDES] = coords[<span class="number">0</span>];</span><br><span class="line">   	    LinearRing ring = geometryFactory.createLinearRing( coords );</span><br><span class="line">   	    Polygon polygon = geometryFactory.createPolygon( ring, <span class="keyword">null</span> );</span><br><span class="line">   	    <span class="keyword">return</span> polygon;</span><br><span class="line">   	&#125;</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    <span class="comment">/**</span><br><span class="line">     * 将经纬度的点坐标转换为平面坐标</span><br><span class="line">     * <span class="doctag">@param</span> point</span><br><span class="line">     * <span class="doctag">@return</span></span><br><span class="line">     * <span class="doctag">@throws</span> FactoryException </span><br><span class="line">     * <span class="doctag">@throws</span> TransformException </span><br><span class="line">     * <span class="doctag">@throws</span> MismatchedDimensionException </span><br><span class="line">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Coordinate <span class="title">lonLatToXY</span><span class="params">(Coordinate coordinate)</span> <span class="keyword">throws</span> FactoryException, MismatchedDimensionException, TransformException</span>&#123;</span><br><span class="line">    	Hints hint = <span class="keyword">new</span> Hints(Hints.LENIENT_DATUM_SHIFT, <span class="keyword">true</span>);</span><br><span class="line">    	CoordinateReferenceSystem sourceCRS = crsFactory.createFromWKT(GCS_China_2000);</span><br><span class="line">        CoordinateReferenceSystem targetCRS = crsFactory.createFromWKT(Mercator_XY_WKT);</span><br><span class="line">    	CoordinateOperationFactory coFactory = ReferencingFactoryFinder.getCoordinateOperationFactory(hint);</span><br><span class="line">        CoordinateOperation co = coFactory.createOperation(sourceCRS,targetCRS);</span><br><span class="line">        MathTransform transform = co.getMathTransform();</span><br><span class="line">        <span class="keyword">double</span> x = coordinate.x;</span><br><span class="line">    	<span class="keyword">double</span> y = coordinate.y;</span><br><span class="line">    	DirectPosition point = <span class="keyword">new</span> GeneralDirectPosition(x, y);</span><br><span class="line">    	point = transform.transform(point, point);</span><br><span class="line">    	<span class="keyword">double</span> lat = point.getOrdinate(<span class="number">0</span>);</span><br><span class="line">    	<span class="keyword">double</span> lon = point.getOrdinate(<span class="number">1</span>);</span><br><span class="line">    	<span class="keyword">return</span> createPoint(lat,lon);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/**</span><br><span class="line">	 * <span class="doctag">@param</span> args</span><br><span class="line">	 * <span class="doctag">@throws</span> FactoryException </span><br><span class="line">	 * <span class="doctag">@throws</span> TransformException </span><br><span class="line">	 * <span class="doctag">@throws</span> MismatchedDimensionException </span><br><span class="line">	 */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> FactoryException, MismatchedDimensionException, TransformException </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		Coordinate point1=GeometryUtil.createPoint(<span class="number">116.252189</span>, <span class="number">39.9065632</span>);</span><br><span class="line">		Coordinate point2=GeometryUtil.createPoint(<span class="number">116.251977</span>, <span class="number">39.9068492</span>);</span><br><span class="line">		Coordinate point3=GeometryUtil.createPoint(<span class="number">116.252168</span>, <span class="number">39.9065392</span>);</span><br><span class="line">		Coordinate point4=GeometryUtil.createPoint(<span class="number">116.255095</span>, <span class="number">39.9066112</span>);</span><br><span class="line">		List&lt;Coordinate&gt; points=<span class="keyword">new</span> ArrayList&lt;Coordinate&gt;();</span><br><span class="line">		List&lt;Coordinate&gt; points1=<span class="keyword">new</span> ArrayList&lt;Coordinate&gt;();</span><br><span class="line">		points.add(point1);</span><br><span class="line">		points.add(point2);</span><br><span class="line">		points.add(point3);</span><br><span class="line">		points.add(point4);</span><br><span class="line">		points.add(point1);</span><br><span class="line">		points1.add(point1);</span><br><span class="line">        <span class="comment">//创建面</span></span><br><span class="line">		Polygon polygon=GeometryUtil.createPolygon(points);</span><br><span class="line">		<span class="comment">//创建线</span></span><br><span class="line">		LineString line1=GeometryUtil.createLine(points1);</span><br><span class="line">		LineString line =GeometryUtil.createLine(points);</span><br><span class="line">		<span class="comment">//获取面积和长度</span></span><br><span class="line">		System.out.println(<span class="string">"line-changdu-lonlat:"</span>+line.getLength());</span><br><span class="line">		System.out.println(<span class="string">"line-changdu-xy:"</span>+GeometryUtil.getLengthLonLat(line));</span><br><span class="line">		System.out.println(<span class="string">"polygon-mianji-lonlat:"</span>+polygon.getArea());</span><br><span class="line">		System.out.println(<span class="string">"line-changdu-xy:"</span>+GeometryUtil.getAreaLonLat(polygon));</span><br><span class="line">		System.out.println(<span class="string">"toString()---"</span>+line.toString());</span><br><span class="line">		System.out.println(<span class="string">"toString()---"</span>+line1.toString());</span><br><span class="line">		<span class="comment">//判断某个点是否在圆内</span></span><br><span class="line">		Polygon p = GeometryUtil.createCircle(<span class="number">116.1851444</span>, <span class="number">39.9269055</span>, <span class="number">200000</span>);</span><br><span class="line">		Point point=GeometryUtil.createPoint(<span class="number">119.185144</span>, <span class="number">39.9269</span>);</span><br><span class="line">		Boolean isOk=p.contains(point);</span><br><span class="line">		System.out.println(isOk);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>另外接口还包含很多关于对空间图形计算的：</strong></p>
+<p>相等(Equals)：几何形状拓扑上相等。<br>脱节(Disjoint)：几何形状没有共有的点。<br>相交(Intersects)：几何形状至少有一个共有点（区别于脱节）<br>接触(Touches)：几何形状有至少一个公共的边界点，但是没有内部点。<br>交叉(Crosses)：几何形状共享一些但不是所有的内部点。<br>内含(Within)：几何形状A的线都在几何形状B内部。<br>包含(Contains)：几何形状B的线都在几何形状A内部（区别于内含）<br>重叠(Overlaps)：几何形状共享一部分但不是所有的公共点，而且相交处有他们自己相同的区域。</p>
+</span>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/GeoTools/" rel="tag">#GeoTools</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/09/06/web-performance-optimization/" rel="next" title="前端网站性能优化14点">
+                <i class="fa fa-chevron-left"></i> 前端网站性能优化14点
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/09/15/jquery-mp3-demo/" rel="prev" title="jquery-mp3.js模仿站长之家的音乐播放效果">
+                jquery-mp3.js模仿站长之家的音乐播放效果 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+ </div>
+
+        
+
+        
+          <div class="comments" id="comments">
+            
+              <div class="ds-thread" data-thread-key="2015/09/09/jst-JSTFactoryFinder-geometry/"
+                   data-title="GeoTools使用之JTSFactoryFinder接口demo" data-url="http://giscafer.com/2015/09/09/jst-JSTFactoryFinder-geometry/">
+              </div>
+            
+          </div>
+        
+      </div>
+
+      
+        
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" src="https://avatars0.githubusercontent.com/u/8676711?v=3&s=460" alt="giscafer" itemprop="image"/>
+          <p class="site-author-name" itemprop="name">giscafer</p>
+        </div>
+        <p class="site-description motion-element" itemprop="description">Day Day Study，Good Good Up</p>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">17</span>
+              <span class="site-state-item-name">文章</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            <a href="/categories">
+              <span class="site-state-item-count">9</span>
+              <span class="site-state-item-name">分类</span>
+              </a>
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/tags">
+              <span class="site-state-item-count">19</span>
+              <span class="site-state-item-name">标签</span>
+              </a>
+          </div>
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="menu-item-icon icon-next-feed"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/giscafer" target="_blank">
+                  <i class="fa fa-github"></i> github
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/laohoubin" target="_blank">
+                  <i class="fa fa-weibo"></i> weibo
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/giscafer" target="_blank">
+                  <i class="fa fa-zhihu"></i> zhihu
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+            <p class="site-author-name">Links</p>
+            
+              <span class="links-of-author-item">
+                <a href="http://gis520.com/" target="_blank">GIS520</a>
+              </span>
+            
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator"></div>
+          <div class="post-toc">
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator"></div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+      
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner"> <div class="copyright" >
+  
+  &copy;  2014 - 
+  <span itemprop="copyrightYear">2015</span>
+  <span class="with-love">
+    <i class="icon-next-heart fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">giscafer</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+ </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+  
+    
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"giscafe"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+    
+     
+
+
+    
+  
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.2"></script>
+
+
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.2"></script>
+  
+
+  <script type="text/javascript" src="/js/motion_fallback.js?v=0.4.5.2" id="motion.fallback"></script>
+
+
+
+
+  <script type="text/javascript" src="/js/nav-toggle.js?v=0.4.5.2"></script>
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.2" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 0.4 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    var $tocContent = $('.post-toc-content');
+    if (isDesktop() && CONFIG.sidebar === 'post') {
+      if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+        displaySidebar();
+      }
+    }
+  });
+</script>
+
+
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      if (CONFIG.sidebar === 'always') {
+        displaySidebar();
+      }
+      if (isMobile()) {
+        FastClick.attach(document.body);
+      }
+
+      motionIntegrator.bootstrap();
+    });
+  </script>
+
+  
+  
+
+  
+  
+
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"slide":{"type":"slide","bdImg":"3","bdPos":"left","bdTop":"250"}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+  
+  <script type="text/javascript" src="/js/lazyload.js"></script>
+  <script type="text/javascript">
+    $(function () {
+      $("#posts").find('img').lazyload({
+        placeholder: "/images/loading.gif",
+        effect: "fadeIn"
+      });
+    });
+  </script>
+</body>
+</html>
