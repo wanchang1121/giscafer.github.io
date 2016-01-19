@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Day Day Study，Good Good Up]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://giscafer.com/"/>
-  <updated>2016-01-16T18:13:35.876Z</updated>
+  <updated>2016-01-19T10:59:34.942Z</updated>
   <id>http://giscafer.com/</id>
   
   <author>
@@ -19,9 +19,9 @@
     <link href="http://giscafer.com/2016/01/16/alidayu-sign-nodejs/"/>
     <id>http://giscafer.com/2016/01/16/alidayu-sign-nodejs/</id>
     <published>2016-01-16T02:49:20.000Z</published>
-    <updated>2016-01-16T18:13:35.876Z</updated>
+    <updated>2016-01-19T10:59:34.942Z</updated>
     <content type="html"><![CDATA[<h3 id="1、说明">1、说明</h3><p>阿里大鱼提供了验证码，短信通知，语音等服务，在使用后感觉挺方便，不愧是阿里旗下的产品。</p>
-<p>最近想搞个NodeJS发送短信通知的功能，这里没有使用<code>alidayu-node</code>（开始做的时候并不知道有这个。如果使用alidayu-node那就简单了。），自己整一个签名sign，实现短信发送。</p>
+<p>最近想搞个NodeJS发送短信通知的功能，这里没有使用<code>alidayujs</code>（这个是本人后来封装的。如果使用<a href="https://github.com/giscafer/alidayujs" target="_blank" rel="external">alidayujs</a>那就简单了。），自己整一个签名sign，实现短信发送。</p>
 <a id="more"></a>
 <p>官方的<a href="http://open.taobao.com/doc2/detail.htm?articleId=101617&amp;docType=1&amp;treeId=1" target="_blank" rel="external">文档</a>说明了签名<code>sign</code>的生成步骤，不过第三步骤:</p>
 <blockquote>
@@ -38,7 +38,7 @@
 ]]></content>
     <summary type="html">
     <![CDATA[<h3 id="1、说明">1、说明</h3><p>阿里大鱼提供了验证码，短信通知，语音等服务，在使用后感觉挺方便，不愧是阿里旗下的产品。</p>
-<p>最近想搞个NodeJS发送短信通知的功能，这里没有使用<code>alidayu-node</code>（开始做的时候并不知道有这个。如果使用alidayu-node那就简单了。），自己整一个签名sign，实现短信发送。</p>]]>
+<p>最近想搞个NodeJS发送短信通知的功能，这里没有使用<code>alidayujs</code>（这个是本人后来封装的。如果使用<a href="https://github.com/giscafer/alidayujs">alidayujs</a>那就简单了。），自己整一个签名sign，实现短信发送。</p>]]>
     
     </summary>
     
