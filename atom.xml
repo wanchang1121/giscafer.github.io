@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Day Day Study，Good Good Up]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://giscafer.com/"/>
-  <updated>2016-02-04T08:16:03.249Z</updated>
+  <updated>2016-02-04T08:19:25.575Z</updated>
   <id>http://giscafer.com/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://giscafer.com/2016/02/04/bluebird-api-study/"/>
     <id>http://giscafer.com/2016/02/04/bluebird-api-study/</id>
     <published>2016-02-04T06:58:29.000Z</published>
-    <updated>2016-02-04T08:16:03.249Z</updated>
+    <updated>2016-02-04T08:19:25.575Z</updated>
     <content type="html"><![CDATA[<h2 id="Promises/A+规范">Promises/A+规范</h2><h3 id="Promise">Promise</h3><p>是一个拥有<code>then</code>方法的对象或函数，起行为符合本规范；</p>
 <h3 id="thenable">thenable</h3><p>是一个定义了<code>then</code>方法的对象或函数，即<code>拥有then方法</code>；</p>
 <p>详情介绍见文章<a href="http://www.ituring.com.cn/article/66566" target="_blank" rel="external">《Promises/A+规范》</a></p>
@@ -47,7 +47,9 @@
 <h3 id="thenable">then]]>
     </summary>
     
-      <category term="promise,bluebird" scheme="http://giscafer.com/tags/promise-bluebird/"/>
+      <category term="bluebird" scheme="http://giscafer.com/tags/bluebird/"/>
+    
+      <category term="promise" scheme="http://giscafer.com/tags/promise/"/>
     
       <category term="NodeJS" scheme="http://giscafer.com/categories/NodeJS/"/>
     
