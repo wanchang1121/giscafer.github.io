@@ -59,7 +59,7 @@ bluebird之前做node.js项目的时候一直使用朴灵的eventproxy来处理�
 thenable是一个定义了then方法的对象或函数，即拥有then方法；
 详情介绍见文章《Promises/A+规范》
 bluebird之前做node.js项目的时候一直使用朴灵的eventproxy来处理异步或者回调，eventproxy采用的是事件机制，使用也挺方便。现在也了解一下备受欢迎的blu">
-<meta property="og:updated_time" content="2016-02-04T08:19:25.575Z">
+<meta property="og:updated_time" content="2016-02-04T08:23:05.403Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="bluebird(Promise/A+)介绍">
 <meta name="twitter:description" content="Promises/A+规范Promise是一个拥有then方法的对象或函数，起行为符合本规范；
@@ -311,7 +311,7 @@ bluebird之前做node.js项目的时候一直使用朴灵的eventproxy来处理�
         <span itemprop="articleBody"><h2 id="Promises/A+规范">Promises/A+规范</h2><h3 id="Promise">Promise</h3><p>是一个拥有<code>then</code>方法的对象或函数，起行为符合本规范；</p>
 <h3 id="thenable">thenable</h3><p>是一个定义了<code>then</code>方法的对象或函数，即<code>拥有then方法</code>；</p>
 <p>详情介绍见文章<a href="http://www.ituring.com.cn/article/66566" target="_blank" rel="external">《Promises/A+规范》</a></p>
-<h2 id="bluebird">bluebird</h2><p>之前做node.js项目的时候一直使用朴灵的<code>eventproxy</code>来处理异步或者回调，<code>eventproxy</code>采用的是事件机制，使用也挺方便。<br>现在也了解一下备受欢迎的<code>bluebird</code>——<a href="http://bluebirdjs.com/" target="_blank" rel="external">官网</a>，bb的API文档很全很详细。</p>
+<h2 id="bluebird">bluebird</h2><p>之前做node.js项目的时候一直使用朴灵的<code>eventproxy</code>来处理异步或者回调，<code>eventproxy</code>采用的是事件机制，使用也挺方便。<br>现在也了解一下备受欢迎的<code>bluebird</code>——<a href="http://bluebirdjs.com/" target="_blank" rel="external">官网</a>，bb的API文档很全很详细。<br><a id="more"></a></p>
 <h3 id="-promisifyAll">.promisifyAll</h3><p>官方API说明：</p>
 <blockquote>
 <p>Promisifies the entire object by going through the object’s properties and creating an async equivalent of each function on the object and its prototype chain. The promisified method name will be the original method name suffixed with suffix (default is “Async”). Any class properties of the object (which is the case for the main export of many modules) are also promisified, both static and instance methods. Class property is a property with a function value that has a non-empty .prototype object. Returns the input object.</p>
