@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Day Day Study，Good Good Up]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://giscafer.com/"/>
-  <updated>2016-02-05T06:38:11.571Z</updated>
+  <updated>2016-02-05T06:40:28.645Z</updated>
   <id>http://giscafer.com/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://giscafer.com/2016/02/05/nodejs-overflow-question/"/>
     <id>http://giscafer.com/2016/02/05/nodejs-overflow-question/</id>
     <published>2016-02-05T06:18:08.000Z</published>
-    <updated>2016-02-05T06:38:11.571Z</updated>
+    <updated>2016-02-05T06:40:28.645Z</updated>
     <content type="html"><![CDATA[<h2 id="0、NodeJS调试介绍">0、NodeJS调试介绍</h2><p>级别从高到低，推荐到不推荐：</p>
 <ol>
 <li>ttd/bdd测试驱动</li>
@@ -80,6 +80,10 @@ const Promise = require(<span class="string">'bluebird'</span>);
 <li>console.log]]>
     
     </summary>
+    
+      <category term="NodeJS" scheme="http://giscafer.com/tags/NodeJS/"/>
+    
+      <category term="NodeJS" scheme="http://giscafer.com/categories/NodeJS/"/>
     
   </entry>
   
