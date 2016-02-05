@@ -36,7 +36,7 @@
 
 
 
-  <meta name="keywords" content="Hexo," />
+  <meta name="keywords" content="前端开发博客,giscafer,javascript,nodejs,java,html,css" />
 
 
 
@@ -47,27 +47,31 @@
   <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.2" />
 
 
-<meta name="description" content="##将Hexo本地博客，托管到gitcafe教程
-###（1）注册gitcafe账号
-首先注册gitcafe账号，然后登陆到gitcafe，在个人首页左下角处，新建一个项目">
+<meta name="description" content="0、NodeJS调试介绍级别从高到低，推荐到不推荐：
+
+ttd/bdd测试驱动
+node-inspector，vsc编辑器，webstrom；
+node-debug
+console.log">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo静态博客搭建教程[2]">
-<meta property="og:url" content="http://giscafer.com/2014/04/27/hexo-to-gitcafe_course/index.html">
+<meta property="og:title" content="NodeJS开发常见错误A&Q">
+<meta property="og:url" content="http://giscafer.com/2016/02/05/nodejs-overflow-question/index.html">
 <meta property="og:site_name" content="Giscafer's blog">
-<meta property="og:description" content="##将Hexo本地博客，托管到gitcafe教程
-###（1）注册gitcafe账号
-首先注册gitcafe账号，然后登陆到gitcafe，在个人首页左下角处，新建一个项目">
-<meta property="og:image" content="http://giscafer.github.io/static/img/hexo_course_08.jpg">
-<meta property="og:image" content="http://giscafer.github.io/static/img/hexo_course_09.jpg">
-<meta property="og:image" content="http://giscafer.github.io/static/img/hexo_course_11.jpg">
-<meta property="og:image" content="http://giscafer.github.io/static/img/hexo_course_12.jpg">
-<meta property="og:image" content="http://giscafer.github.io/static/img/hexo_course_13.jpg">
-<meta property="og:updated_time" content="2015-09-03T11:22:33.475Z">
+<meta property="og:description" content="0、NodeJS调试介绍级别从高到低，推荐到不推荐：
+
+ttd/bdd测试驱动
+node-inspector，vsc编辑器，webstrom；
+node-debug
+console.log">
+<meta property="og:updated_time" content="2016-02-05T06:38:11.571Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo静态博客搭建教程[2]">
-<meta name="twitter:description" content="##将Hexo本地博客，托管到gitcafe教程
-###（1）注册gitcafe账号
-首先注册gitcafe账号，然后登陆到gitcafe，在个人首页左下角处，新建一个项目">
+<meta name="twitter:title" content="NodeJS开发常见错误A&Q">
+<meta name="twitter:description" content="0、NodeJS调试介绍级别从高到低，推荐到不推荐：
+
+ttd/bdd测试驱动
+node-inspector，vsc编辑器，webstrom；
+node-debug
+console.log">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -79,7 +83,7 @@
 
 
 
-  <title> Hexo静态博客搭建教程[2] | Giscafer's blog </title>
+  <title> NodeJS开发常见错误A&Q | Giscafer's blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -255,7 +259,7 @@
             
             
               
-                Hexo静态博客搭建教程[2]
+                NodeJS开发常见错误A&Q
               
             
           </h1>
@@ -264,34 +268,19 @@
         <div class="post-meta">
           <span class="post-time">
             发表于
-            <time itemprop="dateCreated" datetime="2014-04-27T17:35:41+08:00" content="2014-04-27">
-              2014-04-27
+            <time itemprop="dateCreated" datetime="2016-02-05T14:18:08+08:00" content="2016-02-05">
+              2016-02-05
             </time>
           </span>
 
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp; 分类于
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">Hexo</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
           
 
           
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2014/04/27/hexo-to-gitcafe_course/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2014/04/27/hexo-to-gitcafe_course/" itemprop="commentsCount"></span>
+                <a href="/2016/02/05/nodejs-overflow-question/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/02/05/nodejs-overflow-question/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -310,73 +299,74 @@
       
 
       
-        <span itemprop="articleBody"><p>##将Hexo本地博客，托管到gitcafe教程</p>
-<p>###（1）注册<a href="http://gitcafe.com/signup?invited_by=giscafe" target="_blank" rel="external">gitcafe</a>账号</p>
-<p>首先注册gitcafe账号，然后登陆到gitcafe，在个人首页左下角处，新建一个项目<br><img src="http://giscafer.github.io/static/img/hexo_course_08.jpg" alt=""></p>
-<a id="more"></a>
-<p>###（2）填写好项目信息：</p>
-<p><img src="http://giscafer.github.io/static/img/hexo_course_09.jpg" alt=""></p>
-<p>###（3）进入账户设置：</p>
-<p><img src="http://giscafer.github.io/static/img/hexo_course_11.jpg" alt=""></p>
-<p>###（4）添加SSH公匙：</p>
-<p><img src="http://giscafer.github.io/static/img/hexo_course_12.jpg" alt=""></p>
-<p>###（5）公匙获取方法：</p>
-<blockquote>
-<p>$ clip &lt; ~/.ssh/id_rsa.pub</p>
-<p>  复制公匙到剪切板</p>
-</blockquote>
-<p>第一次使用的朋友没有公匙请看官方创建官方教程<a href="https://help.github.com/articles/generating-ssh-keys" target="_blank" rel="external">Generating SSH Keys</a></p>
-<p>将复制的公式粘贴到gitcafe账户设置处的SSH公匙里边，保存即可！</p>
-<p>打开博客根目录下的_config.yml文件，设置<br>将最后的“# Deployment”设置选项设置为如下：</p>
-<pre><code><span class="attribute">deploy</span>:
-  <span class="attribute">type</span>: github
-  <span class="attribute">repository</span>: git<span class="variable">@gitcafe</span>.<span class="attribute">com</span>:giscafe/giscafe.git
-  <span class="attribute">branch</span>: master 
-</code></pre><p>这里的repository改为自己的Git地址，获取方法见图：</p>
-<p><img src="http://giscafer.github.io/static/img/hexo_course_13.jpg" alt=""></p>
-<p>保存，运行以下命令：</p>
-<p>$hexo generate</p>
-<p>$hexo deploy</p>
-<p>这样即可将博客文件部署到gitcafe了，生成的静态文件会上传到gitcafe项目的master分支里边。<br>使用$ hexo doploy命令需要输入密码，就是上边<a href="https://help.github.com/articles/generating-ssh-keys" target="_blank" rel="external">Generating SSH Keys</a> 教程里边设置SSH时需要的密码。</p>
-<p>###PS:</p>
-<p>首次使用git的时候都需要提交一下自己的user_name和user_email</p>
-<p>下面的命令将修改/home/[username]/.gitconfig文件，也就是说下面的配置只对每一个ssh的用户可见，所以每个人都需要做。</p>
-<p>提交代码的log里面会显示提交者的信息:</p>
-<pre><code><span class="tag">git</span> <span class="tag">config</span> —<span class="tag">global</span> <span class="tag">user</span><span class="class">.name</span> <span class="attr_selector">[username]</span>
-<span class="tag">git</span> <span class="tag">config</span> —<span class="tag">global</span> <span class="tag">user</span><span class="class">.email</span> <span class="attr_selector">[email]</span>
-</code></pre><p><strong>deploy完成后，在浏览器输入gitcafe送的二级域名即可进入了，比如我的是<a href="http://giscafer.github.io" target="_blank" rel="external">http://giscafer.github.io</a></strong></p>
-<p><strong>就是“项目名.gitcafe.com”</strong></p>
-<p>==========================</p>
-<p>Author: <a href="http://weibo.com/laohoubin" target="_blank" rel="external">@勞黑炭要好好好学习</a></p>
-<p>2014 年 04月 29日</p>
+        <span itemprop="articleBody"><h2 id="0、NodeJS调试介绍">0、NodeJS调试介绍</h2><p>级别从高到低，推荐到不推荐：</p>
+<ol>
+<li>ttd/bdd测试驱动</li>
+<li>node-inspector，vsc编辑器，webstrom；</li>
+<li>node-debug</li>
+<li>console.log<a id="more"></a>
+<h2 id="1、CookieParser错误">1、CookieParser错误</h2><code>throw new Error(&#39;cookieParser(&quot;secret&quot;) required for signed cookies&#39;);</code><br>提示：<strong>Error: cookieParser(“secret”) required for signed cookies</strong></li>
+</ol>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.use(cookieParser(config.auth_cookie_name));//&#36825;&#37324;cookieParser(&#34;secret&#34;)&#38656;&#35201;&#25351;&#23450;&#20869;&#23481;&#34;secret&#34;&#10;//&#22240;&#20026;&#29256;&#26412;&#38382;&#39064;&#65292;&#36825;&#37324;&#22353;&#37324;&#22909;&#19968;&#20250;&#10;app.use(session(&#123;&#10;  secret:config.session_secret,&#10;  key: config.auth_cookie_name, //&#36825;&#37324;auth_cookie_name&#23601;&#26159;&#25351;&#23450;&#20869;&#23481;&#34;secret&#34;&#10;  cookie: &#123;maxAge: 1000 * 60 * 60 * 24 * 30&#125;,//30 days&#10;  resave: false,&#10;  saveUninitialized: true,&#10;  store: new MongoStore(&#123;&#10;    url: config.dev_dbUrl&#10;  &#125;)&#10;&#125;));</span><br></pre></td></tr></table></figure>
+<p>出现以上问题可能是在代码中使用类似<code>var auth_token = req.signedCookies[config.auth_cookie_name];</code>代码，如果没用，以上直接使用<code>pp.use(cookieParser());</code>即可。</p>
+<p>参考解决：</p>
+<p><a href="http://stackoverflow.com/questions/20112876/cookieparser-and-cookiesession-middleware-in-expressjs" target="_blank" rel="external">http://stackoverflow.com/questions/20112876/cookieparser-and-cookiesession-middleware-in-expressjs</a></p>
+<h2 id="2、Cast_to_ObjectId_failed_for_value">2、Cast to ObjectId failed for value</h2><p>错误大致：</p>
+<pre><code><span class="number">500</span> <span class="string">CastError:</span> Cast to ObjectId failed <span class="keyword">for</span> value <span class="string">"Mp0uah2G6TJVwPhOQ2sSZ10yklPkmbRV"</span> at path <span class="string">"_id"</span>
+ at MongooseError.CastError (<span class="regexp">/home/</span>bae<span class="regexp">/app/</span>.bae<span class="regexp">/node_modules/</span>mongoose<span class="regexp">/lib/</span>error/cast.<span class="string">js:</span><span class="number">19</span>:<span class="number">11</span>)
+ at ObjectId.cast (<span class="regexp">/home/</span>bae<span class="regexp">/app/</span>.bae<span class="regexp">/node_modules/</span>mongoose<span class="regexp">/lib/</span>schema/objectid.<span class="string">js:</span><span class="number">134</span>:<span class="number">13</span>)
+ at ObjectId.castForQuery (<span class="regexp">/home/</span>bae<span class="regexp">/app/</span>.bae<span class="regexp">/node_modules/</span>mongoose<span class="regexp">/lib/</span>schema/objectid.<span class="string">js:</span><span class="number">173</span>:<span class="number">17</span>)
+ at module.exports (<span class="regexp">/home/</span>bae<span class="regexp">/app/</span>.bae<span class="regexp">/node_modules/</span>mongoose<span class="regexp">/lib/</span>cast.<span class="string">js:</span><span class="number">205</span>:<span class="number">32</span>)
+ at Query.cast (<span class="regexp">/home/</span>bae<span class="regexp">/app/</span>.bae<span class="regexp">/node_modules/</span>mongoose<span class="regexp">/lib/</span>query.<span class="string">js:</span><span class="number">2533</span>:<span class="number">10</span>)
+ at Query.findOne (<span class="regexp">/home/</span>bae<span class="regexp">/app/</span>.bae<span class="regexp">/node_modules/</span>mongoose<span class="regexp">/lib/</span>query.<span class="string">js:</span><span class="number">1239</span>:<span class="number">10</span>)
+ at Function.findOne (<span class="regexp">/home/</span>bae<span class="regexp">/app/</span>.bae<span class="regexp">/node_modules/</span>mongoose<span class="regexp">/lib/</span>model.<span class="string">js:</span><span class="number">1254</span>:<span class="number">13</span>)
+ at Object.exports.getUserById (<span class="regexp">/home/</span>bae<span class="regexp">/app/</span>src<span class="regexp">/server/</span>proxy/user.<span class="string">js:</span><span class="number">39</span>:<span class="number">7</span>)
+ at exports.authUser (<span class="regexp">/home/</span>bae<span class="regexp">/app/</span>src<span class="regexp">/server/</span>common/auth.<span class="string">js:</span><span class="number">114</span>:<span class="number">19</span>)
+ at Layer.handle [<span class="keyword">as</span> handle_request] (<span class="regexp">/home/</span>bae<span class="regexp">/app/</span>.bae<span class="regexp">/node_modules/</span>express<span class="regexp">/lib/</span>router/layer.<span class="string">js:</span><span class="number">95</span>:<span class="number">5</span>)
+ at trim_prefix (<span class="regexp">/home/</span>bae<span class="regexp">/app/</span>.bae<span class="regexp">/node_modules/</span>express<span class="regexp">/lib/</span>router/index.<span class="string">js:</span><span class="number">312</span>:<span class="number">13</span>)
+ at <span class="regexp">/home/</span>bae<span class="regexp">/app/</span>.bae<span class="regexp">/node_modules/</span>express<span class="regexp">/lib/</span>router/index.<span class="string">js:</span><span class="number">280</span>:<span class="number">7</span>
+ at Function.process_params (<span class="regexp">/home/</span>bae<span class="regexp">/app/</span>.bae<span class="regexp">/node_modules/</span>express<span class="regexp">/lib/</span>router/index.<span class="string">js:</span><span class="number">330</span>:<span class="number">12</span>)
+ at next (<span class="regexp">/home/</span>bae<span class="regexp">/app/</span>.bae<span class="regexp">/node_modules/</span>express<span class="regexp">/lib/</span>router/index.<span class="string">js:</span><span class="number">271</span>:<span class="number">10</span>)
+ at <span class="regexp">/home/</span>bae<span class="regexp">/app/</span>.bae<span class="regexp">/node_modules/</span>express-session/index.<span class="string">js:</span><span class="number">437</span>:<span class="number">7</span>
+ at Command.callback (<span class="regexp">/home/</span>bae<span class="regexp">/app/</span>.bae<span class="regexp">/node_modules/</span>connect-redis<span class="regexp">/lib/</span>connect-redis.<span class="string">js:</span><span class="number">158</span>:<span class="number">14</span>)
+</code></pre><p>这个问题可能和<code>1问题</code>有相关，如果不是，参考以下解决方案：</p>
+<p><a href="http://stackoverflow.com/questions/15771470/mongoose-cast-to-objectid-failed-for-value" target="_blank" rel="external">http://stackoverflow.com/questions/15771470/mongoose-cast-to-objectid-failed-for-value</a></p>
+<p><a href="http://stackoverflow.com/questions/25380388/error-casterror-cast-to-objectid-failed-for-value-at-path-id" target="_blank" rel="external">http://stackoverflow.com/questions/25380388/error-casterror-cast-to-objectid-failed-for-value-at-path-id</a></p>
+<h2 id="3、model对象赋值不成功，需要创建字段。">3、model对象赋值不成功，需要创建字段。</h2><p>目前通过schema创建字段解决。原因未知。</p>
+<h2 id="4、SyntaxError:_Use_of_const_in_strict_mode-">4、SyntaxError: Use of const in strict mode.</h2><pre><code><span class="regexp">/home/</span>bae<span class="regexp">/app/</span>.bae<span class="regexp">/node_modules/</span>connect-mongo<span class="regexp">/src/</span>index.<span class="string">js:</span><span class="number">3</span>
+const Promise = require(<span class="string">'bluebird'</span>);
+^^^^^
+<span class="string">SyntaxError:</span> Use of const <span class="keyword">in</span> strict mode.
+</code></pre><h2 id="5、Error:_Can’t_set_headers_after_they_are_sent-">5、Error: Can’t set headers after they are sent.</h2><p><code>Can’t set headers after they are sent.</code> =&gt; <code>不能发送headers因为已经发送过一次了</code> =&gt; 在处理HTTP请求时，服务器会先输出响应头，<br>然后再输出主体内容，而一旦输出过一次响应头（比如执行过 <code>res.writeHead()</code> 或 <code>res.write()</code> 或 <code>res.end()</code>），<br>你再尝试通过 <code>res.setHeader()</code> 或 <code>res.writeHead()</code> 来设置响应头时（有些方法比如 <code>res.redirect()</code> 会调用 <code>res.writeHead()</code>），就会报这个错误。</p>
+<p>（说明：express中的 res.header() 相当于 res.writeHead() ，res.send() 相当于 res.write() ）</p>
+<p>原因就是你程序有问题，重复作出响应，具体原因很多，需要自己根据以上的原则来排除。</p>
+<p>解决：<code>在一个回调函数前边应该加一个return</code></p>
+<p>参考：</p>
+<p><a href="https://cnodejs.org/topic/53774ffecbcc396349ca1155" target="_blank" rel="external">https://cnodejs.org/topic/53774ffecbcc396349ca1155</a></p>
+<p><a href="http://stackoverflow.com/questions/7042340/node-js-error-cant-set-headers-after-they-are-sent" target="_blank" rel="external">http://stackoverflow.com/questions/7042340/node-js-error-cant-set-headers-after-they-are-sent</a></p>
+<h2 id="6、Redis:ERR_wrong_number_of_arguments_for_‘set’_command">6、Redis:ERR wrong number of arguments for ‘set’ command</h2><p>将<a href="https://github.com/giscafer/Vue-order" target="_blank" rel="external">Vue-order</a>部署BAE的时候遇到此Redis报错问题，系统访问就会报此错误 最后查出是因为connect-redis插件版本引起的；（该原因也可能是代码引起）</p>
+<h2 id="7、express-session_deprecated_cookie_should_be_available_in_req-headers-cookie">7、express-session deprecated cookie should be available in req.headers.cookie</h2><p><a href="https://github.com/expressjs/session/issues/62" target="_blank" rel="external">https://github.com/expressjs/session/issues/62</a></p>
+<h2 id="8、Error:_Argument_passed_in_must_be_a_single_String_of_12_bytes_or_a_string_of_24_hex_characters">8、Error: Argument passed in must be a single String of 12 bytes or a string of 24 hex characters</h2><p>必须是24位16进制的字符，或者一个12字节的字符串</p>
+<p><a href="http://stackoverflow.com/questions/26453507/argument-passed-in-must-be-a-single-string-of-12-bytes" target="_blank" rel="external">http://stackoverflow.com/questions/26453507/argument-passed-in-must-be-a-single-string-of-12-bytes</a></p>
+<p><a href="https://docs.mongodb.org/manual/reference/object-id/" target="_blank" rel="external">https://docs.mongodb.org/manual/reference/object-id/</a></p>
 </span>
       
     </div>
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/Hexo/" rel="tag">#Hexo</a>
-          
-        </div>
-      
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2014/04/27/hexo-config-setting/" rel="next" title="hexo博客配置文件">
-                <i class="fa fa-chevron-left"></i> hexo博客配置文件
+              <a href="/2016/02/04/bluebird-api-study/" rel="next" title="bluebird(Promise/A+)介绍">
+                <i class="fa fa-chevron-left"></i> bluebird(Promise/A+)介绍
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2014/04/28/hexo-backup/" rel="prev" title="关于Hexo博客备份">
-                关于Hexo博客备份 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -401,8 +391,8 @@
         
           <div class="comments" id="comments">
             
-              <div class="ds-thread" data-thread-key="2014/04/27/hexo-to-gitcafe_course/"
-                   data-title="Hexo静态博客搭建教程[2]" data-url="http://giscafer.com/2014/04/27/hexo-to-gitcafe_course/">
+              <div class="ds-thread" data-thread-key="2016/02/05/nodejs-overflow-question/"
+                   data-title="NodeJS开发常见错误A&Q" data-url="http://giscafer.com/2016/02/05/nodejs-overflow-question/">
               </div>
             
           </div>
@@ -521,7 +511,7 @@
           <div class="post-toc">
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#0、NodeJS调试介绍"><span class="nav-number">1.</span> <span class="nav-text">0、NodeJS调试介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1、CookieParser错误"><span class="nav-number">2.</span> <span class="nav-text">1、CookieParser错误</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、Cast_to_ObjectId_failed_for_value"><span class="nav-number">3.</span> <span class="nav-text">2、Cast to ObjectId failed for value</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、model对象赋值不成功，需要创建字段。"><span class="nav-number">4.</span> <span class="nav-text">3、model对象赋值不成功，需要创建字段。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4、SyntaxError:_Use_of_const_in_strict_mode-"><span class="nav-number">5.</span> <span class="nav-text">4、SyntaxError: Use of const in strict mode.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5、Error:_Can’t_set_headers_after_they_are_sent-"><span class="nav-number">6.</span> <span class="nav-text">5、Error: Can’t set headers after they are sent.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6、Redis:ERR_wrong_number_of_arguments_for_‘set’_command"><span class="nav-number">7.</span> <span class="nav-text">6、Redis:ERR wrong number of arguments for ‘set’ command</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7、express-session_deprecated_cookie_should_be_available_in_req-headers-cookie"><span class="nav-number">8.</span> <span class="nav-text">7、express-session deprecated cookie should be available in req.headers.cookie</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8、Error:_Argument_passed_in_must_be_a_single_String_of_12_bytes_or_a_string_of_24_hex_characters"><span class="nav-number">9.</span> <span class="nav-text">8、Error: Argument passed in must be a single String of 12 bytes or a string of 24 hex characters</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>

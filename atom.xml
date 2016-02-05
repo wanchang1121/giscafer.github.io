@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Day Day Study，Good Good Up]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://giscafer.com/"/>
-  <updated>2016-02-04T08:23:05.403Z</updated>
+  <updated>2016-02-05T06:38:11.571Z</updated>
   <id>http://giscafer.com/</id>
   
   <author>
@@ -15,15 +15,84 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[NodeJS开发常见错误A&Q]]></title>
+    <link href="http://giscafer.com/2016/02/05/nodejs-overflow-question/"/>
+    <id>http://giscafer.com/2016/02/05/nodejs-overflow-question/</id>
+    <published>2016-02-05T06:18:08.000Z</published>
+    <updated>2016-02-05T06:38:11.571Z</updated>
+    <content type="html"><![CDATA[<h2 id="0、NodeJS调试介绍">0、NodeJS调试介绍</h2><p>级别从高到低，推荐到不推荐：</p>
+<ol>
+<li>ttd/bdd测试驱动</li>
+<li>node-inspector，vsc编辑器，webstrom；</li>
+<li>node-debug</li>
+<li>console.log<a id="more"></a>
+<h2 id="1、CookieParser错误">1、CookieParser错误</h2><code>throw new Error(&#39;cookieParser(&quot;secret&quot;) required for signed cookies&#39;);</code><br>提示：<strong>Error: cookieParser(“secret”) required for signed cookies</strong></li>
+</ol>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.use(cookieParser(config.auth_cookie_name));//&#36825;&#37324;cookieParser(&#34;secret&#34;)&#38656;&#35201;&#25351;&#23450;&#20869;&#23481;&#34;secret&#34;&#10;//&#22240;&#20026;&#29256;&#26412;&#38382;&#39064;&#65292;&#36825;&#37324;&#22353;&#37324;&#22909;&#19968;&#20250;&#10;app.use(session(&#123;&#10;  secret:config.session_secret,&#10;  key: config.auth_cookie_name, //&#36825;&#37324;auth_cookie_name&#23601;&#26159;&#25351;&#23450;&#20869;&#23481;&#34;secret&#34;&#10;  cookie: &#123;maxAge: 1000 * 60 * 60 * 24 * 30&#125;,//30 days&#10;  resave: false,&#10;  saveUninitialized: true,&#10;  store: new MongoStore(&#123;&#10;    url: config.dev_dbUrl&#10;  &#125;)&#10;&#125;));</span><br></pre></td></tr></table></figure>
+<p>出现以上问题可能是在代码中使用类似<code>var auth_token = req.signedCookies[config.auth_cookie_name];</code>代码，如果没用，以上直接使用<code>pp.use(cookieParser());</code>即可。</p>
+<p>参考解决：</p>
+<p><a href="http://stackoverflow.com/questions/20112876/cookieparser-and-cookiesession-middleware-in-expressjs" target="_blank" rel="external">http://stackoverflow.com/questions/20112876/cookieparser-and-cookiesession-middleware-in-expressjs</a></p>
+<h2 id="2、Cast_to_ObjectId_failed_for_value">2、Cast to ObjectId failed for value</h2><p>错误大致：</p>
+<pre><code><span class="number">500</span> <span class="string">CastError:</span> Cast to ObjectId failed <span class="keyword">for</span> value <span class="string">"Mp0uah2G6TJVwPhOQ2sSZ10yklPkmbRV"</span> at path <span class="string">"_id"</span>
+ at MongooseError.CastError (<span class="regexp">/home/</span>bae<span class="regexp">/app/</span>.bae<span class="regexp">/node_modules/</span>mongoose<span class="regexp">/lib/</span>error/cast.<span class="string">js:</span><span class="number">19</span>:<span class="number">11</span>)
+ at ObjectId.cast (<span class="regexp">/home/</span>bae<span class="regexp">/app/</span>.bae<span class="regexp">/node_modules/</span>mongoose<span class="regexp">/lib/</span>schema/objectid.<span class="string">js:</span><span class="number">134</span>:<span class="number">13</span>)
+ at ObjectId.castForQuery (<span class="regexp">/home/</span>bae<span class="regexp">/app/</span>.bae<span class="regexp">/node_modules/</span>mongoose<span class="regexp">/lib/</span>schema/objectid.<span class="string">js:</span><span class="number">173</span>:<span class="number">17</span>)
+ at module.exports (<span class="regexp">/home/</span>bae<span class="regexp">/app/</span>.bae<span class="regexp">/node_modules/</span>mongoose<span class="regexp">/lib/</span>cast.<span class="string">js:</span><span class="number">205</span>:<span class="number">32</span>)
+ at Query.cast (<span class="regexp">/home/</span>bae<span class="regexp">/app/</span>.bae<span class="regexp">/node_modules/</span>mongoose<span class="regexp">/lib/</span>query.<span class="string">js:</span><span class="number">2533</span>:<span class="number">10</span>)
+ at Query.findOne (<span class="regexp">/home/</span>bae<span class="regexp">/app/</span>.bae<span class="regexp">/node_modules/</span>mongoose<span class="regexp">/lib/</span>query.<span class="string">js:</span><span class="number">1239</span>:<span class="number">10</span>)
+ at Function.findOne (<span class="regexp">/home/</span>bae<span class="regexp">/app/</span>.bae<span class="regexp">/node_modules/</span>mongoose<span class="regexp">/lib/</span>model.<span class="string">js:</span><span class="number">1254</span>:<span class="number">13</span>)
+ at Object.exports.getUserById (<span class="regexp">/home/</span>bae<span class="regexp">/app/</span>src<span class="regexp">/server/</span>proxy/user.<span class="string">js:</span><span class="number">39</span>:<span class="number">7</span>)
+ at exports.authUser (<span class="regexp">/home/</span>bae<span class="regexp">/app/</span>src<span class="regexp">/server/</span>common/auth.<span class="string">js:</span><span class="number">114</span>:<span class="number">19</span>)
+ at Layer.handle [<span class="keyword">as</span> handle_request] (<span class="regexp">/home/</span>bae<span class="regexp">/app/</span>.bae<span class="regexp">/node_modules/</span>express<span class="regexp">/lib/</span>router/layer.<span class="string">js:</span><span class="number">95</span>:<span class="number">5</span>)
+ at trim_prefix (<span class="regexp">/home/</span>bae<span class="regexp">/app/</span>.bae<span class="regexp">/node_modules/</span>express<span class="regexp">/lib/</span>router/index.<span class="string">js:</span><span class="number">312</span>:<span class="number">13</span>)
+ at <span class="regexp">/home/</span>bae<span class="regexp">/app/</span>.bae<span class="regexp">/node_modules/</span>express<span class="regexp">/lib/</span>router/index.<span class="string">js:</span><span class="number">280</span>:<span class="number">7</span>
+ at Function.process_params (<span class="regexp">/home/</span>bae<span class="regexp">/app/</span>.bae<span class="regexp">/node_modules/</span>express<span class="regexp">/lib/</span>router/index.<span class="string">js:</span><span class="number">330</span>:<span class="number">12</span>)
+ at next (<span class="regexp">/home/</span>bae<span class="regexp">/app/</span>.bae<span class="regexp">/node_modules/</span>express<span class="regexp">/lib/</span>router/index.<span class="string">js:</span><span class="number">271</span>:<span class="number">10</span>)
+ at <span class="regexp">/home/</span>bae<span class="regexp">/app/</span>.bae<span class="regexp">/node_modules/</span>express-session/index.<span class="string">js:</span><span class="number">437</span>:<span class="number">7</span>
+ at Command.callback (<span class="regexp">/home/</span>bae<span class="regexp">/app/</span>.bae<span class="regexp">/node_modules/</span>connect-redis<span class="regexp">/lib/</span>connect-redis.<span class="string">js:</span><span class="number">158</span>:<span class="number">14</span>)
+</code></pre><p>这个问题可能和<code>1问题</code>有相关，如果不是，参考以下解决方案：</p>
+<p><a href="http://stackoverflow.com/questions/15771470/mongoose-cast-to-objectid-failed-for-value" target="_blank" rel="external">http://stackoverflow.com/questions/15771470/mongoose-cast-to-objectid-failed-for-value</a></p>
+<p><a href="http://stackoverflow.com/questions/25380388/error-casterror-cast-to-objectid-failed-for-value-at-path-id" target="_blank" rel="external">http://stackoverflow.com/questions/25380388/error-casterror-cast-to-objectid-failed-for-value-at-path-id</a></p>
+<h2 id="3、model对象赋值不成功，需要创建字段。">3、model对象赋值不成功，需要创建字段。</h2><p>目前通过schema创建字段解决。原因未知。</p>
+<h2 id="4、SyntaxError:_Use_of_const_in_strict_mode-">4、SyntaxError: Use of const in strict mode.</h2><pre><code><span class="regexp">/home/</span>bae<span class="regexp">/app/</span>.bae<span class="regexp">/node_modules/</span>connect-mongo<span class="regexp">/src/</span>index.<span class="string">js:</span><span class="number">3</span>
+const Promise = require(<span class="string">'bluebird'</span>);
+^^^^^
+<span class="string">SyntaxError:</span> Use of const <span class="keyword">in</span> strict mode.
+</code></pre><h2 id="5、Error:_Can’t_set_headers_after_they_are_sent-">5、Error: Can’t set headers after they are sent.</h2><p><code>Can’t set headers after they are sent.</code> =&gt; <code>不能发送headers因为已经发送过一次了</code> =&gt; 在处理HTTP请求时，服务器会先输出响应头，<br>然后再输出主体内容，而一旦输出过一次响应头（比如执行过 <code>res.writeHead()</code> 或 <code>res.write()</code> 或 <code>res.end()</code>），<br>你再尝试通过 <code>res.setHeader()</code> 或 <code>res.writeHead()</code> 来设置响应头时（有些方法比如 <code>res.redirect()</code> 会调用 <code>res.writeHead()</code>），就会报这个错误。</p>
+<p>（说明：express中的 res.header() 相当于 res.writeHead() ，res.send() 相当于 res.write() ）</p>
+<p>原因就是你程序有问题，重复作出响应，具体原因很多，需要自己根据以上的原则来排除。</p>
+<p>解决：<code>在一个回调函数前边应该加一个return</code></p>
+<p>参考：</p>
+<p><a href="https://cnodejs.org/topic/53774ffecbcc396349ca1155" target="_blank" rel="external">https://cnodejs.org/topic/53774ffecbcc396349ca1155</a></p>
+<p><a href="http://stackoverflow.com/questions/7042340/node-js-error-cant-set-headers-after-they-are-sent" target="_blank" rel="external">http://stackoverflow.com/questions/7042340/node-js-error-cant-set-headers-after-they-are-sent</a></p>
+<h2 id="6、Redis:ERR_wrong_number_of_arguments_for_‘set’_command">6、Redis:ERR wrong number of arguments for ‘set’ command</h2><p>将<a href="https://github.com/giscafer/Vue-order" target="_blank" rel="external">Vue-order</a>部署BAE的时候遇到此Redis报错问题，系统访问就会报此错误 最后查出是因为connect-redis插件版本引起的；（该原因也可能是代码引起）</p>
+<h2 id="7、express-session_deprecated_cookie_should_be_available_in_req-headers-cookie">7、express-session deprecated cookie should be available in req.headers.cookie</h2><p><a href="https://github.com/expressjs/session/issues/62" target="_blank" rel="external">https://github.com/expressjs/session/issues/62</a></p>
+<h2 id="8、Error:_Argument_passed_in_must_be_a_single_String_of_12_bytes_or_a_string_of_24_hex_characters">8、Error: Argument passed in must be a single String of 12 bytes or a string of 24 hex characters</h2><p>必须是24位16进制的字符，或者一个12字节的字符串</p>
+<p><a href="http://stackoverflow.com/questions/26453507/argument-passed-in-must-be-a-single-string-of-12-bytes" target="_blank" rel="external">http://stackoverflow.com/questions/26453507/argument-passed-in-must-be-a-single-string-of-12-bytes</a></p>
+<p><a href="https://docs.mongodb.org/manual/reference/object-id/" target="_blank" rel="external">https://docs.mongodb.org/manual/reference/object-id/</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="0、NodeJS调试介绍">0、NodeJS调试介绍</h2><p>级别从高到低，推荐到不推荐：</p>
+<ol>
+<li>ttd/bdd测试驱动</li>
+<li>node-inspector，vsc编辑器，webstrom；</li>
+<li>node-debug</li>
+<li>console.log]]>
+    
+    </summary>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[bluebird(Promise/A+)介绍]]></title>
     <link href="http://giscafer.com/2016/02/04/bluebird-api-study/"/>
     <id>http://giscafer.com/2016/02/04/bluebird-api-study/</id>
     <published>2016-02-04T06:58:29.000Z</published>
-    <updated>2016-02-04T08:23:05.403Z</updated>
-    <content type="html"><![CDATA[<h2 id="Promises/A+规范">Promises/A+规范</h2><h3 id="Promise">Promise</h3><p>是一个拥有<code>then</code>方法的对象或函数，起行为符合本规范；</p>
+    <updated>2016-02-04T08:25:57.459Z</updated>
+    <content type="html"><![CDATA[<h2 id="一、Promises/A+规范">一、Promises/A+规范</h2><h3 id="Promise">Promise</h3><p>是一个拥有<code>then</code>方法的对象或函数，起行为符合本规范；</p>
 <h3 id="thenable">thenable</h3><p>是一个定义了<code>then</code>方法的对象或函数，即<code>拥有then方法</code>；</p>
 <p>详情介绍见文章<a href="http://www.ituring.com.cn/article/66566" target="_blank" rel="external">《Promises/A+规范》</a></p>
-<h2 id="bluebird">bluebird</h2><p>之前做node.js项目的时候一直使用朴灵的<code>eventproxy</code>来处理异步或者回调，<code>eventproxy</code>采用的是事件机制，使用也挺方便。<br>现在也了解一下备受欢迎的<code>bluebird</code>——<a href="http://bluebirdjs.com/" target="_blank" rel="external">官网</a>，bb的API文档很全很详细。<br><a id="more"></a></p>
+<h2 id="二、bluebird">二、bluebird</h2><p>之前做node.js项目的时候一直使用朴灵的<code>eventproxy</code>来处理异步或者回调，<code>eventproxy</code>采用的是事件机制，使用也挺方便。<br>现在也了解一下备受欢迎的<code>bluebird</code>——<a href="http://bluebirdjs.com/" target="_blank" rel="external">官网</a>，bb的API文档很全很详细。<br><a id="more"></a></p>
 <h3 id="-promisifyAll">.promisifyAll</h3><p>官方API说明：</p>
 <blockquote>
 <p>Promisifies the entire object by going through the object’s properties and creating an async equivalent of each function on the object and its prototype chain. The promisified method name will be the original method name suffixed with suffix (default is “Async”). Any class properties of the object (which is the case for the main export of many modules) are also promisified, both static and instance methods. Class property is a property with a function value that has a non-empty .prototype object. Returns the input object.</p>
@@ -43,10 +112,10 @@
 <p>还有其他好用的方法，需要的时候去了解一下API文档，根据实际情况使用即可。</p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<h2 id="Promises/A+规范">Promises/A+规范</h2><h3 id="Promise">Promise</h3><p>是一个拥有<code>then</code>方法的对象或函数，起行为符合本规范；</p>
+    <![CDATA[<h2 id="一、Promises/A+规范">一、Promises/A+规范</h2><h3 id="Promise">Promise</h3><p>是一个拥有<code>then</code>方法的对象或函数，起行为符合本规范；</p>
 <h3 id="thenable">thenable</h3><p>是一个定义了<code>then</code>方法的对象或函数，即<code>拥有then方法</code>；</p>
 <p>详情介绍见文章<a href="http://www.ituring.com.cn/article/66566">《Promises/A+规范》</a></p>
-<h2 id="bluebird">bluebird</h2><p>之前做node.js项目的时候一直使用朴灵的<code>eventproxy</code>来处理异步或者回调，<code>eventproxy</code>采用的是事件机制，使用也挺方便。<br>现在也了解一下备受欢迎的<code>bluebird</code>——<a href="http://bluebirdjs.com/">官网</a>，bb的API文档很全很详细。<br>]]>
+<h2 id="二、bluebird">二、bluebird</h2><p>之前做node.js项目的时候一直使用朴灵的<code>eventproxy</code>来处理异步或者回调，<code>eventproxy</code>采用的是事件机制，使用也挺方便。<br>现在也了解一下备受欢迎的<code>bluebird</code>——<a href="http://bluebirdjs.com/">官网</a>，bb的API文档很全很详细。<br>]]>
     
     </summary>
     
