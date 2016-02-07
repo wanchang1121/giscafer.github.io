@@ -63,7 +63,7 @@ ttd/bdd测试驱动
 node-inspector，vsc编辑器，webstrom；
 node-debug
 console.log">
-<meta property="og:updated_time" content="2016-02-05T06:40:28.645Z">
+<meta property="og:updated_time" content="2016-02-05T06:54:15.495Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="NodeJS开发常见错误A&Q">
 <meta name="twitter:description" content="0、NodeJS调试介绍级别从高到低，推荐到不推荐：
@@ -319,9 +319,10 @@ console.log">
 <li>ttd/bdd测试驱动</li>
 <li>node-inspector，vsc编辑器，webstrom；</li>
 <li>node-debug</li>
-<li>console.log<a id="more"></a>
-<h2 id="1、CookieParser错误">1、CookieParser错误</h2><code>throw new Error(&#39;cookieParser(&quot;secret&quot;) required for signed cookies&#39;);</code><br>提示：<strong>Error: cookieParser(“secret”) required for signed cookies</strong></li>
+<li>console.log</li>
 </ol>
+<a id="more"></a>
+<h2 id="1、CookieParser错误">1、CookieParser错误</h2><p><code>throw new Error(&#39;cookieParser(&quot;secret&quot;) required for signed cookies&#39;);</code><br>提示：<strong>Error: cookieParser(“secret”) required for signed cookies</strong></p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.use(cookieParser(config.auth_cookie_name));//&#36825;&#37324;cookieParser(&#34;secret&#34;)&#38656;&#35201;&#25351;&#23450;&#20869;&#23481;&#34;secret&#34;&#10;//&#22240;&#20026;&#29256;&#26412;&#38382;&#39064;&#65292;&#36825;&#37324;&#22353;&#37324;&#22909;&#19968;&#20250;&#10;app.use(session(&#123;&#10;  secret:config.session_secret,&#10;  key: config.auth_cookie_name, //&#36825;&#37324;auth_cookie_name&#23601;&#26159;&#25351;&#23450;&#20869;&#23481;&#34;secret&#34;&#10;  cookie: &#123;maxAge: 1000 * 60 * 60 * 24 * 30&#125;,//30 days&#10;  resave: false,&#10;  saveUninitialized: true,&#10;  store: new MongoStore(&#123;&#10;    url: config.dev_dbUrl&#10;  &#125;)&#10;&#125;));</span><br></pre></td></tr></table></figure>
 <p>出现以上问题可能是在代码中使用类似<code>var auth_token = req.signedCookies[config.auth_cookie_name];</code>代码，如果没用，以上直接使用<code>pp.use(cookieParser());</code>即可。</p>
 <p>参考解决：</p>
@@ -388,6 +389,10 @@ const Promise = require(<span class="string">'bluebird'</span>);
           </div>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/02/05/mongodb-map-reduce/" rel="prev" title="mongoDB查询统计之Map-Reduce方法">
+                mongoDB查询统计之Map-Reduce方法 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -456,21 +461,21 @@ const Promise = require(<span class="string">'bluebird'</span>);
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">20</span>
+              <span class="site-state-item-count">21</span>
               <span class="site-state-item-name">文章</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             <a href="/categories">
-              <span class="site-state-item-count">9</span>
+              <span class="site-state-item-count">10</span>
               <span class="site-state-item-name">分类</span>
               </a>
           </div>
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">23</span>
+              <span class="site-state-item-count">26</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>

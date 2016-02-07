@@ -2,8 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://giscafer.com/2016/02/05/mongodb-map-reduce/</loc>
+    <lastmod>2016-02-06T10:10:20.524Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://giscafer.com/2016/02/05/nodejs-overflow-question/</loc>
-    <lastmod>2016-02-05T06:40:28.645Z</lastmod>
+    <lastmod>2016-02-05T06:54:15.495Z</lastmod>
   </url>
   
   <url>
