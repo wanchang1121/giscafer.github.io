@@ -47,29 +47,17 @@
   <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.2" />
 
 
-<meta name="description" content="0、说明官方给的Map-Reduce的流程如下图：
-
-该函数接收三个参数：map,reduce,{query,output}；其中map,reduce是方法，最后一个参数是对象，该对象可以使用query作为查询过滤条件，output的意思是将结果保存在临时的集合里边，最后用来查询。
-首先，数据库我存的订餐数据如下所示：
-123456789101112131415161718192021222324">
+<meta name="description" content="0、说明官方给的Map-Reduce的流程如下图：">
 <meta property="og:type" content="article">
 <meta property="og:title" content="mongoDB查询统计之Map-Reduce方法">
 <meta property="og:url" content="http://giscafer.com/2016/02/05/mongodb-map-reduce/index.html">
 <meta property="og:site_name" content="Giscafer's blog">
-<meta property="og:description" content="0、说明官方给的Map-Reduce的流程如下图：
-
-该函数接收三个参数：map,reduce,{query,output}；其中map,reduce是方法，最后一个参数是对象，该对象可以使用query作为查询过滤条件，output的意思是将结果保存在临时的集合里边，最后用来查询。
-首先，数据库我存的订餐数据如下所示：
-123456789101112131415161718192021222324">
+<meta property="og:description" content="0、说明官方给的Map-Reduce的流程如下图：">
 <meta property="og:image" content="https://docs.mongodb.org/manual/_images/map-reduce.png">
-<meta property="og:updated_time" content="2016-02-06T10:10:20.524Z">
+<meta property="og:updated_time" content="2016-02-07T11:26:22.779Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mongoDB查询统计之Map-Reduce方法">
-<meta name="twitter:description" content="0、说明官方给的Map-Reduce的流程如下图：
-
-该函数接收三个参数：map,reduce,{query,output}；其中map,reduce是方法，最后一个参数是对象，该对象可以使用query作为查询过滤条件，output的意思是将结果保存在临时的集合里边，最后用来查询。
-首先，数据库我存的订餐数据如下所示：
-123456789101112131415161718192021222324">
+<meta name="twitter:description" content="0、说明官方给的Map-Reduce的流程如下图：">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -313,8 +301,7 @@
 
       
         <span itemprop="articleBody"><h3 id="0、说明">0、说明</h3><p>官方给的Map-Reduce的流程如下图：</p>
-<p><img src="https://docs.mongodb.org/manual/_images/map-reduce.png" alt="此处输入图片的描述"></p>
-<p>该函数接收三个参数：<code>map</code>,<code>reduce</code>,{<code>query</code>,<code>output</code>}；其中<code>map</code>,<code>reduce</code>是方法，最后一个参数是对象，<br>该对象可以使用<code>query</code>作为查询过滤条件，<code>output</code>的意思是将结果保存在临时的集合里边，最后用来查询。</p>
+<p><img src="https://docs.mongodb.org/manual/_images/map-reduce.png" alt="此处输入图片的描述"><br><a id="more"></a><br>该函数接收三个参数：<code>map</code>,<code>reduce</code>,{<code>query</code>,<code>output</code>}；其中<code>map</code>,<code>reduce</code>是方法，最后一个参数是对象，<br>该对象可以使用<code>query</code>作为查询过滤条件，<code>output</code>的意思是将结果保存在临时的集合里边，最后用来查询。</p>
 <p>首先，数据库我存的订餐数据如下所示：</p>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">        "<span class="attribute">_id</span>" : <span class="value">ObjectId(<span class="string">"56b45c45ad1434e863ea1406"</span>)</span>,</span><br><span class="line">        "<span class="attribute">user_id</span>" : <span class="value">ObjectId(<span class="string">"568bbaa0e78f752802a65a7b"</span>)</span>,</span><br><span class="line">        "<span class="attribute">dish_name</span>" : <span class="value"><span class="string">"韭菜鸡蛋"</span></span>,</span><br><span class="line">        "<span class="attribute">deleted</span>" : <span class="value"><span class="literal">false</span></span>,</span><br><span class="line">        "<span class="attribute">update_at</span>" : <span class="value">ISODate(<span class="string">"2016-02-05T08:24:37.761Z"</span>)</span>,</span><br><span class="line">        "<span class="attribute">create_at</span>" : <span class="value">ISODate(<span class="string">"2016-02-05T08:24:37.761Z"</span>)</span>,</span><br><span class="line">        "<span class="attribute">ispack</span>" : <span class="value"><span class="literal">false</span></span>,</span><br><span class="line">        "<span class="attribute">dish_price</span>" : <span class="value"><span class="number">12</span></span>,</span><br><span class="line">        "<span class="attribute">__v</span>" : <span class="value"><span class="number">0</span></span><br><span class="line"></span>&#125;</span><br><span class="line">&#123;</span><br><span class="line">        "<span class="attribute">_id</span>" : <span class="value">ObjectId(<span class="string">"56b45c5fad1434e863ea1407"</span>)</span>,</span><br><span class="line">        "<span class="attribute">user_id</span>" : <span class="value">ObjectId(<span class="string">"568bbaa0e78f752802a65a7b"</span>)</span>,</span><br><span class="line">        "<span class="attribute">dish_name</span>" : <span class="value"><span class="string">"红烧鸡块"</span></span>,</span><br><span class="line">        "<span class="attribute">deleted</span>" : <span class="value"><span class="literal">false</span></span>,</span><br><span class="line">        "<span class="attribute">update_at</span>" : <span class="value">ISODate(<span class="string">"2016-02-05T08:25:03.070Z"</span>)</span>,</span><br><span class="line">        "<span class="attribute">create_at</span>" : <span class="value">ISODate(<span class="string">"2016-02-05T08:25:03.070Z"</span>)</span>,</span><br><span class="line">        "<span class="attribute">ispack</span>" : <span class="value"><span class="literal">false</span></span>,</span><br><span class="line">        "<span class="attribute">dish_price</span>" : <span class="value"><span class="number">15</span></span>,</span><br><span class="line">        "<span class="attribute">__v</span>" : <span class="value"><span class="number">0</span></span><br><span class="line"></span>&#125;</span><br><span class="line">&#123;</span><br><span class="line">        "<span class="attribute">_id</span>" : <span class="value">ObjectId(<span class="string">"56b45c66ad1434e863ea1408"</span>)</span>,</span><br><span class="line">        "<span class="attribute">user_id</span>" : <span class="value">ObjectId(<span class="string">"568bbaa0e78f752802a65a7b"</span>)</span>,</span><br><span class="line">        "<span class="attribute">dish_name</span>" : <span class="value"><span class="string">"耗油生菜"</span></span>,</span><br><span class="line">        "<span class="attribute">deleted</span>" : <span class="value"><span class="literal">false</span></span>,</span><br><span class="line">        "<span class="attribute">update_at</span>" : <span class="value">ISODate(<span class="string">"2016-02-05T08:25:10.002Z"</span>)</span>,</span><br><span class="line">        "<span class="attribute">create_at</span>" : <span class="value">ISODate(<span class="string">"2016-02-05T08:25:10.002Z"</span>)</span>,</span><br><span class="line">        "<span class="attribute">ispack</span>" : <span class="value"><span class="literal">false</span></span>,</span><br><span class="line">        "<span class="attribute">dish_price</span>" : <span class="value"><span class="number">13</span></span>,</span><br><span class="line">        "<span class="attribute">__v</span>" : <span class="value"><span class="number">0</span></span><br><span class="line"></span>&#125;</span><br></pre></td></tr></table></figure>
 <p>下边会介绍对这些数据进行查询统计！</p>
