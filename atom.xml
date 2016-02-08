@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Day Day Study，Good Good Up]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://giscafer.com/"/>
-  <updated>2016-02-08T13:01:45.908Z</updated>
+  <updated>2016-02-08T13:04:02.734Z</updated>
   <id>http://giscafer.com/</id>
   
   <author>
@@ -19,9 +19,9 @@
     <link href="http://giscafer.com/2016/02/05/mongodb-map-reduce/"/>
     <id>http://giscafer.com/2016/02/05/mongodb-map-reduce/</id>
     <published>2016-02-05T08:44:56.000Z</published>
-    <updated>2016-02-08T13:01:45.908Z</updated>
-    <content type="html"><![CDATA[<a id="more"></a>
-<h3 id="0、说明">0、说明</h3><p>官方给的Map-Reduce的流程如下图：</p>
+    <updated>2016-02-08T13:04:02.734Z</updated>
+    <content type="html"><![CDATA[<h3 id="0、说明">0、说明</h3><a id="more"></a>
+<p>官方给的Map-Reduce的流程如下图：</p>
 <p><img src="https://docs.mongodb.org/manual/_images/map-reduce.png" alt="此处输入图片的描述"></p>
 <p>该函数接收三个参数：<code>map</code>,<code>reduce</code>,{<code>query</code>,<code>output</code>}；其中<code>map</code>,<code>reduce</code>是方法，最后一个参数是对象，<br>该对象可以使用<code>query</code>作为查询过滤条件，<code>output</code>的意思是将结果保存在临时的集合里边，最后用来查询。</p>
 <p>首先，数据库我存的订餐数据如下所示：</p>
@@ -40,9 +40,8 @@
 <p>统计示例见：<a href="http://vueorder.duapp.com/charts" target="_blank" rel="external">订餐统计</a></p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<a id="more"></a>
-<h3 id="0、说明">0、说明</h3><p>官方给的Map-Reduce的流程如下图：</p>
-<p><img src="https://docs.mongodb.org/manual/_images/map-reduce.png" a]]>
+    <![CDATA[<h3 id="0、说明">0、说明</h3>]]>
+    
     </summary>
     
       <category term="mapReduce" scheme="http://giscafer.com/tags/mapReduce/"/>
