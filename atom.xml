@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Day Day Study，Good Good Up]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://giscafer.com/"/>
-  <updated>2016-02-10T13:12:15.294Z</updated>
+  <updated>2016-02-11T14:56:05.000Z</updated>
   <id>http://giscafer.com/</id>
   
   <author>
@@ -13,6 +13,38 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[工作一年半了]]></title>
+    <link href="http://giscafer.com/2016/02/11/diary-2016-02-11/"/>
+    <id>http://giscafer.com/2016/02/11/diary-2016-02-11/</id>
+    <published>2016-02-11T14:51:39.000Z</published>
+    <updated>2016-02-11T14:56:05.000Z</updated>
+    <content type="html"><![CDATA[<p>2014年7月，毕业工作，成为了一名程序猿，我算是误打误撞的进了it行业；公司是做gis相关的，工作是做web开发，平时也就写写JavaScript和html\css……，慢慢的，觉得乏味，偶然关注了互联网前端开发，发现目前工作并不算是真正的前端开发，从此，开始学习互联网前端开发相关技术，并热衷无法自拔……</p>
+<a id="more"></a>
+<p>上学，由于学校本专业（gis)的研究方向是农业或土壤，本人从农村出身，对种植玉米什么的已经种了多年，不想再多做研究，从小也没有成为袁隆平这样伟人的志向，不得不另谋出路。学校里，专业编程能力相对其他院校来说应该是最弱的，要求也是最低的吧；在上学的日子里，我已经对GIS就业方向感到了迷茫，也不知道什么缘由，我觉得我只能去学习编程，毕业能找份工作。</p>
+<p>大三，第二学期我做了考研的打算，当时也报了培训班；最后由于自己心态问题，定不下心复习看书，当我把高数课本换成编程书籍的时候，我竟然能看下一整天……就这样，我的考研之路已经终止了。（当时报考武汉大学，主要是觉得武大gis的开发方向应该不错）</p>
+<p>大四，作为一个开发新入门的菜鸟，当时的我没什么要求，有份工作就行；有个环境能让我学习技术就好，我要逃出校园，因为校园太安逸，迷茫；学长学姐、老师也没和我说就业的严峻性，作为开发方向，也没有人指导，也是孤独的，一个班里，对编程感兴趣了可能就两人。对去什么公司和做什么事情那会儿也没多少想法，有公司来校招就去应聘了。应聘那会，没想过什么北漂，也不清楚什么是北漂咯，天真其实也挺好。</p>
+<p>工作后，总结了自身编程缺失的地方，在晚上下班和周末的时候有时间就会学习，那时也有哥们一起上晚自习，有个伴确实好，主要是编程学习需要交流。作为一名985毕业的学生，工资算开发人员里边垫底的，我也清楚是看技术开的，没计较什么，就惭愧一下，感叹一下自己大学都在干嘛了？然后就励志，有动力学习了。个人觉得技术上，清楚自己缺啥，需要学习什么，这样就去学，积累+实践后，也就慢慢成长起来。</p>
+<p>同事+舍友，公司里的同事总体都不错，项目经理和领导都很好，别人都说这是小公司比较好的情况，大公司就不一样了。舍友都是刚毕业一起实习最后一起工作的，一起住了单位宿舍，也一起合租过，相处的挺欢乐，有爱专研技术的，这个算是兴趣一样的地方，也有爱打篮球的伴。所以我觉得是幸运的，因为我是两者的受益者。公司另外两个妹子，离职的比较早，不过还偶尔联系着。大约7人，我们相处的很不错，一起过着如图大学同学般，这可能是第一份工作，大家遇到好玩的人吧。以后就难咯……</p>
+<p>北京生活，个人比较宅，低薪当然也不会有剩余咯，只能是吃喝上不受影响（不刻意拮据），在北京没怎么玩，工作一年半也就去了后海，天安门，王府井，西单，鸟巢，香山，几个学校校园。大多好玩的都没去，因为身边的舍友太尼玛宅了，我起初没那么宅的，后边可能受影响，越来越宅。公司有个别的同事去北京工作半年多还没去过天安门的……正常现象（原因估计是没妹子约）。总的来说，在北京，如果考虑到买房买车，或者是经济自由，那确实是压力大。</p>
+<p>2015年7月，我搬出来自己租房，顿时就感受到了经济上的一些压力。另一方面，自己学习的时间也越来越多，一方面公司的项目不多，一方面，租房环境吧，比较安静，适合学习。后半年自己学习的方向也越来越明确，主要是自己有逛开发社区的习惯，也只能通过社区来找到情感共鸣和发泄了，因为身边没有‘志同道合’（加个引号，非贬义，指的是开发方向的选择和技术学习）的同事，今年在github上也更加活跃了，因为关注了很多大牛，看到他们如此努力学习，我这等菜鸟就更具动力…… ，2015结束，拿到了第一份年终奖，虽然不多；工资和刚入职比翻了倍。</p>
+<p>2015年学习使用的技术栈有：</p>
+<p><code>nodejs</code>,<code>bootstrap</code>,<code>vue.js</code>,<code>jfinal</code>,<code>jade</code>,<code>mongodb</code>……</p>
+<p>2016年，继续前端技术的学习；继续github；认识更多大牛和前辈；进军互联网！</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>2014年7月，毕业工作，成为了一名程序猿，我算是误打误撞的进了it行业；公司是做gis相关的，工作是做web开发，平时也就写写JavaScript和html\css……，慢慢的，觉得乏味，偶然关注了互联网前端开发，发现目前工作并不算是真正的前端开发，从此，开始学习互联网前端开发相关技术，并热衷无法自拔……</p>]]>
+    
+    </summary>
+    
+      <category term="diary" scheme="http://giscafer.com/tags/diary/"/>
+    
+      <category term="随笔" scheme="http://giscafer.com/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+      <category term="diary" scheme="http://giscafer.com/categories/diary/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[阿里大鱼JavaScript SDK插件alidayujs]]></title>
@@ -938,65 +970,6 @@ define(<span class="function"><span class="keyword">function</span>(<span class=
     <summary type="html">
     <![CDATA[<p>博客搭建几天了，这个静态博客框架使用感觉不错，一开始还是觉得更新博文比较麻烦，但是了解了<br>markdown的编辑器使用后，排版简单，另外是静态博客不需要数据库，纯粹的页面托管，可以放到github等网站。</p>
 <p><a href="http://www.osch]]>
-    </summary>
-    
-      <category term="Hexo" scheme="http://giscafer.com/tags/Hexo/"/>
-    
-      <category term="Hexo" scheme="http://giscafer.com/categories/Hexo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Hexo静态博客搭建教程[2]]]></title>
-    <link href="http://giscafer.com/2014/04/27/hexo-to-gitcafe_course/"/>
-    <id>http://giscafer.com/2014/04/27/hexo-to-gitcafe_course/</id>
-    <published>2014-04-27T09:35:41.000Z</published>
-    <updated>2015-09-03T11:22:33.475Z</updated>
-    <content type="html"><![CDATA[<p>##将Hexo本地博客，托管到gitcafe教程</p>
-<p>###（1）注册<a href="http://gitcafe.com/signup?invited_by=giscafe" target="_blank" rel="external">gitcafe</a>账号</p>
-<p>首先注册gitcafe账号，然后登陆到gitcafe，在个人首页左下角处，新建一个项目<br><img src="http://giscafer.github.io/static/img/hexo_course_08.jpg" alt=""></p>
-<a id="more"></a>
-<p>###（2）填写好项目信息：</p>
-<p><img src="http://giscafer.github.io/static/img/hexo_course_09.jpg" alt=""></p>
-<p>###（3）进入账户设置：</p>
-<p><img src="http://giscafer.github.io/static/img/hexo_course_11.jpg" alt=""></p>
-<p>###（4）添加SSH公匙：</p>
-<p><img src="http://giscafer.github.io/static/img/hexo_course_12.jpg" alt=""></p>
-<p>###（5）公匙获取方法：</p>
-<blockquote>
-<p>$ clip &lt; ~/.ssh/id_rsa.pub</p>
-<p>  复制公匙到剪切板</p>
-</blockquote>
-<p>第一次使用的朋友没有公匙请看官方创建官方教程<a href="https://help.github.com/articles/generating-ssh-keys" target="_blank" rel="external">Generating SSH Keys</a></p>
-<p>将复制的公式粘贴到gitcafe账户设置处的SSH公匙里边，保存即可！</p>
-<p>打开博客根目录下的_config.yml文件，设置<br>将最后的“# Deployment”设置选项设置为如下：</p>
-<pre><code><span class="attribute">deploy</span>:
-  <span class="attribute">type</span>: github
-  <span class="attribute">repository</span>: git<span class="variable">@gitcafe</span>.<span class="attribute">com</span>:giscafe/giscafe.git
-  <span class="attribute">branch</span>: master 
-</code></pre><p>这里的repository改为自己的Git地址，获取方法见图：</p>
-<p><img src="http://giscafer.github.io/static/img/hexo_course_13.jpg" alt=""></p>
-<p>保存，运行以下命令：</p>
-<p>$hexo generate</p>
-<p>$hexo deploy</p>
-<p>这样即可将博客文件部署到gitcafe了，生成的静态文件会上传到gitcafe项目的master分支里边。<br>使用$ hexo doploy命令需要输入密码，就是上边<a href="https://help.github.com/articles/generating-ssh-keys" target="_blank" rel="external">Generating SSH Keys</a> 教程里边设置SSH时需要的密码。</p>
-<p>###PS:</p>
-<p>首次使用git的时候都需要提交一下自己的user_name和user_email</p>
-<p>下面的命令将修改/home/[username]/.gitconfig文件，也就是说下面的配置只对每一个ssh的用户可见，所以每个人都需要做。</p>
-<p>提交代码的log里面会显示提交者的信息:</p>
-<pre><code><span class="tag">git</span> <span class="tag">config</span> —<span class="tag">global</span> <span class="tag">user</span><span class="class">.name</span> <span class="attr_selector">[username]</span>
-<span class="tag">git</span> <span class="tag">config</span> —<span class="tag">global</span> <span class="tag">user</span><span class="class">.email</span> <span class="attr_selector">[email]</span>
-</code></pre><p><strong>deploy完成后，在浏览器输入gitcafe送的二级域名即可进入了，比如我的是<a href="http://giscafer.github.io" target="_blank" rel="external">http://giscafer.github.io</a></strong></p>
-<p><strong>就是“项目名.gitcafe.com”</strong></p>
-<p>==========================</p>
-<p>Author: <a href="http://weibo.com/laohoubin" target="_blank" rel="external">@勞黑炭要好好好学习</a></p>
-<p>2014 年 04月 29日</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>##将Hexo本地博客，托管到gitcafe教程</p>
-<p>###（1）注册<a href="http://gitcafe.com/signup?invited_by=giscafe">gitcafe</a>账号</p>
-<p>首先注册gitcafe账号，然后登陆到gitcafe，在个人首页左下角处，新建一个项目<br><img src="http://giscafer.github.io/static/img/hexo_course_08.jpg" alt=""></p>]]>
-    
     </summary>
     
       <category term="Hexo" scheme="http://giscafer.com/tags/Hexo/"/>
