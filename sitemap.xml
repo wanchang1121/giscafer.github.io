@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://giscafer.com/2016/02/12/nodejs-mocha-test/</loc>
+    <lastmod>2016-02-12T11:59:19.972Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://giscafer.com/2016/02/11/diary-2016-02-11/</loc>
     <lastmod>2016-02-11T16:06:26.121Z</lastmod>
   </url>
