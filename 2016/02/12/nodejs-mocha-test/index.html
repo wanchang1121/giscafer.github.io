@@ -57,7 +57,7 @@ BDD和TDD的差别： The Difference Between TDD and BDD">
 <meta property="og:description" content="不写测试的项目都是耍流氓
 
 BDD和TDD的差别： The Difference Between TDD and BDD">
-<meta property="og:updated_time" content="2016-02-12T11:59:19.972Z">
+<meta property="og:updated_time" content="2016-02-13T04:23:52.635Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="在Nodejs项目里写测试">
 <meta name="twitter:description" content="不写测试的项目都是耍流氓
@@ -308,7 +308,7 @@ BDD和TDD的差别： The Difference Between TDD and BDD">
         <span itemprop="articleBody"><blockquote>
 <p>不写测试的项目都是耍流氓</p>
 </blockquote>
-<p>BDD和TDD的差别： <a href="http://joshldavis.com/2013/05/27/difference-between-tdd-and-bdd/" target="_blank" rel="external">The Difference Between TDD and BDD</a></p>
+<p><code>BDD</code>和<code>TDD</code>的差别： <a href="http://joshldavis.com/2013/05/27/difference-between-tdd-and-bdd/" target="_blank" rel="external">The Difference Between TDD and BDD</a></p>
 <a id="more"></a>
 <h3 id="测试框架：">测试框架：</h3><p><code>mocha</code></p>
 <blockquote>
@@ -321,6 +321,19 @@ BDD和TDD的差别： The Difference Between TDD and BDD">
 </ul>
 <p>一个典型的mocha例子：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> assert = <span class="built_in">require</span>(<span class="string">'chai'</span>).assert;</span><br><span class="line"><span class="keyword">var</span> expect = <span class="built_in">require</span>(<span class="string">'chai'</span>).expect;</span><br><span class="line"><span class="keyword">var</span> should=<span class="built_in">require</span>(<span class="string">'chai'</span>).should();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">describe(<span class="string">'Test'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    before(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// runs before all tests in this block</span></span><br><span class="line">    &#125;);</span><br><span class="line">  after(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="comment">// runs after all tests in this block</span></span><br><span class="line">  &#125;);</span><br><span class="line">  beforeEach(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="comment">// runs before each test in this block</span></span><br><span class="line">  &#125;);</span><br><span class="line">  afterEach(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="comment">// runs after each test in this block</span></span><br><span class="line">  &#125;);</span><br><span class="line">    </span><br><span class="line">  describe(<span class="string">'Array'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  describe(<span class="string">'#indexOf()'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    it(<span class="string">'should return -1 when the value is not present'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>].indexOf(<span class="number">5</span>).should.equal(-<span class="number">1</span>);</span><br><span class="line">      [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>].indexOf(<span class="number">0</span>).should.equal(-<span class="number">1</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>beforeEach</code>会对当前<code>describe</code>下的所有子<code>case</code>生效。</li>
+<li><code>before</code>和<code>after</code>的代码没有特殊顺序要求。</li>
+<li>同一个<code>describe</code>下可以有多个<code>before</code>，执行顺序与代码顺序相同。</li>
+<li>同一个<code>describe</code>下的执行顺序为<code>before</code>, <code>beforeEach</code>, <code>afterEach</code>, <code>after</code></li>
+<li>当一个<code>it</code>有多个<code>before</code>的时候，执行顺序从最外围的<code>describe</code>的<code>before</code>开始，其余同理。</li>
+</ul>
+<p>1.<code>describe (moduleName, testDetails)</code>表示<code>测试套件</code>（test suite），表示一组相关的测试。它是一个函数，可以嵌套，第一个参数<code>moduleName</code>是测试套件的名称（可随意命名，一般描述测试内容），第二个参数<code>testDetails</code>是一个实际执行的函数。</p>
+<p>2.<code>it (info, function)</code>块称为<code>测试用例</code>（test case），表示一个单独的测试，是测试的最小单位。它也是一个函数，第一个参数<code>info</code>是测试用例的名称，第二个参数<code>function</code>是一个实际执行的函数。</p>
+<p>3.<code>done()</code> 按照瀑布流编程习惯，取名done是表示你回调的最深处，也就是结束写嵌套回调函数。但对于回调链来说done实际上意味着告诉mocha从此处开始测试，一层层回调回去。此外，一个测试用例下（也就是一个it）里面只能调用一次done。</p>
+<p>4.使用命令<code>mocha --recursive</code>执行当前目录下所有的测试用例（包括子目录）</p>
+<p>推荐两篇不错的博文：<br><a href="http://www.ruanyifeng.com/blog/2015/12/a-mocha-tutorial-of-examples.html" target="_blank" rel="external">测试框架 Mocha 实例教程</a></p>
+<p><a href="https://cnodejs.org/topic/516526766d38277306c7d277#56beaebf26d02fc6626bb560" target="_blank" rel="external">初识 mocha in NodeJS</a></p>
 </span>
       
     </div>
