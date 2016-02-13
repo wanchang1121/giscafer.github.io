@@ -57,7 +57,9 @@ BDD和TDD的差别： The Difference Between TDD and BDD">
 <meta property="og:description" content="不写测试的项目都是耍流氓
 
 BDD和TDD的差别： The Difference Between TDD and BDD">
-<meta property="og:updated_time" content="2016-02-13T14:30:17.299Z">
+<meta property="og:image" content="https://travis-ci.org/giscafer/Vue-order.svg?branch=master">
+<meta property="og:image" content="https://coveralls.io/repos/github/giscafer/Vue-order/badge.svg?branch=master">
+<meta property="og:updated_time" content="2016-02-13T16:50:38.963Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="在Nodejs项目里写测试">
 <meta name="twitter:description" content="不写测试的项目都是耍流氓
@@ -332,12 +334,24 @@ BDD和TDD的差别： The Difference Between TDD and BDD">
 <p>2.<code>it (info, function)</code>块称为<code>测试用例</code>（test case），表示一个单独的测试，是测试的最小单位。它也是一个函数，第一个参数<code>info</code>是测试用例的名称，第二个参数<code>function</code>是一个实际执行的函数。</p>
 <p>3.<code>done()</code> 按照瀑布流编程习惯，取名done是表示你回调的最深处，也就是结束写嵌套回调函数。但对于回调链来说done实际上意味着告诉mocha从此处开始测试，一层层回调回去。此外，一个测试用例下（也就是一个it）里面只能调用一次done。</p>
 <p>4.使用命令<code>mocha --recursive</code>执行当前目录下所有的测试用例（包括子目录）</p>
-<p>推荐几篇不错的文章：</p>
+<h3 id="使用gulp自动化测试">使用gulp自动化测试</h3><h3 id="测试覆盖率">测试覆盖率</h3><p>在github上的项目大都有如图所示标志：<br><a href="https://travis-ci.org/giscafer/Vue-order" target="_blank" rel="external"><img src="https://travis-ci.org/giscafer/Vue-order.svg?branch=master" alt="Build Status"></a><br><a href="https://coveralls.io/github/giscafer/Vue-order?branch=master" target="_blank" rel="external"><img src="https://coveralls.io/repos/github/giscafer/Vue-order/badge.svg?branch=master" alt="Coverage Status"></a></p>
+<p>使用<code>Istanbul With Mocha</code>生成测试覆盖率，需要安装的插件有：</p>
 <ul>
-<li><a href="http://www.ruanyifeng.com/blog/2015/12/a-mocha-tutorial-of-examples.html" target="_blank" rel="external">测试框架 Mocha 实例教程</a></li>
-<li><a href="https://cnodejs.org/topic/558df089ebf9c92d17e73358" target="_blank" rel="external">Nodejs开源项目里怎么样写测试、CI和代码测试覆盖率</a></li>
-<li><a href="https://cnodejs.org/topic/516526766d38277306c7d277#56beaebf26d02fc6626bb560" target="_blank" rel="external">初识 mocha in NodeJS</a></li>
+<li><a href="https://github.com/nickmerwin/node-coveralls" target="_blank" rel="external">coveralls</a></li>
+<li><a href="https://github.com/gotwarlost/istanbul" target="_blank" rel="external">istanbul</a></li>
+<li>mocha</li>
 </ul>
+<p>1、在<code>package.json</code>文件中的script属性下加入npm自定义命令<code>mocha</code>和<code>cov</code>：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"scripts"</span>: &#123;</span><br><span class="line">   <span class="string">"start"</span>: <span class="string">"node app.js"</span>,</span><br><span class="line">   <span class="string">"test"</span>: <span class="string">"./node_modules/.bin/gulp"</span>,</span><br><span class="line">   <span class="string">"mocha"</span>: <span class="string">"./node_modules/.bin/mocha -u bdd 'src/server/test/**/*.@(js|jsx)'"</span>,</span><br><span class="line">   <span class="string">"cov"</span>: <span class="string">"istanbul cover ./node_modules/mocha/bin/_mocha src/server/test/**/*.js --report lcovonly -- -R spec &amp;&amp; cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js &amp;&amp; rm -rf ./coverage"</span></span><br><span class="line"> &#125;,</span><br></pre></td></tr></table></figure>
+<p><em>mocha命令意思是执行测试的语句，cov命令是生成测试覆盖命令，具体可以查看coveralls文档</em></p>
+<p>2、使用github账号登录<code>travis-ci.org</code>站点，添加pro<br>在本地项目根目录中创建<code>.travis.yml</code>文件<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">language: node_js</span><br><span class="line">repo_token: Yt71K1wQ83RTyiSxvVwkgnrYn***FQn # 从coveralls.io获取</span><br><span class="line">services: mongodb</span><br><span class="line">node_js:</span><br><span class="line">  - stable</span><br><span class="line">  - 5.3</span><br><span class="line">sudo: false</span><br><span class="line">script: npm run mocha</span><br><span class="line">after_script: npm run cov</span><br></pre></td></tr></table></figure></p>
+<p>3、同样使用github账号登录<code>coveralls.io</code>，添加该pro，然后进入<code>SET UP COVERALLS页</code>可以看到教程，选择第一个将代码复制到<code>.coveralls.yml</code>文件中（同样是在根目录创建）<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># travis-pro 填写travis-ci的pro名称</span><br><span class="line">service_name: Vue-order</span><br><span class="line">repo_token: Yt71K1wQ83RTyiSxvVwkgnrYng9rQTFQn</span><br></pre></td></tr></table></figure></p>
+<p>4、最后push提交代码到github，在travis-ci查看项目是否自动部署成功，失败的话点击查看详细日记信息，根据失败信息解决问题即可。之后每次项目提交代码后，travis-ci上都会自动building项目。</p>
+<p>5、成功后，将项目相应结果图片放到Readme.md下</p>
+<pre><code>[<span class="link_label">![Build Status</span>](<span class="link_url">https://travis-ci.org/giscafer/Vue-order.svg?branch=master</span>)](<span class="link_url">https://travis-ci.org/giscafer/Vue-order</span>)
+[<span class="link_label">![Coverage Status</span>](<span class="link_url">https://coveralls.io/repos/github/giscafer/Vue-order/badge.svg?branch=master</span>)](<span class="link_url">https://coveralls.io/github/giscafer/Vue-order?branch=master</span>)
+</code></pre><p>如项目效果：<a href="https://github.com/giscafer/Vue-order" target="_blank" rel="external">https://github.com/giscafer/Vue-order</a></p>
+<p>推荐几篇不错的文章：<br><a href="http://www.ruanyifeng.com/blog/2015/12/a-mocha-tutorial-of-examples.html" target="_blank" rel="external">测试框架 Mocha 实例教程</a><br><a href="https://cnodejs.org/topic/558df089ebf9c92d17e73358" target="_blank" rel="external">Nodejs开源项目里怎么样写测试、CI和代码测试覆盖率</a><br><a href="https://cnodejs.org/topic/516526766d38277306c7d277#56beaebf26d02fc6626bb560" target="_blank" rel="external">初识 mocha in NodeJS</a></p>
 </span>
       
     </div>
@@ -510,7 +524,7 @@ BDD和TDD的差别： The Difference Between TDD and BDD">
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#测试框架："><span class="nav-number">1.</span> <span class="nav-text">测试框架：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#辅助工具"><span class="nav-number">2.</span> <span class="nav-text">辅助工具</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#测试框架："><span class="nav-number">1.</span> <span class="nav-text">测试框架：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#辅助工具"><span class="nav-number">2.</span> <span class="nav-text">辅助工具</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用gulp自动化测试"><span class="nav-number">3.</span> <span class="nav-text">使用gulp自动化测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#测试覆盖率"><span class="nav-number">4.</span> <span class="nav-text">测试覆盖率</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
