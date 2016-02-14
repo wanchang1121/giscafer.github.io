@@ -59,7 +59,7 @@ BDD和TDD的差别： The Difference Between TDD and BDD">
 BDD和TDD的差别： The Difference Between TDD and BDD">
 <meta property="og:image" content="https://travis-ci.org/giscafer/Vue-order.svg?branch=master">
 <meta property="og:image" content="https://coveralls.io/repos/github/giscafer/Vue-order/badge.svg?branch=master">
-<meta property="og:updated_time" content="2016-02-13T16:50:38.963Z">
+<meta property="og:updated_time" content="2016-02-13T16:59:08.039Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="在Nodejs项目里写测试">
 <meta name="twitter:description" content="不写测试的项目都是耍流氓
@@ -334,7 +334,17 @@ BDD和TDD的差别： The Difference Between TDD and BDD">
 <p>2.<code>it (info, function)</code>块称为<code>测试用例</code>（test case），表示一个单独的测试，是测试的最小单位。它也是一个函数，第一个参数<code>info</code>是测试用例的名称，第二个参数<code>function</code>是一个实际执行的函数。</p>
 <p>3.<code>done()</code> 按照瀑布流编程习惯，取名done是表示你回调的最深处，也就是结束写嵌套回调函数。但对于回调链来说done实际上意味着告诉mocha从此处开始测试，一层层回调回去。此外，一个测试用例下（也就是一个it）里面只能调用一次done。</p>
 <p>4.使用命令<code>mocha --recursive</code>执行当前目录下所有的测试用例（包括子目录）</p>
-<h3 id="使用gulp自动化测试">使用gulp自动化测试</h3><h3 id="测试覆盖率">测试覆盖率</h3><p>在github上的项目大都有如图所示标志：<br><a href="https://travis-ci.org/giscafer/Vue-order" target="_blank" rel="external"><img src="https://travis-ci.org/giscafer/Vue-order.svg?branch=master" alt="Build Status"></a><br><a href="https://coveralls.io/github/giscafer/Vue-order?branch=master" target="_blank" rel="external"><img src="https://coveralls.io/repos/github/giscafer/Vue-order/badge.svg?branch=master" alt="Coverage Status"></a></p>
+<h3 id="使用gulp自动化测试">使用gulp自动化测试</h3><p>1、安装插件：</p>
+<ul>
+<li>gulp</li>
+<li>gulp-watch</li>
+<li>gulp-mocha</li>
+</ul>
+<p>2、添加<code>Gulpfile.js</code>文件</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> gulp = <span class="built_in">require</span>(<span class="string">'gulp'</span>);</span><br><span class="line"><span class="keyword">var</span> watch = <span class="built_in">require</span>(<span class="string">'gulp-watch'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> path = <span class="string">'src/server/test/**/*.js'</span>;</span><br><span class="line"></span><br><span class="line">gulp.task(<span class="string">'watch'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  gulp.watch([<span class="string">'src/server/test/**/*.js'</span>, <span class="string">'lib/*.js'</span>], [<span class="string">'mocha'</span>]);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> mocha = <span class="built_in">require</span>(<span class="string">'gulp-mocha'</span>);</span><br><span class="line"> </span><br><span class="line">gulp.task(<span class="string">'mocha'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> gulp.src(path , &#123;read: <span class="literal">false</span>&#125;)</span><br><span class="line">        <span class="comment">// gulp-mocha needs filepaths so you can't have any plugins before it </span></span><br><span class="line">        .pipe(mocha(&#123;reporter: <span class="string">'spec'</span>&#125;));</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">gulp.task(<span class="string">'default'</span>,[<span class="string">'mocha'</span>, <span class="string">'watch'</span>]);</span><br></pre></td></tr></table></figure>
+<p>3、运行监听测试文件改动，只要改动就会自动执行测试。</p>
+<pre><code>gulp
+</code></pre><h3 id="测试覆盖率">测试覆盖率</h3><p>在github上的项目大都有如图所示标志：<br><a href="https://travis-ci.org/giscafer/Vue-order" target="_blank" rel="external"><img src="https://travis-ci.org/giscafer/Vue-order.svg?branch=master" alt="Build Status"></a> <a href="https://coveralls.io/github/giscafer/Vue-order?branch=master" target="_blank" rel="external"><img src="https://coveralls.io/repos/github/giscafer/Vue-order/badge.svg?branch=master" alt="Coverage Status"></a></p>
 <p>使用<code>Istanbul With Mocha</code>生成测试覆盖率，需要安装的插件有：</p>
 <ul>
 <li><a href="https://github.com/nickmerwin/node-coveralls" target="_blank" rel="external">coveralls</a></li>
@@ -351,7 +361,7 @@ BDD和TDD的差别： The Difference Between TDD and BDD">
 <pre><code>[<span class="link_label">![Build Status</span>](<span class="link_url">https://travis-ci.org/giscafer/Vue-order.svg?branch=master</span>)](<span class="link_url">https://travis-ci.org/giscafer/Vue-order</span>)
 [<span class="link_label">![Coverage Status</span>](<span class="link_url">https://coveralls.io/repos/github/giscafer/Vue-order/badge.svg?branch=master</span>)](<span class="link_url">https://coveralls.io/github/giscafer/Vue-order?branch=master</span>)
 </code></pre><p>如项目效果：<a href="https://github.com/giscafer/Vue-order" target="_blank" rel="external">https://github.com/giscafer/Vue-order</a></p>
-<p>推荐几篇不错的文章：<br><a href="http://www.ruanyifeng.com/blog/2015/12/a-mocha-tutorial-of-examples.html" target="_blank" rel="external">测试框架 Mocha 实例教程</a><br><a href="https://cnodejs.org/topic/558df089ebf9c92d17e73358" target="_blank" rel="external">Nodejs开源项目里怎么样写测试、CI和代码测试覆盖率</a><br><a href="https://cnodejs.org/topic/516526766d38277306c7d277#56beaebf26d02fc6626bb560" target="_blank" rel="external">初识 mocha in NodeJS</a></p>
+<p>推荐几篇不错的文章：<br><a href="http://www.ruanyifeng.com/blog/2015/12/a-mocha-tutorial-of-examples.html" target="_blank" rel="external">测试框架 Mocha 实例教程</a><br><a href="https://cnodejs.org/topic/516526766d38277306c7d277#56beaebf26d02fc6626bb560" target="_blank" rel="external">初识 mocha in NodeJS</a><br><a href="https://cnodejs.org/topic/558df089ebf9c92d17e73358" target="_blank" rel="external">Nodejs开源项目里怎么样写测试、CI和代码测试覆盖率</a></p>
 </span>
       
     </div>
