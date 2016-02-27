@@ -2,6 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://giscafer.com/aboutme/cv.html</loc>
+    <lastmod>2016-02-27T04:54:36.497Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://giscafer.com/aboutme/index.html</loc>
+    <lastmod>2016-02-27T04:48:01.109Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://giscafer.com/2016/02/12/nodejs-mocha-test/</loc>
     <lastmod>2016-02-20T11:36:45.564Z</lastmod>
   </url>
@@ -39,16 +49,6 @@
   <url>
     <loc>http://giscafer.com/2016/01/16/alidayu-sign-nodejs/</loc>
     <lastmod>2016-01-19T10:59:34.942Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://giscafer.com/aboutme/index.html</loc>
-    <lastmod>2016-01-17T13:27:40.967Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://giscafer.com/aboutme/cv.html</loc>
-    <lastmod>2016-01-07T11:02:36.272Z</lastmod>
   </url>
   
   <url>
