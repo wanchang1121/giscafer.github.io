@@ -869,8 +869,8 @@ define(<span class="string">'app'</span>, [<span class="string">'script/b'</span
     <link href="http://giscafer.com/2015/08/20/nodejs-study-note/"/>
     <id>http://giscafer.com/2015/08/20/nodejs-study-note/</id>
     <published>2015-08-20T12:46:25.000Z</published>
-    <updated>2015-09-02T18:06:35.472Z</updated>
-    <content type="html"><![CDATA[<h3 id="【CommonJS\CMD\AMD\NODEJS与JavaScript】">【CommonJS\CMD\AMD\NODEJS与JavaScript】</h3><p>CMD是国内玉伯大神在开发SeaJS的时候提出来的，属于CommonJS的一种规范，此外还有AMD，其对于的框架是RequireJS:<br>1、二者都是异步模块定义（Asynchronuous Module Definition）的一个实现；<br>2、CMD和AMD都是CommonJS的一种规范的实现定义，RequireJS和SeaJS是对应的实践；<br>3、CMD和AMD的区别:CMD相当于按需加载，定义一个模块的时候不需要立即制定依赖模块，在需要的时候require就可以了，比较方便；而AMD则相反，定义模块的时候需要制定依赖模块，并以形参的方式引入factory中。<br><a id="more"></a></p>
+    <updated>2016-03-05T08:11:23.649Z</updated>
+    <content type="html"><![CDATA[<h3 id="CommonJS、CMD、AMD、Node-js与JavaScript">CommonJS、CMD、AMD、Node.js与JavaScript</h3><p>CMD是国内玉伯大神在开发SeaJS的时候提出来的，属于CommonJS的一种规范，此外还有AMD，其对于的框架是RequireJS:<br>1、二者都是异步模块定义（Asynchronuous Module Definition）的一个实现；<br>2、CMD和AMD都是CommonJS的一种规范的实现定义，RequireJS和SeaJS是对应的实践；<br>3、CMD和AMD的区别:CMD相当于按需加载，定义一个模块的时候不需要立即制定依赖模块，在需要的时候require就可以了，比较方便；而AMD则相反，定义模块的时候需要制定依赖模块，并以形参的方式引入factory中。<br><a id="more"></a></p>
 <pre><code><span class="comment">//AMD方式定义模块</span>
 define([<span class="string">'dep1'</span>,<span class="string">'dep2'</span>],<span class="function"><span class="keyword">function</span>(<span class="params">dep1,dep2</span>)</span>{
      <span class="comment">//内部只能使用制定的模块</span>
@@ -883,7 +883,7 @@ define(<span class="function"><span class="keyword">function</span>(<span class=
 });
 </code></pre><p>4、JavaScript语言是弱结构性的，通过CommonJS定义一些规范，CMD和AMD得定义模块的方式对代码进行管理，使得更易维护；此外，NodeJS的诞生，对模块的规范定义，和包（npm）的概念的引入，让JS管理不再困难，一个字，爽爆了！</p>
 <hr>
-<h3 id="一、常用的Module地址">一、常用的Module地址</h3><p><code>个人开发中用到的模块，记下有时间了解</code></p>
+<h3 id="一、常用的Module地址">一、常用的Module地址</h3><p><code>node开发中用到的模块，记下</code></p>
 <p><strong>utility</strong> <a href="https://www.npmjs.com/package/utility" target="_blank" rel="external">A collection of useful utilities.</a> </p>
 <p><strong>bcrypt</strong> <a href="https://www.npmjs.com/package/bcrypt" target="_blank" rel="external">A bcrypt library for NodeJS.</a> </p>
 <p><strong>node-uuid</strong> <a href="https://www.npmjs.com/package/node-uuid" target="_blank" rel="external">生成uuid的模块</a></p>
@@ -898,11 +898,16 @@ define(<span class="function"><span class="keyword">function</span>(<span class=
 <p><strong>lodash</strong> <a href="https://lodash.com/" target="_blank" rel="external">由Underscore.js演变成的好用工具</a></p>
 <p><strong>connect-multiparty</strong> <a href="https://www.npmjs.com/package/connect-multiparty" target="_blank" rel="external">multipart parsing middleware for connect using multiparty</a></p>
 <p><strong>grunt-mocha-test</strong> <a href="https://www.npmjs.com/package/grunt-mocha-test" target="_blank" rel="external">【单元测试】A grunt task for running server side mocha tests</a></p>
+<p><strong>mocha</strong> JavaScript测试框架</p>
+<p><strong>chai</strong> should、expect等BDD测试</p>
+<p><strong>sequelize</strong> Sequelize is an easy-to-use multi sql dialect ORM for Node.js &amp; io.js. It currently supports MySQL, MariaDB, SQLite, PostgreSQL and MSSQL.<a href="http://sequelizejs.com" target="_blank" rel="external">github</a> </p>
+<p><strong>node-schedule</strong> A cron-like and not-cron-like job scheduler for Node.<a href="https://github.com/node-schedule/node-schedule" target="_blank" rel="external">github</a></p>
+<p><strong>superagent</strong> Ajax with less suck - (and node.js HTTP client to match) <a href="http://visionmedia.github.com/superagent/" target="_blank" rel="external">github</a></p>
 <hr>
 <h3 id="二、Grunt集成自动重启">二、Grunt集成自动重启</h3><p>1、安装grunt环境： <code>npm install grunt -g</code>和<code>npm install grunt-cli -g</code><br>2、安装 <code>npm install grunt-contrib-watch --save-dev</code><br>3、安装 <code>npm grunt-concurrent --save-dev</code><br>4、安装 <code>npm grunt-contrib-watch --save-dev</code><br>5、安装 <code>npm grunt-nodemon --save-dev</code><br>(–save-dev会将该模块信息保存到package.json里边)<br><a href="http://blog.csdn.net/allgis/article/details/46572815" target="_blank" rel="external">Nodemon和Grunt-Contrib-Watch: 有什么不同?</a></p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<h3 id="【CommonJS\CMD\AMD\NODEJS与JavaScript】">【CommonJS\CMD\AMD\NODEJS与JavaScript】</h3><p>CMD是国内玉伯大神在开发SeaJS的时候提出来的，属于CommonJS的一种规范，此外还有AMD，其对于的框架是RequireJS:<br>1、二者都是异步模块定义（Asynchronuous Module Definition）的一个实现；<br>2、CMD和AMD都是CommonJS的一种规范的实现定义，RequireJS和SeaJS是对应的实践；<br>3、CMD和AMD的区别:CMD相当于按需加载，定义一个模块的时候不需要立即制定依赖模块，在需要的时候require就可以了，比较方便；而AMD则相反，定义模块的时候需要制定依赖模块，并以形参的方式引入factory中。<br>]]>
+    <![CDATA[<h3 id="CommonJS、CMD、AMD、Node-js与JavaScript">CommonJS、CMD、AMD、Node.js与JavaScript</h3><p>CMD是国内玉伯大神在开发SeaJS的时候提出来的，属于CommonJS的一种规范，此外还有AMD，其对于的框架是RequireJS:<br>1、二者都是异步模块定义（Asynchronuous Module Definition）的一个实现；<br>2、CMD和AMD都是CommonJS的一种规范的实现定义，RequireJS和SeaJS是对应的实践；<br>3、CMD和AMD的区别:CMD相当于按需加载，定义一个模块的时候不需要立即制定依赖模块，在需要的时候require就可以了，比较方便；而AMD则相反，定义模块的时候需要制定依赖模块，并以形参的方式引入factory中。<br>]]>
     
     </summary>
     
