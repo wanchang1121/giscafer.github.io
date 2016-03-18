@@ -36,7 +36,7 @@
 
 
 
-  <meta name="keywords" content="JFinal," />
+  <meta name="keywords" content="diary," />
 
 
 
@@ -47,25 +47,22 @@
   <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.2" />
 
 
-<meta name="description" content="一、路由路径规则
-1：模板路径= BaseViewPath + ViewPath + render时的参数
-2：当 render 时view的参数以 “/“ 打头，则模板路径使用从WebRoot下的绝对路
-3：在配置路由时如果省略第三个参数，则 viewPath = controllerKey">
+<meta name="description" content="这是一篇简短而深刻的日记，记下此刻起（2016年3月18日17:58:35），日后在学习、工作用的技术知识点上，理解透彻其原理；做大一切知其然，知其所以然。
+怀有一颗求知若渴的心，客观看清自身不足；做好现在的工作，展望未来！
+写此谨记！">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JFinal设置基础路径为WEB-INF">
-<meta property="og:url" content="http://giscafer.com/2015/10/30/jfinal-setbaseview/index.html">
+<meta property="og:title" content="知其然，知其所以然">
+<meta property="og:url" content="http://giscafer.com/2016/03/18/diary2016-3-18/index.html">
 <meta property="og:site_name" content="Giscafer's blog">
-<meta property="og:description" content="一、路由路径规则
-1：模板路径= BaseViewPath + ViewPath + render时的参数
-2：当 render 时view的参数以 “/“ 打头，则模板路径使用从WebRoot下的绝对路
-3：在配置路由时如果省略第三个参数，则 viewPath = controllerKey">
-<meta property="og:updated_time" content="2015-10-30T14:21:14.291Z">
+<meta property="og:description" content="这是一篇简短而深刻的日记，记下此刻起（2016年3月18日17:58:35），日后在学习、工作用的技术知识点上，理解透彻其原理；做大一切知其然，知其所以然。
+怀有一颗求知若渴的心，客观看清自身不足；做好现在的工作，展望未来！
+写此谨记！">
+<meta property="og:updated_time" content="2016-03-18T10:02:18.886Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JFinal设置基础路径为WEB-INF">
-<meta name="twitter:description" content="一、路由路径规则
-1：模板路径= BaseViewPath + ViewPath + render时的参数
-2：当 render 时view的参数以 “/“ 打头，则模板路径使用从WebRoot下的绝对路
-3：在配置路由时如果省略第三个参数，则 viewPath = controllerKey">
+<meta name="twitter:title" content="知其然，知其所以然">
+<meta name="twitter:description" content="这是一篇简短而深刻的日记，记下此刻起（2016年3月18日17:58:35），日后在学习、工作用的技术知识点上，理解透彻其原理；做大一切知其然，知其所以然。
+怀有一颗求知若渴的心，客观看清自身不足；做好现在的工作，展望未来！
+写此谨记！">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -77,7 +74,7 @@
 
 
 
-  <title> JFinal设置基础路径为WEB-INF | Giscafer's blog </title>
+  <title> 知其然，知其所以然 | Giscafer's blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -253,7 +250,7 @@
             
             
               
-                JFinal设置基础路径为WEB-INF
+                知其然，知其所以然
               
             
           </h1>
@@ -262,8 +259,8 @@
         <div class="post-meta">
           <span class="post-time">
             发表于
-            <time itemprop="dateCreated" datetime="2015-10-30T21:49:31+08:00" content="2015-10-30">
-              2015-10-30
+            <time itemprop="dateCreated" datetime="2016-03-18T17:52:12+08:00" content="2016-03-18">
+              2016-03-18
             </time>
           </span>
 
@@ -272,8 +269,8 @@
               &nbsp; | &nbsp; 分类于
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/JFinal/" itemprop="url" rel="index">
-                    <span itemprop="name">JFinal</span>
+                  <a href="/categories/diary/" itemprop="url" rel="index">
+                    <span itemprop="name">diary</span>
                   </a>
                 </span>
 
@@ -288,8 +285,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2015/10/30/jfinal-setbaseview/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/30/jfinal-setbaseview/" itemprop="commentsCount"></span>
+                <a href="/2016/03/18/diary2016-3-18/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/18/diary2016-3-18/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -308,36 +305,9 @@
       
 
       
-        <span itemprop="articleBody"><h2 id="一、路由路径规则">一、路由路径规则</h2><blockquote>
-<p>1：模板路径= BaseViewPath + ViewPath + render时的参数</p>
-<p>2：当 render 时view的参数以 “/“ 打头，则模板路径使用从WebRoot下的绝对路</p>
-<p>3：在配置路由时如果省略第三个参数，则 viewPath = controllerKey</p>
-</blockquote>
-<a id="more"></a>
-<p>在JFinalConfig的<code>configConstant</code>方法中设置/WEB-INF/views/为基础路径；<br><code>me.setBaseViewPath(&quot;/WEB-INF/views/&quot;)</code>；</p>
-<p>设定后，路由configRoute内的视图路径就会直接找<code>/WEB-INF/views/</code>下的文件，Controller里边render 时view的参数不能以 “/“ 打头，不然就是直接是找WebRoot下的绝对路径。</p>
-<pre><code><span class="tag">&lt;<span class="title">filter</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">filter-name</span>&gt;</span>jfinal<span class="tag">&lt;/<span class="title">filter-name</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">filter-class</span>&gt;</span>com.jfinal.core.JFinalFilter<span class="tag">&lt;/<span class="title">filter-class</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">init-param</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">param-name</span>&gt;</span>configClass<span class="tag">&lt;/<span class="title">param-name</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">param-value</span>&gt;</span>com.giscafer.schedule.config.ScheduleConfig<span class="tag">&lt;/<span class="title">param-value</span>&gt;</span>
-    <span class="tag">&lt;/<span class="title">init-param</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">filter</span>&gt;</span>
-
-<span class="tag">&lt;<span class="title">filter-mapping</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">filter-name</span>&gt;</span>jfinal<span class="tag">&lt;/<span class="title">filter-name</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">url-pattern</span>&gt;</span>/*<span class="tag">&lt;/<span class="title">url-pattern</span>&gt;</span><span class="comment">&lt;!--此处如果不是/*的话，路由会失效--&gt;</span>
-<span class="tag">&lt;/<span class="title">filter-mapping</span>&gt;</span>
-</code></pre><h2 id="JFinal_过滤器拦截Servlet解决方法">JFinal 过滤器拦截Servlet解决方法</h2><p>JFinal配置的过滤器（如上过滤器配置）会拦截掉Servlet请求，这个时候可以通过配置路由处理器来解决：</p>
-<pre><code><span class="comment">/**
- * 配置处理器
- */</span>
-<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">configHandler</span><span class="params">(Handlers me)</span> </span>{
-    <span class="comment">//使用此方式跳过jfinal过滤器对servlet的拦截</span>
-    me.add(<span class="keyword">new</span> UrlSkipHandler(<span class="string">"/home"</span>, <span class="literal">false</span>));
-}
-</code></pre><p>这样，<code>/home</code>路径的servlet就不会被jfinal的过滤器拦截了。这是最方便的解决方式。</p>
+        <span itemprop="articleBody"><p>这是一篇简短而深刻的日记，记下此刻起（2016年3月18日17:58:35），日后在学习、工作用的技术知识点上，理解透彻其原理；做大一切<code>知其然，知其所以然</code>。</p>
+<p>怀有一颗求知若渴的心，客观看清自身不足；做好现在的工作，展望未来！</p>
+<p>写此谨记！</p>
 </span>
       
     </div>
@@ -346,7 +316,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/JFinal/" rel="tag">#JFinal</a>
+            <a href="/tags/diary/" rel="tag">#diary</a>
           
         </div>
       
@@ -355,17 +325,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/10/18/swiftype-for-hexo/" rel="next" title="利用swiftype为hexo博客添加站内搜索">
-                <i class="fa fa-chevron-left"></i> 利用swiftype为hexo博客添加站内搜索
+              <a href="/2016/03/08/npm-registry/" rel="next" title="npm设置淘宝镜像">
+                <i class="fa fa-chevron-left"></i> npm设置淘宝镜像
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2015/11/30/gulp-front-end-automated-builds/" rel="prev" title="什么，你还不懂前端自动化构建？">
-                什么，你还不懂前端自动化构建？ <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -390,8 +356,8 @@
         
           <div class="comments" id="comments">
             
-              <div class="ds-thread" data-thread-key="2015/10/30/jfinal-setbaseview/"
-                   data-title="JFinal设置基础路径为WEB-INF" data-url="http://giscafer.com/2015/10/30/jfinal-setbaseview/">
+              <div class="ds-thread" data-thread-key="2016/03/18/diary2016-3-18/"
+                   data-title="知其然，知其所以然" data-url="http://giscafer.com/2016/03/18/diary2016-3-18/">
               </div>
             
           </div>
@@ -510,7 +476,7 @@
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、路由路径规则"><span class="nav-number">1.</span> <span class="nav-text">一、路由路径规则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JFinal_过滤器拦截Servlet解决方法"><span class="nav-number">2.</span> <span class="nav-text">JFinal 过滤器拦截Servlet解决方法</span></a></li></ol></div>
+              <p class="post-toc-empty">此文章未包含目录</p>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>

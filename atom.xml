@@ -4,7 +4,7 @@
   <subtitle><![CDATA[知其然，知其所以然]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://giscafer.com/"/>
-  <updated>2016-03-08T15:40:33.541Z</updated>
+  <updated>2016-03-18T10:02:18.886Z</updated>
   <id>http://giscafer.com/</id>
   
   <author>
@@ -13,6 +13,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[知其然，知其所以然]]></title>
+    <link href="http://giscafer.com/2016/03/18/diary2016-3-18/"/>
+    <id>http://giscafer.com/2016/03/18/diary2016-3-18/</id>
+    <published>2016-03-18T09:52:12.000Z</published>
+    <updated>2016-03-18T10:02:18.886Z</updated>
+    <content type="html"><![CDATA[<p>这是一篇简短而深刻的日记，记下此刻起（2016年3月18日17:58:35），日后在学习、工作用的技术知识点上，理解透彻其原理；做大一切<code>知其然，知其所以然</code>。</p>
+<p>怀有一颗求知若渴的心，客观看清自身不足；做好现在的工作，展望未来！</p>
+<p>写此谨记！</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>这是一篇简短而深刻的日记，记下此刻起（2016年3月18日17:58:35），日后在学习、工作用的技术知识点上，理解透彻其原理；做大一切<code>知其然，知其所以然</code>。</p>
+<p>怀有一颗求知若渴的心，客观看清自身不足；做好现在的工作，展望未来！</p>
+]]>
+    </summary>
+    
+      <category term="diary" scheme="http://giscafer.com/tags/diary/"/>
+    
+      <category term="diary" scheme="http://giscafer.com/categories/diary/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[npm设置淘宝镜像]]></title>
@@ -941,55 +963,6 @@ define(<span class="function"><span class="keyword">function</span>(<span class=
       <category term="npm" scheme="http://giscafer.com/tags/npm/"/>
     
       <category term="NodeJS" scheme="http://giscafer.com/categories/NodeJS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[hexo博客中多说插件的配置使用]]></title>
-    <link href="http://giscafer.com/2014/10/02/hexo-duoshuo/"/>
-    <id>http://giscafer.com/2014/10/02/hexo-duoshuo/</id>
-    <published>2014-10-02T08:43:15.000Z</published>
-    <updated>2015-09-03T11:22:05.099Z</updated>
-    <content type="html"><![CDATA[<p>多说中的几个配置如下</p>
-<p> 1.</p>
-<pre><code>&lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"ds-thread"</span> data-thread-key=<span class="string">"请将此处替换成文
-章在你的站点中的ID"</span> data-title=<span class="string">"请替换成文章的标题"</span> data-url=<span class="string">"请替换成文章的网址"</span>&gt;&lt;/<span class="keyword">div</span>&gt;
-</code></pre><p>2.<br>   <code>{short_name:&quot;二级域名（*.duoshuo.com）&quot;}</code>，只需要填二级域名缩写，也就是*号部分！</p>
-<a id="more"></a>
-<p>多说文章评论配置，hexo博客的都可以参考以下的配置</p>
-<pre><code><span class="xml"></span>&lt;%<span class="ruby"> <span class="keyword">if</span> (theme.duoshuo.enable &amp;&amp; page.comments){ </span>%&gt;<span class="xml">
-
-<span class="comment">&lt;!-- 多说评论框 start --&gt;</span>
-<span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"ds-thread"</span> <span class="attribute">data-thread-key</span>=<span class="value">"</span></span></span>&lt;%-<span class="ruby"> config.root </span>%&gt;<span class="xml"><span class="tag"><span class="value"></span></span></span>&lt;%-<span class="ruby"> item.path</span>%&gt;<span class="xml"><span class="tag"><span class="value">"</span> <span class="attribute">data-title</span>=<span class="value">"</span></span></span>&lt;%-<span class="ruby"> item.title </span>%&gt;<span class="xml"><span class="tag"><span class="value">"</span> <span class="attribute">data-url</span>=<span class="value">"</span></span></span>&lt;%-<span class="ruby"> item.permalink </span>%&gt;<span class="xml"><span class="tag"><span class="value">"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>
-<span class="comment">&lt;!-- 多说评论框 end --&gt;</span>
-<span class="comment">&lt;!-- 多说公共JS代码 start (一个网页只需插入一次) --&gt;</span>
-<span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript"</span>&gt;</span><span class="javascript">
-<span class="keyword">var</span> duoshuoQuery = {short_name:<span class="string">"giscafe"</span>};
-(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
-    <span class="keyword">var</span> ds = <span class="built_in">document</span>.createElement(<span class="string">'script'</span>);
-    ds.type = <span class="string">'text/javascript'</span>;ds.async = <span class="literal">true</span>;
-    ds.src = (<span class="built_in">document</span>.location.protocol == <span class="string">'https:'</span> ? <span class="string">'https:'</span> : <span class="string">'http:'</span>) + <span class="string">'//static.duoshuo.com/embed.js'</span>;
-    ds.charset = <span class="string">'UTF-8'</span>;
-    (<span class="built_in">document</span>.getElementsByTagName(<span class="string">'head'</span>)[<span class="number">0</span>] 
-     || <span class="built_in">document</span>.getElementsByTagName(<span class="string">'body'</span>)[<span class="number">0</span>]).appendChild(ds);
-})();
-</span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
-<span class="comment">&lt;!-- 多说公共JS代码 end --&gt;</span>
-</span>&lt;%<span class="ruby"> } </span>%&gt;<span class="xml"></span>
-</code></pre><p>将修改好的代码放到theme\主题名称\layout_partial\comment.ejs下即可。（有些主题可能位置不一样，其他位置找到即可。）</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>多说中的几个配置如下</p>
-<p> 1.</p>
-<pre><code>&lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"ds-thread"</span> data-thread-key=<span class="string">"请将此处替换成文
-章在你的站点中的ID"</span> data-title=<span class="string">"请替换成文章的标题"</span> data-url=<span class="string">"请替换成文章的网址"</span>&gt;&lt;/<span class="keyword">div</span>&gt;
-</code></pre><p>2.<br>   <code>{short_name:&quot;二级域名（*.duoshuo.com）&quot;}</code>，只需要填二级域名缩写，也就是*号部分！</p>]]>
-    
-    </summary>
-    
-      <category term="Hexo" scheme="http://giscafer.com/tags/Hexo/"/>
-    
-      <category term="Hexo" scheme="http://giscafer.com/categories/Hexo/"/>
     
   </entry>
   
