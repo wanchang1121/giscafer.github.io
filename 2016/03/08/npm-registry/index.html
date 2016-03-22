@@ -50,7 +50,8 @@
 <meta name="description" content="今晚使用npm下载webpack和其他插件时巨慢，这是以前从未遇到过的，所以就换了淘宝镜像，快了很多
 更换镜像方式很多种，参考官方文档说明
 更方便的方式是，在c盘用户目录下，找到.npmrc文件，加入如下代码即可。
-1registry = http://registry.npm.taobao.org">
+1registry = http://registry.npm.taobao.org
+但是这样做有个问题，发布npm插件的时候需要npm adduser，如果.npmrc文件填了这个的">
 <meta property="og:type" content="article">
 <meta property="og:title" content="npm设置淘宝镜像">
 <meta property="og:url" content="http://giscafer.com/2016/03/08/npm-registry/index.html">
@@ -58,14 +59,16 @@
 <meta property="og:description" content="今晚使用npm下载webpack和其他插件时巨慢，这是以前从未遇到过的，所以就换了淘宝镜像，快了很多
 更换镜像方式很多种，参考官方文档说明
 更方便的方式是，在c盘用户目录下，找到.npmrc文件，加入如下代码即可。
-1registry = http://registry.npm.taobao.org">
-<meta property="og:updated_time" content="2016-03-08T15:40:33.541Z">
+1registry = http://registry.npm.taobao.org
+但是这样做有个问题，发布npm插件的时候需要npm adduser，如果.npmrc文件填了这个的">
+<meta property="og:updated_time" content="2016-03-22T14:15:19.197Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="npm设置淘宝镜像">
 <meta name="twitter:description" content="今晚使用npm下载webpack和其他插件时巨慢，这是以前从未遇到过的，所以就换了淘宝镜像，快了很多
 更换镜像方式很多种，参考官方文档说明
 更方便的方式是，在c盘用户目录下，找到.npmrc文件，加入如下代码即可。
-1registry = http://registry.npm.taobao.org">
+1registry = http://registry.npm.taobao.org
+但是这样做有个问题，发布npm插件的时候需要npm adduser，如果.npmrc文件填了这个的">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -312,6 +315,7 @@
 <p>更换镜像方式很多种，参考官方<a href="http://npm.taobao.org/" target="_blank" rel="external">文档说明</a></p>
 <p>更方便的方式是，在c盘用户目录下，找到<code>.npmrc</code>文件，加入如下代码即可。</p>
 <figure class="highlight tcl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">registry</span> = <span class="keyword">http</span>://<span class="keyword">registry</span>.npm.taobao.org</span><br></pre></td></tr></table></figure>
+<p>但是这样做有个问题，发布npm插件的时候需要<code>npm adduser</code>，如果<code>.npmrc</code>文件填了这个的话，是登录不上的，<br>所以记得发布插件的时候删除了，或者是通过上边<code>文档说明</code>提供的其他方式解决。</p>
 </span>
       
     </div>
