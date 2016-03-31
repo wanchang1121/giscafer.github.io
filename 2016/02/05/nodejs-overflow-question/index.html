@@ -63,7 +63,7 @@ ttd/bdd测试驱动
 node-inspector，vsc编辑器，webstrom；
 node-debug
 console.log">
-<meta property="og:updated_time" content="2016-02-05T06:54:15.495Z">
+<meta property="og:updated_time" content="2016-03-26T16:14:09.998Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="NodeJS开发常见错误A&Q">
 <meta name="twitter:description" content="0、NodeJS调试介绍级别从高到低，推荐到不推荐：
@@ -325,8 +325,7 @@ console.log">
 <h2 id="1、CookieParser错误">1、CookieParser错误</h2><p><code>throw new Error(&#39;cookieParser(&quot;secret&quot;) required for signed cookies&#39;);</code><br>提示：<strong>Error: cookieParser(“secret”) required for signed cookies</strong></p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.use(cookieParser(config.auth_cookie_name));//&#36825;&#37324;cookieParser(&#34;secret&#34;)&#38656;&#35201;&#25351;&#23450;&#20869;&#23481;&#34;secret&#34;&#10;//&#22240;&#20026;&#29256;&#26412;&#38382;&#39064;&#65292;&#36825;&#37324;&#22353;&#37324;&#22909;&#19968;&#20250;&#10;app.use(session(&#123;&#10;  secret:config.session_secret,&#10;  key: config.auth_cookie_name, //&#36825;&#37324;auth_cookie_name&#23601;&#26159;&#25351;&#23450;&#20869;&#23481;&#34;secret&#34;&#10;  cookie: &#123;maxAge: 1000 * 60 * 60 * 24 * 30&#125;,//30 days&#10;  resave: false,&#10;  saveUninitialized: true,&#10;  store: new MongoStore(&#123;&#10;    url: config.dev_dbUrl&#10;  &#125;)&#10;&#125;));</span><br></pre></td></tr></table></figure>
 <p>出现以上问题可能是在代码中使用类似<code>var auth_token = req.signedCookies[config.auth_cookie_name];</code>代码，如果没用，以上直接使用<code>pp.use(cookieParser());</code>即可。</p>
-<p>参考解决：</p>
-<p><a href="http://stackoverflow.com/questions/20112876/cookieparser-and-cookiesession-middleware-in-expressjs" target="_blank" rel="external">http://stackoverflow.com/questions/20112876/cookieparser-and-cookiesession-middleware-in-expressjs</a></p>
+<p>参考解决：<br><a href="https://segmentfault.com/a/1190000004139342" target="_blank" rel="external">https://segmentfault.com/a/1190000004139342</a><br><a href="http://stackoverflow.com/questions/20112876/cookieparser-and-cookiesession-middleware-in-expressjs" target="_blank" rel="external">http://stackoverflow.com/questions/20112876/cookieparser-and-cookiesession-middleware-in-expressjs</a></p>
 <h2 id="2、Cast_to_ObjectId_failed_for_value">2、Cast to ObjectId failed for value</h2><p>错误大致：</p>
 <pre><code><span class="number">500</span> <span class="string">CastError:</span> Cast to ObjectId failed <span class="keyword">for</span> value <span class="string">"Mp0uah2G6TJVwPhOQ2sSZ10yklPkmbRV"</span> at path <span class="string">"_id"</span>
  at MongooseError.CastError (<span class="regexp">/home/</span>bae<span class="regexp">/app/</span>.bae<span class="regexp">/node_modules/</span>mongoose<span class="regexp">/lib/</span>error/cast.<span class="string">js:</span><span class="number">19</span>:<span class="number">11</span>)
@@ -361,7 +360,7 @@ const Promise = require(<span class="string">'bluebird'</span>);
 <p><a href="https://cnodejs.org/topic/53774ffecbcc396349ca1155" target="_blank" rel="external">https://cnodejs.org/topic/53774ffecbcc396349ca1155</a></p>
 <p><a href="http://stackoverflow.com/questions/7042340/node-js-error-cant-set-headers-after-they-are-sent" target="_blank" rel="external">http://stackoverflow.com/questions/7042340/node-js-error-cant-set-headers-after-they-are-sent</a></p>
 <h2 id="6、Redis:ERR_wrong_number_of_arguments_for_‘set’_command">6、Redis:ERR wrong number of arguments for ‘set’ command</h2><p>将<a href="https://github.com/giscafer/Vue-order" target="_blank" rel="external">Vue-order</a>部署BAE的时候遇到此Redis报错问题，系统访问就会报此错误 最后查出是因为connect-redis插件版本引起的；（该原因也可能是代码引起）</p>
-<h2 id="7、express-session_deprecated_cookie_should_be_available_in_req-headers-cookie">7、express-session deprecated cookie should be available in req.headers.cookie</h2><p><a href="https://github.com/expressjs/session/issues/62" target="_blank" rel="external">https://github.com/expressjs/session/issues/62</a></p>
+<h2 id="7、express-session_deprecated_cookie_should_be_available_in_req-headers-cookie">7、express-session deprecated cookie should be available in req.headers.cookie</h2><p><a href="https://segmentfault.com/a/1190000004139342" target="_blank" rel="external">https://segmentfault.com/a/1190000004139342</a><br><a href="https://github.com/expressjs/session/issues/62" target="_blank" rel="external">https://github.com/expressjs/session/issues/62</a></p>
 <h2 id="8、Error:_Argument_passed_in_must_be_a_single_String_of_12_bytes_or_a_string_of_24_hex_characters">8、Error: Argument passed in must be a single String of 12 bytes or a string of 24 hex characters</h2><p>必须是24位16进制的字符，或者一个12字节的字符串</p>
 <p><a href="http://stackoverflow.com/questions/26453507/argument-passed-in-must-be-a-single-string-of-12-bytes" target="_blank" rel="external">http://stackoverflow.com/questions/26453507/argument-passed-in-must-be-a-single-string-of-12-bytes</a></p>
 <p><a href="https://docs.mongodb.org/manual/reference/object-id/" target="_blank" rel="external">https://docs.mongodb.org/manual/reference/object-id/</a></p>
@@ -461,21 +460,21 @@ const Promise = require(<span class="string">'bluebird'</span>);
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">26</span>
+              <span class="site-state-item-count">27</span>
               <span class="site-state-item-name">文章</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             <a href="/categories">
-              <span class="site-state-item-count">11</span>
+              <span class="site-state-item-count">13</span>
               <span class="site-state-item-name">分类</span>
               </a>
           </div>
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">34</span>
+              <span class="site-state-item-count">38</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>

@@ -4,7 +4,7 @@
   <subtitle><![CDATA[知其然，知其所以然]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://giscafer.com/"/>
-  <updated>2016-03-18T10:18:09.701Z</updated>
+  <updated>2016-03-31T05:24:31.131Z</updated>
   <id>http://giscafer.com/</id>
   
   <author>
@@ -13,6 +13,43 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Ponitor价格监测]]></title>
+    <link href="http://giscafer.com/2016/03/31/project-ponitor/"/>
+    <id>http://giscafer.com/2016/03/31/project-ponitor/</id>
+    <published>2016-03-31T05:21:01.000Z</published>
+    <updated>2016-03-31T05:24:31.131Z</updated>
+    <content type="html"><![CDATA[<p>开发这个项目的初衷是学习<code>vue.js+webpack</code>构建应用，加上学习<code>ES6</code>之后没有正式在项目里边练习，然后偶然看到一个demo是做app爬虫的，加上本人又有计划入手个单反的想法，于是就有了<a href="https://github.com/giscafer/Ponitor" target="_blank" rel="external">Ponitor</a>。</p>
+<p>项目支持对天猫、淘宝、和京东进行爬虫，关注一些商品，降价或涨价的时候都推送消息；（话说如果每天都监测商品价格，在双11和双12，会发现有些商家提前提升价格再故意降价的情况，哈哈哈……，只是猜测，不过这情况是会有的吧。），他们的恶劣行为会被<code>Ponitor</code>记录。</p>
+<h2 id="关于商品信息获取">关于商品信息获取</h2><p>1、爬虫Apple App是最方便的，一切信息都在html里边，只需要请求，解析出来即可。</p>
+<p>2、爬虫京东和阿里的就不一样了，价格或者图片是被隐藏的，得通过其他方式；找到他们ajax请求的接口等。当接口如果发生变化，还需要调整修改。当然，只要页面能显示的数据，我们通过爬虫都能获取到；不过阿里是有很强的反爬虫机制的，当你请求数过多的时候，会强制跳转登录页面，要想记录爬信息，得通过这个关卡。。。。有时间研究一下吧。</p>
+<p>3、补充：阿里反的是频繁爬虫，只要模拟好爬虫行为接近浏览器，或者是项目只对个人来使用（请求不会频繁），是没有任何问题的。</p>
+<h2 id="项目截图">项目截图</h2><p><img src="https://raw.githubusercontent.com/giscafer/Ponitor/master/wiki/index_preview.png" alt="index"></p>
+<p><img src="https://raw.githubusercontent.com/giscafer/Ponitor/master/wiki/goodlist_preview.png" alt="index"></p>
+<p>关注的商品价格发生变化（涨价or降价）的时候发生邮件通知，如测试截图：</p>
+<p><img src="https://raw.githubusercontent.com/giscafer/Ponitor/master/wiki/email-sample.png" alt="index"></p>
+<h2 id="使用">使用</h2><p>详情见README.md</p>
+<h2 id="源码">源码</h2><p><a href="https://github.com/giscafer/Ponitor" target="_blank" rel="external">https://github.com/giscafer/Ponitor</a></p>
+<p>欢迎交流学习！！！</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>开发这个项目的初衷是学习<code>vue.js+webpack</code>构建应用，加上学习<code>ES6</code>之后没有正式在项目里边练习，然后偶然看到一个demo是做app爬虫的，加上本人又有计划入手个单反的想法，于是就有了<a href="https:/]]>
+    </summary>
+    
+      <category term="Project" scheme="http://giscafer.com/tags/Project/"/>
+    
+      <category term="node.js" scheme="http://giscafer.com/tags/node-js/"/>
+    
+      <category term="vue" scheme="http://giscafer.com/tags/vue/"/>
+    
+      <category term="webpack" scheme="http://giscafer.com/tags/webpack/"/>
+    
+      <category term="Project" scheme="http://giscafer.com/categories/Project/"/>
+    
+      <category term="NodeJS" scheme="http://giscafer.com/categories/Project/NodeJS/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[知其然，知其所以然]]></title>
@@ -248,7 +285,7 @@
     <link href="http://giscafer.com/2016/02/05/nodejs-overflow-question/"/>
     <id>http://giscafer.com/2016/02/05/nodejs-overflow-question/</id>
     <published>2016-02-05T06:18:08.000Z</published>
-    <updated>2016-02-05T06:54:15.495Z</updated>
+    <updated>2016-03-26T16:14:09.998Z</updated>
     <content type="html"><![CDATA[<h2 id="0、NodeJS调试介绍">0、NodeJS调试介绍</h2><p>级别从高到低，推荐到不推荐：</p>
 <ol>
 <li>ttd/bdd测试驱动</li>
@@ -260,8 +297,7 @@
 <h2 id="1、CookieParser错误">1、CookieParser错误</h2><p><code>throw new Error(&#39;cookieParser(&quot;secret&quot;) required for signed cookies&#39;);</code><br>提示：<strong>Error: cookieParser(“secret”) required for signed cookies</strong></p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.use(cookieParser(config.auth_cookie_name));//&#36825;&#37324;cookieParser(&#34;secret&#34;)&#38656;&#35201;&#25351;&#23450;&#20869;&#23481;&#34;secret&#34;&#10;//&#22240;&#20026;&#29256;&#26412;&#38382;&#39064;&#65292;&#36825;&#37324;&#22353;&#37324;&#22909;&#19968;&#20250;&#10;app.use(session(&#123;&#10;  secret:config.session_secret,&#10;  key: config.auth_cookie_name, //&#36825;&#37324;auth_cookie_name&#23601;&#26159;&#25351;&#23450;&#20869;&#23481;&#34;secret&#34;&#10;  cookie: &#123;maxAge: 1000 * 60 * 60 * 24 * 30&#125;,//30 days&#10;  resave: false,&#10;  saveUninitialized: true,&#10;  store: new MongoStore(&#123;&#10;    url: config.dev_dbUrl&#10;  &#125;)&#10;&#125;));</span><br></pre></td></tr></table></figure>
 <p>出现以上问题可能是在代码中使用类似<code>var auth_token = req.signedCookies[config.auth_cookie_name];</code>代码，如果没用，以上直接使用<code>pp.use(cookieParser());</code>即可。</p>
-<p>参考解决：</p>
-<p><a href="http://stackoverflow.com/questions/20112876/cookieparser-and-cookiesession-middleware-in-expressjs" target="_blank" rel="external">http://stackoverflow.com/questions/20112876/cookieparser-and-cookiesession-middleware-in-expressjs</a></p>
+<p>参考解决：<br><a href="https://segmentfault.com/a/1190000004139342" target="_blank" rel="external">https://segmentfault.com/a/1190000004139342</a><br><a href="http://stackoverflow.com/questions/20112876/cookieparser-and-cookiesession-middleware-in-expressjs" target="_blank" rel="external">http://stackoverflow.com/questions/20112876/cookieparser-and-cookiesession-middleware-in-expressjs</a></p>
 <h2 id="2、Cast_to_ObjectId_failed_for_value">2、Cast to ObjectId failed for value</h2><p>错误大致：</p>
 <pre><code><span class="number">500</span> <span class="string">CastError:</span> Cast to ObjectId failed <span class="keyword">for</span> value <span class="string">"Mp0uah2G6TJVwPhOQ2sSZ10yklPkmbRV"</span> at path <span class="string">"_id"</span>
  at MongooseError.CastError (<span class="regexp">/home/</span>bae<span class="regexp">/app/</span>.bae<span class="regexp">/node_modules/</span>mongoose<span class="regexp">/lib/</span>error/cast.<span class="string">js:</span><span class="number">19</span>:<span class="number">11</span>)
@@ -296,7 +332,7 @@ const Promise = require(<span class="string">'bluebird'</span>);
 <p><a href="https://cnodejs.org/topic/53774ffecbcc396349ca1155" target="_blank" rel="external">https://cnodejs.org/topic/53774ffecbcc396349ca1155</a></p>
 <p><a href="http://stackoverflow.com/questions/7042340/node-js-error-cant-set-headers-after-they-are-sent" target="_blank" rel="external">http://stackoverflow.com/questions/7042340/node-js-error-cant-set-headers-after-they-are-sent</a></p>
 <h2 id="6、Redis:ERR_wrong_number_of_arguments_for_‘set’_command">6、Redis:ERR wrong number of arguments for ‘set’ command</h2><p>将<a href="https://github.com/giscafer/Vue-order" target="_blank" rel="external">Vue-order</a>部署BAE的时候遇到此Redis报错问题，系统访问就会报此错误 最后查出是因为connect-redis插件版本引起的；（该原因也可能是代码引起）</p>
-<h2 id="7、express-session_deprecated_cookie_should_be_available_in_req-headers-cookie">7、express-session deprecated cookie should be available in req.headers.cookie</h2><p><a href="https://github.com/expressjs/session/issues/62" target="_blank" rel="external">https://github.com/expressjs/session/issues/62</a></p>
+<h2 id="7、express-session_deprecated_cookie_should_be_available_in_req-headers-cookie">7、express-session deprecated cookie should be available in req.headers.cookie</h2><p><a href="https://segmentfault.com/a/1190000004139342" target="_blank" rel="external">https://segmentfault.com/a/1190000004139342</a><br><a href="https://github.com/expressjs/session/issues/62" target="_blank" rel="external">https://github.com/expressjs/session/issues/62</a></p>
 <h2 id="8、Error:_Argument_passed_in_must_be_a_single_String_of_12_bytes_or_a_string_of_24_hex_characters">8、Error: Argument passed in must be a single String of 12 bytes or a string of 24 hex characters</h2><p>必须是24位16进制的字符，或者一个12字节的字符串</p>
 <p><a href="http://stackoverflow.com/questions/26453507/argument-passed-in-must-be-a-single-string-of-12-bytes" target="_blank" rel="external">http://stackoverflow.com/questions/26453507/argument-passed-in-must-be-a-single-string-of-12-bytes</a></p>
 <p><a href="https://docs.mongodb.org/manual/reference/object-id/" target="_blank" rel="external">https://docs.mongodb.org/manual/reference/object-id/</a></p>
@@ -906,64 +942,6 @@ define(<span class="string">'app'</span>, [<span class="string">'script/b'</span
       <category term="Hexo" scheme="http://giscafer.com/tags/Hexo/"/>
     
       <category term="Hexo" scheme="http://giscafer.com/categories/Hexo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[NodeJS 学习笔记]]></title>
-    <link href="http://giscafer.com/2015/08/20/nodejs-study-note/"/>
-    <id>http://giscafer.com/2015/08/20/nodejs-study-note/</id>
-    <published>2015-08-20T12:46:25.000Z</published>
-    <updated>2016-03-05T08:24:09.146Z</updated>
-    <content type="html"><![CDATA[<h3 id="CommonJS、CMD、AMD、Node-js与JavaScript">CommonJS、CMD、AMD、Node.js与JavaScript</h3><p>CMD是国内玉伯大神在开发SeaJS的时候提出来的，属于CommonJS的一种规范，此外还有AMD，其对于的框架是RequireJS:<br>1、二者都是异步模块定义（Asynchronuous Module Definition）的一个实现；<br>2、CMD和AMD都是CommonJS的一种规范的实现定义，RequireJS和SeaJS是对应的实践；<br>3、CMD和AMD的区别:CMD相当于按需加载，定义一个模块的时候不需要立即制定依赖模块，在需要的时候require就可以了，比较方便；而AMD则相反，定义模块的时候需要制定依赖模块，并以形参的方式引入factory中。<br><a id="more"></a></p>
-<pre><code><span class="comment">//AMD方式定义模块</span>
-define([<span class="string">'dep1'</span>,<span class="string">'dep2'</span>],<span class="function"><span class="keyword">function</span>(<span class="params">dep1,dep2</span>)</span>{
-     <span class="comment">//内部只能使用制定的模块</span>
-      <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{};
-});
-<span class="comment">//CMD</span>
-define(<span class="function"><span class="keyword">function</span>(<span class="params">require,exports,module</span>)</span>{
-   <span class="comment">//此处如果需要某XX模块，可以引入</span>
-   <span class="keyword">var</span> xx=<span class="built_in">require</span>(<span class="string">'XX'</span>);
-});
-</code></pre><p>4、JavaScript语言是弱结构性的，通过CommonJS定义一些规范，CMD和AMD得定义模块的方式对代码进行管理，使得更易维护；此外，NodeJS的诞生，对模块的规范定义，和包（npm）的概念的引入，让JS管理不再困难，一个字，爽爆了！</p>
-<hr>
-<h3 id="一、常用的Module">一、常用的Module</h3><p><code>node开发中用到的模块，记下</code></p>
-<p><strong>utility</strong> <a href="https://www.npmjs.com/package/utility" target="_blank" rel="external">A collection of useful utilities.</a> </p>
-<p><strong>bcrypt</strong> <a href="https://www.npmjs.com/package/bcrypt" target="_blank" rel="external">A bcrypt library for NodeJS.</a> </p>
-<p><strong>node-uuid</strong> <a href="https://www.npmjs.com/package/node-uuid" target="_blank" rel="external">生成uuid的模块</a></p>
-<p><strong>eventproxy</strong> <a href="https://www.npmjs.com/package/eventproxy" target="_blank" rel="external">An implementation of task/event based asynchronous pattern.</a></p>
-<p><strong>nodemailer</strong> <a href="https://www.npmjs.com/package/nodemailer" target="_blank" rel="external">Easy as cake e-mail sending from your Node.js applications</a><br><strong>nodemailer-smtp-transport</strong> <a href="https://github.com/andris9/nodemailer-smtp-transport" target="_blank" rel="external">（nodemailer1.0以上需要此辅助）https://github.com/andris9/nodemailer-smtp-transport</a></p>
-<p><strong>moment</strong> <a href="https://www.npmjs.com/package/moment" target="_blank" rel="external">Parse, validate, manipulate, and display dates</a></p>
-<p><strong>node-inspector</strong> <a href="https://www.npmjs.com/package/node-inspector" target="_blank" rel="external">Web Inspector based nodeJS debugger</a></p>
-<p><strong>connect-mongodb</strong> <a href="https://www.npmjs.com/package/connect-mongodb" target="_blank" rel="external">mongodb session store for connect</a></p>
-<p><strong>cookie-parser</strong> <a href="https://www.npmjs.com/package/cookie-parser" target="_blank" rel="external">cookie parsing with signatures</a></p>
-<p><strong>express-session</strong>  <a href="https://www.npmjs.com/package/express-session" target="_blank" rel="external">Simple session middleware for Express</a></p>
-<p><strong>body-parser</strong> <a href="https://www.npmjs.com/package/body-parser" target="_blank" rel="external">Node.js body parsing middleware</a></p>
-<p><strong>lodash</strong> <a href="https://lodash.com/" target="_blank" rel="external">由Underscore.js演变成的好用工具</a></p>
-<p><strong>connect-multiparty</strong> <a href="https://www.npmjs.com/package/connect-multiparty" target="_blank" rel="external">multipart parsing middleware for connect using multiparty</a></p>
-<p><strong>grunt-mocha-test</strong> <a href="https://www.npmjs.com/package/grunt-mocha-test" target="_blank" rel="external">【单元测试】A grunt task for running server side mocha tests</a></p>
-<p><strong>mocha</strong> JavaScript测试框架</p>
-<p><strong>chai</strong> should、expect等BDD测试</p>
-<p><strong>sequelize</strong> Sequelize is an easy-to-use multi sql dialect ORM for Node.js &amp; io.js. It currently supports MySQL, MariaDB, SQLite, PostgreSQL and MSSQL.——<a href="http://sequelizejs.com" target="_blank" rel="external">github</a> </p>
-<p><strong>node-schedule</strong> A cron-like and not-cron-like job scheduler for Node.——<a href="https://github.com/node-schedule/node-schedule" target="_blank" rel="external">github</a></p>
-<p><strong>superagent</strong> Ajax with less suck - (and node.js HTTP client to match) ——<a href="http://visionmedia.github.com/superagent/" target="_blank" rel="external">github</a></p>
-<p><strong>morgan</strong> HTTP request logger middleware for node.js ——<a href="https://github.com/expressjs/morgan" target="_blank" rel="external">github</a></p>
-<p><strong>serve-favicon</strong> favicon serving middleware ——<a href="https://github.com/expressjs/serve-favicon" target="_blank" rel="external">github</a></p>
-<p><strong>cheerio</strong> Fast, flexible, and lean implementation of core jQuery designed specifically for the server. ——<a href="http://cheeriojs.github.io/cheerio/" target="_blank" rel="external">github</a></p>
-<hr>
-<h3 id="二、Grunt集成自动重启">二、Grunt集成自动重启</h3><p>1、安装grunt环境： <code>npm install grunt -g</code>和<code>npm install grunt-cli -g</code><br>2、安装 <code>npm install grunt-contrib-watch --save-dev</code><br>3、安装 <code>npm grunt-concurrent --save-dev</code><br>4、安装 <code>npm grunt-contrib-watch --save-dev</code><br>5、安装 <code>npm grunt-nodemon --save-dev</code><br>(–save-dev会将该模块信息保存到package.json里边)<br><a href="http://blog.csdn.net/allgis/article/details/46572815" target="_blank" rel="external">Nodemon和Grunt-Contrib-Watch: 有什么不同?</a></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h3 id="CommonJS、CMD、AMD、Node-js与JavaScript">CommonJS、CMD、AMD、Node.js与JavaScript</h3><p>CMD是国内玉伯大神在开发SeaJS的时候提出来的，属于CommonJS的一种规范，此外还有AMD，其对于的框架是RequireJS:<br>1、二者都是异步模块定义（Asynchronuous Module Definition）的一个实现；<br>2、CMD和AMD都是CommonJS的一种规范的实现定义，RequireJS和SeaJS是对应的实践；<br>3、CMD和AMD的区别:CMD相当于按需加载，定义一个模块的时候不需要立即制定依赖模块，在需要的时候require就可以了，比较方便；而AMD则相反，定义模块的时候需要制定依赖模块，并以形参的方式引入factory中。<br>]]>
-    
-    </summary>
-    
-      <category term="Node.js" scheme="http://giscafer.com/tags/Node-js/"/>
-    
-      <category term="npm" scheme="http://giscafer.com/tags/npm/"/>
-    
-      <category term="NodeJS" scheme="http://giscafer.com/categories/NodeJS/"/>
     
   </entry>
   
