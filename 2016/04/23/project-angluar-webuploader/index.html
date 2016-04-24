@@ -36,7 +36,7 @@
 
 
 
-  <meta name="keywords" content="Hexo,Hexo教程," />
+  <meta name="keywords" content="angluar,webuploader," />
 
 
 
@@ -47,29 +47,22 @@
   <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.2" />
 
 
-<meta name="description" content="###Hexo的介绍用一句话即可：
-A fast, simple &amp;amp; powerful blog framework,powered by Node.js
-Hexo是一个基于Node.js快而轻的强大博客框架，Hexo所生成的网页都是静态的，所以说他轻而快那是必然的，目前可以将其托管到gitcafe(国内）,github和heroku（国外）。giscafe’s bolg托管在gitcaf">
+<meta name="description" content="简述最近公司做个项目需要使用AngularJS重新封装图片上传控件，支持IE低版本等，之间看过JQuery-File-Upload，尝试使用了一些，觉得文件太多，不好修改；最后使用webuploader时因为其简洁的界面和使用方便；
+angluar-webuploader是使用angular指令封装的webuploader demo，弹窗上传图片，缩略图展示列表，翻页效果；支持点击缩略图查看大图详">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo静态博客搭建教程[1]">
-<meta property="og:url" content="http://giscafer.com/2014/04/27/hexo-build-course01/index.html">
+<meta property="og:title" content="图片上传控件angluar-webuploader">
+<meta property="og:url" content="http://giscafer.com/2016/04/23/project-angluar-webuploader/index.html">
 <meta property="og:site_name" content="Giscafer's blog">
-<meta property="og:description" content="###Hexo的介绍用一句话即可：
-A fast, simple &amp;amp; powerful blog framework,powered by Node.js
-Hexo是一个基于Node.js快而轻的强大博客框架，Hexo所生成的网页都是静态的，所以说他轻而快那是必然的，目前可以将其托管到gitcafe(国内）,github和heroku（国外）。giscafe’s bolg托管在gitcaf">
-<meta property="og:image" content="http://giscafer.github.io/static/img/hexo_course_01.jpg">
-<meta property="og:image" content="http://giscafer.github.io/static/img/hexo_course_02.jpg">
-<meta property="og:image" content="http://giscafer.github.io/static/img/hexo_course_04.jpg">
-<meta property="og:image" content="http://giscafer.github.io/static/img/hexo_course_03.jpg">
-<meta property="og:image" content="http://giscafer.github.io/static/img/hexo_course_05.jpg">
-<meta property="og:image" content="http://giscafer.github.io/static/img/hexo_course_06.jpg">
-<meta property="og:image" content="http://giscafer.github.io/static/img/hexo_course_07.jpg">
-<meta property="og:updated_time" content="2015-10-18T05:08:01.108Z">
+<meta property="og:description" content="简述最近公司做个项目需要使用AngularJS重新封装图片上传控件，支持IE低版本等，之间看过JQuery-File-Upload，尝试使用了一些，觉得文件太多，不好修改；最后使用webuploader时因为其简洁的界面和使用方便；
+angluar-webuploader是使用angular指令封装的webuploader demo，弹窗上传图片，缩略图展示列表，翻页效果；支持点击缩略图查看大图详">
+<meta property="og:image" content="https://raw.githubusercontent.com/giscafer/angular-webuploader/master/images/screenshot.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/giscafer/angular-webuploader/master/images/screenshot2.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/giscafer/angular-webuploader/master/images/screenshot1.png">
+<meta property="og:updated_time" content="2016-04-24T02:46:16.068Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo静态博客搭建教程[1]">
-<meta name="twitter:description" content="###Hexo的介绍用一句话即可：
-A fast, simple &amp;amp; powerful blog framework,powered by Node.js
-Hexo是一个基于Node.js快而轻的强大博客框架，Hexo所生成的网页都是静态的，所以说他轻而快那是必然的，目前可以将其托管到gitcafe(国内）,github和heroku（国外）。giscafe’s bolg托管在gitcaf">
+<meta name="twitter:title" content="图片上传控件angluar-webuploader">
+<meta name="twitter:description" content="简述最近公司做个项目需要使用AngularJS重新封装图片上传控件，支持IE低版本等，之间看过JQuery-File-Upload，尝试使用了一些，觉得文件太多，不好修改；最后使用webuploader时因为其简洁的界面和使用方便；
+angluar-webuploader是使用angular指令封装的webuploader demo，弹窗上传图片，缩略图展示列表，翻页效果；支持点击缩略图查看大图详">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -81,7 +74,7 @@ Hexo是一个基于Node.js快而轻的强大博客框架，Hexo所生成的网�
 
 
 
-  <title> Hexo静态博客搭建教程[1] | Giscafer's blog </title>
+  <title> 图片上传控件angluar-webuploader | Giscafer's blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -257,7 +250,7 @@ Hexo是一个基于Node.js快而轻的强大博客框架，Hexo所生成的网�
             
             
               
-                Hexo静态博客搭建教程[1]
+                图片上传控件angluar-webuploader
               
             
           </h1>
@@ -266,8 +259,8 @@ Hexo是一个基于Node.js快而轻的强大博客框架，Hexo所生成的网�
         <div class="post-meta">
           <span class="post-time">
             发表于
-            <time itemprop="dateCreated" datetime="2014-04-27T15:35:41+08:00" content="2014-04-27">
-              2014-04-27
+            <time itemprop="dateCreated" datetime="2016-04-23T22:47:13+08:00" content="2016-04-23">
+              2016-04-23
             </time>
           </span>
 
@@ -276,8 +269,8 @@ Hexo是一个基于Node.js快而轻的强大博客框架，Hexo所生成的网�
               &nbsp; | &nbsp; 分类于
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">Hexo</span>
+                  <a href="/categories/Project/" itemprop="url" rel="index">
+                    <span itemprop="name">Project</span>
                   </a>
                 </span>
 
@@ -292,8 +285,8 @@ Hexo是一个基于Node.js快而轻的强大博客框架，Hexo所生成的网�
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2014/04/27/hexo-build-course01/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2014/04/27/hexo-build-course01/" itemprop="commentsCount"></span>
+                <a href="/2016/04/23/project-angluar-webuploader/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/23/project-angluar-webuploader/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -312,38 +305,16 @@ Hexo是一个基于Node.js快而轻的强大博客框架，Hexo所生成的网�
       
 
       
-        <span itemprop="articleBody"><p>###Hexo的介绍用一句话即可：</p>
-<p><strong>A fast, simple &amp; powerful blog framework,powered by Node.js</strong></p>
-<p>Hexo是一个基于Node.js快而轻的强大博客框架，Hexo所生成的网页都是静态的，所以说他轻而快那是必然的，目前可以将其托管到<code>gitcafe</code>(国内）,<code>github</code>和<code>heroku</code>（国外）。giscafe’s bolg托管在<code>gitcafe</code>，理由简单，两个名称很像，O(∩_∩)O哈哈哈~<br>Hexo作者来自台湾：<a href="https://github.com/tommy351/hexo" target="_blank" rel="external">@tommy351</a></p>
-<p>Hexo搭建教程官方的帮助文档很详细，查看官方版版主文档请移步：<a href="http://hexo.io/docs/" target="_blank" rel="external">Hexo Documentation</a></p>
+        <span itemprop="articleBody"><h2 id="简述">简述</h2><p>最近公司做个项目需要使用AngularJS重新封装图片上传控件，支持IE低版本等，之间看过<code>JQuery-File-Upload</code>，尝试使用了一些，觉得文件太多，不好修改；最后使用<a href="http://fex.baidu.com/webuploader" target="_blank" rel="external">webuploader</a>时因为其简洁的界面和使用方便；</p>
+<p><code>angluar-webuploader</code>是使用angular指令封装的webuploader demo，弹窗上传图片，缩略图展示列表，翻页效果；支持点击缩略图查看大图详情；</p>
 <a id="more"></a>
-<p>下边介绍一下如何在gitcafe上搭建Hexo博客：<br>首先整体步骤有几个：</p>
-<blockquote>
-<ul>
-<li><strong>下载Git和Nodejs安装到电脑上</strong>，我使用的是<a href="http://pan.baidu.com/s/1o6LQINK" target="_blank" rel="external">Git</a>（版本为1.9.2）和<a href="http://pan.baidu.com/s/1o6LQINK" target="_blank" rel="external">Node.js</a>（版本为Win7 32位），建议到<a href="http://git-scm.com/" target="_blank" rel="external">Git</a>和<a href="http://nodejs.org/" target="_blank" rel="external">Nodejs</a>官网下载适合自己的版本</li>
-<li><strong>注册<a href="http://gitcafe.com/signup?invited_by=giscafe" target="_blank" rel="external">gitcafe</a>账号</strong></li>
-<li><strong>安装Hexo程序</strong></li>
-<li><strong>博客配置托管到gitcafe</strong></li>
-</ul>
-</blockquote>
-<p>###（1）下载Git和Nodejs安装到电脑上</p>
-<p>到<a href="http://git-scm.com/" target="_blank" rel="external">Git</a>和<a href="http://nodejs.org/" target="_blank" rel="external">Nodejs</a>官网下载适合自己电脑的版本后安装，更改自己想要安装的位置，其他设置默认即可，安装很简单。这里不介绍，安装成功会多这两个：<br><img src="http://giscafer.github.io/static/img/hexo_course_01.jpg" alt=""></p>
-<p>###（2）新建目录</p>
-<p>在自己喜欢的一个目录下新建一个目录，命名自定义，这里我命名为<code>hexo</code>,在这个文件夹内右键》选择<code>Git Bash</code>命令，会打开如图窗口<br><img src="http://giscafer.github.io/static/img/hexo_course_02.jpg" alt=""></p>
-<p>这就是传说中的Git命令窗口，更多关于Git的命令使用和教程可以网上搜索或者到官网学习。</p>
-<p>###（3）下载安装Hexo</p>
-<pre><code>$ npm <span class="operator"><span class="keyword">install</span> hexo -<span class="keyword">g</span></span>
-</code></pre><p>使用上面的命令来下载安装Hexo程序</p>
-<p>###（4）创建博客文件夹</p>
-<pre><code>$ hexo init <span class="keyword">blog </span>&amp;&amp; cd <span class="keyword">blog</span>
-</code></pre><p>或</p>
-<pre><code><span class="variable">$ </span>hexo init
-</code></pre><p>来创建博客目录，<code>$ hexo init blog &amp;&amp; cd blog</code>是在根目录下创建一个blog文件夹再创建博客，<code>$ hexo init</code>则为直接在根目录创建博客文件夹：<br><img src="http://giscafer.github.io/static/img/hexo_course_04.jpg" alt=""><br>最后文件夹如图：<br><img src="http://giscafer.github.io/static/img/hexo_course_03.jpg" alt=""></p>
-<p><code>PS:</code>下边是Hexo在Git里搭建的几个日后常用命令<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate      <span class="comment">//可以简写为$hexo g,本地文件更改后都需要执行一次，相当于提交更改</span></span><br><span class="line"></span><br><span class="line">$ hexo server        <span class="comment">//可以简写为$hexo s，本地服务启动，启动后可以在浏览器地址输入"localhost:4000"来访问博客，用于本地调试，满意了再提交</span></span><br><span class="line"></span><br><span class="line">$ hexo deploy        <span class="comment">//可以简写为$hexo d，提交代码到空间（托管处）</span></span><br></pre></td></tr></table></figure></p>
-<p>###（5）本地博客搭建完成<br>在git命令窗口中使用以下两个命令：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$hexo generate或hexo g</span><br><span class="line">$hexo server或hexo s</span><br></pre></td></tr></table></figure></p>
-<p><img src="http://giscafer.github.io/static/img/hexo_course_05.jpg" alt="hexo generate"><br><img src="http://giscafer.github.io/static/img/hexo_course_06.jpg" alt="hexo server"><br><code>[info] Hexo is running at http://localhost:4000/. Press Ctrl+C to stop</code><br>浏览器输入<a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a> 即可打开刚建好的Hexo博客了。<br><img src="http://giscafer.github.io/static/img/hexo_course_07.jpg" alt="Hello World"><br><strong>按<code>Ctrl+C</code>可以停止程序</strong></p>
-<p><em>通过以上几个步骤即可完成Hexo博客的本地搭建，托管gitcafe教程见下一篇</em></p>
-<p>作者 <a href="http://weibo.com/laohoubin" target="_blank" rel="external">@勞黑炭要好好好学习</a><br>2014 年 04月 28日    </p>
+<h2 id="截图">截图</h2><p><img src="https://raw.githubusercontent.com/giscafer/angular-webuploader/master/images/screenshot.png" alt="screenshot0"></p>
+<p><img src="https://raw.githubusercontent.com/giscafer/angular-webuploader/master/images/screenshot2.png" alt="screenshot1"></p>
+<p><img src="https://raw.githubusercontent.com/giscafer/angular-webuploader/master/images/screenshot1.png" alt="screenshot2"></p>
+<h2 id="使用">使用</h2><p>本demo没有给出java后台代码，后台代码也简单，一个文件读写+图片压缩，返回结果参考以下<code>json</code>格式；<br>然后将图片上传接口请求地址在<code>app.js</code>配置后即可。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">	<span class="string">"status"</span>:<span class="literal">true</span>,<span class="comment">//上传成功状态</span></span><br><span class="line">	<span class="string">"newName"</span>:<span class="string">"/test/temp/upload/picture/20160422/c0c0b8f7bc574ec88f891ff834b79bab.jpg"</span>,<span class="comment">//原图片路径</span></span><br><span class="line">	<span class="string">"thumbName"</span>:<span class="string">"/test/temp/upload/picture/20160422/thumb/c0c0b8f7bc574ec88f891ff834b79bab.jpg"</span><span class="comment">//缩略图路径</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<p>源码地址，欢迎学习交流<br><a href="https://github.com/giscafer/angular-webuploader" target="_blank" rel="external">https://github.com/giscafer/angular-webuploader</a></p>
 </span>
       
     </div>
@@ -352,9 +323,9 @@ Hexo是一个基于Node.js快而轻的强大博客框架，Hexo所生成的网�
       
         <div class="post-tags">
           
-            <a href="/tags/Hexo/" rel="tag">#Hexo</a>
+            <a href="/tags/angluar/" rel="tag">#angluar</a>
           
-            <a href="/tags/Hexo教程/" rel="tag">#Hexo教程</a>
+            <a href="/tags/webuploader/" rel="tag">#webuploader</a>
           
         </div>
       
@@ -363,17 +334,13 @@ Hexo是一个基于Node.js快而轻的强大博客框架，Hexo所生成的网�
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2014/04/27/hexo-config-setting/" rel="next" title="hexo博客配置文件">
-                <i class="fa fa-chevron-left"></i> hexo博客配置文件
+              <a href="/2016/04/13/node-oracledb-demo/" rel="next" title="nodejs链接oracle">
+                <i class="fa fa-chevron-left"></i> nodejs链接oracle
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2014/04/27/hexo-to-gitcafe_course/" rel="prev" title="Hexo静态博客搭建教程[2]">
-                Hexo静态博客搭建教程[2] <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -398,8 +365,8 @@ Hexo是一个基于Node.js快而轻的强大博客框架，Hexo所生成的网�
         
           <div class="comments" id="comments">
             
-              <div class="ds-thread" data-thread-key="2014/04/27/hexo-build-course01/"
-                   data-title="Hexo静态博客搭建教程[1]" data-url="http://giscafer.com/2014/04/27/hexo-build-course01/">
+              <div class="ds-thread" data-thread-key="2016/04/23/project-angluar-webuploader/"
+                   data-title="图片上传控件angluar-webuploader" data-url="http://giscafer.com/2016/04/23/project-angluar-webuploader/">
               </div>
             
           </div>
@@ -518,7 +485,7 @@ Hexo是一个基于Node.js快而轻的强大博客框架，Hexo所生成的网�
           <div class="post-toc">
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#简述"><span class="nav-number">1.</span> <span class="nav-text">简述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#截图"><span class="nav-number">2.</span> <span class="nav-text">截图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用"><span class="nav-number">3.</span> <span class="nav-text">使用</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>

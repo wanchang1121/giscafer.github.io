@@ -4,7 +4,7 @@
   <subtitle><![CDATA[知其然，知其所以然]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://giscafer.com/"/>
-  <updated>2016-04-13T04:19:47.613Z</updated>
+  <updated>2016-04-24T02:46:16.068Z</updated>
   <id>http://giscafer.com/</id>
   
   <author>
@@ -13,6 +13,37 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[图片上传控件angluar-webuploader]]></title>
+    <link href="http://giscafer.com/2016/04/23/project-angluar-webuploader/"/>
+    <id>http://giscafer.com/2016/04/23/project-angluar-webuploader/</id>
+    <published>2016-04-23T14:47:13.000Z</published>
+    <updated>2016-04-24T02:46:16.068Z</updated>
+    <content type="html"><![CDATA[<h2 id="简述">简述</h2><p>最近公司做个项目需要使用AngularJS重新封装图片上传控件，支持IE低版本等，之间看过<code>JQuery-File-Upload</code>，尝试使用了一些，觉得文件太多，不好修改；最后使用<a href="http://fex.baidu.com/webuploader" target="_blank" rel="external">webuploader</a>时因为其简洁的界面和使用方便；</p>
+<p><code>angluar-webuploader</code>是使用angular指令封装的webuploader demo，弹窗上传图片，缩略图展示列表，翻页效果；支持点击缩略图查看大图详情；</p>
+<a id="more"></a>
+<h2 id="截图">截图</h2><p><img src="https://raw.githubusercontent.com/giscafer/angular-webuploader/master/images/screenshot.png" alt="screenshot0"></p>
+<p><img src="https://raw.githubusercontent.com/giscafer/angular-webuploader/master/images/screenshot2.png" alt="screenshot1"></p>
+<p><img src="https://raw.githubusercontent.com/giscafer/angular-webuploader/master/images/screenshot1.png" alt="screenshot2"></p>
+<h2 id="使用">使用</h2><p>本demo没有给出java后台代码，后台代码也简单，一个文件读写+图片压缩，返回结果参考以下<code>json</code>格式；<br>然后将图片上传接口请求地址在<code>app.js</code>配置后即可。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">	<span class="string">"status"</span>:<span class="literal">true</span>,<span class="comment">//上传成功状态</span></span><br><span class="line">	<span class="string">"newName"</span>:<span class="string">"/test/temp/upload/picture/20160422/c0c0b8f7bc574ec88f891ff834b79bab.jpg"</span>,<span class="comment">//原图片路径</span></span><br><span class="line">	<span class="string">"thumbName"</span>:<span class="string">"/test/temp/upload/picture/20160422/thumb/c0c0b8f7bc574ec88f891ff834b79bab.jpg"</span><span class="comment">//缩略图路径</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<p>源码地址，欢迎学习交流<br><a href="https://github.com/giscafer/angular-webuploader" target="_blank" rel="external">https://github.com/giscafer/angular-webuploader</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="简述">简述</h2><p>最近公司做个项目需要使用AngularJS重新封装图片上传控件，支持IE低版本等，之间看过<code>JQuery-File-Upload</code>，尝试使用了一些，觉得文件太多，不好修改；最后使用<a href="http://fex.baidu.com/webuploader">webuploader</a>时因为其简洁的界面和使用方便；</p>
+<p><code>angluar-webuploader</code>是使用angular指令封装的webuploader demo，弹窗上传图片，缩略图展示列表，翻页效果；支持点击缩略图查看大图详情；</p>]]>
+    
+    </summary>
+    
+      <category term="angluar" scheme="http://giscafer.com/tags/angluar/"/>
+    
+      <category term="webuploader" scheme="http://giscafer.com/tags/webuploader/"/>
+    
+      <category term="Project" scheme="http://giscafer.com/categories/Project/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[nodejs链接oracle]]></title>
@@ -919,33 +950,6 @@ define(<span class="string">'app'</span>, [<span class="string">'script/b'</span
       <category term="前端优化" scheme="http://giscafer.com/tags/%E5%89%8D%E7%AB%AF%E4%BC%98%E5%8C%96/"/>
     
       <category term="前端优化" scheme="http://giscafer.com/categories/%E5%89%8D%E7%AB%AF%E4%BC%98%E5%8C%96/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[SeaJS配置使用学习笔记]]></title>
-    <link href="http://giscafer.com/2015/09/05/seajs-intro/"/>
-    <id>http://giscafer.com/2015/09/05/seajs-intro/</id>
-    <published>2015-09-05T14:48:47.000Z</published>
-    <updated>2015-09-05T15:28:43.095Z</updated>
-    <content type="html"><![CDATA[<p>SeaJS确实简单，看<a href="http://seajs.org" target="_blank" rel="external">官网</a>介绍只需要5分钟就可以基本了解其使用方法，但是中间也有坑，官方文档并没有介绍很详细，这坑可能在你用了SeaJS后才会遇到。<br><a id="more"></a></p>
-<p>SeaJS在使用之前必须要一段配置代码：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">seajs.config(&#123;</span><br><span class="line">           <span class="comment">//遵循seajs的ID和路径原则：https://github.com/seajs/seajs/issues/930</span></span><br><span class="line">           base: <span class="string">"./"</span>,</span><br><span class="line">           <span class="comment">//设置路径，方便跨目录调用</span></span><br><span class="line">           paths:&#123;</span><br><span class="line">               <span class="comment">//应用模块</span></span><br><span class="line">               <span class="string">'app'</span>: <span class="string">'app'</span>,</span><br><span class="line">               <span class="comment">//类库</span></span><br><span class="line">               <span class="string">'module'</span>: <span class="string">'sea-modules'</span>,</span><br><span class="line">               <span class="comment">//通用模块</span></span><br><span class="line">               <span class="string">'common'</span>: <span class="string">'common'</span></span><br><span class="line">           &#125;,</span><br><span class="line">           <span class="comment">//别名配置，配置之后可在模块中使用require调用 require('jquery');</span></span><br><span class="line">           alias: &#123;</span><br><span class="line">               <span class="comment">//此路径下的【module】映射是上边paths中的module，也就是</span></span><br><span class="line">               <span class="comment">//翻译为sea-modules/jquery/jquery/1.10.1/jquery.js</span></span><br><span class="line">               <span class="string">"jquery"</span>: <span class="string">"module/jquery/jquery/1.10.1/jquery.js"</span></span><br><span class="line">           &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
-<p>其中，<code>base</code>路径很重要，Sea.js 在解析顶级标识时，会相对 base 路径来解析，require加载模块时查找路径也和此相关。也就是你sea.js放置的位置要合适，使得路径简单些。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">  <span class="comment">// 调用定义模块</span></span><br><span class="line">seajs.use([<span class="string">'jquery'</span>,<span class="string">'js/test'</span>], <span class="function"><span class="keyword">function</span>(<span class="params">$</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'jquery'</span>, $)</span><br><span class="line">    $(<span class="string">'#hhhh'</span>).html(<span class="string">'Hello SeaJS'</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p><strong>test.js文件代码</strong></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">define(<span class="function"><span class="keyword">function</span>(<span class="params">require, exports, module</span>) </span>&#123;</span><br><span class="line"><span class="comment">//加载commonUtil模块（上班paths映射common为common。故目录为：common/commonUtil）</span></span><br><span class="line"><span class="built_in">window</span>.c = <span class="built_in">require</span>(<span class="string">'common/commonUtil'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'c'</span>, c);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p>其实中间是有坑的，<code>juery</code>就是一个坑，如果修改了<code>base</code>，路径的改变就要求你需要改变你定义的一些模块的id，不然会在<code>var a=require（&#39;modulename&#39;);</code>的时候a为<code>null</code>。比如修改jquery模块下额id<br><img src="http://giscafer.github.io/static/img/seajs-intro01.png" alt="base路径改变后需要修改jquery的id"></p>
-<p><img src="http://giscafer.github.io/static/img/seajs-intro02.png" alt="基本结构"><br>详情请看：<a href="https://github.com/seajs/seajs/issues/930" target="_blank" rel="external">https://github.com/seajs/seajs/issues/930</a><br><code>很多坑前辈都是走过的，我们可以搜索参考他们的解决办法</code></p>
-<p>》》》》》》<a href="http://giscafer.github.io/static/uploadfile/seajs-intro-demo.zip" target="_blank" rel="external">demo下载</a></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>SeaJS确实简单，看<a href="http://seajs.org">官网</a>介绍只需要5分钟就可以基本了解其使用方法，但是中间也有坑，官方文档并没有介绍很详细，这坑可能在你用了SeaJS后才会遇到。<br>]]>
-    
-    </summary>
-    
-      <category term="SeaJS" scheme="http://giscafer.com/tags/SeaJS/"/>
-    
-      <category term="SeaJS" scheme="http://giscafer.com/categories/SeaJS/"/>
     
   </entry>
   
