@@ -4,7 +4,7 @@
   <subtitle><![CDATA[知其然，知其所以然]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://giscafer.com/"/>
-  <updated>2016-04-24T02:46:16.068Z</updated>
+  <updated>2016-06-06T03:35:44.728Z</updated>
   <id>http://giscafer.com/</id>
   
   <author>
@@ -13,6 +13,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[自制Echarts地图数据 mapshaper-plus]]></title>
+    <link href="http://giscafer.com/2016/06/06/echarts-data-map-project/"/>
+    <id>http://giscafer.com/2016/06/06/echarts-data-map-project/</id>
+    <published>2016-06-06T03:32:47.000Z</published>
+    <updated>2016-06-06T03:35:44.728Z</updated>
+    <content type="html"><![CDATA[<h1 id="mapshaper-plus">mapshaper-plus</h1><p>基于<a href="https://github.com/mbloch/mapshaper" target="_blank" rel="external">mapshaper</a>对geojson地图数据的坐标信息进行压缩编码，并提供可直接生成压缩编码后的echarts map数据格式</p>
+<a id="more"></a>
+<h2 id="Demo">Demo</h2><p><a href="http://giscafer.com/mapshaper-plus/">http://giscafer.com/mapshaper-plus/</a></p>
+<h2 id="Description">Description</h2><p><strong>介绍</strong> ——<a href="https://github.com/mbloch/mapshaper" target="_blank" rel="external">mapshaper</a>可以将多种数据格式（Shapefile, GeoJSON, TopoJSON<br>和 Zip files）导入后，对地图的编辑和导出（Shapefile, GeoJSON, TopoJSON, DSV, SVG），功能强大和简单易用。</p>
+<p><code>mapshaper-plus</code>是在<code>mapshaper</code>基础上拓展对地图坐标信息的压缩编码，很大程度上减小了文件的代码行数和字节大小：譬如一个贵州省的数据，原始的<code>geojson</code>数据会在<code>30M</code>左右，但在对坐标信息压缩编码后，仅为<code>1.4M</code>。</p>
+<p><strong>背景</strong> ——在做echarts图表统计时，需要自制地图数据，但官方没有提供一个平台可以直接将<code>shp文件</code>转化为压缩后的<code>json</code>或<code>js</code>格式的地图文件，而<code>mapshaper</code>导出的json数据没有压缩，数据量过大。</p>
+<p>体验可以访问<a href="http://giscafer.com/mapshaper-plus/">mapshaper-plus在线demo</a></p>
+<h2 id="Screenshot">Screenshot</h2><p><img src="https://raw.githubusercontent.com/giscafer/mapshaper-plus/master/images/echarts01.png" alt="导出压缩版的数据"></p>
+<h2 id="Github">Github</h2><p><a href="https://github.com/giscafer/mapshaper-plus" target="_blank" rel="external">https://github.com/giscafer/mapshaper-plus</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h1 id="mapshaper-plus">mapshaper-plus</h1><p>基于<a href="https://github.com/mbloch/mapshaper">mapshaper</a>对geojson地图数据的坐标信息进行压缩编码，并提供可直接生成压缩编码后的echarts map数据格式</p>]]>
+    
+    </summary>
+    
+      <category term="echarts地图" scheme="http://giscafer.com/tags/echarts%E5%9C%B0%E5%9B%BE/"/>
+    
+      <category term="mapshaper" scheme="http://giscafer.com/tags/mapshaper/"/>
+    
+      <category term="Project" scheme="http://giscafer.com/categories/Project/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[图片上传控件angluar-webuploader]]></title>
@@ -907,49 +936,6 @@ define(<span class="string">'app'</span>, [<span class="string">'script/b'</span
       <category term="GeoTools" scheme="http://giscafer.com/tags/GeoTools/"/>
     
       <category term="GeoTools" scheme="http://giscafer.com/categories/GeoTools/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[前端网站性能优化14点]]></title>
-    <link href="http://giscafer.com/2015/09/06/web-performance-optimization/"/>
-    <id>http://giscafer.com/2015/09/06/web-performance-optimization/</id>
-    <published>2015-09-06T15:28:44.000Z</published>
-    <updated>2015-09-07T04:55:13.372Z</updated>
-    <content type="html"><![CDATA[<p>了解前端必备的优化内容，这作为开发的标准的话，会让我们养成好的编码风格，并做到后期优化内容更少。下边是在学习前端优化记录的笔记内容。<strong>推荐书《高性能网站建设指南》</strong></p>
-<h3 id="1、尽可能的减少_HTTP_请求数">1、尽可能的减少 HTTP 请求数</h3><p>前端页面初始化的时候，会在服务器下载外部文件，比如图片、js、css文件等，Http请求次数越多，消耗的时间越长，有效的将图片和js\css文件合并，减少Http的请求可以提升性能优化</p>
-<a id="more"></a>
-<h3 id="2、_使用CDN（内容分发网络）">2、 使用CDN（内容分发网络）</h3><p>CDN 意思是尽可能避免互联网上可能影响数据传输速度和稳定性的瓶颈和环节，使内容传输的更快、更稳定。</p>
-<h3 id="3、添加Expire/Cache-Control头">3、添加Expire/Cache-Control头</h3><p><code>expire头</code>的内容是一个时间值，值就是资源的本地的过期时间、存在本地。在本地缓存阶段，找到对应的资源值，当前时间还没超过资源的过期时间，就直接使用这个资源，不会发送http请求。</p>
-<p><code>Cache-Control</code>是http协议中常用的头部之一，顾名思义，他是负责控制页面缓存机制，如果该头部指示缓存，缓存的内容也会缓存在本地，操作流程和expire相似，但是也有不同的地方，cache-control有更多的选项，而且也有更多的处理方式。</p>
-<h3 id="4、启用Gzip压缩">4、启用Gzip压缩</h3><p>HTML、php、js、css、xml、txt都可以使用Gzip压缩使得文件变小，提升文件传输速度。</p>
-<h3 id="5、把CSS放在页面最上面">5、把CSS放在页面最上面</h3><p>为了提高浏览器的渲染性能，避免页面出现空白或者闪烁问题，应该将CSS放在页面顶部，或者head里边。</p>
-<p>###6、 将script放在页面最下面</p>
-<p>和DOM加载顺序有关，由于script标签的引入和加载消耗时间，而浏览器渲染的时候，CSS和script标签其实都是阻塞的，浏览器加载script的时候，下载完毕并执行，这个过程会阻塞进程。文件大的时候影响着页面的渲染速度和效果，所以将script标签放到页面底部，不影响页面的加载</p>
-<h3 id="7、避免在CSS中使用Expressions">7、避免在CSS中使用Expressions</h3><p>CSS中使用Expressions，就是CSS表达式（CSS属性和JavaScript表达式）。在页面显示和缩放、页面滚动、移动的时候浏览器会计算CSS Expressions，移动鼠标的时候也会计算，这个网上可以搜到计算的方法，可以测试一下就发现很恐怖。</p>
-<h3 id="8、把JavaScript和CSS都放到外部文件中">8、把JavaScript和CSS都放到外部文件中</h3><p><strong>提出来的好处</strong>：提高了js和css的复用性，减小页面体积，提高了js和css的可维护性，可作为文件被浏览器单独缓存；<br><strong>坏处</strong>：文件多的时候回增加请求数量</p>
-<p><strong>放到页面好处</strong>：减少页面请求、加快页面渲染速度；<br><strong>坏处</strong>：不利于维护，可复用性差</p>
-<p><strong>写在页面内的情况：</strong></p>
-<pre><code>&gt; <span class="number">1</span>、只应用于一个页面
- &gt; <span class="number">2</span>、不经常被访问到
- &gt; <span class="number">3</span>、脚本和样式很少
-</code></pre><h3 id="9、减少DNS查询">9、减少DNS查询</h3><p>当浏览器访问www.giscafer.com的时候，浏览器会将域名解析为IP地址，然后根据DNS查找网站服务器，这个期间会消耗时间，有些网站是将js和img等放在多域下，所以DNS查询多的时候就需要考虑减少dns查询或者缓存来解决</p>
-<h3 id="10、压缩JavaScript和CSS">10、压缩JavaScript和CSS</h3><p>通过网上一些在线或者其他根据来压缩js、css文件，已减少文件体积，提升网页下载文件速度；</p>
-<h3 id="11、避免重定向">11、避免重定向</h3><p>http协议中重定向有301（页面被移动到了另外的位置）和302（被找到了）两种状态码。<br>另外301表示永久重定向，302表示临时重定向。对搜索引擎来说，爬虫会不定期的搜索站点，如果站点使用了301重定向，搜索引擎会将（a——&gt;b）b记录下来，删除a不再去爬虫。<br>当然，简单的从重定向来看，在这个过程中会消耗时间，所以不使用的话就尽量避免；另外特别注意的细微差别是，比如<a href="http://giscafer.com这个地址，就暗藏了重定向了，正确的为http://giscafer.com/才是直接访问的。其他的地址类似，一般后边加上`/`" target="_blank" rel="external">http://giscafer.com这个地址，就暗藏了重定向了，正确的为http://giscafer.com/才是直接访问的。其他的地址类似，一般后边加上`/`</a></p>
-<h3 id="12、移除重复的脚本">12、移除重复的脚本</h3><p>这也是个编码习惯和质量的问题；当重复的脚本下有相同的全局变量时，这个会影响到其他代码，或者是被全局污染了。js前端代码如果使用模块化管理的方式的话就避免了污染的情况。</p>
-<h3 id="13、配置实体标签（ETag）">13、配置实体标签（ETag）</h3><p>ETag——Entity Tag（实体标签），属于HTTP协议，受Web服务支持。使用特殊的字符串，来标识某个请求资源版本<br><img src="http://giscafer.github.io/static/img/web-performance-optimization13.png" alt="浏览器和服务器交流"><br>当每次Http请求的时候，服务器会判断该次请求的数据是否做过修改，如果没有修改过，则返回304状态码告诉浏览器，浏览器继续使用原来版本的资源，如果修改过了，则重新ETag标识，此时返回状态码是200。</p>
-<h3 id="14、使AJAX缓存">14、使AJAX缓存</h3><p>Ajax请求也是会消耗时间的，所以有时候也是需要缓存，但AJAX的POST请求的时候，是不被缓存的，而GET请求时可以被缓存的。<br><img src="http://giscafer.github.io/static/img/web-performance-optimization15.png" alt="POST和GET的区别"></p>
-<h3 id="15、Yslow网站性能优化工具">15、Yslow网站性能优化工具</h3><p>最后推荐Yslow工具，其实基于Firebug上使用的，如果是使用Firefox浏览器可以直接安装插件，Google chrome的话先安装FirebugLiteforChrome插件再安装Yslow</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>了解前端必备的优化内容，这作为开发的标准的话，会让我们养成好的编码风格，并做到后期优化内容更少。下边是在学习前端优化记录的笔记内容。<strong>推荐书《高性能网站建设指南》</strong></p>
-<h3 id="1、尽可能的减少_HTTP_请求数">1、尽可能的减少 HTTP 请求数</h3><p>前端页面初始化的时候，会在服务器下载外部文件，比如图片、js、css文件等，Http请求次数越多，消耗的时间越长，有效的将图片和js\css文件合并，减少Http的请求可以提升性能优化</p>]]>
-    
-    </summary>
-    
-      <category term="前端优化" scheme="http://giscafer.com/tags/%E5%89%8D%E7%AB%AF%E4%BC%98%E5%8C%96/"/>
-    
-      <category term="前端优化" scheme="http://giscafer.com/categories/%E5%89%8D%E7%AB%AF%E4%BC%98%E5%8C%96/"/>
     
   </entry>
   
