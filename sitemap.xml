@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://giscafer.com/2016/03/08/npm-registry/</loc>
+    <lastmod>2016-06-19T15:23:20.546Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://giscafer.com/2016/06/06/echarts-data-map-project/</loc>
     <lastmod>2016-06-06T03:35:44.728Z</lastmod>
   </url>
@@ -29,11 +34,6 @@
   <url>
     <loc>http://giscafer.com/aboutme/cv.html</loc>
     <lastmod>2016-03-26T08:08:44.884Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://giscafer.com/2016/03/08/npm-registry/</loc>
-    <lastmod>2016-03-22T14:15:19.197Z</lastmod>
   </url>
   
   <url>

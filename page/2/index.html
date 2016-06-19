@@ -309,7 +309,9 @@
 <p>更换镜像方式很多种，参考官方<a href="http://npm.taobao.org/" target="_blank" rel="external">文档说明</a></p>
 <p>更方便的方式是，在c盘用户目录下，找到<code>.npmrc</code>文件，加入如下代码即可。</p>
 <figure class="highlight tcl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">registry</span> = <span class="keyword">http</span>://<span class="keyword">registry</span>.npm.taobao.org</span><br></pre></td></tr></table></figure>
-<p>但是这样做有个问题，发布npm插件的时候需要<code>npm adduser</code>，如果<code>.npmrc</code>文件填了这个的话，是登录不上的，<br>所以记得发布插件的时候删除了，或者是通过上边<code>文档说明</code>提供的其他方式解决。</p>
+<p>或者手动设置</p>
+<pre><code>npm config <span class="keyword">set</span> <span class="keyword">registry</span> <span class="keyword">http</span>://<span class="keyword">registry</span>.npm.taobao.org/
+</code></pre><p>但是这样做有个问题，发布npm插件的时候需要<code>npm adduser</code>，如果<code>.npmrc</code>文件填了这个的话，是登录不上的，<br>所以记得发布插件的时候删除了，或者是通过上边<code>文档说明</code>提供的其他方式解决。</p>
 
             
           </span>
