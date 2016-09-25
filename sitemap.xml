@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://giscafer.com/aboutme/cv.html</loc>
+    <lastmod>2016-09-25T08:38:43.405Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://giscafer.com/2016/08/28/project-git-batch-file-builder/</loc>
     <lastmod>2016-08-28T14:48:21.102Z</lastmod>
   </url>
@@ -9,11 +14,6 @@
   <url>
     <loc>http://giscafer.com/2016/08/10/the-interveiw-for-a-second-job/</loc>
     <lastmod>2016-08-20T09:04:53.971Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://giscafer.com/aboutme/cv.html</loc>
-    <lastmod>2016-07-01T13:50:39.237Z</lastmod>
   </url>
   
   <url>
