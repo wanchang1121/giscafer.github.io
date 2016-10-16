@@ -245,6 +245,104 @@
             
             
               
+                <a class="post-title-link" href="/2015/10/15/fullcalendar-schedule-secondary-del/" itemprop="url">
+                  基于fullCalendar二次开发的排班管理和考勤签到功能
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            发表于
+            <time itemprop="dateCreated" datetime="2015-10-15T00:59:48+08:00" content="2015-10-15">
+              2015-10-15
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; 分类于
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/10/15/fullcalendar-schedule-secondary-del/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/15/fullcalendar-schedule-secondary-del/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <p>最近做个GIS的巡护系统需要开发一个排班管理功能和一个考勤签到统计功能，在查找实现方式和插件后，决定使用<code>fullCalendar</code>进行二次开发来实现；<code>fullCalendar</code>是一个jQuery日历插件，使用它主要是为了借助其日期功能的实现。（另外，有个和fullCalendar类型的日历插件是<code>dhtmlxScheduler</code>，都能达到大致一样的效果）</p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2015/10/15/fullcalendar-schedule-secondary-del/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
                 <a class="post-title-link" href="/2015/09/15/jquery-mp3-demo/" itemprop="url">
                   jquery-mp3.js模仿站长之家的音乐播放效果
                 </a>
@@ -622,105 +720,6 @@
 
 
     
-      
-
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                <a class="post-title-link" href="/2015/09/03/hexo-archive-setting/" itemprop="url">
-                  Hexo添加归档widget并扩展展开和收起功能
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            发表于
-            <time itemprop="dateCreated" datetime="2015-09-03T14:15:05+08:00" content="2015-09-03">
-              2015-09-03
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp; 分类于
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">Hexo</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2015/09/03/hexo-archive-setting/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/03/hexo-archive-setting/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <h3 id="1、以下是添加archvie（归档）模块代码：">1、以下是添加archvie（归档）模块代码：</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"> <span class="tag">&lt;<span class="title">%</span> <span class="attribute">if</span> (<span class="attribute">site.posts.length</span>)&#123; %&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"archive_side"</span> <span class="attribute">class</span>=<span class="value">"widget tag"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">p</span> <span class="attribute">class</span>=<span class="value">"title"</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"&lt;%- config.root %&gt;archives"</span>&gt;</span><span class="tag">&lt;<span class="title">%=</span> <span class="attribute">__</span>('<span class="attribute">archive_a</span>') %&gt;</span><span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">p</span>&gt;</span></span><br><span class="line">   	 <span class="tag">&lt;<span class="title">%-</span> <span class="attribute">list_archives</span>(&#123;'<span class="attribute">display_count</span>'<span class="attribute">:2</span>&#125;) %&gt;</span><span class="comment">&lt;!--此处的代码是扩展--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">%</span> <span class="attribute">if</span> (<span class="attribute">site.posts.length</span>&gt;</span>3)&#123; %&gt;</span><br><span class="line">    <span class="tag">&lt;<span class="title">%&#125;</span> %&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">%</span> &#125; %&gt;</span></span><br></pre></td></tr></table></figure>
-<p><code>list_archives({&#39;display_count&#39;:2}</code>这句话中传的参数是扩展的，下边会介绍</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/09/03/hexo-archive-setting/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -763,7 +762,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">32</span>
+              <span class="site-state-item-count">33</span>
               <span class="site-state-item-name">文章</span>
             </a>
           </div>
@@ -777,7 +776,7 @@
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">46</span>
+              <span class="site-state-item-count">48</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>
