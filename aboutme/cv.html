@@ -39,6 +39,7 @@
                 </a>
                 <br>
                 <h3>劳厚宾</h3>
+                <small>前端经验：<span id="work_year"></span>年</small>
                 <h5>前端开发工程师，往全栈发展.</h5>
                 <small>低调闷骚，喜欢欧美音乐，热爱篮球运动；热爱互联网，专研前端技术.</small>
                 <p><a target="_blank" href="mailto:giscafer@outlook.com">giscafer@outlook.com</a></p>
@@ -72,8 +73,9 @@
                 </p>
                 <p>
                     <span class="l4">BootStrap</span>&nbsp;
-                    <span class="l5">PhotoShop</span>&nbsp;
+                    <span class="l5">React</span>&nbsp;
                     <span class="l6">ionic</span>&nbsp;
+                    <span class="l6">TypeScript</span>&nbsp;
                 </p>
                 <p><span>……</span></p>
             </section>
@@ -138,6 +140,7 @@
     <script src="../lib/reveal.js/lib/js/head.min.js"></script>
     <script src="../lib/reveal.js/js/reveal.js"></script>
     <script>
+        document.getElementById('work_year').innerHTML=new Date().getFullYear()-new Date('2013/12/01').getFullYear()
     // Full list of configuration options available at:
     // https://github.com/hakimel/reveal.js#configuration
     Reveal.initialize({
@@ -182,6 +185,7 @@
             32: 'next' //空格键
         }
     });
+
     </script>
 </body>
 
