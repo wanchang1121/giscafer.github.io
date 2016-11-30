@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title><![CDATA[Giscafer's blog]]></title>
-  <subtitle><![CDATA[知其然，知其所以然]]></subtitle>
+  
   <link href="/atom.xml" rel="self"/>
   <link href="http://giscafer.com/"/>
   <updated>2016-10-16T01:18:28.772Z</updated>
@@ -9,7 +9,7 @@
   
   <author>
     <name><![CDATA[giscafer]]></name>
-    
+    <email><![CDATA[giscafer@outlook.com]]></email>
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
