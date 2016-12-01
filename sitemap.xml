@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://giscafer.com/2015/09/06/web-performance-optimization/</loc>
+    <lastmod>2016-12-01T13:16:13.481Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://giscafer.com/2015/11/30/gulp-front-end-automated-builds/</loc>
     <lastmod>2016-12-01T13:14:47.818Z</lastmod>
   </url>
@@ -209,11 +214,6 @@
   <url>
     <loc>http://giscafer.com/static/demo/jquery-mp3/lib/style.css</loc>
     <lastmod>2015-09-15T05:04:29.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://giscafer.com/2015/09/06/web-performance-optimization/</loc>
-    <lastmod>2015-09-07T04:55:13.372Z</lastmod>
   </url>
   
   <url>
