@@ -133,10 +133,10 @@
   
   <entry>
     <title><![CDATA[前端面试笔记]]></title>
-    <link href="http://giscafer.com/2016/08/10/the-interveiw-for-a-second-job/"/>
-    <id>http://giscafer.com/2016/08/10/the-interveiw-for-a-second-job/</id>
+    <link href="http://giscafer.com/2016/08/10/the-interveiw-for-a-second-job-2016-08-10/"/>
+    <id>http://giscafer.com/2016/08/10/the-interveiw-for-a-second-job-2016-08-10/</id>
     <published>2016-08-10T09:02:41.000Z</published>
-    <updated>2016-08-20T09:04:53.971Z</updated>
+    <updated>2016-12-01T12:12:20.779Z</updated>
     <content type="html"><![CDATA[<p>面试邀请很多，最后只面试了4个，一方面心累了，一方面想通过新的平台再加强一下自己，今后再次去尝试。<br><a id="more"></a></p>
 <h3 id="2016-8-4_下午">2016-8-4 下午</h3><p>下午，面试了本周第一家公司（这也是两年以来，第二次面对面的面试，第一次是北京的老东家，一干就干了2年整），这次面试的是一家做闪购的公司，公司办公地理位置好，环境不错，主要做的是App产品，去了才知道招聘的前端就主要是App的前端，这也是我最弱的地方了，一直做PC端的前端，在今年的6月份，离职前两个月，才接手一个ionic+angularjs相关的H5 App开发，功能模块的开发，当时时间紧张，所有的时间都花费在功能模块的开发，界面UI这些都是用现成的ionic的样式或者bootstrap样式；也就是没有设计美化UI，直接开发功能。<br>这是传统行业的特点，开发的时候都优先功能第一。</p>
 <p>一直以来，我的App前端UI方向可以说是没有实践过的，给出一个设计图，通过HTML/CSS来仿真出来是有点困难，因为在老东家，这些都被美工、UI设计师包揽了。我能做的是在他们设计好的成品上进行简单的修改和调整，我是属<code>于偏JS方向的前端开发工程师</code></p>
@@ -185,7 +185,7 @@
     
       <category term="前端面试" scheme="http://giscafer.com/tags/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95/"/>
     
-      <category term="diary" scheme="http://giscafer.com/categories/diary/"/>
+      <category term="随笔" scheme="http://giscafer.com/categories/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
@@ -329,7 +329,7 @@
     <link href="http://giscafer.com/2016/03/18/diary2016-3-18/"/>
     <id>http://giscafer.com/2016/03/18/diary2016-3-18/</id>
     <published>2016-03-18T09:52:12.000Z</published>
-    <updated>2016-03-18T10:18:09.701Z</updated>
+    <updated>2016-12-01T12:11:18.929Z</updated>
     <content type="html"><![CDATA[<p>这是一篇简短而深刻的日记，记下此刻起（2016年3月18日17:58:35），日后在学习、工作用的技术知识点上，理解透彻其原理；做好一切<code>知其然，知其所以然</code>。</p>
 <p>怀有一颗求知若渴的心，客观看清自身不足；做好现在的工作，展望未来！</p>
 <p>写此谨记！</p>
@@ -342,7 +342,7 @@
     
       <category term="diary" scheme="http://giscafer.com/tags/diary/"/>
     
-      <category term="diary" scheme="http://giscafer.com/categories/diary/"/>
+      <category term="随笔" scheme="http://giscafer.com/categories/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
@@ -459,7 +459,7 @@
     <link href="http://giscafer.com/2016/02/11/diary-2016-02-11/"/>
     <id>http://giscafer.com/2016/02/11/diary-2016-02-11/</id>
     <published>2016-02-11T14:51:39.000Z</published>
-    <updated>2016-03-01T16:07:50.860Z</updated>
+    <updated>2016-12-01T12:11:10.171Z</updated>
     <content type="html"><![CDATA[<p>2014年7月，毕业工作，成为了一名程序猿，我算是误打误撞的进了it行业；公司是做gis相关的，工作是做web开发，平时也就写写JavaScript和html\css……，慢慢的，觉得乏味，偶然关注了互联网前端开发，发现目前工作并不算是真正的前端开发，从此，开始学习互联网前端开发相关技术，并热衷无法自拔……</p>
 <a id="more"></a>
 <p>上学，由于学校本专业（gis)的研究方向是农业或土壤，个人觉得偏离了当时gis流行的云计算或者大数据可视化分析，课程也没多少有趣的；另外，教学专业编程能力相对其他院校来说应该是最弱的，要求也是最低的吧；在上学的日子里，我已经对GIS就业方向感到了迷茫，也不知道什么缘由，我觉得我只能去学习编程，毕业能找份工作。不管什么学校，什么专业，靠的是自己，教学多么好还是差，学霸和学渣都会有……</p>
@@ -483,7 +483,7 @@
     
       <category term="随笔" scheme="http://giscafer.com/tags/%E9%9A%8F%E7%AC%94/"/>
     
-      <category term="diary" scheme="http://giscafer.com/categories/diary/"/>
+      <category term="随笔" scheme="http://giscafer.com/categories/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
