@@ -716,7 +716,7 @@ const Promise = require(<span class="string">'bluebird'</span>);
     <link href="http://giscafer.com/2015/12/02/amd-optimize-gulp/"/>
     <id>http://giscafer.com/2015/12/02/amd-optimize-gulp/</id>
     <published>2015-12-02T12:11:16.000Z</published>
-    <updated>2015-12-02T12:21:57.579Z</updated>
+    <updated>2016-12-01T13:13:55.502Z</updated>
     <content type="html"><![CDATA[<p>这里所说的<code>AMD</code>构建，是指<code>AMD</code>定义模块方式的代码构建。AMD=异步定义模块，具体查看官方<a href="https://github.com/amdjs/amdjs-api" target="_blank" rel="external">AMD</a>解释。</p>
 <p>首先，所谓构建就是将多个文件合并压缩等，但是对于<code>AMD</code>定义的模块来说，模块之间存在这依赖关系，<code>AMD</code>构建主要就是解决这种模块之间的依赖关系，构建的方式很多种，下边是gulp 的<code>amd-optimize</code>插件构建笔记。<br><a id="more"></a></p>
 <h3 id="使用gulp对AMD模块构建">使用gulp对AMD模块构建</h3><p>需要三个插件 <code>gulp amd-optimize gulp-concat</code></p>
@@ -794,7 +794,7 @@ define(<span class="string">'app'</span>, [<span class="string">'script/b'</span
     
       <category term="前端构建" scheme="http://giscafer.com/tags/%E5%89%8D%E7%AB%AF%E6%9E%84%E5%BB%BA/"/>
     
-      <category term="AMD" scheme="http://giscafer.com/categories/AMD/"/>
+      <category term="前端相关" scheme="http://giscafer.com/categories/%E5%89%8D%E7%AB%AF%E7%9B%B8%E5%85%B3/"/>
     
   </entry>
   
@@ -803,7 +803,7 @@ define(<span class="string">'app'</span>, [<span class="string">'script/b'</span
     <link href="http://giscafer.com/2015/11/30/gulp-front-end-automated-builds/"/>
     <id>http://giscafer.com/2015/11/30/gulp-front-end-automated-builds/</id>
     <published>2015-11-30T14:29:09.000Z</published>
-    <updated>2015-12-02T12:14:30.638Z</updated>
+    <updated>2016-12-01T13:14:47.818Z</updated>
     <content type="html"><![CDATA[<p>如果你是搞前端开发的，或者你每天都在写CSS、JavaScript等前端编程语言代码，如果你不知道什么叫前端自动化构建，那一般只有两种情况：</p>
 <ol>
 <li>你在传统软件行业，用着4、5年前网页开发方式工作;</li>
@@ -934,7 +934,7 @@ define(<span class="string">'app'</span>, [<span class="string">'script/b'</span
     
       <category term="前端构建" scheme="http://giscafer.com/tags/%E5%89%8D%E7%AB%AF%E6%9E%84%E5%BB%BA/"/>
     
-      <category term="AMD" scheme="http://giscafer.com/categories/AMD/"/>
+      <category term="前端相关" scheme="http://giscafer.com/categories/%E5%89%8D%E7%AB%AF%E7%9B%B8%E5%85%B3/"/>
     
   </entry>
   
@@ -943,7 +943,7 @@ define(<span class="string">'app'</span>, [<span class="string">'script/b'</span
     <link href="http://giscafer.com/2015/10/30/jfinal-setbaseview/"/>
     <id>http://giscafer.com/2015/10/30/jfinal-setbaseview/</id>
     <published>2015-10-30T13:49:31.000Z</published>
-    <updated>2015-10-30T14:21:14.291Z</updated>
+    <updated>2016-12-01T13:12:32.667Z</updated>
     <content type="html"><![CDATA[<h2 id="一、路由路径规则">一、路由路径规则</h2><blockquote>
 <p>1：模板路径= BaseViewPath + ViewPath + render时的参数</p>
 <p>2：当 render 时view的参数以 “/“ 打头，则模板路径使用从WebRoot下的绝对路</p>
@@ -986,7 +986,7 @@ define(<span class="string">'app'</span>, [<span class="string">'script/b'</span
     
       <category term="JFinal" scheme="http://giscafer.com/tags/JFinal/"/>
     
-      <category term="JFinal" scheme="http://giscafer.com/categories/JFinal/"/>
+      <category term="Java" scheme="http://giscafer.com/categories/Java/"/>
     
   </entry>
   
