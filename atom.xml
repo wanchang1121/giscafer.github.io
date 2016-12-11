@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://giscafer.com/"/>
-  <updated>2016-10-16T01:18:28.772Z</updated>
+  <updated>2016-12-11T03:45:42.904Z</updated>
   <id>http://giscafer.com/</id>
   
   <author>
@@ -13,6 +13,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[hexo-theme-cafe]]></title>
+    <link href="http://giscafer.com/2016/12/11/hexo-theme-cafe/"/>
+    <id>http://giscafer.com/2016/12/11/hexo-theme-cafe/</id>
+    <published>2016-12-11T03:40:35.000Z</published>
+    <updated>2016-12-11T03:45:42.904Z</updated>
+    <content type="html"><![CDATA[<p>尝试自己定制一个Hexo博客主题<code>Cafe</code>，Cafe 主题旨在追求简约、操作简单、阅读舒适度，详细介绍和源码见<a href="https://github.com/giscafer/hexo-theme-cafe" target="_blank" rel="external">https://github.com/giscafer/hexo-theme-cafe</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>尝试自己定制一个Hexo博客主题<code>Cafe</code>，Cafe 主题旨在追求简约、操作简单、阅读舒适度，详细介绍和源码见<a href="https://github.com/giscafer/hexo-theme-cafe" target="_blank" ]]>
+    </summary>
+    
+      <category term="Hexo" scheme="http://giscafer.com/tags/Hexo/"/>
+    
+      <category term="cafe" scheme="http://giscafer.com/tags/cafe/"/>
+    
+      <category term="Project" scheme="http://giscafer.com/categories/Project/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[WebGL Earth台风监测web应用webglearth-typhoon]]></title>
@@ -987,34 +1007,6 @@ define(<span class="string">'app'</span>, [<span class="string">'script/b'</span
       <category term="JFinal" scheme="http://giscafer.com/tags/JFinal/"/>
     
       <category term="Java" scheme="http://giscafer.com/categories/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[利用swiftype为hexo博客添加站内搜索]]></title>
-    <link href="http://giscafer.com/2015/10/18/swiftype-for-hexo/"/>
-    <id>http://giscafer.com/2015/10/18/swiftype-for-hexo/</id>
-    <published>2015-10-18T07:42:47.000Z</published>
-    <updated>2015-10-18T08:04:47.383Z</updated>
-    <content type="html"><![CDATA[<p>之前使用百度站内搜索，本质其实是跳转到百度页面搜索站点内容，效果也不好，今天更换闻名已久的swiftype。</p>
-<a id="more"></a>
-<h3 id="下边看效果图：">下边看效果图：</h3><p><img src="/static/img/swiftype-for-hexo1.png" alt="自动搜索效果"><br><img src="/static/img/swiftype-for-hexo2.png" alt="回车搜索结果弹窗"></p>
-<h3 id="实现过程">实现过程</h3><p><strong>1、注册swiftype账号，创建search engine，创建步骤简单详细；</strong></p>
-<p><strong>2、添加search.ejs widget文件</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;form <span class="class"><span class="keyword">class</span></span>=<span class="string">"search"</span> action=<span class="string">""</span> method=<span class="string">"get"</span> accept-charset=<span class="string">"utf-8"</span>&gt;</span><br><span class="line">		<span class="xml"><span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"text"</span> <span class="attribute">class</span>=<span class="value">"st-default-search-input"</span> <span class="attribute">maxlength</span>=<span class="value">"20"</span> <span class="attribute">style</span>=<span class="value">"height:40px"</span> <span class="attribute">placeholder</span>=<span class="value">"Search"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">form</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript"</span>&gt;</span><span class="javascript"></span><br><span class="line">  (<span class="function"><span class="keyword">function</span>(<span class="params">w,d,t,u,n,s,e</span>)</span>&#123;w[<span class="string">'SwiftypeObject'</span>]=n;w[n]=w[n]||<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  (w[n].q=w[n].q||[]).push(<span class="built_in">arguments</span>);&#125;;s=d.createElement(t);</span><br><span class="line">  e=d.getElementsByTagName(t)[<span class="number">0</span>];s.async=<span class="number">1</span>;s.src=u;e.parentNode.insertBefore(s,e);</span><br><span class="line">  &#125;)(<span class="built_in">window</span>,<span class="built_in">document</span>,<span class="string">'script'</span>,<span class="string">'//s.swiftypecdn.com/install/v2/st.js'</span>,<span class="string">'_st'</span>);</span><br><span class="line"></span><br><span class="line">  _st(<span class="string">'install'</span>,<span class="string">'ZfmnF1vBkUFHkfhgCvjA'</span>,<span class="string">'2.0.0'</span>);</span><br><span class="line"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure></p>
-<p>其中：以上的<code>ZfmnF1vBkUFHkfhgCvjA</code>是swiftype搜索engine key，在注册创建search engine的最后脚本代码会给出，拷贝使用即可。然后再主题下的<code>_config.yml</code>内引入</p>
-<pre><code><span class="label">widgets:</span>
-- search <span class="preprocessor">##swiftype</span>
-</code></pre>]]></content>
-    <summary type="html">
-    <![CDATA[<p>之前使用百度站内搜索，本质其实是跳转到百度页面搜索站点内容，效果也不好，今天更换闻名已久的swiftype。</p>]]>
-    
-    </summary>
-    
-      <category term="Hexo" scheme="http://giscafer.com/tags/Hexo/"/>
-    
-      <category term="swiftype" scheme="http://giscafer.com/tags/swiftype/"/>
-    
-      <category term="Hexo" scheme="http://giscafer.com/categories/Hexo/"/>
     
   </entry>
   
