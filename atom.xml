@@ -106,7 +106,7 @@
     <link href="http://giscafer.com/2016/12/11/hexo-theme-cafe/"/>
     <id>http://giscafer.com/2016/12/11/hexo-theme-cafe/</id>
     <published>2016-12-11T03:40:35.000Z</published>
-    <updated>2016-12-11T03:45:42.904Z</updated>
+    <updated>2016-12-14T16:44:27.394Z</updated>
     <content type="html"><![CDATA[<p>尝试自己定制一个Hexo博客主题<code>Cafe</code>，Cafe 主题旨在追求简约、操作简单、阅读舒适度，详细介绍和源码见<a href="https://github.com/giscafer/hexo-theme-cafe" target="_blank" rel="external">https://github.com/giscafer/hexo-theme-cafe</a></p>
 ]]></content>
     <summary type="html">
@@ -117,7 +117,11 @@
     
       <category term="cafe" scheme="http://giscafer.com/tags/cafe/"/>
     
-      <category term="Project" scheme="http://giscafer.com/categories/Project/"/>
+      <category term="项目" scheme="http://giscafer.com/tags/%E9%A1%B9%E7%9B%AE/"/>
+    
+      <category term="技术" scheme="http://giscafer.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="项目" scheme="http://giscafer.com/categories/%E6%8A%80%E6%9C%AF/%E9%A1%B9%E7%9B%AE/"/>
     
   </entry>
   
@@ -126,7 +130,7 @@
     <link href="http://giscafer.com/2016/10/16/webglearth-typhoon-project/"/>
     <id>http://giscafer.com/2016/10/16/webglearth-typhoon-project/</id>
     <published>2016-10-16T01:14:39.000Z</published>
-    <updated>2016-10-16T01:18:28.772Z</updated>
+    <updated>2016-12-14T16:49:11.334Z</updated>
     <content type="html"><![CDATA[<h2 id="前言">前言</h2><p>花了一天时间，开发了一个基于<strong>WebGL Eerth</strong>的台风监测系统，写这个web应用的目的有两个：</p>
 <p>1、我在github上创建了<a href="https://github.com/viseye" target="_blank" rel="external">@viseye</a>组织已经一段时间，但是迟迟没有项目，于是近期打算写一个</p>
 <p>2、另一个原因是我再知乎开了<a href="https://zhuanlan.zhihu.com/viseye" target="_blank" rel="external">可视化编程</a>专栏，文章偶尔需要继续更新，就得找些东西来写</p>
@@ -205,7 +209,9 @@
     
       <category term="WebGL" scheme="http://giscafer.com/tags/WebGL/"/>
     
-      <category term="Project" scheme="http://giscafer.com/categories/Project/"/>
+      <category term="技术" scheme="http://giscafer.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="项目" scheme="http://giscafer.com/categories/%E6%8A%80%E6%9C%AF/%E9%A1%B9%E7%9B%AE/"/>
     
   </entry>
   
@@ -214,7 +220,7 @@
     <link href="http://giscafer.com/2016/08/28/project-git-batch-file-builder/"/>
     <id>http://giscafer.com/2016/08/28/project-git-batch-file-builder/</id>
     <published>2016-08-28T14:44:18.000Z</published>
-    <updated>2016-08-28T14:48:21.102Z</updated>
+    <updated>2016-12-14T16:47:47.365Z</updated>
     <content type="html"><![CDATA[<p>编写此工具的原因是工作上遇到数十个工程，需要一个个git clone到本地，所以想使用工具替代重复的操作。</p>
 <p>在<code>生成bat文件</code>时，需要允许浏览器弹窗下载文件，如下图：</p>
 <p><img src="https://raw.githubusercontent.com/giscafer/git-batch-file-builder/master/allowpopwin.jpg" alt=""></p>
@@ -234,7 +240,9 @@
     
       <category term="git批处理" scheme="http://giscafer.com/tags/git%E6%89%B9%E5%A4%84%E7%90%86/"/>
     
-      <category term="Project" scheme="http://giscafer.com/categories/Project/"/>
+      <category term="技术" scheme="http://giscafer.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="Demo" scheme="http://giscafer.com/categories/%E6%8A%80%E6%9C%AF/Demo/"/>
     
   </entry>
   
@@ -243,7 +251,7 @@
     <link href="http://giscafer.com/2016/08/10/the-interveiw-for-a-second-job/"/>
     <id>http://giscafer.com/2016/08/10/the-interveiw-for-a-second-job/</id>
     <published>2016-08-10T09:02:41.000Z</published>
-    <updated>2016-12-01T12:12:20.779Z</updated>
+    <updated>2016-12-14T16:48:30.874Z</updated>
     <content type="html"><![CDATA[<p>面试邀请很多，最后只面试了4个，一方面心累了，一方面想通过新的平台再加强一下自己，今后再次去尝试。<br><a id="more"></a></p>
 <h3 id="2016-8-4_下午">2016-8-4 下午</h3><p>下午，面试了本周第一家公司（这也是两年以来，第二次面对面的面试，第一次是北京的老东家，一干就干了2年整），这次面试的是一家做闪购的公司，公司办公地理位置好，环境不错，主要做的是App产品，去了才知道招聘的前端就主要是App的前端，这也是我最弱的地方了，一直做PC端的前端，在今年的6月份，离职前两个月，才接手一个ionic+angularjs相关的H5 App开发，功能模块的开发，当时时间紧张，所有的时间都花费在功能模块的开发，界面UI这些都是用现成的ionic的样式或者bootstrap样式；也就是没有设计美化UI，直接开发功能。<br>这是传统行业的特点，开发的时候都优先功能第一。</p>
 <p>一直以来，我的App前端UI方向可以说是没有实践过的，给出一个设计图，通过HTML/CSS来仿真出来是有点困难，因为在老东家，这些都被美工、UI设计师包揽了。我能做的是在他们设计好的成品上进行简单的修改和调整，我是属<code>于偏JS方向的前端开发工程师</code></p>
@@ -294,6 +302,8 @@
     
       <category term="随笔" scheme="http://giscafer.com/categories/%E9%9A%8F%E7%AC%94/"/>
     
+      <category term="工作" scheme="http://giscafer.com/categories/%E9%9A%8F%E7%AC%94/%E5%B7%A5%E4%BD%9C/"/>
+    
   </entry>
   
   <entry>
@@ -301,7 +311,7 @@
     <link href="http://giscafer.com/2016/06/06/echarts-data-map-project/"/>
     <id>http://giscafer.com/2016/06/06/echarts-data-map-project/</id>
     <published>2016-06-06T03:32:47.000Z</published>
-    <updated>2016-06-06T03:35:44.728Z</updated>
+    <updated>2016-12-14T16:43:05.418Z</updated>
     <content type="html"><![CDATA[<h1 id="mapshaper-plus">mapshaper-plus</h1><p>基于<a href="https://github.com/mbloch/mapshaper" target="_blank" rel="external">mapshaper</a>对geojson地图数据的坐标信息进行压缩编码，并提供可直接生成压缩编码后的echarts map数据格式</p>
 <a id="more"></a>
 <h2 id="Demo">Demo</h2><p><a href="http://giscafer.com/mapshaper-plus/">http://giscafer.com/mapshaper-plus/</a></p>
@@ -321,7 +331,9 @@
     
       <category term="mapshaper" scheme="http://giscafer.com/tags/mapshaper/"/>
     
-      <category term="Project" scheme="http://giscafer.com/categories/Project/"/>
+      <category term="技术" scheme="http://giscafer.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="Demo" scheme="http://giscafer.com/categories/%E6%8A%80%E6%9C%AF/Demo/"/>
     
   </entry>
   
@@ -330,7 +342,7 @@
     <link href="http://giscafer.com/2016/04/23/project-angluar-webuploader/"/>
     <id>http://giscafer.com/2016/04/23/project-angluar-webuploader/</id>
     <published>2016-04-23T14:47:13.000Z</published>
-    <updated>2016-04-24T02:46:16.068Z</updated>
+    <updated>2016-12-14T16:47:38.179Z</updated>
     <content type="html"><![CDATA[<h2 id="简述">简述</h2><p>最近公司做个项目需要使用AngularJS重新封装图片上传控件，支持IE低版本等，之间看过<code>JQuery-File-Upload</code>，尝试使用了一些，觉得文件太多，不好修改；最后使用<a href="http://fex.baidu.com/webuploader" target="_blank" rel="external">webuploader</a>时因为其简洁的界面和使用方便；</p>
 <p><code>angluar-webuploader</code>是使用angular指令封装的webuploader demo，弹窗上传图片，缩略图展示列表，翻页效果；支持点击缩略图查看大图详情；</p>
 <a id="more"></a>
@@ -352,7 +364,9 @@
     
       <category term="webuploader" scheme="http://giscafer.com/tags/webuploader/"/>
     
-      <category term="Project" scheme="http://giscafer.com/categories/Project/"/>
+      <category term="技术" scheme="http://giscafer.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="Demo" scheme="http://giscafer.com/categories/%E6%8A%80%E6%9C%AF/Demo/"/>
     
   </entry>
   
@@ -361,7 +375,7 @@
     <link href="http://giscafer.com/2016/04/13/node-oracledb-demo/"/>
     <id>http://giscafer.com/2016/04/13/node-oracledb-demo/</id>
     <published>2016-04-13T03:30:17.000Z</published>
-    <updated>2016-04-13T04:19:47.613Z</updated>
+    <updated>2016-12-14T16:46:02.486Z</updated>
     <content type="html"><![CDATA[<h2 id="windows下node-oracledb环境">windows下node-oracledb环境</h2><p>在windows环境下， oracle一直是个麻烦事情，参考官方<a href="https://github.com/oracle/node-oracledb/blob/master/INSTALL.md#instwin" target="_blank" rel="external">环境搭建说明</a><br><a id="more"></a><br>原本就在电脑上安装了<code>oracle11g</code>数据库,<code>VS2013</code>,<code>python2.7</code>，所以，我在环境变量下只需要再添加以下两个变量：<br><figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">set OCI_LIB_DIR=D:<span class="command">\app</span><span class="command">\giscafer</span><span class="command">\product</span>\11.2.0<span class="command">\dbhome</span>_1<span class="command">\OCI</span><span class="command">\lib</span><span class="command">\MSVC</span></span><br><span class="line">set OCI_INC_DIR=D:<span class="command">\app</span><span class="command">\giscafer</span><span class="command">\product</span>\11.2.0<span class="command">\dbhome</span>_1<span class="command">\OCI</span><span class="command">\include</span></span><br></pre></td></tr></table></figure></p>
 <pre><code>npm <span class="operator"><span class="keyword">install</span> <span class="comment">--save oracle</span></span>
 </code></pre><p><img src="http://giscafer.github.io/static/img/node-oracledb.png" alt="node-oracledb.png"></p>
@@ -387,7 +401,9 @@
     
       <category term="node.js链接oracle" scheme="http://giscafer.com/tags/node-js%E9%93%BE%E6%8E%A5oracle/"/>
     
-      <category term="NodeJS" scheme="http://giscafer.com/categories/NodeJS/"/>
+      <category term="技术" scheme="http://giscafer.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="DataBase" scheme="http://giscafer.com/categories/%E6%8A%80%E6%9C%AF/DataBase/"/>
     
   </entry>
   
@@ -396,7 +412,7 @@
     <link href="http://giscafer.com/2016/03/31/project-ponitor/"/>
     <id>http://giscafer.com/2016/03/31/project-ponitor/</id>
     <published>2016-03-31T05:21:01.000Z</published>
-    <updated>2016-04-01T14:55:58.916Z</updated>
+    <updated>2016-12-14T16:47:55.773Z</updated>
     <content type="html"><![CDATA[<p>开发这个项目的初衷是学习<code>vue.js+webpack</code>构建应用，加上学习<code>ES6</code>之后没有正式在项目里边练习，然后偶然看到一个demo是做app爬虫的，加上本人又有计划入手个单反的想法，于是就有了<a href="https://github.com/giscafer/Ponitor" target="_blank" rel="external">Ponitor</a>。</p>
 <p>项目支持对天猫、淘宝、和京东进行爬虫，关注一些商品，降价或涨价的时候都推送消息；（话说如果每天都监测商品价格，在双11和双12，会发现有些商家提前提升价格再故意降价的情况，哈哈哈……，只是猜测，不过这情况是会有的吧。），他们的恶劣行为会被<code>Ponitor</code>记录。</p>
 <a id="more"></a>
@@ -425,9 +441,9 @@
     
       <category term="webpack" scheme="http://giscafer.com/tags/webpack/"/>
     
-      <category term="Project" scheme="http://giscafer.com/categories/Project/"/>
+      <category term="技术" scheme="http://giscafer.com/categories/%E6%8A%80%E6%9C%AF/"/>
     
-      <category term="NodeJS" scheme="http://giscafer.com/categories/Project/NodeJS/"/>
+      <category term="项目" scheme="http://giscafer.com/categories/%E6%8A%80%E6%9C%AF/%E9%A1%B9%E7%9B%AE/"/>
     
   </entry>
   
@@ -458,7 +474,7 @@
     <link href="http://giscafer.com/2016/03/08/npm-registry/"/>
     <id>http://giscafer.com/2016/03/08/npm-registry/</id>
     <published>2016-03-08T15:36:18.000Z</published>
-    <updated>2016-06-19T15:23:20.546Z</updated>
+    <updated>2016-12-14T16:47:10.989Z</updated>
     <content type="html"><![CDATA[<p>今晚使用npm下载<code>webpack</code>和其他插件时巨慢，这是以前从未遇到过的，所以就换了淘宝镜像，快了很多</p>
 <p>更换镜像方式很多种，参考官方<a href="http://npm.taobao.org/" target="_blank" rel="external">文档说明</a></p>
 <p>更方便的方式是，在c盘用户目录下，找到<code>.npmrc</code>文件，加入如下代码即可。</p>
@@ -474,7 +490,9 @@
     
       <category term="npm" scheme="http://giscafer.com/tags/npm/"/>
     
-      <category term="NodeJS" scheme="http://giscafer.com/categories/NodeJS/"/>
+      <category term="技术" scheme="http://giscafer.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="开发手册" scheme="http://giscafer.com/categories/%E6%8A%80%E6%9C%AF/%E5%BC%80%E5%8F%91%E6%89%8B%E5%86%8C/"/>
     
   </entry>
   
@@ -483,7 +501,7 @@
     <link href="http://giscafer.com/2016/02/12/nodejs-mocha-test/"/>
     <id>http://giscafer.com/2016/02/12/nodejs-mocha-test/</id>
     <published>2016-02-12T11:57:46.000Z</published>
-    <updated>2016-02-20T11:36:45.564Z</updated>
+    <updated>2016-12-14T16:46:17.886Z</updated>
     <content type="html"><![CDATA[<blockquote>
 <p>不写测试的项目都是耍流氓</p>
 </blockquote>
@@ -557,7 +575,9 @@
     
       <category term="should" scheme="http://giscafer.com/tags/should/"/>
     
-      <category term="NodeJS" scheme="http://giscafer.com/categories/NodeJS/"/>
+      <category term="技术" scheme="http://giscafer.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="开发手册" scheme="http://giscafer.com/categories/%E6%8A%80%E6%9C%AF/%E5%BC%80%E5%8F%91%E6%89%8B%E5%86%8C/"/>
     
   </entry>
   
@@ -566,7 +586,7 @@
     <link href="http://giscafer.com/2016/02/11/diary-2016-02-11/"/>
     <id>http://giscafer.com/2016/02/11/diary-2016-02-11/</id>
     <published>2016-02-11T14:51:39.000Z</published>
-    <updated>2016-12-01T12:11:10.171Z</updated>
+    <updated>2016-12-14T16:41:48.656Z</updated>
     <content type="html"><![CDATA[<p>2014年7月，毕业工作，成为了一名程序猿，我算是误打误撞的进了it行业；公司是做gis相关的，工作是做web开发，平时也就写写JavaScript和html\css……，慢慢的，觉得乏味，偶然关注了互联网前端开发，发现目前工作并不算是真正的前端开发，从此，开始学习互联网前端开发相关技术，并热衷无法自拔……</p>
 <a id="more"></a>
 <p>上学，由于学校本专业（gis)的研究方向是农业或土壤，个人觉得偏离了当时gis流行的云计算或者大数据可视化分析，课程也没多少有趣的；另外，教学专业编程能力相对其他院校来说应该是最弱的，要求也是最低的吧；在上学的日子里，我已经对GIS就业方向感到了迷茫，也不知道什么缘由，我觉得我只能去学习编程，毕业能找份工作。不管什么学校，什么专业，靠的是自己，教学多么好还是差，学霸和学渣都会有……</p>
@@ -592,6 +612,8 @@
     
       <category term="随笔" scheme="http://giscafer.com/categories/%E9%9A%8F%E7%AC%94/"/>
     
+      <category term="胡思乱想" scheme="http://giscafer.com/categories/%E9%9A%8F%E7%AC%94/%E8%83%A1%E6%80%9D%E4%B9%B1%E6%83%B3/"/>
+    
   </entry>
   
   <entry>
@@ -599,7 +621,7 @@
     <link href="http://giscafer.com/2016/02/10/alidayujs-npm/"/>
     <id>http://giscafer.com/2016/02/10/alidayujs-npm/</id>
     <published>2016-02-10T13:11:06.000Z</published>
-    <updated>2016-02-10T13:12:15.294Z</updated>
+    <updated>2016-12-14T16:38:55.261Z</updated>
     <content type="html"><![CDATA[<p><code>alidayujs</code>是学习nodejs以来写的第一个<code>npm</code>插件，目前实现了短信发送接口的封装，其余语音等有时间再拓展吧。使用介绍见以下链接：</p>
 <a id="more"></a>
 <p>github源码:<a href="https://github.com/giscafer/alidayujs" target="_blank" rel="external">https://github.com/giscafer/alidayujs</a></p>
@@ -618,7 +640,9 @@
     
       <category term="阿里大鱼sdk" scheme="http://giscafer.com/tags/%E9%98%BF%E9%87%8C%E5%A4%A7%E9%B1%BCsdk/"/>
     
-      <category term="NodeJS" scheme="http://giscafer.com/categories/NodeJS/"/>
+      <category term="技术" scheme="http://giscafer.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="NodeJS" scheme="http://giscafer.com/categories/%E6%8A%80%E6%9C%AF/NodeJS/"/>
     
   </entry>
   
@@ -627,7 +651,7 @@
     <link href="http://giscafer.com/2016/02/05/mongodb-map-reduce/"/>
     <id>http://giscafer.com/2016/02/05/mongodb-map-reduce/</id>
     <published>2016-02-05T08:44:56.000Z</published>
-    <updated>2016-12-01T13:16:49.775Z</updated>
+    <updated>2016-12-14T16:45:54.674Z</updated>
     <content type="html"><![CDATA[<h3 id="0、说明">0、说明</h3><a id="more"></a>
 <p>官方给的Map-Reduce的流程如下图：</p>
 <p><img src="https://docs.mongodb.org/manual/_images/map-reduce.png" alt="此处输入图片的描述"></p>
@@ -658,7 +682,9 @@
     
       <category term="mongoDB统计" scheme="http://giscafer.com/tags/mongoDB%E7%BB%9F%E8%AE%A1/"/>
     
-      <category term="DB" scheme="http://giscafer.com/categories/DB/"/>
+      <category term="技术" scheme="http://giscafer.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="DataBase" scheme="http://giscafer.com/categories/%E6%8A%80%E6%9C%AF/DataBase/"/>
     
   </entry>
   
@@ -667,7 +693,7 @@
     <link href="http://giscafer.com/2016/02/05/nodejs-overflow-question/"/>
     <id>http://giscafer.com/2016/02/05/nodejs-overflow-question/</id>
     <published>2016-02-05T06:18:08.000Z</published>
-    <updated>2016-03-26T16:14:09.998Z</updated>
+    <updated>2016-12-14T16:46:52.515Z</updated>
     <content type="html"><![CDATA[<h2 id="0、NodeJS调试介绍">0、NodeJS调试介绍</h2><p>级别从高到低，推荐到不推荐：</p>
 <ol>
 <li>ttd/bdd测试驱动</li>
@@ -732,7 +758,11 @@ const Promise = require(<span class="string">'bluebird'</span>);
     
       <category term="NodeJS" scheme="http://giscafer.com/tags/NodeJS/"/>
     
-      <category term="NodeJS" scheme="http://giscafer.com/categories/NodeJS/"/>
+      <category term="Q&amp;A" scheme="http://giscafer.com/tags/Q-A/"/>
+    
+      <category term="技术" scheme="http://giscafer.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="开发手册" scheme="http://giscafer.com/categories/%E6%8A%80%E6%9C%AF/%E5%BC%80%E5%8F%91%E6%89%8B%E5%86%8C/"/>
     
   </entry>
   
@@ -741,7 +771,7 @@ const Promise = require(<span class="string">'bluebird'</span>);
     <link href="http://giscafer.com/2016/02/04/bluebird-api-study/"/>
     <id>http://giscafer.com/2016/02/04/bluebird-api-study/</id>
     <published>2016-02-04T06:58:29.000Z</published>
-    <updated>2016-02-04T08:25:57.459Z</updated>
+    <updated>2016-12-14T16:40:02.157Z</updated>
     <content type="html"><![CDATA[<h2 id="一、Promises/A+规范">一、Promises/A+规范</h2><h3 id="Promise">Promise</h3><p>是一个拥有<code>then</code>方法的对象或函数，起行为符合本规范；</p>
 <h3 id="thenable">thenable</h3><p>是一个定义了<code>then</code>方法的对象或函数，即<code>拥有then方法</code>；</p>
 <p>详情介绍见文章<a href="http://www.ituring.com.cn/article/66566" target="_blank" rel="external">《Promises/A+规范》</a></p>
@@ -776,7 +806,9 @@ const Promise = require(<span class="string">'bluebird'</span>);
     
       <category term="promise" scheme="http://giscafer.com/tags/promise/"/>
     
-      <category term="NodeJS" scheme="http://giscafer.com/categories/NodeJS/"/>
+      <category term="技术" scheme="http://giscafer.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="开发手册" scheme="http://giscafer.com/categories/%E6%8A%80%E6%9C%AF/%E5%BC%80%E5%8F%91%E6%89%8B%E5%86%8C/"/>
     
   </entry>
   
@@ -785,7 +817,7 @@ const Promise = require(<span class="string">'bluebird'</span>);
     <link href="http://giscafer.com/2016/01/16/alidayu-sign-nodejs/"/>
     <id>http://giscafer.com/2016/01/16/alidayu-sign-nodejs/</id>
     <published>2016-01-16T02:49:20.000Z</published>
-    <updated>2016-01-19T10:59:34.942Z</updated>
+    <updated>2016-12-14T16:38:33.457Z</updated>
     <content type="html"><![CDATA[<h3 id="1、说明">1、说明</h3><p>阿里大鱼提供了验证码，短信通知，语音等服务，在使用后感觉挺方便，不愧是阿里旗下的产品。</p>
 <p>最近想搞个NodeJS发送短信通知的功能，这里没有使用<code>alidayujs</code>（这个是本人后来封装的。如果使用<a href="https://github.com/giscafer/alidayujs" target="_blank" rel="external">alidayujs</a>那就简单了。），自己整一个签名sign，实现短信发送。</p>
 <a id="more"></a>
@@ -808,13 +840,15 @@ const Promise = require(<span class="string">'bluebird'</span>);
     
     </summary>
     
-      <category term="NodeJS" scheme="http://giscafer.com/tags/NodeJS/"/>
+      <category term="Javascript" scheme="http://giscafer.com/tags/Javascript/"/>
     
       <category term="短信发送" scheme="http://giscafer.com/tags/%E7%9F%AD%E4%BF%A1%E5%8F%91%E9%80%81/"/>
     
       <category term="阿里大鱼" scheme="http://giscafer.com/tags/%E9%98%BF%E9%87%8C%E5%A4%A7%E9%B1%BC/"/>
     
-      <category term="NodeJS" scheme="http://giscafer.com/categories/NodeJS/"/>
+      <category term="技术" scheme="http://giscafer.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="Javascript" scheme="http://giscafer.com/categories/%E6%8A%80%E6%9C%AF/Javascript/"/>
     
   </entry>
   
@@ -823,7 +857,7 @@ const Promise = require(<span class="string">'bluebird'</span>);
     <link href="http://giscafer.com/2015/12/02/amd-optimize-gulp/"/>
     <id>http://giscafer.com/2015/12/02/amd-optimize-gulp/</id>
     <published>2015-12-02T12:11:16.000Z</published>
-    <updated>2016-12-01T13:13:55.502Z</updated>
+    <updated>2016-12-14T16:39:41.264Z</updated>
     <content type="html"><![CDATA[<p>这里所说的<code>AMD</code>构建，是指<code>AMD</code>定义模块方式的代码构建。AMD=异步定义模块，具体查看官方<a href="https://github.com/amdjs/amdjs-api" target="_blank" rel="external">AMD</a>解释。</p>
 <p>首先，所谓构建就是将多个文件合并压缩等，但是对于<code>AMD</code>定义的模块来说，模块之间存在这依赖关系，<code>AMD</code>构建主要就是解决这种模块之间的依赖关系，构建的方式很多种，下边是gulp 的<code>amd-optimize</code>插件构建笔记。<br><a id="more"></a></p>
 <h3 id="使用gulp对AMD模块构建">使用gulp对AMD模块构建</h3><p>需要三个插件 <code>gulp amd-optimize gulp-concat</code></p>
@@ -901,7 +935,9 @@ define(<span class="string">'app'</span>, [<span class="string">'script/b'</span
     
       <category term="前端构建" scheme="http://giscafer.com/tags/%E5%89%8D%E7%AB%AF%E6%9E%84%E5%BB%BA/"/>
     
-      <category term="前端相关" scheme="http://giscafer.com/categories/%E5%89%8D%E7%AB%AF%E7%9B%B8%E5%85%B3/"/>
+      <category term="技术" scheme="http://giscafer.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="开发手册" scheme="http://giscafer.com/categories/%E6%8A%80%E6%9C%AF/%E5%BC%80%E5%8F%91%E6%89%8B%E5%86%8C/"/>
     
   </entry>
   
@@ -910,7 +946,7 @@ define(<span class="string">'app'</span>, [<span class="string">'script/b'</span
     <link href="http://giscafer.com/2015/11/30/gulp-front-end-automated-builds/"/>
     <id>http://giscafer.com/2015/11/30/gulp-front-end-automated-builds/</id>
     <published>2015-11-30T14:29:09.000Z</published>
-    <updated>2016-12-01T13:14:47.818Z</updated>
+    <updated>2016-12-14T16:43:46.207Z</updated>
     <content type="html"><![CDATA[<p>如果你是搞前端开发的，或者你每天都在写CSS、JavaScript等前端编程语言代码，如果你不知道什么叫前端自动化构建，那一般只有两种情况：</p>
 <ol>
 <li>你在传统软件行业，用着4、5年前网页开发方式工作;</li>
@@ -1041,7 +1077,9 @@ define(<span class="string">'app'</span>, [<span class="string">'script/b'</span
     
       <category term="前端构建" scheme="http://giscafer.com/tags/%E5%89%8D%E7%AB%AF%E6%9E%84%E5%BB%BA/"/>
     
-      <category term="前端相关" scheme="http://giscafer.com/categories/%E5%89%8D%E7%AB%AF%E7%9B%B8%E5%85%B3/"/>
+      <category term="技术" scheme="http://giscafer.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="开发手册" scheme="http://giscafer.com/categories/%E6%8A%80%E6%9C%AF/%E5%BC%80%E5%8F%91%E6%89%8B%E5%86%8C/"/>
     
   </entry>
   
