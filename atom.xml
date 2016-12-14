@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://giscafer.com/"/>
-  <updated>2016-12-11T03:45:42.904Z</updated>
+  <updated>2016-12-14T16:34:25.599Z</updated>
   <id>http://giscafer.com/</id>
   
   <author>
@@ -13,6 +13,93 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[代码理解React组件生命周期过程]]></title>
+    <link href="http://giscafer.com/2016/12/15/react-component-lifecycle/"/>
+    <id>http://giscafer.com/2016/12/15/react-component-lifecycle/</id>
+    <published>2016-12-14T16:30:30.000Z</published>
+    <updated>2016-12-14T16:34:25.599Z</updated>
+    <content type="html"><![CDATA[<p>React Component整个生命周期分为三大块：<strong>初始化——存在期（更新）——销毁清理</strong></p>
+<h3 id="首次实例化_调用方法">首次实例化 调用方法</h3><ul>
+<li>getDefaultProps()</li>
+<li>getInitialState()</li>
+<li>componentWillMount()</li>
+<li>render()</li>
+<li>componentDidMount()()</li>
+</ul>
+<p><em>ES6写法中则为</em></p>
+<ul>
+<li>constructor()</li>
+<li>componentWillMount()</li>
+<li>render()</li>
+<li>componentDidMount()</li>
+</ul>
+<h3 id="存在期_调用方法">存在期 调用方法</h3><p><strong> <code>props</code> 或 <code>state</code>状态改变</strong></p>
+<ul>
+<li>componentWillReceiveProps()</li>
+<li>shouldComponentUpdate()</li>
+<li>componentWillUpdate()</li>
+<li>render()</li>
+<li>componentDidUpdate()</li>
+</ul>
+<h3 id="销毁清理_调用方法">销毁清理 调用方法</h3><ul>
+<li>componentWillUnmount()</li>
+</ul>
+<a id="more"></a>
+<h2 id="代码演示">代码演示</h2><p>创建一个<code>LifeCycleComponent.js</code>组件</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="pi">    'use strict'</span></span><br><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> Nav <span class="keyword">from</span> <span class="string">'../nav/Nav'</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">LifeCycleComponent</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span></span>&#123;</span><br><span class="line">    constructor(props)&#123;</span><br><span class="line">        <span class="keyword">super</span>(props);</span><br><span class="line">        fpLog(<span class="string">'初始化调用:constructor()'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//在完成首次渲染之前调用，此时仍可以修改组件的state</span></span><br><span class="line">    componentWillMount()&#123;</span><br><span class="line">        fpLog(<span class="string">'完成渲前调用:componentWillMount()'</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    render()&#123;</span><br><span class="line">        fpLog(<span class="string">'渲染时调用:render()'</span>);</span><br><span class="line">        <span class="keyword">return</span>(</span><br><span class="line">            <span class="xml"><span class="tag">&lt;<span class="title">div</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="title">Nav</span>/&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="title">p</span>&gt;</span>&#123;this.props.text&#125;<span class="tag">&lt;/<span class="title">p</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"https://facebook.github.io/react/docs/react-component.html"</span> <span class="attribute">target</span>=<span class="value">"_blank"</span>&gt;</span>Component Specs and Lifecycle<span class="tag">&lt;/<span class="title">a</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">        )</span></span><br><span class="line">    &#125;</span><br><span class="line">    shouldComponentUpdate(nextProps, nextState)&#123;</span><br><span class="line">        <span class="comment">//该方法用来做一下性能优化，默认是返回true，返回false则阻止render()调用，跳过后续的生命周期方法</span></span><br><span class="line">        <span class="comment">//在首次渲染期间或者调用了forceUpdate方法后，该方法不会被调用</span></span><br><span class="line">        fpLog(<span class="string">'当渲染新的props或state调用:shouldComponentUpdate()'</span>);</span><br><span class="line">        fpLog2(<span class="string">'&lt;span style="color:blue"&gt;原始props.text='</span>+<span class="keyword">this</span>.props.text+<span class="string">'&lt;/span&gt;'</span>);</span><br><span class="line">        fpLog2(<span class="string">'&lt;span style="color:red"&gt;改变后的props.text='</span>+nextProps.text+<span class="string">'&lt;/span&gt;'</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(<span class="keyword">this</span>.props.info!==nextProps.text)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    componentWillUpdate()&#123;</span><br><span class="line">         <span class="comment">//该方法中不允许更新props或state，也就是更新也是无效的</span></span><br><span class="line">        fpLog(<span class="string">'接收到新的props或者state后，进行渲染之前调用:componentWillUpdate()'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    componentDidUpdate()&#123;</span><br><span class="line">        fpLog(<span class="string">'完成渲染新的props或者state后调用，此时可以访问到新的DOM元素:componentDidUpdate()'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//真实DOM渲染后调用</span></span><br><span class="line">    componentDidMount()&#123;</span><br><span class="line">        fpLog(<span class="string">'真实DOM渲染后调用:componentDidMount()'</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    componentWillReceiveProps(nextProps)&#123;</span><br><span class="line">        fpLog(<span class="string">'组件接收到新的props时调用:componentWillReceiveProps()---'</span>+nextProps.text)</span><br><span class="line">    &#125;</span><br><span class="line">    componentWillUnmount()&#123;</span><br><span class="line">        fpLog(<span class="string">'组件销毁前调用：componentWillUnmount()'</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">LifeCycleComponent.dispalyName=<span class="string">'LifeCycleComponentDemo'</span>;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> LifeCycleComponent;</span><br></pre></td></tr></table></figure>
+<p><strong>父组件入口文件<code>Main.js</code></strong>，改组件主要用来动态改变<code>state</code>值后，观察<code>LifeCycleComponent</code>组件的生命周期方法的调用情况</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">import</span> LifeCycleApp <span class="keyword">from</span> <span class="string">'./LifeCycle'</span>;</span><br><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">LifeCycleMainComponent</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">    constructor() &#123;</span><br><span class="line">        <span class="keyword">super</span>();</span><br><span class="line">        <span class="keyword">this</span>.state = &#123;</span><br><span class="line">            info: <span class="string">'The React Component Lifecycle'</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    render() &#123;</span><br><span class="line">        <span class="keyword">return</span> (</span><br><span class="line">            <span class="xml"><span class="tag">&lt;<span class="title">LifeCycleApp</span> <span class="attribute">text</span>=<span class="value">&#123;this.state.info&#125;</span> /&gt;</span></span><br><span class="line">        )</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    componentDidMount() &#123;</span><br><span class="line">        <span class="comment">//定时更新state的值</span></span><br><span class="line">        setTimeout(() =&gt; &#123;</span><br><span class="line">            <span class="keyword">this</span>.setState(&#123;</span><br><span class="line">                info: <span class="string">'React组件生命周期'</span></span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;, <span class="number">2000</span>)</span><br><span class="line">        setTimeout(() =&gt; &#123;</span><br><span class="line">            <span class="keyword">this</span>.setState(&#123;</span><br><span class="line">                info: <span class="string">'再次改变state值'</span></span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;, <span class="number">5000</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    componentWillUnmount() &#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">LifeCycleMainComponent.defaultProps = &#123;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> LifeCycleMainComponent;</span><br></pre></td></tr></table></figure>
+<p>最后输出日志为：</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">- 初始化调用:<span class="function"><span class="title">constructor</span><span class="params">()</span></span></span><br><span class="line">- 完成渲前调用:<span class="function"><span class="title">componentWillMount</span><span class="params">()</span></span></span><br><span class="line">- 渲染时调用:<span class="function"><span class="title">render</span><span class="params">()</span></span></span><br><span class="line">- 真实DOM渲染后调用:<span class="function"><span class="title">componentDidMount</span><span class="params">()</span></span></span><br><span class="line">- 组件接收到新的props时调用:<span class="function"><span class="title">componentWillReceiveProps</span><span class="params">()</span></span>---React组件生命周期</span><br><span class="line">- 当渲染新的props或state调用:<span class="function"><span class="title">shouldComponentUpdate</span><span class="params">()</span></span></span><br><span class="line">&gt;&gt;&gt; 原始props.text=The React Component Lifecycle</span><br><span class="line">&gt;&gt;&gt; 改变后的props.text=React组件生命周期</span><br><span class="line">- 接收到新的props或者state后，进行渲染之前调用:<span class="function"><span class="title">componentWillUpdate</span><span class="params">()</span></span></span><br><span class="line">- 渲染时调用:<span class="function"><span class="title">render</span><span class="params">()</span></span></span><br><span class="line">- 完成渲染新的props或者state后调用，此时可以访问到新的DOM元素:<span class="function"><span class="title">componentDidUpdate</span><span class="params">()</span></span></span><br><span class="line">- 组件接收到新的props时调用:<span class="function"><span class="title">componentWillReceiveProps</span><span class="params">()</span></span>---再次改变state值</span><br><span class="line">- 当渲染新的props或state调用:<span class="function"><span class="title">shouldComponentUpdate</span><span class="params">()</span></span></span><br><span class="line">原始props.text=React组件生命周期</span><br><span class="line">改变后的props.text=再次改变state值</span><br><span class="line">- 接收到新的props或者state后，进行渲染之前调用:<span class="function"><span class="title">componentWillUpdate</span><span class="params">()</span></span></span><br><span class="line">- 渲染时调用:<span class="function"><span class="title">render</span><span class="params">()</span></span></span><br><span class="line">- 完成渲染新的props或者state后调用，此时可以访问到新的DOM元素:<span class="function"><span class="title">componentDidUpdate</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+<p>结果截图：</p>
+<p><img src="https://raw.githubusercontent.com/giscafer/react-demo-list/master/src/images/lifecycle.png" alt="React Component lifeCycle"></p>
+<h2 id="源码">源码</h2><p><a href="https://github.com/giscafer/react-demo-list" target="_blank" rel="external">https://github.com/giscafer/react-demo-list</a></p>
+<p>[参考链接]</p>
+<ul>
+<li><a href="https://facebook.github.io/react/docs/react-component.html" target="_blank" rel="external">React.Component</a></li>
+</ul>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>React Component整个生命周期分为三大块：<strong>初始化——存在期（更新）——销毁清理</strong></p>
+<h3 id="首次实例化_调用方法">首次实例化 调用方法</h3><ul>
+<li>getDefaultProps()</li>
+<li>getInitialState()</li>
+<li>componentWillMount()</li>
+<li>render()</li>
+<li>componentDidMount()()</li>
+</ul>
+<p><em>ES6写法中则为</em></p>
+<ul>
+<li>constructor()</li>
+<li>componentWillMount()</li>
+<li>render()</li>
+<li>componentDidMount()</li>
+</ul>
+<h3 id="存在期_调用方法">存在期 调用方法</h3><p><strong> <code>props</code> 或 <code>state</code>状态改变</strong></p>
+<ul>
+<li>componentWillReceiveProps()</li>
+<li>shouldComponentUpdate()</li>
+<li>componentWillUpdate()</li>
+<li>render()</li>
+<li>componentDidUpdate()</li>
+</ul>
+<h3 id="销毁清理_调用方法">销毁清理 调用方法</h3><ul>
+<li>componentWillUnmount()</li>
+</ul>]]>
+    
+    </summary>
+    
+      <category term="React组件" scheme="http://giscafer.com/tags/React%E7%BB%84%E4%BB%B6/"/>
+    
+      <category term="React组件生命周期" scheme="http://giscafer.com/tags/React%E7%BB%84%E4%BB%B6%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/"/>
+    
+      <category term="技术" scheme="http://giscafer.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="React" scheme="http://giscafer.com/categories/%E6%8A%80%E6%9C%AF/React/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[hexo-theme-cafe]]></title>
@@ -955,58 +1042,6 @@ define(<span class="string">'app'</span>, [<span class="string">'script/b'</span
       <category term="前端构建" scheme="http://giscafer.com/tags/%E5%89%8D%E7%AB%AF%E6%9E%84%E5%BB%BA/"/>
     
       <category term="前端相关" scheme="http://giscafer.com/categories/%E5%89%8D%E7%AB%AF%E7%9B%B8%E5%85%B3/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[JFinal设置基础路径为WEB-INF]]></title>
-    <link href="http://giscafer.com/2015/10/30/jfinal-setbaseview/"/>
-    <id>http://giscafer.com/2015/10/30/jfinal-setbaseview/</id>
-    <published>2015-10-30T13:49:31.000Z</published>
-    <updated>2016-12-01T13:12:32.667Z</updated>
-    <content type="html"><![CDATA[<h2 id="一、路由路径规则">一、路由路径规则</h2><blockquote>
-<p>1：模板路径= BaseViewPath + ViewPath + render时的参数</p>
-<p>2：当 render 时view的参数以 “/“ 打头，则模板路径使用从WebRoot下的绝对路</p>
-<p>3：在配置路由时如果省略第三个参数，则 viewPath = controllerKey</p>
-</blockquote>
-<a id="more"></a>
-<p>在JFinalConfig的<code>configConstant</code>方法中设置/WEB-INF/views/为基础路径；<br><code>me.setBaseViewPath(&quot;/WEB-INF/views/&quot;)</code>；</p>
-<p>设定后，路由configRoute内的视图路径就会直接找<code>/WEB-INF/views/</code>下的文件，Controller里边render 时view的参数不能以 “/“ 打头，不然就是直接是找WebRoot下的绝对路径。</p>
-<pre><code><span class="tag">&lt;<span class="title">filter</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">filter-name</span>&gt;</span>jfinal<span class="tag">&lt;/<span class="title">filter-name</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">filter-class</span>&gt;</span>com.jfinal.core.JFinalFilter<span class="tag">&lt;/<span class="title">filter-class</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">init-param</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">param-name</span>&gt;</span>configClass<span class="tag">&lt;/<span class="title">param-name</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">param-value</span>&gt;</span>com.giscafer.schedule.config.ScheduleConfig<span class="tag">&lt;/<span class="title">param-value</span>&gt;</span>
-    <span class="tag">&lt;/<span class="title">init-param</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">filter</span>&gt;</span>
-
-<span class="tag">&lt;<span class="title">filter-mapping</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">filter-name</span>&gt;</span>jfinal<span class="tag">&lt;/<span class="title">filter-name</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">url-pattern</span>&gt;</span>/*<span class="tag">&lt;/<span class="title">url-pattern</span>&gt;</span><span class="comment">&lt;!--此处如果不是/*的话，路由会失效--&gt;</span>
-<span class="tag">&lt;/<span class="title">filter-mapping</span>&gt;</span>
-</code></pre><h2 id="JFinal_过滤器拦截Servlet解决方法">JFinal 过滤器拦截Servlet解决方法</h2><p>JFinal配置的过滤器（如上过滤器配置）会拦截掉Servlet请求，这个时候可以通过配置路由处理器来解决：</p>
-<pre><code><span class="comment">/**
- * 配置处理器
- */</span>
-<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">configHandler</span><span class="params">(Handlers me)</span> </span>{
-    <span class="comment">//使用此方式跳过jfinal过滤器对servlet的拦截</span>
-    me.add(<span class="keyword">new</span> UrlSkipHandler(<span class="string">"/home"</span>, <span class="literal">false</span>));
-}
-</code></pre><p>这样，<code>/home</code>路径的servlet就不会被jfinal的过滤器拦截了。这是最方便的解决方式。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h2 id="一、路由路径规则">一、路由路径规则</h2><blockquote>
-<p>1：模板路径= BaseViewPath + ViewPath + render时的参数</p>
-<p>2：当 render 时view的参数以 “/“ 打头，则模板路径使用从WebRoot下的绝对路</p>
-<p>3：在配置路由时如果省略第三个参数，则 viewPath = controllerKey</p>
-</blockquote>]]>
-    
-    </summary>
-    
-      <category term="JFinal" scheme="http://giscafer.com/tags/JFinal/"/>
-    
-      <category term="Java" scheme="http://giscafer.com/categories/Java/"/>
     
   </entry>
   

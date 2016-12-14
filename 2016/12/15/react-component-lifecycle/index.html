@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>代码理解React组件生命周期过程 | Giscafer&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="React Component整个生命周期分为三大块：初始化——存在期（更新）——销毁清理
+首次实例化 调用方法
+getDefaultProps()
+getInitialState()
+componentWillMount()
+render()
+componentDidMount()()
+
+ES6写法中则为
+
+constructor()
+componentWillMount()
+render()">
+<meta property="og:type" content="article">
+<meta property="og:title" content="代码理解React组件生命周期过程">
+<meta property="og:url" content="http://giscafer.com/2016/12/15/react-component-lifecycle/index.html">
+<meta property="og:site_name" content="Giscafer's blog">
+<meta property="og:description" content="React Component整个生命周期分为三大块：初始化——存在期（更新）——销毁清理
+首次实例化 调用方法
+getDefaultProps()
+getInitialState()
+componentWillMount()
+render()
+componentDidMount()()
+
+ES6写法中则为
+
+constructor()
+componentWillMount()
+render()">
+<meta property="og:image" content="https://raw.githubusercontent.com/giscafer/react-demo-list/master/src/images/lifecycle.png">
+<meta property="og:updated_time" content="2016-12-14T16:34:25.599Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="代码理解React组件生命周期过程">
+<meta name="twitter:description" content="React Component整个生命周期分为三大块：初始化——存在期（更新）——销毁清理
+首次实例化 调用方法
+getDefaultProps()
+getInitialState()
+componentWillMount()
+render()
+componentDidMount()()
+
+ES6写法中则为
+
+constructor()
+componentWillMount()
+render()">
+  
+    <link rel="alternate" href="/atom.xml" title="Giscafer&#39;s blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-88299145-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    
+    <div id="header-inner" class="inner">
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://giscafer.com"></form>
+      </div>
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">首页</a>
+        
+          <a class="main-nav-link" href="/archives">归档</a>
+        
+          <a class="main-nav-link" href="/aboutme">关于</a>
+        
+      </nav>
+      
+    </div>
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Giscafer&#39;s blog</a>
+      </h1>
+      
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-react-component-lifecycle" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/12/15/react-component-lifecycle/" class="article-date">
+  <time datetime="2016-12-14T16:30:30.000Z" itemprop="datePublished">2016-12-15</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/React/">React</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      代码理解React组件生命周期过程
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>React Component整个生命周期分为三大块：<strong>初始化——存在期（更新）——销毁清理</strong></p>
+<h3 id="首次实例化_调用方法">首次实例化 调用方法</h3><ul>
+<li>getDefaultProps()</li>
+<li>getInitialState()</li>
+<li>componentWillMount()</li>
+<li>render()</li>
+<li>componentDidMount()()</li>
+</ul>
+<p><em>ES6写法中则为</em></p>
+<ul>
+<li>constructor()</li>
+<li>componentWillMount()</li>
+<li>render()</li>
+<li>componentDidMount()</li>
+</ul>
+<h3 id="存在期_调用方法">存在期 调用方法</h3><p><strong> <code>props</code> 或 <code>state</code>状态改变</strong></p>
+<ul>
+<li>componentWillReceiveProps()</li>
+<li>shouldComponentUpdate()</li>
+<li>componentWillUpdate()</li>
+<li>render()</li>
+<li>componentDidUpdate()</li>
+</ul>
+<h3 id="销毁清理_调用方法">销毁清理 调用方法</h3><ul>
+<li>componentWillUnmount()</li>
+</ul>
+<a id="more"></a>
+<h2 id="代码演示">代码演示</h2><p>创建一个<code>LifeCycleComponent.js</code>组件</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="pi">    'use strict'</span></span><br><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> Nav <span class="keyword">from</span> <span class="string">'../nav/Nav'</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">LifeCycleComponent</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span></span>&#123;</span><br><span class="line">    constructor(props)&#123;</span><br><span class="line">        <span class="keyword">super</span>(props);</span><br><span class="line">        fpLog(<span class="string">'初始化调用:constructor()'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//在完成首次渲染之前调用，此时仍可以修改组件的state</span></span><br><span class="line">    componentWillMount()&#123;</span><br><span class="line">        fpLog(<span class="string">'完成渲前调用:componentWillMount()'</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    render()&#123;</span><br><span class="line">        fpLog(<span class="string">'渲染时调用:render()'</span>);</span><br><span class="line">        <span class="keyword">return</span>(</span><br><span class="line">            <span class="xml"><span class="tag">&lt;<span class="title">div</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="title">Nav</span>/&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="title">p</span>&gt;</span>&#123;this.props.text&#125;<span class="tag">&lt;/<span class="title">p</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"https://facebook.github.io/react/docs/react-component.html"</span> <span class="attribute">target</span>=<span class="value">"_blank"</span>&gt;</span>Component Specs and Lifecycle<span class="tag">&lt;/<span class="title">a</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">        )</span></span><br><span class="line">    &#125;</span><br><span class="line">    shouldComponentUpdate(nextProps, nextState)&#123;</span><br><span class="line">        <span class="comment">//该方法用来做一下性能优化，默认是返回true，返回false则阻止render()调用，跳过后续的生命周期方法</span></span><br><span class="line">        <span class="comment">//在首次渲染期间或者调用了forceUpdate方法后，该方法不会被调用</span></span><br><span class="line">        fpLog(<span class="string">'当渲染新的props或state调用:shouldComponentUpdate()'</span>);</span><br><span class="line">        fpLog2(<span class="string">'&lt;span style="color:blue"&gt;原始props.text='</span>+<span class="keyword">this</span>.props.text+<span class="string">'&lt;/span&gt;'</span>);</span><br><span class="line">        fpLog2(<span class="string">'&lt;span style="color:red"&gt;改变后的props.text='</span>+nextProps.text+<span class="string">'&lt;/span&gt;'</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(<span class="keyword">this</span>.props.info!==nextProps.text)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    componentWillUpdate()&#123;</span><br><span class="line">         <span class="comment">//该方法中不允许更新props或state，也就是更新也是无效的</span></span><br><span class="line">        fpLog(<span class="string">'接收到新的props或者state后，进行渲染之前调用:componentWillUpdate()'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    componentDidUpdate()&#123;</span><br><span class="line">        fpLog(<span class="string">'完成渲染新的props或者state后调用，此时可以访问到新的DOM元素:componentDidUpdate()'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//真实DOM渲染后调用</span></span><br><span class="line">    componentDidMount()&#123;</span><br><span class="line">        fpLog(<span class="string">'真实DOM渲染后调用:componentDidMount()'</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    componentWillReceiveProps(nextProps)&#123;</span><br><span class="line">        fpLog(<span class="string">'组件接收到新的props时调用:componentWillReceiveProps()---'</span>+nextProps.text)</span><br><span class="line">    &#125;</span><br><span class="line">    componentWillUnmount()&#123;</span><br><span class="line">        fpLog(<span class="string">'组件销毁前调用：componentWillUnmount()'</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">LifeCycleComponent.dispalyName=<span class="string">'LifeCycleComponentDemo'</span>;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> LifeCycleComponent;</span><br></pre></td></tr></table></figure>
+<p><strong>父组件入口文件<code>Main.js</code></strong>，改组件主要用来动态改变<code>state</code>值后，观察<code>LifeCycleComponent</code>组件的生命周期方法的调用情况</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">import</span> LifeCycleApp <span class="keyword">from</span> <span class="string">'./LifeCycle'</span>;</span><br><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">LifeCycleMainComponent</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">    constructor() &#123;</span><br><span class="line">        <span class="keyword">super</span>();</span><br><span class="line">        <span class="keyword">this</span>.state = &#123;</span><br><span class="line">            info: <span class="string">'The React Component Lifecycle'</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    render() &#123;</span><br><span class="line">        <span class="keyword">return</span> (</span><br><span class="line">            <span class="xml"><span class="tag">&lt;<span class="title">LifeCycleApp</span> <span class="attribute">text</span>=<span class="value">&#123;this.state.info&#125;</span> /&gt;</span></span><br><span class="line">        )</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    componentDidMount() &#123;</span><br><span class="line">        <span class="comment">//定时更新state的值</span></span><br><span class="line">        setTimeout(() =&gt; &#123;</span><br><span class="line">            <span class="keyword">this</span>.setState(&#123;</span><br><span class="line">                info: <span class="string">'React组件生命周期'</span></span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;, <span class="number">2000</span>)</span><br><span class="line">        setTimeout(() =&gt; &#123;</span><br><span class="line">            <span class="keyword">this</span>.setState(&#123;</span><br><span class="line">                info: <span class="string">'再次改变state值'</span></span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;, <span class="number">5000</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    componentWillUnmount() &#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">LifeCycleMainComponent.defaultProps = &#123;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> LifeCycleMainComponent;</span><br></pre></td></tr></table></figure>
+<p>最后输出日志为：</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">- 初始化调用:<span class="function"><span class="title">constructor</span><span class="params">()</span></span></span><br><span class="line">- 完成渲前调用:<span class="function"><span class="title">componentWillMount</span><span class="params">()</span></span></span><br><span class="line">- 渲染时调用:<span class="function"><span class="title">render</span><span class="params">()</span></span></span><br><span class="line">- 真实DOM渲染后调用:<span class="function"><span class="title">componentDidMount</span><span class="params">()</span></span></span><br><span class="line">- 组件接收到新的props时调用:<span class="function"><span class="title">componentWillReceiveProps</span><span class="params">()</span></span>---React组件生命周期</span><br><span class="line">- 当渲染新的props或state调用:<span class="function"><span class="title">shouldComponentUpdate</span><span class="params">()</span></span></span><br><span class="line">&gt;&gt;&gt; 原始props.text=The React Component Lifecycle</span><br><span class="line">&gt;&gt;&gt; 改变后的props.text=React组件生命周期</span><br><span class="line">- 接收到新的props或者state后，进行渲染之前调用:<span class="function"><span class="title">componentWillUpdate</span><span class="params">()</span></span></span><br><span class="line">- 渲染时调用:<span class="function"><span class="title">render</span><span class="params">()</span></span></span><br><span class="line">- 完成渲染新的props或者state后调用，此时可以访问到新的DOM元素:<span class="function"><span class="title">componentDidUpdate</span><span class="params">()</span></span></span><br><span class="line">- 组件接收到新的props时调用:<span class="function"><span class="title">componentWillReceiveProps</span><span class="params">()</span></span>---再次改变state值</span><br><span class="line">- 当渲染新的props或state调用:<span class="function"><span class="title">shouldComponentUpdate</span><span class="params">()</span></span></span><br><span class="line">原始props.text=React组件生命周期</span><br><span class="line">改变后的props.text=再次改变state值</span><br><span class="line">- 接收到新的props或者state后，进行渲染之前调用:<span class="function"><span class="title">componentWillUpdate</span><span class="params">()</span></span></span><br><span class="line">- 渲染时调用:<span class="function"><span class="title">render</span><span class="params">()</span></span></span><br><span class="line">- 完成渲染新的props或者state后调用，此时可以访问到新的DOM元素:<span class="function"><span class="title">componentDidUpdate</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+<p>结果截图：</p>
+<p><img src="https://raw.githubusercontent.com/giscafer/react-demo-list/master/src/images/lifecycle.png" alt="React Component lifeCycle"></p>
+<h2 id="源码">源码</h2><p><a href="https://github.com/giscafer/react-demo-list" target="_blank" rel="external">https://github.com/giscafer/react-demo-list</a></p>
+<p>[参考链接]</p>
+<ul>
+<li><a href="https://facebook.github.io/react/docs/react-component.html" target="_blank" rel="external">React.Component</a></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://giscafer.com/2016/12/15/react-component-lifecycle/" data-id="ciwp5rhj0001ek4z5vizf07a5" class="article-share-link">分享</a>
+      
+        <a href="http://giscafer.com/2016/12/15/react-component-lifecycle/#ds-thread" class="article-comment-link">留言</a>
+      
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React组件/">React组件</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React组件生命周期/">React组件生命周期</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/12/11/hexo-theme-cafe/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">hexo-theme-cafe</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+      <div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="2016/12/15/react-component-lifecycle/" data-title="代码理解React组件生命周期过程" data-url="http://giscafer.com/2016/12/15/react-component-lifecycle/"></div>
+	<!-- 多说评论框 end -->
+</div>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/DB/">DB</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/GIS/">GIS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/NodeJS/">NodeJS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Project/">Project</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Project/NodeJS/">NodeJS</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端相关/">前端相关</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/">技术</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/技术/React/">React</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/随笔/">随笔</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/AMD/" style="font-size: 13.33px; color: #4f2bf9">AMD</a> <a href="/tags/BDD/" style="font-size: 10px; color: #00f">BDD</a> <a href="/tags/GeoTools/" style="font-size: 10px; color: #00f">GeoTools</a> <a href="/tags/Hexo/" style="font-size: 20px; color: #ee82ee">Hexo</a> <a href="/tags/Hexo教程/" style="font-size: 10px; color: #00f">Hexo教程</a> <a href="/tags/Http/" style="font-size: 10px; color: #00f">Http</a> <a href="/tags/JFinal/" style="font-size: 10px; color: #00f">JFinal</a> <a href="/tags/JavaScript/" style="font-size: 13.33px; color: #4f2bf9">JavaScript</a> <a href="/tags/Jquery/" style="font-size: 10px; color: #00f">Jquery</a> <a href="/tags/Node-js/" style="font-size: 10px; color: #00f">Node.js</a> <a href="/tags/NodeJS/" style="font-size: 16.67px; color: #9f57f4">NodeJS</a> <a href="/tags/Project/" style="font-size: 10px; color: #00f">Project</a> <a href="/tags/React组件/" style="font-size: 10px; color: #00f">React组件</a> <a href="/tags/React组件生命周期/" style="font-size: 10px; color: #00f">React组件生命周期</a> <a href="/tags/SeaJS/" style="font-size: 10px; color: #00f">SeaJS</a> <a href="/tags/WebGIS/" style="font-size: 10px; color: #00f">WebGIS</a> <a href="/tags/WebGL/" style="font-size: 10px; color: #00f">WebGL</a> <a href="/tags/alidayujs/" style="font-size: 10px; color: #00f">alidayujs</a> <a href="/tags/angluar/" style="font-size: 10px; color: #00f">angluar</a> <a href="/tags/bluebird/" style="font-size: 10px; color: #00f">bluebird</a> <a href="/tags/cafe/" style="font-size: 10px; color: #00f">cafe</a> <a href="/tags/diary/" style="font-size: 13.33px; color: #4f2bf9">diary</a> <a href="/tags/echarts地图/" style="font-size: 10px; color: #00f">echarts地图</a> <a href="/tags/fullCalendar/" style="font-size: 10px; color: #00f">fullCalendar</a> <a href="/tags/git批处理/" style="font-size: 10px; color: #00f">git批处理</a> <a href="/tags/gulp/" style="font-size: 13.33px; color: #4f2bf9">gulp</a> <a href="/tags/jmp3/" style="font-size: 10px; color: #00f">jmp3</a> <a href="/tags/mapReduce/" style="font-size: 10px; color: #00f">mapReduce</a> <a href="/tags/mapshaper/" style="font-size: 10px; color: #00f">mapshaper</a> <a href="/tags/mocha/" style="font-size: 10px; color: #00f">mocha</a> <a href="/tags/mongoDB/" style="font-size: 10px; color: #00f">mongoDB</a> <a href="/tags/mongoDB统计/" style="font-size: 10px; color: #00f">mongoDB统计</a> <a href="/tags/node-oracledb/" style="font-size: 10px; color: #00f">node-oracledb</a> <a href="/tags/node-js/" style="font-size: 10px; color: #00f">node.js</a> <a href="/tags/node-js链接oracle/" style="font-size: 10px; color: #00f">node.js链接oracle</a> <a href="/tags/npm/" style="font-size: 16.67px; color: #9f57f4">npm</a> <a href="/tags/promise/" style="font-size: 10px; color: #00f">promise</a> <a href="/tags/should/" style="font-size: 10px; color: #00f">should</a> <a href="/tags/swiftype/" style="font-size: 10px; color: #00f">swiftype</a> <a href="/tags/vue/" style="font-size: 10px; color: #00f">vue</a> <a href="/tags/webpack/" style="font-size: 10px; color: #00f">webpack</a> <a href="/tags/webuploader/" style="font-size: 10px; color: #00f">webuploader</a> <a href="/tags/前端优化/" style="font-size: 10px; color: #00f">前端优化</a> <a href="/tags/前端构建/" style="font-size: 13.33px; color: #4f2bf9">前端构建</a> <a href="/tags/前端面试/" style="font-size: 10px; color: #00f">前端面试</a> <a href="/tags/排班管理/" style="font-size: 10px; color: #00f">排班管理</a> <a href="/tags/短信发送/" style="font-size: 10px; color: #00f">短信发送</a> <a href="/tags/考勤签到/" style="font-size: 10px; color: #00f">考勤签到</a> <a href="/tags/阿里大鱼/" style="font-size: 10px; color: #00f">阿里大鱼</a> <a href="/tags/阿里大鱼sdk/" style="font-size: 10px; color: #00f">阿里大鱼sdk</a> <a href="/tags/随笔/" style="font-size: 10px; color: #00f">随笔</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/12/15/react-component-lifecycle/">代码理解React组件生命周期过程</a>
+          </li>
+        
+          <li>
+            <a href="/2016/12/11/hexo-theme-cafe/">hexo-theme-cafe</a>
+          </li>
+        
+          <li>
+            <a href="/2016/10/16/webglearth-typhoon-project/">WebGL Earth台风监测web应用webglearth-typhoon</a>
+          </li>
+        
+          <li>
+            <a href="/2016/08/28/project-git-batch-file-builder/">Git批处理|git-batch-file-builder</a>
+          </li>
+        
+          <li>
+            <a href="/2016/08/10/the-interveiw-for-a-second-job/">前端面试笔记</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+     
+
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新评论</h3>
+    <div class="widget">
+         <div class="hot-comments">
+    <!-- 多说最新评论 start -->
+	<div class="ds-recent-comments" data-num-items="5" data-show-avatars="1" data-show-time="1" data-show-title="1" data-show-admin="1" data-excerpt-length="70"></div>
+    <!-- 多说最新评论 end -->
+</div>
+    </div>
+  </div>
+
+
+
+  
+     
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">二月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">一月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">十二月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">十一月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">十月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">九月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">八月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">十月 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">五月 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">四月 2014</a></li></ul>
+    </div>
+  </div>
+
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-left">
+      &copy; 2014 - 2016 giscafer&nbsp;|&nbsp;
+      主题 <a href="https://github.com/giscafer/hexo-theme-cafe/" target="_blank">Cafe</a>
+    </div>
+     <div id="footer-right">
+      联系方式&nbsp;|&nbsp;giscafer@outlook.com
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+    <a href="/aboutme" class="mobile-nav-link">关于</a>
+  
+</nav>
+    
+
+
+    	<script type="text/javascript">
+        var duoshuoQuery = {short_name:"giscafe"};
+      </script>
+      <script src="/duoshuo/embed.js" type="text/javascript"></script>
+
+
+ <script src="/jquery/jquery.min.js" type="text/javascript"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+  </div>
+</body>
+</html>

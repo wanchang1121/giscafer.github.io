@@ -81,6 +81,58 @@ ga('send', 'pageview');
       <div class="outer">
         <section id="main">
   
+    <article id="post-npm-registry" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/03/08/npm-registry/" class="article-date">
+  <time datetime="2016-03-08T15:36:18.000Z" itemprop="datePublished">2016-03-08</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/NodeJS/">NodeJS</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/08/npm-registry/">npm设置淘宝镜像</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>今晚使用npm下载<code>webpack</code>和其他插件时巨慢，这是以前从未遇到过的，所以就换了淘宝镜像，快了很多</p>
+<p>更换镜像方式很多种，参考官方<a href="http://npm.taobao.org/" target="_blank" rel="external">文档说明</a></p>
+<p>更方便的方式是，在c盘用户目录下，找到<code>.npmrc</code>文件，加入如下代码即可。</p>
+<figure class="highlight tcl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">registry</span> = <span class="keyword">http</span>://<span class="keyword">registry</span>.npm.taobao.org</span><br></pre></td></tr></table></figure>
+<p>或者手动设置</p>
+<pre><code>npm config <span class="keyword">set</span> <span class="keyword">registry</span> <span class="keyword">http</span>://<span class="keyword">registry</span>.npm.taobao.org/
+</code></pre><p>但是这样做有个问题，发布npm插件的时候需要<code>npm adduser</code>，如果<code>.npmrc</code>文件填了这个的话，是登录不上的，<br>所以记得发布插件的时候删除了，或者是通过上边<code>文档说明</code>提供的其他方式解决。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://giscafer.com/2016/03/08/npm-registry/" data-id="ciwp5rhjg0029k4z5kg2kbrjz" class="article-share-link">分享</a>
+      
+        <a href="http://giscafer.com/2016/03/08/npm-registry/#ds-thread" class="article-comment-link">留言</a>
+      
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/npm/">npm</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-nodejs-mocha-test" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/02/12/nodejs-mocha-test/" class="article-date">
@@ -119,7 +171,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://giscafer.com/2016/02/12/nodejs-mocha-test/" data-id="ciwk3y8w6002e5cz5o8a78riq" class="article-share-link">分享</a>
+      <a data-url="http://giscafer.com/2016/02/12/nodejs-mocha-test/" data-id="ciwp5rhjp002nk4z5qk6c88r6" class="article-share-link">分享</a>
       
         <a href="http://giscafer.com/2016/02/12/nodejs-mocha-test/#ds-thread" class="article-comment-link">留言</a>
       
@@ -169,7 +221,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://giscafer.com/2016/02/11/diary-2016-02-11/" data-id="ciwk3y8xr00545cz59doemhoq" class="article-share-link">分享</a>
+      <a data-url="http://giscafer.com/2016/02/11/diary-2016-02-11/" data-id="ciwp5rhl5005dk4z5h0sj49ag" class="article-share-link">分享</a>
       
         <a href="http://giscafer.com/2016/02/11/diary-2016-02-11/#ds-thread" class="article-comment-link">留言</a>
       
@@ -219,7 +271,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://giscafer.com/2016/02/10/alidayujs-npm/" data-id="ciwk3y8xz005k5cz5b30o508q" class="article-share-link">分享</a>
+      <a data-url="http://giscafer.com/2016/02/10/alidayujs-npm/" data-id="ciwp5rhld005tk4z5994flby4" class="article-share-link">分享</a>
       
         <a href="http://giscafer.com/2016/02/10/alidayujs-npm/#ds-thread" class="article-comment-link">留言</a>
       
@@ -269,69 +321,13 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://giscafer.com/2016/02/05/mongodb-map-reduce/" data-id="ciwk3y8wk002s5cz5p34pe5eb" class="article-share-link">分享</a>
+      <a data-url="http://giscafer.com/2016/02/05/mongodb-map-reduce/" data-id="ciwp5rhjx0031k4z5txwtyca7" class="article-share-link">分享</a>
       
         <a href="http://giscafer.com/2016/02/05/mongodb-map-reduce/#ds-thread" class="article-comment-link">留言</a>
       
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mapReduce/">mapReduce</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mongoDB/">mongoDB</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mongoDB统计/">mongoDB统计</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-nodejs-overflow-question" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/02/05/nodejs-overflow-question/" class="article-date">
-  <time datetime="2016-02-05T06:18:08.000Z" itemprop="datePublished">2016-02-05</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/NodeJS/">NodeJS</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/05/nodejs-overflow-question/">NodeJS开发常见错误A&amp;Q</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="0、NodeJS调试介绍">0、NodeJS调试介绍</h2><p>级别从高到低，推荐到不推荐：</p>
-<ol>
-<li>ttd/bdd测试驱动</li>
-<li>node-inspector，vsc编辑器，webstrom；</li>
-<li>node-debug</li>
-<li>console.log</li>
-</ol>
-        
-          <p class="article-more-link">
-            <a href="/2016/02/05/nodejs-overflow-question/#more">继续阅读全文 »</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://giscafer.com/2016/02/05/nodejs-overflow-question/" data-id="ciwk3y8w4002a5cz5uv46tvon" class="article-share-link">分享</a>
-      
-        <a href="http://giscafer.com/2016/02/05/nodejs-overflow-question/#ds-thread" class="article-comment-link">留言</a>
-      
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/NodeJS/">NodeJS</a></li></ul>
 
     </footer>
   </div>
@@ -353,7 +349,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">分类</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/DB/">DB</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/GIS/">GIS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/NodeJS/">NodeJS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Project/">Project</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Project/NodeJS/">NodeJS</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端相关/">前端相关</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/随笔/">随笔</a></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/DB/">DB</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/GIS/">GIS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JavaScript/">JavaScript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/NodeJS/">NodeJS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Project/">Project</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Project/NodeJS/">NodeJS</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端相关/">前端相关</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/">技术</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/技术/React/">React</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/随笔/">随笔</a></li></ul>
     </div>
   </div>
 
@@ -363,7 +359,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/AMD/" style="font-size: 13.33px; color: #4f2bf9">AMD</a> <a href="/tags/BDD/" style="font-size: 10px; color: #00f">BDD</a> <a href="/tags/GeoTools/" style="font-size: 10px; color: #00f">GeoTools</a> <a href="/tags/Hexo/" style="font-size: 20px; color: #ee82ee">Hexo</a> <a href="/tags/Hexo教程/" style="font-size: 10px; color: #00f">Hexo教程</a> <a href="/tags/Http/" style="font-size: 10px; color: #00f">Http</a> <a href="/tags/JFinal/" style="font-size: 10px; color: #00f">JFinal</a> <a href="/tags/JavaScript/" style="font-size: 13.33px; color: #4f2bf9">JavaScript</a> <a href="/tags/Jquery/" style="font-size: 10px; color: #00f">Jquery</a> <a href="/tags/Node-js/" style="font-size: 10px; color: #00f">Node.js</a> <a href="/tags/NodeJS/" style="font-size: 16.67px; color: #9f57f4">NodeJS</a> <a href="/tags/Project/" style="font-size: 10px; color: #00f">Project</a> <a href="/tags/SeaJS/" style="font-size: 10px; color: #00f">SeaJS</a> <a href="/tags/WebGIS/" style="font-size: 10px; color: #00f">WebGIS</a> <a href="/tags/WebGL/" style="font-size: 10px; color: #00f">WebGL</a> <a href="/tags/alidayujs/" style="font-size: 10px; color: #00f">alidayujs</a> <a href="/tags/angluar/" style="font-size: 10px; color: #00f">angluar</a> <a href="/tags/bluebird/" style="font-size: 10px; color: #00f">bluebird</a> <a href="/tags/cafe/" style="font-size: 10px; color: #00f">cafe</a> <a href="/tags/diary/" style="font-size: 13.33px; color: #4f2bf9">diary</a> <a href="/tags/echarts地图/" style="font-size: 10px; color: #00f">echarts地图</a> <a href="/tags/fullCalendar/" style="font-size: 10px; color: #00f">fullCalendar</a> <a href="/tags/git批处理/" style="font-size: 10px; color: #00f">git批处理</a> <a href="/tags/gulp/" style="font-size: 13.33px; color: #4f2bf9">gulp</a> <a href="/tags/jmp3/" style="font-size: 10px; color: #00f">jmp3</a> <a href="/tags/mapReduce/" style="font-size: 10px; color: #00f">mapReduce</a> <a href="/tags/mapshaper/" style="font-size: 10px; color: #00f">mapshaper</a> <a href="/tags/mocha/" style="font-size: 10px; color: #00f">mocha</a> <a href="/tags/mongoDB/" style="font-size: 10px; color: #00f">mongoDB</a> <a href="/tags/mongoDB统计/" style="font-size: 10px; color: #00f">mongoDB统计</a> <a href="/tags/node-oracledb/" style="font-size: 10px; color: #00f">node-oracledb</a> <a href="/tags/node-js/" style="font-size: 10px; color: #00f">node.js</a> <a href="/tags/node-js链接oracle/" style="font-size: 10px; color: #00f">node.js链接oracle</a> <a href="/tags/npm/" style="font-size: 16.67px; color: #9f57f4">npm</a> <a href="/tags/promise/" style="font-size: 10px; color: #00f">promise</a> <a href="/tags/should/" style="font-size: 10px; color: #00f">should</a> <a href="/tags/swiftype/" style="font-size: 10px; color: #00f">swiftype</a> <a href="/tags/vue/" style="font-size: 10px; color: #00f">vue</a> <a href="/tags/webpack/" style="font-size: 10px; color: #00f">webpack</a> <a href="/tags/webuploader/" style="font-size: 10px; color: #00f">webuploader</a> <a href="/tags/前端优化/" style="font-size: 10px; color: #00f">前端优化</a> <a href="/tags/前端构建/" style="font-size: 13.33px; color: #4f2bf9">前端构建</a> <a href="/tags/前端面试/" style="font-size: 10px; color: #00f">前端面试</a> <a href="/tags/排班管理/" style="font-size: 10px; color: #00f">排班管理</a> <a href="/tags/短信发送/" style="font-size: 10px; color: #00f">短信发送</a> <a href="/tags/考勤签到/" style="font-size: 10px; color: #00f">考勤签到</a> <a href="/tags/阿里大鱼/" style="font-size: 10px; color: #00f">阿里大鱼</a> <a href="/tags/阿里大鱼sdk/" style="font-size: 10px; color: #00f">阿里大鱼sdk</a> <a href="/tags/随笔/" style="font-size: 10px; color: #00f">随笔</a>
+      <a href="/tags/AMD/" style="font-size: 13.33px; color: #4f2bf9">AMD</a> <a href="/tags/BDD/" style="font-size: 10px; color: #00f">BDD</a> <a href="/tags/GeoTools/" style="font-size: 10px; color: #00f">GeoTools</a> <a href="/tags/Hexo/" style="font-size: 20px; color: #ee82ee">Hexo</a> <a href="/tags/Hexo教程/" style="font-size: 10px; color: #00f">Hexo教程</a> <a href="/tags/Http/" style="font-size: 10px; color: #00f">Http</a> <a href="/tags/JFinal/" style="font-size: 10px; color: #00f">JFinal</a> <a href="/tags/JavaScript/" style="font-size: 13.33px; color: #4f2bf9">JavaScript</a> <a href="/tags/Jquery/" style="font-size: 10px; color: #00f">Jquery</a> <a href="/tags/Node-js/" style="font-size: 10px; color: #00f">Node.js</a> <a href="/tags/NodeJS/" style="font-size: 16.67px; color: #9f57f4">NodeJS</a> <a href="/tags/Project/" style="font-size: 10px; color: #00f">Project</a> <a href="/tags/React组件/" style="font-size: 10px; color: #00f">React组件</a> <a href="/tags/React组件生命周期/" style="font-size: 10px; color: #00f">React组件生命周期</a> <a href="/tags/SeaJS/" style="font-size: 10px; color: #00f">SeaJS</a> <a href="/tags/WebGIS/" style="font-size: 10px; color: #00f">WebGIS</a> <a href="/tags/WebGL/" style="font-size: 10px; color: #00f">WebGL</a> <a href="/tags/alidayujs/" style="font-size: 10px; color: #00f">alidayujs</a> <a href="/tags/angluar/" style="font-size: 10px; color: #00f">angluar</a> <a href="/tags/bluebird/" style="font-size: 10px; color: #00f">bluebird</a> <a href="/tags/cafe/" style="font-size: 10px; color: #00f">cafe</a> <a href="/tags/diary/" style="font-size: 13.33px; color: #4f2bf9">diary</a> <a href="/tags/echarts地图/" style="font-size: 10px; color: #00f">echarts地图</a> <a href="/tags/fullCalendar/" style="font-size: 10px; color: #00f">fullCalendar</a> <a href="/tags/git批处理/" style="font-size: 10px; color: #00f">git批处理</a> <a href="/tags/gulp/" style="font-size: 13.33px; color: #4f2bf9">gulp</a> <a href="/tags/jmp3/" style="font-size: 10px; color: #00f">jmp3</a> <a href="/tags/mapReduce/" style="font-size: 10px; color: #00f">mapReduce</a> <a href="/tags/mapshaper/" style="font-size: 10px; color: #00f">mapshaper</a> <a href="/tags/mocha/" style="font-size: 10px; color: #00f">mocha</a> <a href="/tags/mongoDB/" style="font-size: 10px; color: #00f">mongoDB</a> <a href="/tags/mongoDB统计/" style="font-size: 10px; color: #00f">mongoDB统计</a> <a href="/tags/node-oracledb/" style="font-size: 10px; color: #00f">node-oracledb</a> <a href="/tags/node-js/" style="font-size: 10px; color: #00f">node.js</a> <a href="/tags/node-js链接oracle/" style="font-size: 10px; color: #00f">node.js链接oracle</a> <a href="/tags/npm/" style="font-size: 16.67px; color: #9f57f4">npm</a> <a href="/tags/promise/" style="font-size: 10px; color: #00f">promise</a> <a href="/tags/should/" style="font-size: 10px; color: #00f">should</a> <a href="/tags/swiftype/" style="font-size: 10px; color: #00f">swiftype</a> <a href="/tags/vue/" style="font-size: 10px; color: #00f">vue</a> <a href="/tags/webpack/" style="font-size: 10px; color: #00f">webpack</a> <a href="/tags/webuploader/" style="font-size: 10px; color: #00f">webuploader</a> <a href="/tags/前端优化/" style="font-size: 10px; color: #00f">前端优化</a> <a href="/tags/前端构建/" style="font-size: 13.33px; color: #4f2bf9">前端构建</a> <a href="/tags/前端面试/" style="font-size: 10px; color: #00f">前端面试</a> <a href="/tags/排班管理/" style="font-size: 10px; color: #00f">排班管理</a> <a href="/tags/短信发送/" style="font-size: 10px; color: #00f">短信发送</a> <a href="/tags/考勤签到/" style="font-size: 10px; color: #00f">考勤签到</a> <a href="/tags/阿里大鱼/" style="font-size: 10px; color: #00f">阿里大鱼</a> <a href="/tags/阿里大鱼sdk/" style="font-size: 10px; color: #00f">阿里大鱼sdk</a> <a href="/tags/随笔/" style="font-size: 10px; color: #00f">随笔</a>
     </div>
   </div>
 
@@ -373,6 +369,10 @@ ga('send', 'pageview');
     <h3 class="widget-title">最新文章</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2016/12/15/react-component-lifecycle/">代码理解React组件生命周期过程</a>
+          </li>
         
           <li>
             <a href="/2016/12/11/hexo-theme-cafe/">hexo-theme-cafe</a>
@@ -388,10 +388,6 @@ ga('send', 'pageview');
         
           <li>
             <a href="/2016/08/10/the-interveiw-for-a-second-job/">前端面试笔记</a>
-          </li>
-        
-          <li>
-            <a href="/2016/06/06/echarts-data-map-project/">自制Echarts地图数据 mapshaper-plus</a>
           </li>
         
       </ul>
