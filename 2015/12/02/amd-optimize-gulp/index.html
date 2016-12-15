@@ -27,21 +27,8 @@
   
     
   
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
   
-<!-- Google Analytics -->
-<script type="text/javascript">
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'UA-88299145-1', 'auto');
-ga('send', 'pageview');
-
-</script>
-<!-- End Google Analytics -->
-
 
 </head>
 
@@ -113,73 +100,73 @@ ga('send', 'pageview');
         
         <p>这里所说的<code>AMD</code>构建，是指<code>AMD</code>定义模块方式的代码构建。AMD=异步定义模块，具体查看官方<a href="https://github.com/amdjs/amdjs-api" target="_blank" rel="external">AMD</a>解释。</p>
 <p>首先，所谓构建就是将多个文件合并压缩等，但是对于<code>AMD</code>定义的模块来说，模块之间存在这依赖关系，<code>AMD</code>构建主要就是解决这种模块之间的依赖关系，构建的方式很多种，下边是gulp 的<code>amd-optimize</code>插件构建笔记。<br><a id="more"></a></p>
-<h3 id="使用gulp对AMD模块构建">使用gulp对AMD模块构建</h3><p>需要三个插件 <code>gulp amd-optimize gulp-concat</code></p>
-<pre><code>npm <span class="operator"><span class="keyword">install</span> gulp amd-<span class="keyword">optimize</span> gulp-<span class="keyword">concat</span> <span class="comment">--save-dev</span></span>
+<h3 id="使用gulp对AMD模块构建"><a href="#使用gulp对AMD模块构建" class="headerlink" title="使用gulp对AMD模块构建"></a>使用gulp对AMD模块构建</h3><p>需要三个插件 <code>gulp amd-optimize gulp-concat</code></p>
+<pre><code>npm install gulp amd-optimize gulp-concat --save-dev
 </code></pre><p>创建gulpfile.js文件，内容如下：</p>
-<pre><code><span class="keyword">var</span> gulp = <span class="built_in">require</span>(<span class="string">"gulp"</span>);
-<span class="keyword">var</span> amdOptimize = <span class="built_in">require</span>(<span class="string">"amd-optimize"</span>);
-<span class="keyword">var</span> concat = <span class="built_in">require</span>(<span class="string">'gulp-concat'</span>);
+<pre><code>var gulp = require(&quot;gulp&quot;);
+var amdOptimize = require(&quot;amd-optimize&quot;);
+var concat = require(&apos;gulp-concat&apos;);
 
-gulp.task(<span class="string">"default"</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>{
-  <span class="keyword">return</span> gulp.src(<span class="string">"app/**/*.js"</span>) <span class="comment">//需要合并的代码</span>
-    .pipe(amdOptimize(<span class="string">"app"</span>))   <span class="comment">//主入口文件</span>
-    .pipe(concat(<span class="string">"result.js"</span>))  <span class="comment">//合并后文件</span>
-    .pipe(gulp.dest(<span class="string">"dist"</span>));  <span class="comment">//输出目录</span>
+gulp.task(&quot;default&quot;, function () {
+  return gulp.src(&quot;app/**/*.js&quot;) //需要合并的代码
+    .pipe(amdOptimize(&quot;app&quot;))   //主入口文件
+    .pipe(concat(&quot;result.js&quot;))  //合并后文件
+    .pipe(gulp.dest(&quot;dist&quot;));  //输出目录
 
 });
 </code></pre><p>工程中，app/index/a.js代码：</p>
-<pre><code>define(<span class="function"><span class="keyword">function</span>(<span class="params">require,exports,module</span>) </span>{
-    <span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>)</span>{
-        <span class="built_in">console</span>.log(<span class="string">"this is the module a"</span>);
+<pre><code>define(function(require,exports,module) {
+    function fn(){
+        console.log(&quot;this is the module a&quot;);
     }
     exports.fn=fn;
 });
 </code></pre><p>app/script/b.js代码：</p>
-<pre><code>define(<span class="function"><span class="keyword">function</span>(<span class="params">require,exports,module</span>) </span>{
-    <span class="keyword">var</span> a = <span class="built_in">require</span>(<span class="string">'../index/a'</span>);
+<pre><code>define(function(require,exports,module) {
+    var a = require(&apos;../index/a&apos;);
     a.fn();
-    <span class="built_in">console</span>.log(<span class="string">"i am module b"</span>);
+    console.log(&quot;i am module b&quot;);
 
-    <span class="built_in">console</span>.log(<span class="string">"b has finished"</span>);
+    console.log(&quot;b has finished&quot;);
 });
 </code></pre><p>根目录下app.js入口文件内容：</p>
-<pre><code>define([<span class="string">'script/b'</span>],<span class="function"><span class="keyword">function</span>(<span class="params">require,exports,module</span>)</span>{
-    <span class="built_in">console</span>.log(<span class="string">" module c"</span>);
+<pre><code>define([&apos;script/b&apos;],function(require,exports,module){
+    console.log(&quot; module c&quot;);
 
-    <span class="built_in">console</span>.log(<span class="string">"c finished"</span>);
+    console.log(&quot;c finished&quot;);
 });
 </code></pre><p>执行构建后，在dist下就会输出result.js文件代码如下</p>
-<pre><code>  define(<span class="string">'index/a'</span>, [
-    <span class="string">'require'</span>,
-    <span class="string">'exports'</span>,
-    <span class="string">'module'</span>
-], <span class="function"><span class="keyword">function</span> (<span class="params">require, exports, module</span>) </span>{
-    <span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>{
-        <span class="built_in">console</span>.log(<span class="string">'this is the module a'</span>);
+<pre><code>  define(&apos;index/a&apos;, [
+    &apos;require&apos;,
+    &apos;exports&apos;,
+    &apos;module&apos;
+], function (require, exports, module) {
+    function fn() {
+        console.log(&apos;this is the module a&apos;);
     }
     exports.fn = fn;
 });
-define(<span class="string">'script/b'</span>, [
-    <span class="string">'require'</span>,
-    <span class="string">'exports'</span>,
-    <span class="string">'module'</span>,
-    <span class="string">'index/a'</span>
-], <span class="function"><span class="keyword">function</span> (<span class="params">require, exports, module</span>) </span>{
-    <span class="keyword">var</span> a = <span class="built_in">require</span>(<span class="string">'../index/a'</span>);
+define(&apos;script/b&apos;, [
+    &apos;require&apos;,
+    &apos;exports&apos;,
+    &apos;module&apos;,
+    &apos;index/a&apos;
+], function (require, exports, module) {
+    var a = require(&apos;../index/a&apos;);
     a.fn();
-    <span class="built_in">console</span>.log(<span class="string">'i am module b'</span>);
-    <span class="built_in">console</span>.log(<span class="string">'b has finished'</span>);
+    console.log(&apos;i am module b&apos;);
+    console.log(&apos;b has finished&apos;);
 });
-define(<span class="string">'app'</span>, [<span class="string">'script/b'</span>], <span class="function"><span class="keyword">function</span> (<span class="params">require, exports, module</span>) </span>{
-    <span class="built_in">console</span>.log(<span class="string">' module c'</span>);
-    <span class="built_in">console</span>.log(<span class="string">'c finished'</span>);
+define(&apos;app&apos;, [&apos;script/b&apos;], function (require, exports, module) {
+    console.log(&apos; module c&apos;);
+    console.log(&apos;c finished&apos;);
 });
 </code></pre><p>可见，会解决package内部模块之间的项目依赖</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://giscafer.com/2015/12/02/amd-optimize-gulp/" data-id="ciwp6pwmk006q08z5j0qmw9ze" class="article-share-link">分享</a>
+      <a data-url="http://giscafer.com/2015/12/02/amd-optimize-gulp/" data-id="ciwqg2zbd0009gkz5cpu3asxt" class="article-share-link">分享</a>
       
         <a href="http://giscafer.com/2015/12/02/amd-optimize-gulp/#ds-thread" class="article-comment-link">留言</a>
       
@@ -220,30 +207,25 @@ define(<span class="string">'app'</span>, [<span class="string">'script/b'</span
 </div>
 
 </section>
-        
-          <aside id="sidebar">
+           
+    <aside id="sidebar">
   
-     <!-- Table of Contents -->
-
-  <div class="widget-wrap " id="">
-  
-    <div class="widget" id="toc-widget-fixed">
     
-       <strong class="toc-title">文章目录</strong>
-       <div class="toc-widget-list">
-            
-        </div>
+  
+    <div class="widget-wrap">
+    
+      <div class="widget" id="toc-widget-fixed">
+      
+        <strong class="toc-title">文章目录</strong>
+        <div class="toc-widget-list">
+              <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#使用gulp对AMD模块构建"><span class="toc-number">1.</span> <span class="toc-text">使用gulp对AMD模块构建</span></a></li></ol>
+          </div>
+      </div>
     </div>
-  </div>
+  
 
   
-    <br/>
-404.html<br/>
-http://giscafer.com/404.html<br/>
-false<br/>
-index=false<br/>
-if=false
-
+    
 
   
     
@@ -261,7 +243,7 @@ if=false
 
   
 </aside>
-        
+
       </div>
       <footer id="footer">
   
@@ -291,18 +273,18 @@ if=false
     	<script type="text/javascript">
         var duoshuoQuery = {short_name:"giscafe"};
       </script>
-      <script src="/duoshuo/embed.js" type="text/javascript"></script>
+      <script src="/duoshuo/embed.js"></script>
 
 
- <script src="/jquery/jquery.min.js" type="text/javascript"></script>
- <script src="/js/is.js" type="text/javascript"></script>
+ <script src="/jquery/jquery.min.js"></script>
+ <script src="/js/is.js"></script>
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
-  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
 
 
-<script src="/js/script.js" type="text/javascript"></script>
+<script src="/js/script.js"></script>
 
   </div>
 </body>

@@ -33,21 +33,8 @@ thenable是一个定义了then方法的对象或函数，即拥有then方法；
   
     
   
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
   
-<!-- Google Analytics -->
-<script type="text/javascript">
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'UA-88299145-1', 'auto');
-ga('send', 'pageview');
-
-</script>
-<!-- End Google Analytics -->
-
 
 </head>
 
@@ -117,32 +104,32 @@ ga('send', 'pageview');
       
         <!-- Table of Contents -->
         
-        <h2 id="一、Promises/A+规范">一、Promises/A+规范</h2><h3 id="Promise">Promise</h3><p>是一个拥有<code>then</code>方法的对象或函数，起行为符合本规范；</p>
-<h3 id="thenable">thenable</h3><p>是一个定义了<code>then</code>方法的对象或函数，即<code>拥有then方法</code>；</p>
+        <h2 id="一、Promises-A-规范"><a href="#一、Promises-A-规范" class="headerlink" title="一、Promises/A+规范"></a>一、Promises/A+规范</h2><h3 id="Promise"><a href="#Promise" class="headerlink" title="Promise"></a>Promise</h3><p>是一个拥有<code>then</code>方法的对象或函数，起行为符合本规范；</p>
+<h3 id="thenable"><a href="#thenable" class="headerlink" title="thenable"></a>thenable</h3><p>是一个定义了<code>then</code>方法的对象或函数，即<code>拥有then方法</code>；</p>
 <p>详情介绍见文章<a href="http://www.ituring.com.cn/article/66566" target="_blank" rel="external">《Promises/A+规范》</a></p>
-<h2 id="二、bluebird">二、bluebird</h2><p>之前做node.js项目的时候一直使用朴灵的<code>eventproxy</code>来处理异步或者回调，<code>eventproxy</code>采用的是事件机制，使用也挺方便。<br>现在也了解一下备受欢迎的<code>bluebird</code>——<a href="http://bluebirdjs.com/" target="_blank" rel="external">官网</a>，bb的API文档很全很详细。<br><a id="more"></a></p>
-<h3 id="-promisifyAll">.promisifyAll</h3><p>官方API说明：</p>
+<h2 id="二、bluebird"><a href="#二、bluebird" class="headerlink" title="二、bluebird"></a>二、bluebird</h2><p>之前做node.js项目的时候一直使用朴灵的<code>eventproxy</code>来处理异步或者回调，<code>eventproxy</code>采用的是事件机制，使用也挺方便。<br>现在也了解一下备受欢迎的<code>bluebird</code>——<a href="http://bluebirdjs.com/" target="_blank" rel="external">官网</a>，bb的API文档很全很详细。<br><a id="more"></a></p>
+<h3 id="promisifyAll"><a href="#promisifyAll" class="headerlink" title=".promisifyAll"></a>.promisifyAll</h3><p>官方API说明：</p>
 <blockquote>
 <p>Promisifies the entire object by going through the object’s properties and creating an async equivalent of each function on the object and its prototype chain. The promisified method name will be the original method name suffixed with suffix (default is “Async”). Any class properties of the object (which is the case for the main export of many modules) are also promisified, both static and instance methods. Class property is a property with a function value that has a non-empty .prototype object. Returns the input object.</p>
 </blockquote>
 <p>大概意思就是，<code>Promise.promisifyAll</code>方法接收一个对象，会遍历对象中的方法并克隆该方法并在其后加上<code>Async</code>字符。也就是说会多出一样的方法，只不过都带<code>Async</code>（异步）的后缀。如果想将对象原型链上的方法也加上的话，则传入对象的原型即可，例如 <code>Promise.promisifyAll(obj.prototype)</code>，返回的是该对象。</p>
-<h3 id="-then">.then</h3><p>类似原生Promise/A+规范的then方法：</p>
+<h3 id="then"><a href="#then" class="headerlink" title=".then"></a>.then</h3><p>类似原生Promise/A+规范的then方法：</p>
 <blockquote>
 <p>.then(<br>    [function(any value) fulfilledHandler],<br>    [function(any error) rejectedHandler]<br>    ) -&gt; Promise</p>
 </blockquote>
-<p><strong>例子：</strong>（then和promisifyAll的使用）<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">var</span> <span class="built_in">Promise</span>=<span class="built_in">require</span>(<span class="string">'bluebird'</span>);</span><br><span class="line"><span class="keyword">var</span> fs=<span class="built_in">Promise</span>.promisifyAll(<span class="built_in">require</span>(<span class="string">'fs'</span>));</span><br><span class="line"><span class="keyword">var</span> onFulfilled=<span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</span><br><span class="line">       <span class="built_in">console</span>.log(data)</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> onRejected=<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'报错啦--'</span>,e)</span><br><span class="line">&#125;</span><br><span class="line">fs.readFileAsync(<span class="string">'package.json'</span>, <span class="string">"utf8"</span>).then(onFulfilled,onRejected);</span><br></pre></td></tr></table></figure></p>
-<h3 id="-catch">.catch</h3><p>更方便的是，<code>bluebird</code>提供了<code>.catch</code>方法，可以在”链式”的操作上捕获异常，如上边的例子可以改写为如下方式：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">fs.readFileAsync(<span class="string">'package.json'</span>, <span class="string">"utf8"</span>).then(<span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;<span class="comment">//只需要关注成功的时候</span></span><br><span class="line">    <span class="built_in">console</span>.log(data);</span><br><span class="line">&#125;).catch(<span class="function"><span class="keyword">function</span>(<span class="params">err</span>)</span>&#123;<span class="comment">//轻松处理所有出现的异常</span></span><br><span class="line">    <span class="built_in">console</span>.log(err);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p><strong>例子：</strong>（then和promisifyAll的使用）<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">var</span> <span class="built_in">Promise</span>=<span class="built_in">require</span>(<span class="string">'bluebird'</span>);</div><div class="line"><span class="keyword">var</span> fs=<span class="built_in">Promise</span>.promisifyAll(<span class="built_in">require</span>(<span class="string">'fs'</span>));</div><div class="line"><span class="keyword">var</span> onFulfilled=<span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</div><div class="line">       <span class="built_in">console</span>.log(data)</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> onRejected=<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'报错啦--'</span>,e)</div><div class="line">&#125;</div><div class="line">fs.readFileAsync(<span class="string">'package.json'</span>, <span class="string">"utf8"</span>).then(onFulfilled,onRejected);</div></pre></td></tr></table></figure></p>
+<h3 id="catch"><a href="#catch" class="headerlink" title=".catch"></a>.catch</h3><p>更方便的是，<code>bluebird</code>提供了<code>.catch</code>方法，可以在”链式”的操作上捕获异常，如上边的例子可以改写为如下方式：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">fs.readFileAsync(<span class="string">'package.json'</span>, <span class="string">"utf8"</span>).then(<span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;<span class="comment">//只需要关注成功的时候</span></div><div class="line">    <span class="built_in">console</span>.log(data);</div><div class="line">&#125;).catch(<span class="function"><span class="keyword">function</span>(<span class="params">err</span>)</span>&#123;<span class="comment">//轻松处理所有出现的异常</span></div><div class="line">    <span class="built_in">console</span>.log(err);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
 <p>此外，还可以区别捕获不同的异常，分别处理，只需要指定异常的类型（如<code>TypeError</code>,<code>ReferenceError</code>,<code>NetworkError</code>等）即可（和java的异常类型处理类似吧？）</p>
-<p>例子1，区分不同错误类型捕捉：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">somePromise.then(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a.b.c.d();</span><br><span class="line">&#125;).catch(<span class="built_in">TypeError</span>, <span class="built_in">ReferenceError</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">    <span class="comment">//程序异常捕获</span></span><br><span class="line">&#125;).catch(NetworkError, TimeoutError, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">    <span class="comment">//网络异常捕获</span></span><br><span class="line">&#125;).catch(<span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">    <span class="comment">//捕获所有其他异常</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
-<p>例子2，捕捉找不到文件报错：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">fs.readFileAsync(<span class="string">'package.jsn'</span>, <span class="string">"utf8"</span>).then(<span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(data);</span><br><span class="line">&#125;).catch(&#123; code: <span class="string">'ENOENT'</span> &#125;, <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"file not found: "</span> + e.path);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
-<h3 id="集合相关的方法">集合相关的方法</h3><p><code>.all</code>方法可以处理一个数组内的所有方法，处理完毕返回信息，如例子异步创建10个文件后，返回成功信息：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> files = [];</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; ++i) &#123;</span><br><span class="line">    files.push(fs.writeFileAsync(<span class="string">"file-"</span> + i + <span class="string">".txt"</span>, <span class="string">""</span>, <span class="string">"utf-8"</span>));</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">Promise</span>.all(files).then(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"all the files were created"</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>例子1，区分不同错误类型捕捉：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">somePromise.then(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> a.b.c.d();</div><div class="line">&#125;).catch(<span class="built_in">TypeError</span>, <span class="built_in">ReferenceError</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</div><div class="line">    <span class="comment">//程序异常捕获</span></div><div class="line">&#125;).catch(NetworkError, TimeoutError, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</div><div class="line">    <span class="comment">//网络异常捕获</span></div><div class="line">&#125;).catch(<span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</div><div class="line">    <span class="comment">//捕获所有其他异常</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>例子2，捕捉找不到文件报错：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">fs.readFileAsync(<span class="string">'package.jsn'</span>, <span class="string">"utf8"</span>).then(<span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(data);</div><div class="line">&#125;).catch(&#123; <span class="attr">code</span>: <span class="string">'ENOENT'</span> &#125;, <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"file not found: "</span> + e.path);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<h3 id="集合相关的方法"><a href="#集合相关的方法" class="headerlink" title="集合相关的方法"></a>集合相关的方法</h3><p><code>.all</code>方法可以处理一个数组内的所有方法，处理完毕返回信息，如例子异步创建10个文件后，返回成功信息：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> files = [];</div><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; ++i) &#123;</div><div class="line">    files.push(fs.writeFileAsync(<span class="string">"file-"</span> + i + <span class="string">".txt"</span>, <span class="string">""</span>, <span class="string">"utf-8"</span>));</div><div class="line">&#125;</div><div class="line"><span class="built_in">Promise</span>.all(files).then(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"all the files were created"</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 <p>还有其他好用的方法，需要的时候去了解一下API文档，根据实际情况使用即可。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://giscafer.com/2016/02/04/bluebird-api-study/" data-id="ciwp6pwma006j08z53gbytu35" class="article-share-link">分享</a>
+      <a data-url="http://giscafer.com/2016/02/04/bluebird-api-study/" data-id="ciwqg2zbb0007gkz5gboo4pa8" class="article-share-link">分享</a>
       
         <a href="http://giscafer.com/2016/02/04/bluebird-api-study/#ds-thread" class="article-comment-link">留言</a>
       
@@ -183,30 +170,25 @@ ga('send', 'pageview');
 </div>
 
 </section>
-        
-          <aside id="sidebar">
+           
+    <aside id="sidebar">
   
-     <!-- Table of Contents -->
-
-  <div class="widget-wrap " id="">
-  
-    <div class="widget" id="toc-widget-fixed">
     
-       <strong class="toc-title">文章目录</strong>
-       <div class="toc-widget-list">
-            
-        </div>
+  
+    <div class="widget-wrap">
+    
+      <div class="widget" id="toc-widget-fixed">
+      
+        <strong class="toc-title">文章目录</strong>
+        <div class="toc-widget-list">
+              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、Promises-A-规范"><span class="toc-number">1.</span> <span class="toc-text">一、Promises/A+规范</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Promise"><span class="toc-number">1.1.</span> <span class="toc-text">Promise</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#thenable"><span class="toc-number">1.2.</span> <span class="toc-text">thenable</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、bluebird"><span class="toc-number">2.</span> <span class="toc-text">二、bluebird</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#promisifyAll"><span class="toc-number">2.1.</span> <span class="toc-text">.promisifyAll</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#then"><span class="toc-number">2.2.</span> <span class="toc-text">.then</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#catch"><span class="toc-number">2.3.</span> <span class="toc-text">.catch</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#集合相关的方法"><span class="toc-number">2.4.</span> <span class="toc-text">集合相关的方法</span></a></li></ol></li></ol>
+          </div>
+      </div>
     </div>
-  </div>
+  
 
   
-    <br/>
-404.html<br/>
-http://giscafer.com/404.html<br/>
-false<br/>
-index=false<br/>
-if=false
-
+    
 
   
     
@@ -224,7 +206,7 @@ if=false
 
   
 </aside>
-        
+
       </div>
       <footer id="footer">
   
@@ -254,18 +236,18 @@ if=false
     	<script type="text/javascript">
         var duoshuoQuery = {short_name:"giscafe"};
       </script>
-      <script src="/duoshuo/embed.js" type="text/javascript"></script>
+      <script src="/duoshuo/embed.js"></script>
 
 
- <script src="/jquery/jquery.min.js" type="text/javascript"></script>
- <script src="/js/is.js" type="text/javascript"></script>
+ <script src="/jquery/jquery.min.js"></script>
+ <script src="/js/is.js"></script>
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
-  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
 
 
-<script src="/js/script.js" type="text/javascript"></script>
+<script src="/js/script.js"></script>
 
   </div>
 </body>

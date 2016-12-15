@@ -30,21 +30,8 @@ HTTP状态码（HTTP Status Code）是用以表示网页服务器HTTP响应状�
   
     
   
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
   
-<!-- Google Analytics -->
-<script type="text/javascript">
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'UA-88299145-1', 'auto');
-ga('send', 'pageview');
-
-</script>
-<!-- End Google Analytics -->
-
 
 </head>
 
@@ -116,14 +103,14 @@ ga('send', 'pageview');
         
         <p>###HTTP状态码</p>
 <p>HTTP状态码（HTTP Status Code）是用以表示网页服务器HTTP响应状态的 3 位数字代码。</p>
-<h3 id="0（无法访问）">0（无法访问）</h3><a id="more"></a>
+<h3 id="0（无法访问）"><a href="#0（无法访问）" class="headerlink" title="0（无法访问）"></a>0（无法访问）</h3><a id="more"></a>
 <p>代码 说明</p>
 <p>0     （无法访问）无法连接服务器或者域名不存在。</p>
-<h3 id="1xx（临时响应）">1xx（临时响应）</h3><p>表示临时响应并需要请求者继续执行操作的状态代码。</p>
+<h3 id="1xx（临时响应）"><a href="#1xx（临时响应）" class="headerlink" title="1xx（临时响应）"></a>1xx（临时响应）</h3><p>表示临时响应并需要请求者继续执行操作的状态代码。</p>
 <p>代码 说明</p>
 <p>100 （继续） 请求者应当继续提出请求。 服务器返回此代码表示已收到请求的第一部分，正在等待其余部分。</p>
 <p>101 （切换协议） 请求者已要求服务器切换协议，服务器已确认并准备切换。</p>
-<h3 id="2xx_（成功）">2xx （成功）</h3><p>表示成功处理了请求的状态代码。</p>
+<h3 id="2xx-（成功）"><a href="#2xx-（成功）" class="headerlink" title="2xx （成功）"></a>2xx （成功）</h3><p>表示成功处理了请求的状态代码。</p>
 <p> 代码 说明 </p>
 <p>200 （成功） 服务器已成功处理了请求。 通常，这表示服务器提供了请求的网页。</p>
 <p>201 （已创建） 请求成功并且服务器创建了新的资源。</p>
@@ -132,7 +119,7 @@ ga('send', 'pageview');
 <p>204 （无内容） 服务器成功处理了请求，但没有返回任何内容。</p>
 <p>205 （重置内容） 服务器成功处理了请求，但没有返回任何内容。</p>
 <p>206 （部分内容） 服务器成功处理了部分 GET 请求。</p>
-<h3 id="3xx_（重定向）">3xx （重定向）</h3><p>表示要完成请求，需要进一步操作。 通常，这些状态代码用来重定向。</p>
+<h3 id="3xx-（重定向）"><a href="#3xx-（重定向）" class="headerlink" title="3xx （重定向）"></a>3xx （重定向）</h3><p>表示要完成请求，需要进一步操作。 通常，这些状态代码用来重定向。</p>
 <p> 代码 说明 </p>
 <p>300 （多种选择） 针对请求，服务器可执行多种操作。 服务器可根据请求者 (user agent) 选择一项操作，或提供操作列表供请求者选择。</p>
 <p>301 （永久移动） 请求的网页已永久移动到新位置。 服务器返回此响应（对 GET 或 HEAD 请求的响应）时，会自动将请求者转到新位置。</p>
@@ -141,7 +128,7 @@ ga('send', 'pageview');
 <p>304 （未修改） 自从上次请求后，请求的网页未修改过。 服务器返回此响应时，不会返回网页内容。</p>
 <p>305 （使用代理） 请求者只能使用代理访问请求的网页。 如果服务器返回此响应，还表示请求者应使用代理。</p>
 <p>307 （临时重定向） 服务器目前从不同位置的网页响应请求，但请求者应继续使用原有位置来进行以后的请求。</p>
-<h3 id="4xx（请求错误）">4xx（请求错误）</h3><p>这些状态代码表示请求可能出错，妨碍了服务器的处理。</p>
+<h3 id="4xx（请求错误）"><a href="#4xx（请求错误）" class="headerlink" title="4xx（请求错误）"></a>4xx（请求错误）</h3><p>这些状态代码表示请求可能出错，妨碍了服务器的处理。</p>
 <p> 代码 说明 </p>
 <p>400 （错误请求） 服务器不理解请求的语法。</p>
 <p>401 （未授权） 请求要求身份验证。 对于需要登录的网页，服务器可能返回此响应。</p>
@@ -160,7 +147,7 @@ ga('send', 'pageview');
 <p>415 （不支持的媒体类型） 请求的格式不受请求页面的支持。</p>
 <p>416 （请求范围不符合要求） 如果页面无法提供请求的范围，则服务器会返回此状态代码。</p>
 <p>417 （未满足期望值） 服务器未满足”期望”请求标头字段的要求。</p>
-<h3 id="5xx（服务器错误）">5xx（服务器错误）</h3><p>这些状态代码表示服务器在尝试处理请求时发生内部错误。 这些错误可能是服务器本身的错误，而不是请求出错。</p>
+<h3 id="5xx（服务器错误）"><a href="#5xx（服务器错误）" class="headerlink" title="5xx（服务器错误）"></a>5xx（服务器错误）</h3><p>这些状态代码表示服务器在尝试处理请求时发生内部错误。 这些错误可能是服务器本身的错误，而不是请求出错。</p>
 <p> 代码 说明<br>500 （服务器内部错误） 服务器遇到错误，无法完成请求。</p>
 <p>501 （尚未实施） 服务器不具备完成请求的功能。 例如，服务器无法识别请求方法时可能会返回此代码。</p>
 <p>502 （错误网关） 服务器作为网关或代理，从上游服务器收到无效响应。</p>
@@ -172,7 +159,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://giscafer.com/2014/05/27/http-status/" data-id="ciwp6pwkd004d08z57s32iho6" class="article-share-link">分享</a>
+      <a data-url="http://giscafer.com/2014/05/27/http-status/" data-id="ciwqg2zc80017gkz5e3dhn65o" class="article-share-link">分享</a>
       
         <a href="http://giscafer.com/2014/05/27/http-status/#ds-thread" class="article-comment-link">留言</a>
       
@@ -213,30 +200,25 @@ ga('send', 'pageview');
 </div>
 
 </section>
-        
-          <aside id="sidebar">
+           
+    <aside id="sidebar">
   
-     <!-- Table of Contents -->
-
-  <div class="widget-wrap " id="">
-  
-    <div class="widget" id="toc-widget-fixed">
     
-       <strong class="toc-title">文章目录</strong>
-       <div class="toc-widget-list">
-            
-        </div>
+  
+    <div class="widget-wrap">
+    
+      <div class="widget" id="toc-widget-fixed">
+      
+        <strong class="toc-title">文章目录</strong>
+        <div class="toc-widget-list">
+              <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#0（无法访问）"><span class="toc-number">1.</span> <span class="toc-text">0（无法访问）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1xx（临时响应）"><span class="toc-number">2.</span> <span class="toc-text">1xx（临时响应）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2xx-（成功）"><span class="toc-number">3.</span> <span class="toc-text">2xx （成功）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3xx-（重定向）"><span class="toc-number">4.</span> <span class="toc-text">3xx （重定向）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4xx（请求错误）"><span class="toc-number">5.</span> <span class="toc-text">4xx（请求错误）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5xx（服务器错误）"><span class="toc-number">6.</span> <span class="toc-text">5xx（服务器错误）</span></a></li></ol>
+          </div>
+      </div>
     </div>
-  </div>
+  
 
   
-    <br/>
-404.html<br/>
-http://giscafer.com/404.html<br/>
-false<br/>
-index=false<br/>
-if=false
-
+    
 
   
     
@@ -254,7 +236,7 @@ if=false
 
   
 </aside>
-        
+
       </div>
       <footer id="footer">
   
@@ -284,18 +266,18 @@ if=false
     	<script type="text/javascript">
         var duoshuoQuery = {short_name:"giscafe"};
       </script>
-      <script src="/duoshuo/embed.js" type="text/javascript"></script>
+      <script src="/duoshuo/embed.js"></script>
 
 
- <script src="/jquery/jquery.min.js" type="text/javascript"></script>
- <script src="/js/is.js" type="text/javascript"></script>
+ <script src="/jquery/jquery.min.js"></script>
+ <script src="/js/is.js"></script>
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
-  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
 
 
-<script src="/js/script.js" type="text/javascript"></script>
+<script src="/js/script.js"></script>
 
   </div>
 </body>

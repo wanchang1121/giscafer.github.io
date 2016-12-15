@@ -21,6 +21,7 @@
 <meta name="twitter:title" content="Ponitor价格监测">
 <meta name="twitter:description" content="开发这个项目的初衷是学习vue.js+webpack构建应用，加上学习ES6之后没有正式在项目里边练习，然后偶然看到一个demo是做app爬虫的，加上本人又有计划入手个单反的想法，于是就有了Ponitor。
 项目支持对天猫、淘宝、和京东进行爬虫，关注一些商品，降价或涨价的时候都推送消息；（话说如果每天都监测商品价格，在双11和双12，会发现有些商家提前提升价格再故意降价的情况，哈哈哈……，只是猜测">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/giscafer/Ponitor/master/wiki/index_preview.png">
   
     <link rel="alternate" href="/atom.xml" title="Giscafer&#39;s blog" type="application/atom+xml">
   
@@ -30,21 +31,8 @@
   
     
   
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
   
-<!-- Google Analytics -->
-<script type="text/javascript">
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'UA-88299145-1', 'auto');
-ga('send', 'pageview');
-
-</script>
-<!-- End Google Analytics -->
-
 
 </head>
 
@@ -117,21 +105,21 @@ ga('send', 'pageview');
         <p>开发这个项目的初衷是学习<code>vue.js+webpack</code>构建应用，加上学习<code>ES6</code>之后没有正式在项目里边练习，然后偶然看到一个demo是做app爬虫的，加上本人又有计划入手个单反的想法，于是就有了<a href="https://github.com/giscafer/Ponitor" target="_blank" rel="external">Ponitor</a>。</p>
 <p>项目支持对天猫、淘宝、和京东进行爬虫，关注一些商品，降价或涨价的时候都推送消息；（话说如果每天都监测商品价格，在双11和双12，会发现有些商家提前提升价格再故意降价的情况，哈哈哈……，只是猜测，不过这情况是会有的吧。），他们的恶劣行为会被<code>Ponitor</code>记录。</p>
 <a id="more"></a>
-<h2 id="关于商品信息获取">关于商品信息获取</h2><p>1、爬虫Apple App是最方便的，一切信息都在html里边，只需要请求，解析出来即可。</p>
+<h2 id="关于商品信息获取"><a href="#关于商品信息获取" class="headerlink" title="关于商品信息获取"></a>关于商品信息获取</h2><p>1、爬虫Apple App是最方便的，一切信息都在html里边，只需要请求，解析出来即可。</p>
 <p>2、爬虫京东和阿里的就不一样了，价格或者图片是被隐藏的，得通过其他方式；找到他们ajax请求的接口等。当接口如果发生变化，还需要调整修改。当然，只要页面能显示的数据，我们通过爬虫都能获取到；不过阿里是有很强的反爬虫机制的，当你请求数过多的时候，会强制跳转登录页面，要想记录爬信息，得通过这个关卡。。。。有时间研究一下吧。</p>
 <p>3、补充：阿里反的是频繁爬虫，只要模拟好爬虫行为接近浏览器，或者是项目只对个人来使用（请求不会频繁），是没有任何问题的。</p>
-<h2 id="项目截图">项目截图</h2><p><img src="https://raw.githubusercontent.com/giscafer/Ponitor/master/wiki/index_preview.png" alt="index"></p>
+<h2 id="项目截图"><a href="#项目截图" class="headerlink" title="项目截图"></a>项目截图</h2><p><img src="https://raw.githubusercontent.com/giscafer/Ponitor/master/wiki/index_preview.png" alt="index"></p>
 <p><img src="https://raw.githubusercontent.com/giscafer/Ponitor/master/wiki/goodlist_preview.png" alt="index"></p>
 <p>关注的商品价格发生变化（涨价or降价）的时候发生邮件通知，如测试截图：</p>
 <p><img src="https://raw.githubusercontent.com/giscafer/Ponitor/master/wiki/email-sample.png" alt="index"></p>
-<h2 id="使用">使用</h2><p>详情见README.md</p>
-<h2 id="源码">源码</h2><p><a href="https://github.com/giscafer/Ponitor" target="_blank" rel="external">https://github.com/giscafer/Ponitor</a></p>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>详情见README.md</p>
+<h2 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h2><p><a href="https://github.com/giscafer/Ponitor" target="_blank" rel="external">https://github.com/giscafer/Ponitor</a></p>
 <p>欢迎交流学习！！！</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://giscafer.com/2016/03/31/project-ponitor/" data-id="ciwp6pwj3001u08z54jenbgay" class="article-share-link">分享</a>
+      <a data-url="http://giscafer.com/2016/03/31/project-ponitor/" data-id="ciwqg2zct0025gkz5klyy6che" class="article-share-link">分享</a>
       
         <a href="http://giscafer.com/2016/03/31/project-ponitor/#ds-thread" class="article-comment-link">留言</a>
       
@@ -172,30 +160,25 @@ ga('send', 'pageview');
 </div>
 
 </section>
-        
-          <aside id="sidebar">
+           
+    <aside id="sidebar">
   
-     <!-- Table of Contents -->
-
-  <div class="widget-wrap " id="">
-  
-    <div class="widget" id="toc-widget-fixed">
     
-       <strong class="toc-title">文章目录</strong>
-       <div class="toc-widget-list">
-            
-        </div>
+  
+    <div class="widget-wrap">
+    
+      <div class="widget" id="toc-widget-fixed">
+      
+        <strong class="toc-title">文章目录</strong>
+        <div class="toc-widget-list">
+              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#关于商品信息获取"><span class="toc-number">1.</span> <span class="toc-text">关于商品信息获取</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#项目截图"><span class="toc-number">2.</span> <span class="toc-text">项目截图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用"><span class="toc-number">3.</span> <span class="toc-text">使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#源码"><span class="toc-number">4.</span> <span class="toc-text">源码</span></a></li></ol>
+          </div>
+      </div>
     </div>
-  </div>
+  
 
   
-    <br/>
-404.html<br/>
-http://giscafer.com/404.html<br/>
-false<br/>
-index=false<br/>
-if=false
-
+    
 
   
     
@@ -213,7 +196,7 @@ if=false
 
   
 </aside>
-        
+
       </div>
       <footer id="footer">
   
@@ -243,18 +226,18 @@ if=false
     	<script type="text/javascript">
         var duoshuoQuery = {short_name:"giscafe"};
       </script>
-      <script src="/duoshuo/embed.js" type="text/javascript"></script>
+      <script src="/duoshuo/embed.js"></script>
 
 
- <script src="/jquery/jquery.min.js" type="text/javascript"></script>
- <script src="/js/is.js" type="text/javascript"></script>
+ <script src="/jquery/jquery.min.js"></script>
+ <script src="/js/is.js"></script>
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
-  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
 
 
-<script src="/js/script.js" type="text/javascript"></script>
+<script src="/js/script.js"></script>
 
   </div>
 </body>
