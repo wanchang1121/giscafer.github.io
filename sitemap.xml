@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://giscafer.com/2016/12/15/react-component-lifecycle/</loc>
+    
+    <lastmod>2016-12-15T14:16:26.246Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://giscafer.com/2016/03/18/diary2016-3-18/</loc>
     
     <lastmod>2016-12-14T16:50:09.265Z</lastmod>
@@ -236,13 +243,6 @@
     <loc>http://giscafer.com/2016/01/16/alidayu-sign-nodejs/</loc>
     
     <lastmod>2016-12-14T16:38:33.457Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://giscafer.com/2016/12/15/react-component-lifecycle/</loc>
-    
-    <lastmod>2016-12-14T16:34:25.599Z</lastmod>
     
   </url>
   

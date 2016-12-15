@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://giscafer.com/"/>
-  <updated>2016-12-14T16:34:25.599Z</updated>
+  <updated>2016-12-15T14:16:26.246Z</updated>
   <id>http://giscafer.com/</id>
   
   <author>
@@ -20,9 +20,9 @@
     <link href="http://giscafer.com/2016/12/15/react-component-lifecycle/"/>
     <id>http://giscafer.com/2016/12/15/react-component-lifecycle/</id>
     <published>2016-12-14T16:30:30.000Z</published>
-    <updated>2016-12-14T16:34:25.599Z</updated>
+    <updated>2016-12-15T14:16:26.246Z</updated>
     
-    <content type="html"><![CDATA[<p>React Component整个生命周期分为三大块：<strong>初始化——存在期（更新）——销毁清理</strong></p>
+    <content type="html"><![CDATA[<h2 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h2><p>React Component整个生命周期分为三大块：<strong>初始化——存在期（更新）——销毁清理</strong></p>
 <h3 id="首次实例化-调用方法"><a href="#首次实例化-调用方法" class="headerlink" title="首次实例化 调用方法"></a>首次实例化 调用方法</h3><ul>
 <li>getDefaultProps()</li>
 <li>getInitialState()</li>
@@ -66,7 +66,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;React Component整个生命周期分为三大块：&lt;strong&gt;初始化——存在期（更新）——销毁清理&lt;/strong&gt;&lt;/p&gt;
+      &lt;h2 id=&quot;生命周期&quot;&gt;&lt;a href=&quot;#生命周期&quot; class=&quot;headerlink&quot; title=&quot;生命周期&quot;&gt;&lt;/a&gt;生命周期&lt;/h2&gt;&lt;p&gt;React Component整个生命周期分为三大块：&lt;strong&gt;初始化——存在期（更新）——销毁清理&lt;/strong&gt;&lt;/p&gt;
 &lt;h3 id=&quot;首次实例化-调用方法&quot;&gt;&lt;a href=&quot;#首次实例化-调用方法&quot; class=&quot;headerlink&quot; title=&quot;首次实例化 调用方法&quot;&gt;&lt;/a&gt;首次实例化 调用方法&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;getDefaultProps()&lt;/li&gt;
 &lt;li&gt;getInitialState()&lt;/li&gt;

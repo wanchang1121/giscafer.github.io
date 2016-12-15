@@ -305,7 +305,8 @@ body {
 .widget-title.tags:before,
 .widget-title.recent-posts:before,
 .widget-title.lastest-comments:before,
-.widget-title.hot-comment-posts:before {
+.widget-title.hot-comment-posts:before,
+#categories ul.category-list-child li >a:before {
   font-family: FontAwesome;
   padding-right: 4px;
 }
@@ -472,7 +473,6 @@ body {
   right: 0;
   background: #fff;
   padding: 5px 15px;
-  -webkit-border-radius: 15px;
   border-radius: 15px;
   -webkit-box-shadow: 0 0 10px rgba(255,255,255,0.3);
   box-shadow: 0 0 10px rgba(255,255,255,0.3);
@@ -683,7 +683,6 @@ a.article-title:hover {
   display: inline-block;
   line-height: 1em;
   padding: 6px 15px;
-  -webkit-border-radius: 15px;
   border-radius: 15px;
   background: #f5f5d5 /*#eee*/;
   color: #008000;
@@ -767,7 +766,6 @@ a.article-title:hover {
     margin-top: -4px;
     margin-left: -4px;
     content: "";
-    -webkit-border-radius: 50%;
     border-radius: 50%;
     background: #ddd;
     -webkit-box-shadow: 0 1px 2px #fff;
@@ -829,7 +827,6 @@ a.article-title:hover {
   background: #fff;
   -webkit-box-shadow: 1px 2px 10px rgba(0,0,0,0.2);
   box-shadow: 1px 2px 10px rgba(0,0,0,0.2);
-  -webkit-border-radius: 3px;
   border-radius: 3px;
   margin-left: -145px;
   overflow: hidden;
@@ -849,7 +846,6 @@ a.article-title:hover {
   color: #333;
   outline: none;
   border: 1px solid #ddd;
-  -webkit-border-radius: 3px 3px 0 0;
   border-radius: 3px 3px 0 0;
   height: 36px;
   line-height: 36px;
@@ -993,7 +989,6 @@ a.article-title:hover {
 .toc-article {
   background: #eee;
   border: 1px solid #bbb;
-  -webkit-border-radius: 10px;
   border-radius: 10px;
   margin: 1.5em 0 0.3em 1.5em;
   padding: 1.2em 1em 0 1em;
@@ -1029,9 +1024,9 @@ a.article-title:hover {
 }
 .toc-widget-list {
   background: #eee;
-  margin: 1.5em 0 0.3em 1.5em;
+  margin: 0.4em 0 0.3em 0.6em;
   padding: 1.2em 1em 0 1em;
-  max-width: 95%;
+  max-width: 90%;
 }
 .toc-widget-list li>a {
   color: #258fb8;
@@ -1043,7 +1038,6 @@ a.article-title:hover {
   box-shadow: 1px 2px 3px #ddd;
   padding: 20px;
   border: 1px solid #ddd;
-  -webkit-border-radius: 3px;
   border-radius: 3px;
   margin: 50px 0;
 }
@@ -1128,7 +1122,6 @@ a.article-title:hover {
   -webkit-box-shadow: 1px 2px 3px #ddd;
   box-shadow: 1px 2px 3px #ddd;
   border: 1px solid #f5f5d5 /*#eee*/;
-  -webkit-border-radius: 3px;
   border-radius: 3px;
   text-align: center;
   color: #999;
@@ -1231,7 +1224,6 @@ a.article-title:hover {
 .article-entry code {
   background: #ffc0cb;
   color: #333 !important;
-  -webkit-border-radius: 4px;
   border-radius: 4px;
   margin: auto 3px;
   padding: 0 0.3em;
@@ -1428,97 +1420,83 @@ span.ua .location:before {
   background-color: #ccc !important;
   color: #fff;
   border: 1px solid #bbb !important;
-  -webkit-border-radius: 4px;
   border-radius: 4px;
 }
 .ua_ie {
   background-color: #428bca !important;
   border-color: #357ebd !important;
-  -webkit-border-radius: 4px;
   border-radius: 4px;
   padding: 0 5px !important;
 }
 .ua_firefox {
   background-color: #f0ad4e !important;
   border-color: #eea236 !important;
-  -webkit-border-radius: 4px;
   border-radius: 4px;
   padding: 0 5px !important;
 }
 .ua_maxthon {
   background-color: #7373b9 !important;
   border-color: #7373b9 !important;
-  -webkit-border-radius: 4px;
   border-radius: 4px;
   padding: 0 5px !important;
 }
 .ua_ucweb {
   background-color: #ff740f !important;
   border-color: #d43f3a !important;
-  -webkit-border-radius: 4px;
   border-radius: 4px;
   padding: 0 5px !important;
 }
 .ua_sogou {
   background-color: #78ace9 !important;
   border-color: #4cae4c !important;
-  -webkit-border-radius: 4px;
   border-radius: 4px;
   padding: 0 5px !important;
 }
 .ua_2345explorer {
   background-color: #2478b8 !important;
   border-color: #4cae4c !important;
-  -webkit-border-radius: 4px;
   border-radius: 4px;
   padding: 0 5px !important;
 }
 .ua_2345chrome {
   background-color: #f9d024 !important;
   border-color: #4cae4c !important;
-  -webkit-border-radius: 4px;
   border-radius: 4px;
   padding: 0 5px !important;
 }
 .ua_mi {
   background-color: #ff4a00 !important;
   border-color: #4cae4c !important;
-  -webkit-border-radius: 4px;
   border-radius: 4px;
   padding: 0 5px !important;
 }
 .ua_lbbrowser {
   background-color: #fc9d2e !important;
   border-color: #4cae4c !important;
-  -webkit-border-radius: 4px;
   border-radius: 4px;
   padding: 0 5px !important;
 }
 .ua_chrome {
   background-color: #ee6252 !important;
   border-color: #4cae4c !important;
-  -webkit-border-radius: 4px;
   border-radius: 4px;
   padding: 0 5px !important;
 }
 .ua_qq {
   background-color: #3d88a8 !important;
   border-color: #4cae4c !important;
-  -webkit-border-radius: 4px;
   border-radius: 4px;
   padding: 0 5px !important;
 }
 .ua_apple {
   background-color: #e95620 !important;
   border-color: #4cae4c !important;
-  -webkit-border-radius: 4px;
   border-radius: 4px;
   padding: 0 5px !important;
 }
 .ua_opera {
   background-color: #d9534f !important;
   border-color: #d43f3a !important;
-  -webkit-border-radius: 4px;
   border-radius: 4px;
   padding: 0 5px !important;
 }
@@ -1531,56 +1509,48 @@ span.ua .location:before {
 .os_8_1 {
   background-color: #39b3d7 !important;
   border-color: #46b8da !important;
-  -webkit-border-radius: 4px;
   border-radius: 4px;
   padding: 0 5px !important;
 }
 .os_android {
   background-color: #98c13d !important;
   border-color: #01b171 !important;
-  -webkit-border-radius: 4px;
   border-radius: 4px;
   padding: 0 5px !important;
 }
 .os_ubuntu {
   background-color: #dd4814 !important;
   border-color: #01b171 !important;
-  -webkit-border-radius: 4px;
   border-radius: 4px;
   padding: 0 5px !important;
 }
 .os_linux {
   background-color: #3a3a3a !important;
   border-color: #1f1f1f !important;
-  -webkit-border-radius: 4px;
   border-radius: 4px;
   padding: 0 5px !important;
 }
 .os_mac {
   background-color: #666 !important;
   border-color: #1f1f1f !important;
-  -webkit-border-radius: 4px;
   border-radius: 4px;
   padding: 0 5px !important;
 }
 .os_unix {
   background-color: #060 !important;
   border-color: #1f1f1f !important;
-  -webkit-border-radius: 4px;
   border-radius: 4px;
   padding: 0 5px !important;
 }
 .os_nokia {
   background-color: #014485 !important;
   border-color: #1f1f1f !important;
-  -webkit-border-radius: 4px;
   border-radius: 4px;
   padding: 0 5px !important;
 }
 .sskadmin {
   background-color: #00a67c !important;
   border-color: #01b171 !important;
-  -webkit-border-radius: 4px;
   border-radius: 4px;
   padding: 0 5px !important;
 }
@@ -1623,7 +1593,6 @@ span.ua .location:before {
   box-shadow: 0 -1px 4px #eee inset;
   border: 1px solid #eee;
   padding: 15px;
-  -webkit-border-radius: 10px;
   border-radius: 10px;
 }
 .widget a {
@@ -1643,7 +1612,10 @@ span.ua .location:before {
 .widget ol dl,
 .widget dl dl {
   margin-left: 15px;
-  list-style: disc;
+}
+#categories ul.category-list-child li >a:before {
+  content: "\f0da";
+  color: #999;
 }
 .widget {
   line-height: 1.6em;
@@ -1660,10 +1632,6 @@ span.ua .location:before {
 .widget ul ol,
 .widget ol ol {
   margin: 0 20px;
-}
-.widget ul ul,
-.widget ol ul {
-  list-style: disc;
 }
 .widget ul ol,
 .widget ol ol {
