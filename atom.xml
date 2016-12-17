@@ -127,11 +127,11 @@
       <category term="项目" scheme="http://giscafer.com/categories/%E6%8A%80%E6%9C%AF/%E9%A1%B9%E7%9B%AE/"/>
     
     
-      <category term="项目" scheme="http://giscafer.com/tags/%E9%A1%B9%E7%9B%AE/"/>
-    
       <category term="Hexo" scheme="http://giscafer.com/tags/Hexo/"/>
     
       <category term="cafe" scheme="http://giscafer.com/tags/cafe/"/>
+    
+      <category term="项目" scheme="http://giscafer.com/tags/%E9%A1%B9%E7%9B%AE/"/>
     
   </entry>
   
