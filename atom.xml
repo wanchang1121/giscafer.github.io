@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://giscafer.com/"/>
-  <updated>2016-12-15T14:16:26.246Z</updated>
+  <updated>2016-12-23T14:08:41.053Z</updated>
   <id>http://giscafer.com/</id>
   
   <author>
@@ -14,6 +14,54 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>2016-year-end-summary</title>
+    <link href="http://giscafer.com/2016/12/23/2016-year-end-summary/"/>
+    <id>http://giscafer.com/2016/12/23/2016-year-end-summary/</id>
+    <published>2016-12-23T12:55:29.000Z</published>
+    <updated>2016-12-23T14:08:41.053Z</updated>
+    
+    <content type="html"><![CDATA[<p>年底了，毕业两年半，也就是工作2年半了，times flying！！！</p>
+<p>2016年，变化比较大的有三方面：工作地点由北京换到广州、脱离单身dog、gis行业转互联网（勉强算，都是做编程开发）。</p>
+<h3 id="北京——广州"><a href="#北京——广州" class="headerlink" title="北京——广州"></a>北京——广州</h3><p><strong>北京</strong> 毕业北漂<code>求技</code>之旅，刚好两年，不长不短，体验到了北京大都市的生活节奏和人情风俗。总体来说都挺好的，除了雾霾天气比较严重外，其他给我的印象都不错；比如北京的街道很干净，公民总体素质高，社会基础设施，安全保障等，但最重要的还属于北京资源丰富。<code>资源</code>包括教育、医疗、科技等方方面面，it行业创业公司和氛围都很好，大型it公司也很多，竞争激烈，然而我并不能收益很多，两年时间是不够的。<br>我谈一下北漂的感受，实话说，程序猿北漂是相对轻松一点的吧，起薪高，尽管北京消费租房是昂贵的，还是能支付的起。比如租房2k月租左右的预付，能找到不错的，一个月2k的吃喝也足了（这里往高的说，你合租可以找1k~1.5k的房子，吃的话一天50也够了，一个月也就1.5k）。所以说，程序猿北漂是可以的，具体看个人了，可能还会买买衣服，电子产品这些，最后能不能省钱是一回事，反正我没剩钱。刚毕业，技术放在第一，养活自己就可以了。想在北京定居不容易，户口和房价是个问题。</p>
+<p><strong>广州</strong>  说实话，我觉得广州还不如北京好，说租房，不好租，广州整租的很多，很少单独租主卧这种的，整租的话也贵，3k~4k 一个月（当然我指的是稍微交通便利的地带）。来广州我租了一间单间，1.7k的月租（北京我租的是次卧1.4k），附近吃喝和北京相比没差别，所以消费是和北京几乎等同的了，但是广州薪资和北京相比是有 20%~50% 浮动的差距的，房价慢慢涨到2W+每平米的水平。另外一个是交通不方便的问题，广州人多，交通运输量不够，早班时，地铁根本不能坐（广州3号线），挤地铁能活着不容易啊。就说不好的，好处也很多，就不说了~</p>
+<p>作为南方人，广州市最好的选择吧，起码离家近，能常回家看看</p>
+<h3 id="GIS——互联网前端"><a href="#GIS——互联网前端" class="headerlink" title="GIS——互联网前端"></a>GIS——互联网前端</h3><p>GIS专业毕业，我能选择的只有两个方向：一、数据处理工程师；二、软件开发工程师；因为我也只会这两个了。选开发那是肯定的，因为我一向不喜欢用软件搞数据，天天重复做着差不多的事情。开发也是天天写代码，但是写的代码不一样，思考的东西也不一样，发展方向也广阔，看的是技术能力和学习能力。</p>
+<p>离开GIS行业是有原因的，在第一家公司里做GIS项目有10多个了，感受比较深的是，做这类政务系统，要求很低，安全性和稳定性以及易用性等。从前端来讲，优化是谈不上的，只要把功能做出来，没bug就OK。我觉得这不是前端所追求的，作为前端开发方向发展的我，选择离开是正确的。</p>
+<h3 id="走着并追赶在前端的潮流之上"><a href="#走着并追赶在前端的潮流之上" class="headerlink" title="走着并追赶在前端的潮流之上"></a>走着并追赶在前端的潮流之上</h3><p>这几年，前端很火，变化的也多。前些天，一些大牛又在微博撕X，辩论XX技术好不好，有没有意义。作为前端小菜，我觉得新推出的技术、框架是要学习了解一下的，不管用不用上，学习了解一下没啥大不了，只有学习才能正确体验到框架是否真正好用，适用什么场景。实际上，有几年工作经验的程序猿，学一个框架，也就是一个周末而已就差不多了解其使用、适用场景了，就如入门一门新编程语言，可能也只需要一两周的时间。所以在前端混的，有选择的学习一下一些新技术是必要的。在前端潮流中享受与受伤吧~~o(╯□╰)o，听说2017年，高版本webkit浏览器将支持模块化js，也就是commonjs，AMD这些直接支持了，再过几年淘汰老版本浏览器后就不需要编译了。。一切都在变化之中，或者已经在变化的路上！</p>
+<p>这一年，做了很多小应用和demo，目前在用angular封装一套ui框架，目的是学习和方便以后快速定制开发系统使用。</p>
+<p>以下是敲击记录（<em>我觉得github日历上满满的绿的用户，多数是前端开发方向</em>）</p>
+<p><img src="./static/img/2016-github.png" alt="2016年Github提交记录"></p>
+<p>2017年继续有计划的学习，计划开发一个上线运营的App，技术用<code>React Native</code>还是<code>Angualr Ionic2</code>待定，定位暂定为GIS学习方向。</p>
+<p>最后引入 [转自微博@tombkeeper]的话来总结：</p>
+<p><strong>从事任何技术研究，不知道该干什么的时候，就问自己四个问题</strong></p>
+<pre><code>- 这个方向上最新进展是什么？ 都知道吗？
+- 这个方向上最著名的专家有哪些？他们的研究都看过吗？
+- 这个方向上最著名的技术社区有哪些？精华帖都看过一遍吗？
+- 这个方向上最重要的文章、工具有哪些？文章都看过吗？工具都分析过吗？
+- 你有对象了吗？（针对程序猿）
+</code></pre><h3 id="脱离单身dog"><a href="#脱离单身dog" class="headerlink" title="脱离单身dog"></a>脱离单身dog</h3><p>终于可以专心啪啪啪~敲着键盘，宅着写代码了。。。女票说想学测试，正在指导学习的路上，学不成也无所谓，能更好的了解计算机和互联网，不会那么电脑文盲，也可能不小心入坑了呢。。。</p>
+<h3 id="生活"><a href="#生活" class="headerlink" title="生活"></a>生活</h3><p>2016年没去几个城市，只有北京、陕西、广州三地。生活质量期待以后的提升，计划一些旅游什么的，为了目标努力吧！！！</p>
+<h3 id="2017年愿景"><a href="#2017年愿景" class="headerlink" title="2017年愿景"></a>2017年愿景</h3><p>1、多陪父母多电话<br>2、工作上期望有个好的技术氛围，多认识一些爱学习讨论的coder，更快成长<br>3、开心的玩</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;年底了，毕业两年半，也就是工作2年半了，times flying！！！&lt;/p&gt;
+&lt;p&gt;2016年，变化比较大的有三方面：工作地点由北京换到广州、脱离单身dog、gis行业转互联网（勉强算，都是做编程开发）。&lt;/p&gt;
+&lt;h3 id=&quot;北京——广州&quot;&gt;&lt;a href=&quot;#北京—
+    
+    </summary>
+    
+      <category term="随笔" scheme="http://giscafer.com/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+      <category term="年终总结" scheme="http://giscafer.com/categories/%E9%9A%8F%E7%AC%94/%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/"/>
+    
+    
+      <category term="日记" scheme="http://giscafer.com/tags/%E6%97%A5%E8%AE%B0/"/>
+    
+  </entry>
   
   <entry>
     <title>代码理解React组件生命周期过程</title>
@@ -1008,152 +1056,6 @@ define(&apos;app&apos;, [&apos;script/b&apos;], function (require, exports, modu
     
       &lt;p&gt;这里所说的&lt;code&gt;AMD&lt;/code&gt;构建，是指&lt;code&gt;AMD&lt;/code&gt;定义模块方式的代码构建。AMD=异步定义模块，具体查看官方&lt;a href=&quot;https://github.com/amdjs/amdjs-api&quot;&gt;AMD&lt;/a&gt;解释。&lt;/p&gt;
 &lt;p&gt;首先，所谓构建就是将多个文件合并压缩等，但是对于&lt;code&gt;AMD&lt;/code&gt;定义的模块来说，模块之间存在这依赖关系，&lt;code&gt;AMD&lt;/code&gt;构建主要就是解决这种模块之间的依赖关系，构建的方式很多种，下边是gulp 的&lt;code&gt;amd-optimize&lt;/code&gt;插件构建笔记。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="技术" scheme="http://giscafer.com/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-      <category term="开发手册" scheme="http://giscafer.com/categories/%E6%8A%80%E6%9C%AF/%E5%BC%80%E5%8F%91%E6%89%8B%E5%86%8C/"/>
-    
-    
-      <category term="AMD" scheme="http://giscafer.com/tags/AMD/"/>
-    
-      <category term="gulp" scheme="http://giscafer.com/tags/gulp/"/>
-    
-      <category term="前端构建" scheme="http://giscafer.com/tags/%E5%89%8D%E7%AB%AF%E6%9E%84%E5%BB%BA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>什么，你还不懂前端自动化构建？</title>
-    <link href="http://giscafer.com/2015/11/30/gulp-front-end-automated-builds/"/>
-    <id>http://giscafer.com/2015/11/30/gulp-front-end-automated-builds/</id>
-    <published>2015-11-30T14:29:09.000Z</published>
-    <updated>2016-12-14T16:43:46.207Z</updated>
-    
-    <content type="html"><![CDATA[<p>如果你是搞前端开发的，或者你每天都在写CSS、JavaScript等前端编程语言代码，如果你不知道什么叫前端自动化构建，那一般只有两种情况：</p>
-<ol>
-<li>你在传统软件行业，用着4、5年前网页开发方式工作;</li>
-<li>你并不是一个真正的Front End Software Engineer；</li>
-</ol>
-<h3 id="什么是前端构建工具？"><a href="#什么是前端构建工具？" class="headerlink" title="什么是前端构建工具？"></a>什么是前端构建工具？</h3><p>前端构建工具——实现前端代码的编译（sass、less）、压缩、测试；图片的压缩以及浏览器自动刷新等等功能。</p>
-<p>目前流行的三大前端构建工具<code>grunt</code>、<code>gulp</code>、<code>fis3</code>，他们都是基于Node.js的插件工具。前两个是国外出品，fis3是百度国产。fis3听说还不错，但是还没使用过，之前学习NodeJS使用的是grunt,感觉这东西挺牛。智能、前端自动化。听说<code>gulp</code>比<code>grunt</code>好用些，所以就研究一下吧。</p>
-<a id="more"></a>
-<p>以下是学习笔记，官方gulp工具介绍见<a href="https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md" target="_blank" rel="external">github</a></p>
-<h3 id="一、安装gulp工具到全局环境"><a href="#一、安装gulp工具到全局环境" class="headerlink" title="一、安装gulp工具到全局环境"></a>一、安装gulp工具到全局环境</h3><p><code>（前提安装了NodeJS和NPM）</code></p>
-<pre><code>$  npm install --global gulp
-</code></pre><h3 id="二、接着进入项目根目录下，安装gulp开发依赖环境"><a href="#二、接着进入项目根目录下，安装gulp开发依赖环境" class="headerlink" title="二、接着进入项目根目录下，安装gulp开发依赖环境"></a>二、接着进入项目根目录下，安装gulp开发依赖环境</h3><p><code>如果项目下没有package.json文件，请阅读下边步骤再继续此步骤</code></p>
-<pre><code>$  npm install --save-dev gulp
-</code></pre><h3 id="（二）生成package-json"><a href="#（二）生成package-json" class="headerlink" title="（二）生成package.json"></a>（二）生成package.json</h3><pre><code>npm init
-</code></pre><p>输入<code>npm init</code>，回车回车即可生成</p>
-<h3 id="三、安装必要的Gulp插件"><a href="#三、安装必要的Gulp插件" class="headerlink" title="三、安装必要的Gulp插件"></a>三、安装必要的Gulp插件</h3><ul>
-<li>压缩css（gulp-minify-css）</li>
-<li>js代码校验（gulp-jshint）</li>
-<li>合并js文件（gulp-concat）</li>
-<li>压缩js代码（gulp-uglify）</li>
-<li>压缩图片（gulp-imagemin）</li>
-<li>文件重命名 （gulp-rename）</li>
-<li>自动刷新页面（gulp-livereload）</li>
-<li>更改提醒（gulp-notify）</li>
-<li>合并js顺序（gulp-order）（<a href="https://github.com/sirlantis/gulp-order）" target="_blank" rel="external">https://github.com/sirlantis/gulp-order）</a></li>
-</ul>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$  npm <span class="keyword">install</span> gulp-minify-css gulp-jshint gulp-<span class="keyword">concat</span> gulp-uglify gulp-imagemin gulp-notify gulp-livereload gulp-<span class="keyword">rename</span> <span class="comment">--save-dev</span></div></pre></td></tr></table></figure>
-<p>安装完后 package.json文件内容如下：</p>
-<pre><code>  {
-&quot;name&quot;: &quot;goodgis&quot;,
-&quot;version&quot;: &quot;1.0.0&quot;,
-&quot;description&quot;: &quot;&quot;,
-&quot;main&quot;: &quot;main.js&quot;,
-&quot;directories&quot;: {
-  &quot;test&quot;: &quot;test&quot;
-},
-&quot;dependencies&quot;: {
-  &quot;gulp&quot;: &quot;^3.9.0&quot;
-},
-&quot;devDependencies&quot;: {
-  &quot;gulp&quot;: &quot;^3.9.0&quot;,
-  &quot;gulp-concat&quot;: &quot;^2.6.0&quot;,
-  &quot;gulp-imagemin&quot;: &quot;^2.4.0&quot;,
-  &quot;gulp-jshint&quot;: &quot;^2.0.0&quot;,
-  &quot;gulp-livereload&quot;: &quot;^3.8.1&quot;,
-  &quot;gulp-minify-css&quot;: &quot;^1.2.1&quot;,
-  &quot;gulp-notify&quot;: &quot;^2.2.0&quot;,
-  &quot;gulp-rename&quot;: &quot;^1.2.2&quot;,
-  &quot;gulp-uglify&quot;: &quot;^1.5.1&quot;,
-  &quot;jshint&quot;: &quot;^2.8.0&quot;
-},
-&quot;scripts&quot;: {
-  &quot;test&quot;: &quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;
-},
-&quot;author&quot;: &quot;&quot;,
-&quot;license&quot;: &quot;ISC&quot;
-  }
-</code></pre><h3 id="四、根目录下创建gulpfile-js文件"><a href="#四、根目录下创建gulpfile-js文件" class="headerlink" title="四、根目录下创建gulpfile.js文件"></a>四、根目录下创建gulpfile.js文件</h3><p>代码如下，作用看注释</p>
-<pre><code>//引入插件
-   var gulp = require(&apos;gulp&apos;),
-       // minifycss = require(&apos;gulp-minify-css&apos;),
-       jshint = require(&apos;gulp-jshint&apos;), //代码验证检查
-       uglify = require(&apos;gulp-uglify&apos;), //压缩js代码
-       rename = require(&apos;gulp-rename&apos;), //文件重命名
-       concat = require(&apos;gulp-concat&apos;), //合并js文件
-       notify = require(&apos;gulp-notify&apos;), //更改提醒
-       livereload = require(&apos;gulp-livereload&apos;); //自动刷新页面
-
-   //js代码校验、合并和压缩（类似jquery的链式操作，牛）
-   gulp.task(&apos;scripts&apos;, function() {
-       return gulp.src(&apos;src/**/*.js&apos;) //源文件
-           .pipe(jshint(&apos;.jshintrc&apos;)) //1、校验JS文件，jshint校验规则
-           .pipe(jshint.reporter(&apos;default&apos;)) 
-           .pipe(concat(&apos;goodgis.js&apos;))  //2、合并js文件，goodgis.js为合并的文件名称
-           .pipe(gulp.dest(&apos;dist&apos;))  //合并后文件存放位置
-           .pipe(rename({
-               suffix: &apos;.min&apos;
-           }))
-           .pipe(uglify())         //3、执行压缩任务
-           .pipe(gulp.dest(&apos;dist&apos;))  //压缩后文件存放位置
-           .pipe(notify({    //4、操作结束后提示
-               message: &apos;Scripts task complete&apos;
-           }));
-   });
-   // 默认任务，这里完全可以是多个任务，比如压缩CSS，压缩图片，压缩js等
-   gulp.task(&apos;default&apos;,[&apos;watch&apos;], function() {
-       gulp.start(&apos;scripts&apos;);
-   });
-   // 监听（前端自动化的情怀）
-   gulp.task(&apos;watch&apos;, function() {
-       // 监听 .js文件改动，一旦改动就会自动压缩合并
-       gulp.watch(&apos;src/**/*.js&apos;, [&apos;scripts&apos;]);
-       // Create LiveReload server（用来自动刷新浏览器）
-       livereload.listen();
-       // Watch any files in dist/, reload on change
-       gulp.watch([&apos;dist/**&apos;]).on(&apos;change&apos;, livereload.changed);
-   });
-</code></pre><h3 id="五、执行gulp"><a href="#五、执行gulp" class="headerlink" title="五、执行gulp"></a>五、执行gulp</h3><pre><code>$ gulp
-</code></pre><p>只需要gulp一下，之后一切都如此自动化，可以自动压缩CSS，JavaScript，图片，自动刷新浏览器等等。并且，能做的并不只有这些，另外，你还可以自己写插件。</p>
-<p><img src="http://giscafer.com/static/img/gulp-intro1.png" alt="新增了dist文件夹"></p>
-<p><img src="http://giscafer.com/static/img/gulp-intro2.png" alt="里边就是合并压缩的文件"></p>
-<p>原src下很多文件夹，文件夹下很多js文件，如图：</p>
-<p><img src="http://giscafer.com/static/img/gulp-intro0.png" alt="src文件夹"></p>
-<p>不管怎么修改，会自动将整个src文件夹中的js文件（<code>src/**/*.js</code>）压缩合并到dist目录下的<code>goodgis.js</code>(合并未压缩)和<code>goodgis.mini.js</code>(合并且压缩)。</p>
-<h3 id="六、总结"><a href="#六、总结" class="headerlink" title="六、总结"></a>六、总结</h3><p>个人觉得，确实gulp会比grunt好用一点，方便；看使用场景和个人爱好吧，了解NodeJS的话就不会觉得有任何难度了。</p>
-<hr>
-<p><code>Unauthorized use tool that lets you work more efficiently</code></p>
-<ul>
-<li>构建工具官网：<a href="http://gruntjs.com/" target="_blank" rel="external">grunt</a>  、  <a href="http://gulpjs.com/" target="_blank" rel="external">gulp</a>   、 <a href="http://fis.baidu.com/" target="_blank" rel="external">fis3</a></li>
-<li>livereload(浏览器自动刷新):<a href="http://feedback.livereload.com/" target="_blank" rel="external">http://feedback.livereload.com/</a>    或参考<a href="http://feedback.livereload.com/knowledgebase/articles/86180-how-do-i-add-the-script-tag-manually-" target="_blank" rel="external">方法二</a></li>
-</ul>
-<hr>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;如果你是搞前端开发的，或者你每天都在写CSS、JavaScript等前端编程语言代码，如果你不知道什么叫前端自动化构建，那一般只有两种情况：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;你在传统软件行业，用着4、5年前网页开发方式工作;&lt;/li&gt;
-&lt;li&gt;你并不是一个真正的Front End Software Engineer；&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&quot;什么是前端构建工具？&quot;&gt;&lt;a href=&quot;#什么是前端构建工具？&quot; class=&quot;headerlink&quot; title=&quot;什么是前端构建工具？&quot;&gt;&lt;/a&gt;什么是前端构建工具？&lt;/h3&gt;&lt;p&gt;前端构建工具——实现前端代码的编译（sass、less）、压缩、测试；图片的压缩以及浏览器自动刷新等等功能。&lt;/p&gt;
-&lt;p&gt;目前流行的三大前端构建工具&lt;code&gt;grunt&lt;/code&gt;、&lt;code&gt;gulp&lt;/code&gt;、&lt;code&gt;fis3&lt;/code&gt;，他们都是基于Node.js的插件工具。前两个是国外出品，fis3是百度国产。fis3听说还不错，但是还没使用过，之前学习NodeJS使用的是grunt,感觉这东西挺牛。智能、前端自动化。听说&lt;code&gt;gulp&lt;/code&gt;比&lt;code&gt;grunt&lt;/code&gt;好用些，所以就研究一下吧。&lt;/p&gt;
     
     </summary>
     
