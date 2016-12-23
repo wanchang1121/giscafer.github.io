@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://giscafer.com/"/>
-  <updated>2016-12-23T14:08:41.053Z</updated>
+  <updated>2016-12-23T14:10:14.126Z</updated>
   <id>http://giscafer.com/</id>
   
   <author>
@@ -16,11 +16,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>2016-year-end-summary</title>
+    <title>2016年末总结</title>
     <link href="http://giscafer.com/2016/12/23/2016-year-end-summary/"/>
     <id>http://giscafer.com/2016/12/23/2016-year-end-summary/</id>
     <published>2016-12-23T12:55:29.000Z</published>
-    <updated>2016-12-23T14:08:41.053Z</updated>
+    <updated>2016-12-23T14:10:14.126Z</updated>
     
     <content type="html"><![CDATA[<p>年底了，毕业两年半，也就是工作2年半了，times flying！！！</p>
 <p>2016年，变化比较大的有三方面：工作地点由北京换到广州、脱离单身dog、gis行业转互联网（勉强算，都是做编程开发）。</p>
@@ -56,7 +56,7 @@
     
       <category term="随笔" scheme="http://giscafer.com/categories/%E9%9A%8F%E7%AC%94/"/>
     
-      <category term="年终总结" scheme="http://giscafer.com/categories/%E9%9A%8F%E7%AC%94/%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/"/>
+      <category term="summary" scheme="http://giscafer.com/categories/%E9%9A%8F%E7%AC%94/summary/"/>
     
     
       <category term="日记" scheme="http://giscafer.com/tags/%E6%97%A5%E8%AE%B0/"/>
