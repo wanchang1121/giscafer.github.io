@@ -1052,7 +1052,12 @@ a.article-title:hover {
   text-decoration: underline;
 }
 .archives-wrap {
-  margin: 50px 0;
+  margin: 50px 0 50px 120px;
+}
+@media screen and (max-width: 479px) {
+  .archives-wrap {
+    margin: 50px 0;
+  }
 }
 .archives:before,
 .archives:after {
@@ -1065,24 +1070,10 @@ a.article-title:hover {
 .archive-year-wrap {
   margin-bottom: 1em;
 }
-.archives {
-  -webkit-column-gap: 10px;
-  -moz-column-gap: 10px;
-  column-gap: 10px;
-}
-@media screen and (min-width: 480px) and (max-width: 767px) {
-  .archives {
-    -webkit-column-count: 2;
-    -moz-column-count: 2;
-    column-count: 2;
-  }
-}
-@media screen and (min-width: 768px) {
-  .archives {
-    -webkit-column-count: 3;
-    -moz-column-count: 3;
-    column-count: 3;
-  }
+.archive-year-post {
+  color: #999;
+  font-size: 0.85em;
+  margin-left: 1em;
 }
 .archive-article {
   -webkit-column-break-inside: avoid;
@@ -1092,15 +1083,14 @@ a.article-title:hover {
 }
 .archive-article-inner {
   padding: 10px;
-  margin-bottom: 15px;
 }
 .archive-article-title {
+  margin-left: 1em;
   color: #333;
   -webkit-transition: color 0.2s;
   -moz-transition: color 0.2s;
   -ms-transition: color 0.2s;
   transition: color 0.2s;
-  line-height: 1.6em;
 }
 .archive-article-title:hover {
   color: #258fb8;
@@ -1109,10 +1099,10 @@ a.article-title:hover {
   margin-top: 1em;
 }
 .archive-article-date {
+  float: left;
   color: #999;
   text-decoration: none;
   font-size: 0.85em;
-  line-height: 1em;
   margin-bottom: 0.5em;
   display: block;
 }
