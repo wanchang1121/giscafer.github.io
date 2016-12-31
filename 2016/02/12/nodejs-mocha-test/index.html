@@ -205,6 +205,7 @@ BDD和TDD的差别： The Difference Between TDD and BDD">
 	<!-- 多说评论框 end -->
 </div>
 
+
 </section>
            
     <aside id="sidebar">
@@ -254,6 +255,7 @@ BDD和TDD的差别： The Difference Between TDD and BDD">
     </div>
   </div>
 </footer>
+ <script src="/jquery/jquery.min.js"></script>
     </div>
     <nav id="mobile-nav">
   
@@ -264,6 +266,17 @@ BDD和TDD的差别： The Difference Between TDD and BDD">
     <a href="/aboutme" class="mobile-nav-link">关于</a>
   
 </nav>
+    <img class="back-to-top-btn" src="/images/fly-to-top.png"/>
+<script>
+// Elevator script included on the page, already.
+window.onload = function() {
+  var elevator = new Elevator({
+    selector:'.back-to-top-btn',
+    element: document.querySelector('.back-to-top-btn'),
+    duration: 1000 // milliseconds
+  });
+}
+</script>
     
 
 
@@ -273,7 +286,6 @@ BDD和TDD的差别： The Difference Between TDD and BDD">
       <script src="/duoshuo/embed.js"></script>
 
 
- <script src="/jquery/jquery.min.js"></script>
  <script src="/js/is.js"></script>
 
 
@@ -282,7 +294,7 @@ BDD和TDD的差别： The Difference Between TDD and BDD">
 
 
 <script src="/js/script.js"></script>
-
+<script src="/js/elevator.js"></script>
   </div>
 </body>
 </html>

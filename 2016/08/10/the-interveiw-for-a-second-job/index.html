@@ -179,6 +179,7 @@
 	<!-- 多说评论框 end -->
 </div>
 
+
 </section>
            
     <aside id="sidebar">
@@ -228,6 +229,7 @@
     </div>
   </div>
 </footer>
+ <script src="/jquery/jquery.min.js"></script>
     </div>
     <nav id="mobile-nav">
   
@@ -238,6 +240,17 @@
     <a href="/aboutme" class="mobile-nav-link">关于</a>
   
 </nav>
+    <img class="back-to-top-btn" src="/images/fly-to-top.png"/>
+<script>
+// Elevator script included on the page, already.
+window.onload = function() {
+  var elevator = new Elevator({
+    selector:'.back-to-top-btn',
+    element: document.querySelector('.back-to-top-btn'),
+    duration: 1000 // milliseconds
+  });
+}
+</script>
     
 
 
@@ -247,7 +260,6 @@
       <script src="/duoshuo/embed.js"></script>
 
 
- <script src="/jquery/jquery.min.js"></script>
  <script src="/js/is.js"></script>
 
 
@@ -256,7 +268,7 @@
 
 
 <script src="/js/script.js"></script>
-
+<script src="/js/elevator.js"></script>
   </div>
 </body>
 </html>
