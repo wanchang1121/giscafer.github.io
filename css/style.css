@@ -190,6 +190,7 @@ body {
 .article-date,
 .article-category-link,
 .archive-year,
+.follow-title,
 .widget-title {
   text-decoration: none;
   text-transform: uppercase;
@@ -309,6 +310,14 @@ body {
 #categories ul.category-list-child li >a:before {
   font-family: FontAwesome;
   padding-right: 4px;
+}
+.follow .github:before,
+.follow .weibo:before,
+.follow .email:before,
+.follow .zhihu:before,
+.follow .wechat:before {
+  font-family: FontAwesome;
+  padding: 6px;
 }
 #header {
   padding-top: 1em;
@@ -1551,7 +1560,7 @@ span.ua .location:before {
   display: none;
   right: 30px;
   bottom: 100px;
-  z-index: 200;
+  z-index: 300 !important;
   cursor: pointer;
 }
 .back-to-top-btn:hover {
@@ -1566,6 +1575,58 @@ span.ua .location:before {
   .back-to-top-btn:hover {
     border: none;
   }
+}
+.follow-title {
+  text-transform: none !important;
+}
+.follow {
+  text-align: center !important;
+  font-size: 2em !important;
+  line-height: 1em !important;
+}
+.follow a {
+  color: #50504f !important;
+  text-decoration: none !important;
+}
+.follow .github:before {
+  content: "\f092" !important;
+}
+.follow .github:hover {
+  color: #333;
+  cursor: pointer;
+  background-color: #f5f5d5 /*#eee*/;
+}
+.follow .weibo:before {
+  content: "\f18a" !important;
+}
+.follow .weibo:hover {
+  color: #333;
+  cursor: pointer;
+  background-color: #f5f5d5 /*#eee*/;
+}
+.follow .email:before {
+  content: "\f0e0" !important;
+}
+.follow .email:hover {
+  color: #333;
+  cursor: pointer;
+  background-color: #f5f5d5 /*#eee*/;
+}
+.follow .zhihu:before {
+  content: "\f0ac" !important;
+}
+.follow .zhihu:hover {
+  color: #333;
+  cursor: pointer;
+  background-color: #f5f5d5 /*#eee*/;
+}
+.follow .wechat:before {
+  content: "\f1d7" !important;
+}
+.follow .wechat:hover {
+  color: #333;
+  cursor: pointer;
+  background-color: #f5f5d5 /*#eee*/;
 }
 @media screen and (min-width: 768px) {
   #sidebar {
