@@ -11,18 +11,18 @@
 <meta property="og:url" content="http://giscafer.com/2015/10/15/fullcalendar-schedule-secondary-del/index.html">
 <meta property="og:site_name" content="Giscafer's blog">
 <meta property="og:description" content="最近做个GIS的巡护系统需要开发一个排班管理功能和一个考勤签到统计功能，在查找实现方式和插件后，决定使用fullCalendar进行二次开发来实现；fullCalendar是一个jQuery日历插件，使用它主要是为了借助其日期功能的实现。（另外，有个和fullCalendar类型的日历插件是dhtmlxScheduler，都能达到大致一样的效果）">
-<meta property="og:image" content="http://giscafer.github.io/static/img/fullcalendar_paiban_add.png">
-<meta property="og:image" content="http://giscafer.github.io/static/img/fullcalendar_paiban_ctrol1.png">
-<meta property="og:image" content="http://giscafer.github.io/static/img/fullcalendar_paiban_ctrol2.png">
-<meta property="og:image" content="http://giscafer.github.io/static/img/fullcalendar_plan_setting.png">
-<meta property="og:image" content="http://giscafer.github.io/static/img/fullcalendar_paiban_view.png">
-<meta property="og:image" content="http://giscafer.github.io/static/img/fullcalendar_check_1.png">
-<meta property="og:image" content="http://giscafer.github.io/static/img/fullcalendar_check_2.png">
-<meta property="og:updated_time" content="2016-12-14T16:44:34.663Z">
+<meta property="og:image" content="http://giscafer.com/static/img/fullcalendar_paiban_add.png">
+<meta property="og:image" content="http://giscafer.com/static/img/fullcalendar_paiban_ctrol1.png">
+<meta property="og:image" content="http://giscafer.com/static/img/fullcalendar_paiban_ctrol2.png">
+<meta property="og:image" content="http://giscafer.com/static/img/fullcalendar_plan_setting.png">
+<meta property="og:image" content="http://giscafer.com/static/img/fullcalendar_paiban_view.png">
+<meta property="og:image" content="http://giscafer.com/static/img/fullcalendar_check_1.png">
+<meta property="og:image" content="http://giscafer.com/static/img/fullcalendar_check_2.png">
+<meta property="og:updated_time" content="2017-01-10T15:41:32.452Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="基于fullCalendar二次开发的排班管理和考勤签到功能">
 <meta name="twitter:description" content="最近做个GIS的巡护系统需要开发一个排班管理功能和一个考勤签到统计功能，在查找实现方式和插件后，决定使用fullCalendar进行二次开发来实现；fullCalendar是一个jQuery日历插件，使用它主要是为了借助其日期功能的实现。（另外，有个和fullCalendar类型的日历插件是dhtmlxScheduler，都能达到大致一样的效果）">
-<meta name="twitter:image" content="http://giscafer.github.io/static/img/fullcalendar_paiban_add.png">
+<meta name="twitter:image" content="http://giscafer.com/static/img/fullcalendar_paiban_add.png">
   
     <link rel="alternate" href="/atom.xml" title="Giscafer&#39;s blog" type="application/atom+xml">
   
@@ -120,17 +120,17 @@
  dayNamesShort: [&apos;周日&apos;,&apos;周一&apos;,&apos;周二&apos;,&apos;周三&apos;,&apos;周四&apos;,&apos;周五&apos;,&apos;周六&apos;],
 });
 </code></pre><p><code>fullCalendar</code>目前是2.4版本，在对比源码看的时候，发现1.5和1.6的版本的源码写的相对简单易懂，所以旧使用了版本1.6.4进行修改。下边就是二次开发成果展示了！！！</p>
-<h2 id="一、排班管理开发截图"><a href="#一、排班管理开发截图" class="headerlink" title="一、排班管理开发截图"></a>一、排班管理开发截图</h2><p><img src="http://giscafer.github.io/static/img/fullcalendar_paiban_add.png" alt="排班的添加"><br><img src="http://giscafer.github.io/static/img/fullcalendar_paiban_ctrol1.png" alt="排班的班次控制：不能添加相同班次"><br><img src="http://giscafer.github.io/static/img/fullcalendar_paiban_ctrol2.png" alt="排班的班次控制：一天不能添加超过3个班次"><br><img src="http://giscafer.github.io/static/img/fullcalendar_plan_setting.png" alt="额外的功能：班次的维护，班次颜色设定和顺序修改"></p>
-<p><img src="http://giscafer.github.io/static/img/fullcalendar_paiban_view.png" alt="设定的排班保存数据库后结果展示"></p>
-<h2 id="二、考勤签到开发截图"><a href="#二、考勤签到开发截图" class="headerlink" title="二、考勤签到开发截图"></a>二、考勤签到开发截图</h2><p><img src="http://giscafer.github.io/static/img/fullcalendar_check_1.png" alt="考勤签到9月份"></p>
-<p><img src="http://giscafer.github.io/static/img/fullcalendar_check_2.png" alt="考勤签到10月份"></p>
+<h2 id="一、排班管理开发截图"><a href="#一、排班管理开发截图" class="headerlink" title="一、排班管理开发截图"></a>一、排班管理开发截图</h2><p><img src="/static/img/fullcalendar_paiban_add.png" alt="排班的添加"><br><img src="/static/img/fullcalendar_paiban_ctrol1.png" alt="排班的班次控制：不能添加相同班次"><br><img src="/static/img/fullcalendar_paiban_ctrol2.png" alt="排班的班次控制：一天不能添加超过3个班次"><br><img src="/static/img/fullcalendar_plan_setting.png" alt="额外的功能：班次的维护，班次颜色设定和顺序修改"></p>
+<p><img src="/static/img/fullcalendar_paiban_view.png" alt="设定的排班保存数据库后结果展示"></p>
+<h2 id="二、考勤签到开发截图"><a href="#二、考勤签到开发截图" class="headerlink" title="二、考勤签到开发截图"></a>二、考勤签到开发截图</h2><p><img src="/static/img/fullcalendar_check_1.png" alt="考勤签到9月份"></p>
+<p><img src="/static/img/fullcalendar_check_2.png" alt="考勤签到10月份"></p>
 <h2 id="三、开发总结"><a href="#三、开发总结" class="headerlink" title="三、开发总结"></a>三、开发总结</h2><p>纯粹的JS编写和样式CSS编写，麻烦的只是数据的组装；弄清楚fullCalendar实现的原理和渲染的方式后，按照自己的业务逻辑组织好数据就可以了。</p>
 <h2 id="四、源码分享"><a href="#四、源码分享" class="headerlink" title="四、源码分享"></a>四、源码分享</h2><p>写过一个排班管理系统：<a href="https://github.com/giscafer/FinalScheduler" target="_blank" rel="external">FinalScheduler</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://giscafer.com/2015/10/15/fullcalendar-schedule-secondary-del/" data-id="cixro0irv0010rkz5581vab70" class="article-share-link">分享</a>
+      <a data-url="http://giscafer.com/2015/10/15/fullcalendar-schedule-secondary-del/" data-id="cixrov0py000gr0z55qnp52j6" class="article-share-link">分享</a>
       
         <a href="http://giscafer.com/2015/10/15/fullcalendar-schedule-secondary-del/#ds-thread" class="article-comment-link">留言</a>
       

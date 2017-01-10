@@ -13,14 +13,14 @@
 <meta property="og:site_name" content="Giscafer's blog">
 <meta property="og:description" content="了解前端必备的优化内容，这作为开发的标准的话，会让我们养成好的编码风格，并做到后期优化内容更少。下边是在学习前端优化记录的笔记内容。推荐书《高性能网站建设指南》
 1、尽可能的减少 HTTP 请求数前端页面初始化的时候，会在服务器下载外部文件，比如图片、js、css文件等，Http请求次数越多，消耗的时间越长，有效的将图片和js\css文件合并，减少Http的请求可以提升性能优化">
-<meta property="og:image" content="http://giscafer.github.io/static/img/web-performance-optimization13.png">
-<meta property="og:image" content="http://giscafer.github.io/static/img/web-performance-optimization15.png">
-<meta property="og:updated_time" content="2016-12-14T16:49:03.746Z">
+<meta property="og:image" content="http://giscafer.com/static/img/web-performance-optimization13.png">
+<meta property="og:image" content="http://giscafer.com/static/img/web-performance-optimization15.png">
+<meta property="og:updated_time" content="2017-01-10T15:41:33.113Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前端网站性能优化14点">
 <meta name="twitter:description" content="了解前端必备的优化内容，这作为开发的标准的话，会让我们养成好的编码风格，并做到后期优化内容更少。下边是在学习前端优化记录的笔记内容。推荐书《高性能网站建设指南》
 1、尽可能的减少 HTTP 请求数前端页面初始化的时候，会在服务器下载外部文件，比如图片、js、css文件等，Http请求次数越多，消耗的时间越长，有效的将图片和js\css文件合并，减少Http的请求可以提升性能优化">
-<meta name="twitter:image" content="http://giscafer.github.io/static/img/web-performance-optimization13.png">
+<meta name="twitter:image" content="http://giscafer.com/static/img/web-performance-optimization13.png">
   
     <link rel="alternate" href="/atom.xml" title="Giscafer&#39;s blog" type="application/atom+xml">
   
@@ -122,14 +122,14 @@
 <h3 id="10、压缩JavaScript和CSS"><a href="#10、压缩JavaScript和CSS" class="headerlink" title="10、压缩JavaScript和CSS"></a>10、压缩JavaScript和CSS</h3><p>通过网上一些在线或者其他根据来压缩js、css文件，已减少文件体积，提升网页下载文件速度；</p>
 <h3 id="11、避免重定向"><a href="#11、避免重定向" class="headerlink" title="11、避免重定向"></a>11、避免重定向</h3><p>http协议中重定向有301（页面被移动到了另外的位置）和302（被找到了）两种状态码。<br>另外301表示永久重定向，302表示临时重定向。对搜索引擎来说，爬虫会不定期的搜索站点，如果站点使用了301重定向，搜索引擎会将（a——&gt;b）b记录下来，删除a不再去爬虫。<br>当然，简单的从重定向来看，在这个过程中会消耗时间，所以不使用的话就尽量避免；另外特别注意的细微差别是，比如<a href="http://giscafer.com这个地址，就暗藏了重定向了，正确的为http://giscafer.com/才是直接访问的。其他的地址类似，一般后边加上`/`" target="_blank" rel="external">http://giscafer.com这个地址，就暗藏了重定向了，正确的为http://giscafer.com/才是直接访问的。其他的地址类似，一般后边加上`/`</a></p>
 <h3 id="12、移除重复的脚本"><a href="#12、移除重复的脚本" class="headerlink" title="12、移除重复的脚本"></a>12、移除重复的脚本</h3><p>这也是个编码习惯和质量的问题；当重复的脚本下有相同的全局变量时，这个会影响到其他代码，或者是被全局污染了。js前端代码如果使用模块化管理的方式的话就避免了污染的情况。</p>
-<h3 id="13、配置实体标签（ETag）"><a href="#13、配置实体标签（ETag）" class="headerlink" title="13、配置实体标签（ETag）"></a>13、配置实体标签（ETag）</h3><p>ETag——Entity Tag（实体标签），属于HTTP协议，受Web服务支持。使用特殊的字符串，来标识某个请求资源版本<br><img src="http://giscafer.github.io/static/img/web-performance-optimization13.png" alt="浏览器和服务器交流"><br>当每次Http请求的时候，服务器会判断该次请求的数据是否做过修改，如果没有修改过，则返回304状态码告诉浏览器，浏览器继续使用原来版本的资源，如果修改过了，则重新ETag标识，此时返回状态码是200。</p>
-<h3 id="14、使AJAX缓存"><a href="#14、使AJAX缓存" class="headerlink" title="14、使AJAX缓存"></a>14、使AJAX缓存</h3><p>Ajax请求也是会消耗时间的，所以有时候也是需要缓存，但AJAX的POST请求的时候，是不被缓存的，而GET请求时可以被缓存的。<br><img src="http://giscafer.github.io/static/img/web-performance-optimization15.png" alt="POST和GET的区别"></p>
+<h3 id="13、配置实体标签（ETag）"><a href="#13、配置实体标签（ETag）" class="headerlink" title="13、配置实体标签（ETag）"></a>13、配置实体标签（ETag）</h3><p>ETag——Entity Tag（实体标签），属于HTTP协议，受Web服务支持。使用特殊的字符串，来标识某个请求资源版本<br><img src="/static/img/web-performance-optimization13.png" alt="浏览器和服务器交流"><br>当每次Http请求的时候，服务器会判断该次请求的数据是否做过修改，如果没有修改过，则返回304状态码告诉浏览器，浏览器继续使用原来版本的资源，如果修改过了，则重新ETag标识，此时返回状态码是200。</p>
+<h3 id="14、使AJAX缓存"><a href="#14、使AJAX缓存" class="headerlink" title="14、使AJAX缓存"></a>14、使AJAX缓存</h3><p>Ajax请求也是会消耗时间的，所以有时候也是需要缓存，但AJAX的POST请求的时候，是不被缓存的，而GET请求时可以被缓存的。<br><img src="/static/img/web-performance-optimization15.png" alt="POST和GET的区别"></p>
 <h3 id="15、Yslow网站性能优化工具"><a href="#15、Yslow网站性能优化工具" class="headerlink" title="15、Yslow网站性能优化工具"></a>15、Yslow网站性能优化工具</h3><p>最后推荐Yslow工具，其实基于Firebug上使用的，如果是使用Firefox浏览器可以直接安装插件，Google chrome的话先安装FirebugLiteforChrome插件再安装Yslow</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://giscafer.com/2015/09/06/web-performance-optimization/" data-id="cixro0itp003jrkz5b5hglcvr" class="article-share-link">分享</a>
+      <a data-url="http://giscafer.com/2015/09/06/web-performance-optimization/" data-id="cixrov0rm002tr0z55w3vqzh9" class="article-share-link">分享</a>
       
         <a href="http://giscafer.com/2015/09/06/web-performance-optimization/#ds-thread" class="article-comment-link">留言</a>
       

@@ -15,20 +15,20 @@ Hexo是一个基于Node.js快而轻的强大博客框架，Hexo所生成的网�
 <meta property="og:description" content="###Hexo的介绍用一句话即可：
 A fast, simple &amp;amp; powerful blog framework,powered by Node.js
 Hexo是一个基于Node.js快而轻的强大博客框架，Hexo所生成的网页都是静态的，所以说他轻而快那是必然的，目前可以将其托管到gitcafe(国内）,github和heroku（国外）。giscafe’s bolg托管在gitcaf">
-<meta property="og:image" content="http://giscafer.github.io/static/img/hexo_course_01.jpg">
-<meta property="og:image" content="http://giscafer.github.io/static/img/hexo_course_02.jpg">
-<meta property="og:image" content="http://giscafer.github.io/static/img/hexo_course_04.jpg">
-<meta property="og:image" content="http://giscafer.github.io/static/img/hexo_course_03.jpg">
-<meta property="og:image" content="http://giscafer.github.io/static/img/hexo_course_05.jpg">
-<meta property="og:image" content="http://giscafer.github.io/static/img/hexo_course_06.jpg">
-<meta property="og:image" content="http://giscafer.github.io/static/img/hexo_course_07.jpg">
-<meta property="og:updated_time" content="2016-12-14T16:50:06.235Z">
+<meta property="og:image" content="http://giscafer.com/static/img/hexo_course_01.jpg">
+<meta property="og:image" content="http://giscafer.com/static/img/hexo_course_02.jpg">
+<meta property="og:image" content="http://giscafer.com/static/img/hexo_course_04.jpg">
+<meta property="og:image" content="http://giscafer.com/static/img/hexo_course_03.jpg">
+<meta property="og:image" content="http://giscafer.com/static/img/hexo_course_05.jpg">
+<meta property="og:image" content="http://giscafer.com/static/img/hexo_course_06.jpg">
+<meta property="og:image" content="http://giscafer.com/static/img/hexo_course_07.jpg">
+<meta property="og:updated_time" content="2017-01-10T15:41:32.539Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo静态博客搭建教程[1]">
 <meta name="twitter:description" content="###Hexo的介绍用一句话即可：
 A fast, simple &amp;amp; powerful blog framework,powered by Node.js
 Hexo是一个基于Node.js快而轻的强大博客框架，Hexo所生成的网页都是静态的，所以说他轻而快那是必然的，目前可以将其托管到gitcafe(国内）,github和heroku（国外）。giscafe’s bolg托管在gitcaf">
-<meta name="twitter:image" content="http://giscafer.github.io/static/img/hexo_course_01.jpg">
+<meta name="twitter:image" content="http://giscafer.com/static/img/hexo_course_01.jpg">
   
     <link rel="alternate" href="/atom.xml" title="Giscafer&#39;s blog" type="application/atom+xml">
   
@@ -124,9 +124,9 @@ Hexo是一个基于Node.js快而轻的强大博客框架，Hexo所生成的网�
 </ul>
 </blockquote>
 <p>###（1）下载Git和Nodejs安装到电脑上</p>
-<p>到<a href="http://git-scm.com/" target="_blank" rel="external">Git</a>和<a href="http://nodejs.org/" target="_blank" rel="external">Nodejs</a>官网下载适合自己电脑的版本后安装，更改自己想要安装的位置，其他设置默认即可，安装很简单。这里不介绍，安装成功会多这两个：<br><img src="http://giscafer.github.io/static/img/hexo_course_01.jpg" alt=""></p>
+<p>到<a href="http://git-scm.com/" target="_blank" rel="external">Git</a>和<a href="http://nodejs.org/" target="_blank" rel="external">Nodejs</a>官网下载适合自己电脑的版本后安装，更改自己想要安装的位置，其他设置默认即可，安装很简单。这里不介绍，安装成功会多这两个：<br><img src="/static/img/hexo_course_01.jpg" alt=""></p>
 <p>###（2）新建目录</p>
-<p>在自己喜欢的一个目录下新建一个目录，命名自定义，这里我命名为<code>hexo</code>,在这个文件夹内右键》选择<code>Git Bash</code>命令，会打开如图窗口<br><img src="http://giscafer.github.io/static/img/hexo_course_02.jpg" alt=""></p>
+<p>在自己喜欢的一个目录下新建一个目录，命名自定义，这里我命名为<code>hexo</code>,在这个文件夹内右键》选择<code>Git Bash</code>命令，会打开如图窗口<br><img src="/static/img/hexo_course_02.jpg" alt=""></p>
 <p>这就是传说中的Git命令窗口，更多关于Git的命令使用和教程可以网上搜索或者到官网学习。</p>
 <p>###（3）下载安装Hexo</p>
 <pre><code>$ npm install hexo -g
@@ -135,17 +135,17 @@ Hexo是一个基于Node.js快而轻的强大博客框架，Hexo所生成的网�
 <pre><code>$ hexo init blog &amp;&amp; cd blog
 </code></pre><p>或</p>
 <pre><code>$ hexo init
-</code></pre><p>来创建博客目录，<code>$ hexo init blog &amp;&amp; cd blog</code>是在根目录下创建一个blog文件夹再创建博客，<code>$ hexo init</code>则为直接在根目录创建博客文件夹：<br><img src="http://giscafer.github.io/static/img/hexo_course_04.jpg" alt=""><br>最后文件夹如图：<br><img src="http://giscafer.github.io/static/img/hexo_course_03.jpg" alt=""></p>
+</code></pre><p>来创建博客目录，<code>$ hexo init blog &amp;&amp; cd blog</code>是在根目录下创建一个blog文件夹再创建博客，<code>$ hexo init</code>则为直接在根目录创建博客文件夹：<br><img src="/static/img/hexo_course_04.jpg" alt=""><br>最后文件夹如图：<br><img src="/static/img/hexo_course_03.jpg" alt=""></p>
 <p><code>PS:</code>下边是Hexo在Git里搭建的几个日后常用命令<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ hexo generate      <span class="comment">//可以简写为$hexo g,本地文件更改后都需要执行一次，相当于提交更改</span></div><div class="line"></div><div class="line">$ hexo server        <span class="comment">//可以简写为$hexo s，本地服务启动，启动后可以在浏览器地址输入"localhost:4000"来访问博客，用于本地调试，满意了再提交</span></div><div class="line"></div><div class="line">$ hexo deploy        <span class="comment">//可以简写为$hexo d，提交代码到空间（托管处）</span></div></pre></td></tr></table></figure></p>
 <p>###（5）本地博客搭建完成<br>在git命令窗口中使用以下两个命令：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$hexo generate或hexo g</div><div class="line">$hexo server或hexo s</div></pre></td></tr></table></figure></p>
-<p><img src="http://giscafer.github.io/static/img/hexo_course_05.jpg" alt="hexo generate"><br><img src="http://giscafer.github.io/static/img/hexo_course_06.jpg" alt="hexo server"><br><code>[info] Hexo is running at http://localhost:4000/. Press Ctrl+C to stop</code><br>浏览器输入<a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a> 即可打开刚建好的Hexo博客了。<br><img src="http://giscafer.github.io/static/img/hexo_course_07.jpg" alt="Hello World"><br><strong>按<code>Ctrl+C</code>可以停止程序</strong></p>
+<p><img src="/static/img/hexo_course_05.jpg" alt="hexo generate"><br><img src="/static/img/hexo_course_06.jpg" alt="hexo server"><br><code>[info] Hexo is running at http://localhost:4000/. Press Ctrl+C to stop</code><br>浏览器输入<a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a> 即可打开刚建好的Hexo博客了。<br><img src="/static/img/hexo_course_07.jpg" alt="Hello World"><br><strong>按<code>Ctrl+C</code>可以停止程序</strong></p>
 <p><em>通过以上几个步骤即可完成Hexo博客的本地搭建，托管gitcafe教程见下一篇</em></p>
 <p>作者 <a href="http://weibo.com/laohoubin" target="_blank" rel="external">@勞黑炭要好好好学习</a><br>2014 年 04月 28日    </p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://giscafer.com/2014/04/27/hexo-build-course01/" data-id="cixro0isg001orkz5mdj2g5lm" class="article-share-link">分享</a>
+      <a data-url="http://giscafer.com/2014/04/27/hexo-build-course01/" data-id="cixrov0q6000or0z5rab4xv4q" class="article-share-link">分享</a>
       
         <a href="http://giscafer.com/2014/04/27/hexo-build-course01/#ds-thread" class="article-comment-link">留言</a>
       

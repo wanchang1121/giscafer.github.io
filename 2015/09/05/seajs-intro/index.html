@@ -11,13 +11,13 @@
 <meta property="og:url" content="http://giscafer.com/2015/09/05/seajs-intro/index.html">
 <meta property="og:site_name" content="Giscafer's blog">
 <meta property="og:description" content="SeaJS确实简单，看官网介绍只需要5分钟就可以基本了解其使用方法，但是中间也有坑，官方文档并没有介绍很详细，这坑可能在你用了SeaJS后才会遇到。">
-<meta property="og:image" content="http://giscafer.github.io/static/img/seajs-intro01.png">
-<meta property="og:image" content="http://giscafer.github.io/static/img/seajs-intro02.png">
-<meta property="og:updated_time" content="2016-12-14T16:48:07.696Z">
+<meta property="og:image" content="http://giscafer.com/static/img/seajs-intro01.png">
+<meta property="og:image" content="http://giscafer.com/static/img/seajs-intro02.png">
+<meta property="og:updated_time" content="2017-01-10T15:41:32.994Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SeaJS配置使用学习笔记">
 <meta name="twitter:description" content="SeaJS确实简单，看官网介绍只需要5分钟就可以基本了解其使用方法，但是中间也有坑，官方文档并没有介绍很详细，这坑可能在你用了SeaJS后才会遇到。">
-<meta name="twitter:image" content="http://giscafer.github.io/static/img/seajs-intro01.png">
+<meta name="twitter:image" content="http://giscafer.com/static/img/seajs-intro01.png">
   
     <link rel="alternate" href="/atom.xml" title="Giscafer&#39;s blog" type="application/atom+xml">
   
@@ -104,14 +104,14 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">  <span class="comment">// 调用定义模块</span></div><div class="line">seajs.use([<span class="string">'jquery'</span>,<span class="string">'js/test'</span>], <span class="function"><span class="keyword">function</span>(<span class="params">$</span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'jquery'</span>, $)</div><div class="line">    $(<span class="string">'#hhhh'</span>).html(<span class="string">'Hello SeaJS'</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 <p><strong>test.js文件代码</strong></p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">define(<span class="function"><span class="keyword">function</span>(<span class="params">require, exports, module</span>) </span>&#123;</div><div class="line"><span class="comment">//加载commonUtil模块（上班paths映射common为common。故目录为：common/commonUtil）</span></div><div class="line"><span class="built_in">window</span>.c = <span class="built_in">require</span>(<span class="string">'common/commonUtil'</span>);</div><div class="line"><span class="built_in">console</span>.log(<span class="string">'c'</span>, c);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<p>其实中间是有坑的，<code>juery</code>就是一个坑，如果修改了<code>base</code>，路径的改变就要求你需要改变你定义的一些模块的id，不然会在<code>var a=require（&#39;modulename&#39;);</code>的时候a为<code>null</code>。比如修改jquery模块下额id<br><img src="http://giscafer.github.io/static/img/seajs-intro01.png" alt="base路径改变后需要修改jquery的id"></p>
-<p><img src="http://giscafer.github.io/static/img/seajs-intro02.png" alt="基本结构"><br>详情请看：<a href="https://github.com/seajs/seajs/issues/930" target="_blank" rel="external">https://github.com/seajs/seajs/issues/930</a><br><code>很多坑前辈都是走过的，我们可以搜索参考他们的解决办法</code></p>
-<p>》》》》》》<a href="http://giscafer.github.io/static/uploadfile/seajs-intro-demo.zip" target="_blank" rel="external">demo下载</a></p>
+<p>其实中间是有坑的，<code>juery</code>就是一个坑，如果修改了<code>base</code>，路径的改变就要求你需要改变你定义的一些模块的id，不然会在<code>var a=require（&#39;modulename&#39;);</code>的时候a为<code>null</code>。比如修改jquery模块下额id<br><img src="/static/img/seajs-intro01.png" alt="base路径改变后需要修改jquery的id"></p>
+<p><img src="/static/img/seajs-intro02.png" alt="基本结构"><br>详情请看：<a href="https://github.com/seajs/seajs/issues/930" target="_blank" rel="external">https://github.com/seajs/seajs/issues/930</a><br><code>很多坑前辈都是走过的，我们可以搜索参考他们的解决办法</code></p>
+<p>》》》》》》<a href="/static/uploadfile/seajs-intro-demo.zip">demo下载</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://giscafer.com/2015/09/05/seajs-intro/" data-id="cixro0itv003rrkz5ts5oowbi" class="article-share-link">分享</a>
+      <a data-url="http://giscafer.com/2015/09/05/seajs-intro/" data-id="cixrov0rg002jr0z5hfqk70tb" class="article-share-link">分享</a>
       
         <a href="http://giscafer.com/2015/09/05/seajs-intro/#ds-thread" class="article-comment-link">留言</a>
       
