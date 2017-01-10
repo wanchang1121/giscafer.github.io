@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://giscafer.com/"/>
-  <updated>2017-01-10T15:30:28.406Z</updated>
+  <updated>2017-01-10T15:34:59.034Z</updated>
   <id>http://giscafer.com/</id>
   
   <author>
@@ -20,12 +20,12 @@
     <link href="http://giscafer.com/2017/01/10/modularization-webgis/"/>
     <id>http://giscafer.com/2017/01/10/modularization-webgis/</id>
     <published>2017-01-10T15:09:31.000Z</published>
-    <updated>2017-01-10T15:30:28.406Z</updated>
+    <updated>2017-01-10T15:34:59.034Z</updated>
     
     <content type="html"><![CDATA[<h3 id="啰嗦两句"><a href="#啰嗦两句" class="headerlink" title="啰嗦两句"></a>啰嗦两句</h3><p>前面聊过<a href="https://zhuanlan.zhihu.com/p/24780835?refer=viseye" target="_blank" rel="external">《探讨如何使用流行的前端技术开发WebGIS系统》</a>，本篇基于此继续介绍。</p>
 <p><em>不用再讨论兼容IE6，7了，2017年，没人再用了。。。。哈哈哈</em></p>
 <p>本人目前正业余开发一套框架，后端Java+前端Angular+个人封装的UI+个人封装的地图组件，东西很多，一个人搞，这是一个漫长的过程。这也是为什么最近再Github上如此活跃的原因，也因为最近一段时间没加过班。。。除了玩游戏就只能写代码了。。</p>
-<p>=&gt;giscafer (Nickbing Lao)</p>
+<p>=&gt;<a href="https://github.com/giscafer" target="_blank" rel="external">giscafer (Nickbing Lao)</a></p>
 <h3 id="一、后端完善的Restful接口设计有利前端组件封装"><a href="#一、后端完善的Restful接口设计有利前端组件封装" class="headerlink" title="一、后端完善的Restful接口设计有利前端组件封装"></a>一、后端完善的Restful接口设计有利前端组件封装</h3><p>比如知乎的文章链接</p>
 <figure class="highlight awk"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">https:<span class="regexp">//</span>zhuanlan.zhihu.com<span class="regexp">/p/</span><span class="number">24780835</span></div></pre></td></tr></table></figure>
 <p>可以看作一个GET请求，接口p，参数为24780835。这个接口可以查所有文章。</p>
@@ -59,7 +59,7 @@
       &lt;h3 id=&quot;啰嗦两句&quot;&gt;&lt;a href=&quot;#啰嗦两句&quot; class=&quot;headerlink&quot; title=&quot;啰嗦两句&quot;&gt;&lt;/a&gt;啰嗦两句&lt;/h3&gt;&lt;p&gt;前面聊过&lt;a href=&quot;https://zhuanlan.zhihu.com/p/24780835?refer=viseye&quot;&gt;《探讨如何使用流行的前端技术开发WebGIS系统》&lt;/a&gt;，本篇基于此继续介绍。&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;不用再讨论兼容IE6，7了，2017年，没人再用了。。。。哈哈哈&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;本人目前正业余开发一套框架，后端Java+前端Angular+个人封装的UI+个人封装的地图组件，东西很多，一个人搞，这是一个漫长的过程。这也是为什么最近再Github上如此活跃的原因，也因为最近一段时间没加过班。。。除了玩游戏就只能写代码了。。&lt;/p&gt;
-&lt;p&gt;=&amp;gt;giscafer (Nickbing Lao)&lt;/p&gt;
+&lt;p&gt;=&amp;gt;&lt;a href=&quot;https://github.com/giscafer&quot;&gt;giscafer (Nickbing Lao)&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&quot;一、后端完善的Restful接口设计有利前端组件封装&quot;&gt;&lt;a href=&quot;#一、后端完善的Restful接口设计有利前端组件封装&quot; class=&quot;headerlink&quot; title=&quot;一、后端完善的Restful接口设计有利前端组件封装&quot;&gt;&lt;/a&gt;一、后端完善的Restful接口设计有利前端组件封装&lt;/h3&gt;&lt;p&gt;比如知乎的文章链接&lt;/p&gt;
 &lt;figure class=&quot;highlight awk&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;https:&lt;span class=&quot;regexp&quot;&gt;//&lt;/span&gt;zhuanlan.zhihu.com&lt;span class=&quot;regexp&quot;&gt;/p/&lt;/span&gt;&lt;span class=&quot;number&quot;&gt;24780835&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;可以看作一个GET请求，接口p，参数为24780835。这个接口可以查所有文章。&lt;/p&gt;
