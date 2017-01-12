@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://giscafer.com/"/>
-  <updated>2017-01-10T15:44:43.069Z</updated>
+  <updated>2017-01-12T14:04:06.378Z</updated>
   <id>http://giscafer.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://giscafer.com/2017/01/10/modularization-webgis/"/>
     <id>http://giscafer.com/2017/01/10/modularization-webgis/</id>
     <published>2017-01-10T15:09:31.000Z</published>
-    <updated>2017-01-10T15:44:43.069Z</updated>
+    <updated>2017-01-12T14:04:06.378Z</updated>
     
     <content type="html"><![CDATA[<h3 id="啰嗦两句"><a href="#啰嗦两句" class="headerlink" title="啰嗦两句"></a>啰嗦两句</h3><p>前面聊过<a href="https://zhuanlan.zhihu.com/p/24780835?refer=viseye" target="_blank" rel="external">《探讨如何使用流行的前端技术开发WebGIS系统》</a>，本篇基于此继续介绍。</p>
 <p><em>不用再讨论兼容IE6，7了，2017年，没人再用了。。。。哈哈哈</em></p>
@@ -39,9 +39,10 @@
 <h3 id="二、地图工具组件化"><a href="#二、地图工具组件化" class="headerlink" title="二、地图工具组件化"></a>二、地图工具组件化</h3><p>同理，地图工具组件化是必须的。（防转载标记，个人微信公众号：giscafer）</p>
 <p>每个WebGIS系统都有这些一模一样的工具：<strong>全屏、放大、缩小、距离测量、面积测量、i键查询、坐标定位</strong> 等等，这些工具可以封装为无平台相关，也就是兼容所有地图js库，不管是ArcGIS API For JavaScript，还是OpenLayers 等，就比如我封装了一个叫 DMap 的地图库，里边大致结构如图：</p>
 <p><img src="/static/img/modularization-webgis-dmap.png" alt="DMap库结构图"></p>
-<p>在开发系统时，我选择了Mapbox作为地图js库，我再dmap_config.js文件中配置</p>
+<p>在开发系统时，我选择了<code>Mapbox</code>作为地图js库，我在<code>dmap_config.js</code>文件中配置</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">DMAP_JS_TYPE:<span class="string">"MAPBOX"</span></div></pre></td></tr></table></figure>
-<p>这时候我可以自动构建打包一套Mapbox的js库（当然和原生库不一样，我封装了一些组件类，下边介绍）。同理我配置DMAP_JS_TYPE:”OL3”，就表示构建OL3组件库。</p>
+<p>这时候我可以自动构建打包一套Mapbox的js库（当然和原生库不一样，我封装了一些组件类，下边介绍）。同理我配置<code>DMAP_JS_TYPE:&quot;OL3&quot;</code>，就表示构建OL3组件库。</p>
+<p>构建方式用<code>nodejs</code> + <code>webpack</code>等工具开发，类似 <a href="http://echarts.baidu.com/builder.html" target="_blank" rel="external">Echarts的构建方式</a> </p>
 <p>然后我把组件库引入我开发的webgis系统。通过无平台相关（这表示和地图 js库无关）接口 Map 创建地图</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">map = <span class="keyword">new</span> <span class="built_in">Map</span>(<span class="string">"map"</span>, &#123;</div><div class="line">      <span class="comment">//配置</span></div><div class="line">       projection: <span class="string">"EPSG:900913"</span>,</div><div class="line">       <span class="attr">center</span>: [<span class="number">118.665397</span>, <span class="number">47.6569168</span>],</div><div class="line">       <span class="attr">zoom</span>: <span class="number">5</span></div><div class="line">   &#125;);</div></pre></td></tr></table></figure>
 <p>另外，地图类型加载也可以封装成，通过配置地图类型比如，天地图OGC_WMTS，还是高德地图AMAP，demo《<a href="https://zhuanlan.zhihu.com/p/24780835?refer=viseye" target="_blank" rel="external">《探讨如何使用流行的前端技术开发WebGIS系统》</a> 就是配置的高德地图。这些地图加载同样封装成无平台相关。</p>
