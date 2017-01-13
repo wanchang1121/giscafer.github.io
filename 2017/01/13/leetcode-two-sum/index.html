@@ -3,21 +3,24 @@
 <head>
   <meta charset="utf-8">
   
-  <title>LeetCode|Two Sum | Giscafer&#39;s blog</title>
+  <title>1.Two Sum | Giscafer&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Two Sum原题地址：https://leetcode.com/problems/two-sum/
-1234567891011121314151617181920212223242526272829303132333435363738394041/** * @param &amp;#123;number[]&amp;#125; nums * @param &amp;#123;number&amp;#125; target *">
+  <meta name="description" content="原题地址：https://leetcode.com/problems/two-sum/
+方法一正常两次循环，循环次数可能多，只要数组不是很大，效率还是很高的
+1234567891011121314151617181920/** * @param &amp;#123;number[]&amp;#125; nums * @param &amp;#123;number&amp;#125; target * @return &amp;#123;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode|Two Sum">
+<meta property="og:title" content="1.Two Sum">
 <meta property="og:url" content="http://giscafer.com/2017/01/13/leetcode-two-sum/index.html">
 <meta property="og:site_name" content="Giscafer's blog">
-<meta property="og:description" content="Two Sum原题地址：https://leetcode.com/problems/two-sum/
-1234567891011121314151617181920212223242526272829303132333435363738394041/** * @param &amp;#123;number[]&amp;#125; nums * @param &amp;#123;number&amp;#125; target *">
-<meta property="og:updated_time" content="2017-01-13T12:28:22.011Z">
+<meta property="og:description" content="原题地址：https://leetcode.com/problems/two-sum/
+方法一正常两次循环，循环次数可能多，只要数组不是很大，效率还是很高的
+1234567891011121314151617181920/** * @param &amp;#123;number[]&amp;#125; nums * @param &amp;#123;number&amp;#125; target * @return &amp;#123;">
+<meta property="og:updated_time" content="2017-01-13T12:35:33.755Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LeetCode|Two Sum">
-<meta name="twitter:description" content="Two Sum原题地址：https://leetcode.com/problems/two-sum/
-1234567891011121314151617181920212223242526272829303132333435363738394041/** * @param &amp;#123;number[]&amp;#125; nums * @param &amp;#123;number&amp;#125; target *">
+<meta name="twitter:title" content="1.Two Sum">
+<meta name="twitter:description" content="原题地址：https://leetcode.com/problems/two-sum/
+方法一正常两次循环，循环次数可能多，只要数组不是很大，效率还是很高的
+1234567891011121314151617181920/** * @param &amp;#123;number[]&amp;#125; nums * @param &amp;#123;number&amp;#125; target * @return &amp;#123;">
   
     <link rel="alternate" href="/atom.xml" title="Giscafer&#39;s blog" type="application/atom+xml">
   
@@ -88,7 +91,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      LeetCode|Two Sum
+      1.Two Sum
     </h1>
   
 
@@ -98,8 +101,13 @@
       
         <!-- Table of Contents -->
         
-        <h2 id="Two-Sum"><a href="#Two-Sum" class="headerlink" title="Two Sum"></a>Two Sum</h2><p><em>原题地址：<a href="https://leetcode.com/problems/two-sum/" target="_blank" rel="external">https://leetcode.com/problems/two-sum/</a></em></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * @param &#123;number[]&#125; nums</div><div class="line"> * @param &#123;number&#125; target</div><div class="line"> * @return &#123;number[]&#125;</div><div class="line"> */</div><div class="line"><span class="keyword">var</span> nums = [<span class="number">2</span>, <span class="number">7</span>, <span class="number">11</span>, <span class="number">15</span>], target = <span class="number">9</span>;</div><div class="line"><span class="comment">// var nums = [11, 15, 9,1,1,3,1,11, 15, 9,1,1,3,1,1,1,1,1,2,7,3], target = 9;</span></div><div class="line"><span class="keyword">var</span> twoSum = <span class="function"><span class="keyword">function</span>(<span class="params">nums, target</span>) </span>&#123;</div><div class="line">	<span class="built_in">console</span>.time(<span class="string">'twoSum'</span>)</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;nums.length;i++)&#123;</div><div class="line"></div><div class="line">    	<span class="keyword">for</span> (<span class="keyword">var</span> j = <span class="number">0</span>; j &lt; nums.length&amp;&amp; i!=j; j++) &#123;</div><div class="line">    		<span class="keyword">if</span>(nums[j]+nums[i]===target)&#123;</div><div class="line">    			<span class="built_in">console</span>.timeEnd(<span class="string">'twoSum'</span>)</div><div class="line">    			<span class="keyword">var</span> result=[i,j].sort();</div><div class="line">    			<span class="keyword">return</span> result</div><div class="line">    		&#125;</div><div class="line">    	&#125;;</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">var</span> twoSum2 = <span class="function"><span class="keyword">function</span>(<span class="params">nums, target</span>) </span>&#123;</div><div class="line">	<span class="built_in">console</span>.time(<span class="string">'twoSum2'</span>)</div><div class="line">	<span class="keyword">var</span> obj=&#123;&#125;;</div><div class="line"></div><div class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;nums.length;i++)&#123;</div><div class="line">    	<span class="keyword">if</span>(obj[nums[i+<span class="string">''</span>]]!==<span class="literal">null</span> &amp;&amp; obj[nums[i+<span class="string">''</span>]]!==<span class="literal">undefined</span>)&#123;</div><div class="line">    		<span class="keyword">var</span> result=[obj[nums[i]],i];</div><div class="line">    		 <span class="built_in">console</span>.timeEnd(<span class="string">'twoSum2'</span>)</div><div class="line">    		<span class="keyword">return</span> result;</div><div class="line">    	&#125;</div><div class="line">    	obj[target-nums[i]]=i;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">var</span> result2=[];</div><div class="line">    <span class="keyword">return</span> result2;</div><div class="line">&#125;;</div><div class="line">twoSum(nums,target);</div><div class="line">twoSum2(nums,target);</div></pre></td></tr></table></figure>
+        <p><em>原题地址：<a href="https://leetcode.com/problems/two-sum/" target="_blank" rel="external">https://leetcode.com/problems/two-sum/</a></em></p>
+<h3 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h3><p>正常两次循环，循环次数可能多，只要数组不是很大，效率还是很高的</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * @param &#123;number[]&#125; nums</div><div class="line"> * @param &#123;number&#125; target</div><div class="line"> * @return &#123;number[]&#125;</div><div class="line"> */</div><div class="line"></div><div class="line"><span class="keyword">var</span> twoSum = <span class="function"><span class="keyword">function</span>(<span class="params">nums, target</span>) </span>&#123;</div><div class="line">	<span class="built_in">console</span>.time(<span class="string">'twoSum'</span>)</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;nums.length;i++)&#123;</div><div class="line"></div><div class="line">    	<span class="keyword">for</span> (<span class="keyword">var</span> j = <span class="number">0</span>; j &lt; nums.length&amp;&amp; i!=j; j++) &#123;</div><div class="line">    		<span class="keyword">if</span>(nums[j]+nums[i]===target)&#123;</div><div class="line">    			<span class="built_in">console</span>.timeEnd(<span class="string">'twoSum'</span>)</div><div class="line">    			<span class="keyword">var</span> result=[i,j].sort();</div><div class="line">    			<span class="keyword">return</span> result</div><div class="line">    		&#125;</div><div class="line">    	&#125;;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<h3 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h3><p>边循环边使用对象存储</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">var</span> twoSum2 = <span class="function"><span class="keyword">function</span>(<span class="params">nums, target</span>) </span>&#123;</div><div class="line">	<span class="built_in">console</span>.time(<span class="string">'twoSum2'</span>)</div><div class="line">	<span class="keyword">var</span> obj=&#123;&#125;;</div><div class="line"></div><div class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;nums.length;i++)&#123;</div><div class="line">    	<span class="keyword">if</span>(obj[nums[i+<span class="string">''</span>]]!==<span class="literal">null</span> &amp;&amp; obj[nums[i+<span class="string">''</span>]]!==<span class="literal">undefined</span>)&#123;</div><div class="line">    		<span class="keyword">var</span> result=[obj[nums[i]],i];</div><div class="line">    		 <span class="built_in">console</span>.timeEnd(<span class="string">'twoSum2'</span>)</div><div class="line">    		<span class="keyword">return</span> result;</div><div class="line">    	&#125;</div><div class="line">    	obj[target-nums[i]]=i;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">var</span> result2=[];</div><div class="line">    <span class="keyword">return</span> result2;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p>测试结果，建议使用更大的数组测试，才会看到<code>twoSum2</code>方法效率高</p>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var nums = [<span class="number">2</span>, <span class="number">7</span>, <span class="number">11</span>, <span class="number">15</span>], target = <span class="number">9</span>;</div><div class="line"><span class="comment">// var nums = [11, 15, 9,1,1,3,1,11, 15, 9,1,1,3,1,1,1,1,1,2,7,3], target = 9;</span></div><div class="line">twoSum(nums,target);</div><div class="line">twoSum2(nums,target);</div></pre></td></tr></table></figure>
 <p>经测试，在小数组时，<code>twoSum方法</code>比<code>twoSum2</code>快很多，当数组变大时，<code>twoSum2</code>算法更快</p>
 
       
@@ -132,7 +140,7 @@
 
       <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="2017/01/13/leetcode-two-sum/" data-title="LeetCode|Two Sum" data-url="http://giscafer.com/2017/01/13/leetcode-two-sum/"></div>
+	<div class="ds-thread" data-thread-key="2017/01/13/leetcode-two-sum/" data-title="1.Two Sum" data-url="http://giscafer.com/2017/01/13/leetcode-two-sum/"></div>
 	<!-- 多说评论框 end -->
 </div>
 
@@ -158,7 +166,7 @@
       <ul>
         
           <li>
-            <a href="/2017/01/13/leetcode-two-sum/">LeetCode|Two Sum</a>
+            <a href="/2017/01/13/leetcode-two-sum/">1.Two Sum</a>
           </li>
         
           <li>
