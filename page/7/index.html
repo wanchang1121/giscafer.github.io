@@ -68,6 +68,58 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-hexo-archive-setting" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/09/03/hexo-archive-setting/" class="article-date">
+  <time datetime="2015-09-03T06:15:05.000Z" itemprop="datePublished">2015-09-03</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/Hexo/">Hexo</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/09/03/hexo-archive-setting/">Hexo添加归档widget并扩展展开和收起功能</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1、以下是添加archvie（归档）模块代码："><a href="#1、以下是添加archvie（归档）模块代码：" class="headerlink" title="1、以下是添加archvie（归档）模块代码："></a>1、以下是添加archvie（归档）模块代码：</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"> <span class="tag">&lt;<span class="name">%</span> <span class="attr">if</span> (<span class="attr">site.posts.length</span>)&#123; %&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"archive_side"</span> <span class="attr">class</span>=<span class="string">"widget tag"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"title"</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"&lt;%- config.root %&gt;archives"</span>&gt;</span><span class="tag">&lt;<span class="name">%=</span> <span class="attr">__</span>('<span class="attr">archive_a</span>') %&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">   	 <span class="tag">&lt;<span class="name">%-</span> <span class="attr">list_archives</span>(&#123;'<span class="attr">display_count</span>'<span class="attr">:2</span>&#125;) %&gt;</span><span class="comment">&lt;!--此处的代码是扩展--&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">%</span> <span class="attr">if</span> (<span class="attr">site.posts.length</span>&gt;</span>3)&#123; %&gt;</div><div class="line">    <span class="tag">&lt;<span class="name">%&#125;</span> %&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">%</span> &#125; %&gt;</span></div></pre></td></tr></table></figure>
+<p><code>list_archives({&#39;display_count&#39;:2}</code>这句话中传的参数是扩展的，下边会介绍</p>
+        
+          <p class="article-more-link">
+            <a href="/2015/09/03/hexo-archive-setting/#more">继续阅读全文 »</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://giscafer.com/2015/09/03/hexo-archive-setting/" data-id="cixvs4nq7000llwz5j1w4boa1" class="article-share-link">分享</a>
+      
+        <a href="http://giscafer.com/2015/09/03/hexo-archive-setting/#ds-thread" class="article-comment-link">留言</a>
+      
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-nodejs-study-note" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2015/08/20/nodejs-study-note/" class="article-date">
@@ -103,7 +155,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://giscafer.com/2015/08/20/nodejs-study-note/" data-id="cixrov0r2001xr0z5gk58n6lo" class="article-share-link">分享</a>
+      <a data-url="http://giscafer.com/2015/08/20/nodejs-study-note/" data-id="cixvs4nrd0024lwz5zddyact6" class="article-share-link">分享</a>
       
         <a href="http://giscafer.com/2015/08/20/nodejs-study-note/#ds-thread" class="article-comment-link">留言</a>
       
@@ -158,7 +210,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://giscafer.com/2014/10/02/hexo-duoshuo/" data-id="cixrov0qd000tr0z5kpdtu31m" class="article-share-link">分享</a>
+      <a data-url="http://giscafer.com/2014/10/02/hexo-duoshuo/" data-id="cixvs4nqj0010lwz5dvbvpq5f" class="article-share-link">分享</a>
       
         <a href="http://giscafer.com/2014/10/02/hexo-duoshuo/#ds-thread" class="article-comment-link">留言</a>
       
@@ -211,7 +263,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://giscafer.com/2014/05/27/http-status/" data-id="cixrov0qk0018r0z55w1cwjzx" class="article-share-link">分享</a>
+      <a data-url="http://giscafer.com/2014/05/27/http-status/" data-id="cixvs4nqp0016lwz59ga75t3l" class="article-share-link">分享</a>
       
         <a href="http://giscafer.com/2014/05/27/http-status/#ds-thread" class="article-comment-link">留言</a>
       
@@ -265,62 +317,9 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://giscafer.com/2014/04/28/hexo-backup/" data-id="cixrov0q5000nr0z5tgc1drvs" class="article-share-link">分享</a>
+      <a data-url="http://giscafer.com/2014/04/28/hexo-backup/" data-id="cixvs4nqg000ulwz5k29v413v" class="article-share-link">分享</a>
       
         <a href="http://giscafer.com/2014/04/28/hexo-backup/#ds-thread" class="article-comment-link">留言</a>
-      
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-hexo-to-gitcafe_course" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2014/04/27/hexo-to-gitcafe_course/" class="article-date">
-  <time datetime="2014-04-27T09:35:41.000Z" itemprop="datePublished">2014-04-27</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/Hexo/">Hexo</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/04/27/hexo-to-gitcafe_course/">Hexo静态博客搭建教程[2]</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>##将Hexo本地博客，托管到gitcafe教程</p>
-<p>###（1）注册<a href="http://gitcafe.com/signup?invited_by=giscafe">gitcafe</a>账号</p>
-<p>首先注册gitcafe账号，然后登陆到gitcafe，在个人首页左下角处，新建一个项目<br><img src="/static/img/hexo_course_08.jpg" alt=""></p>
-        
-          <p class="article-more-link">
-            <a href="/2014/04/27/hexo-to-gitcafe_course/#more">继续阅读全文 »</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://giscafer.com/2014/04/27/hexo-to-gitcafe_course/" data-id="cixrov0qh0011r0z59ajcz1yt" class="article-share-link">分享</a>
-      
-        <a href="http://giscafer.com/2014/04/27/hexo-to-gitcafe_course/#ds-thread" class="article-comment-link">留言</a>
       
       
       
@@ -360,6 +359,10 @@
       <ul>
         
           <li>
+            <a href="/2017/01/13/leetcode-two-sum/">LeetCode|Two Sum</a>
+          </li>
+        
+          <li>
             <a href="/2017/01/10/modularization-webgis/">如何组件化开发WebGIS系统</a>
           </li>
         
@@ -373,10 +376,6 @@
         
           <li>
             <a href="/2016/12/11/hexo-theme-cafe/">hexo-theme-cafe</a>
-          </li>
-        
-          <li>
-            <a href="/2016/10/16/webglearth-typhoon-project/">WebGL Earth台风监测web应用webglearth-typhoon</a>
           </li>
         
       </ul>
