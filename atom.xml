@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://giscafer.com/"/>
-  <updated>2017-01-13T13:04:29.249Z</updated>
+  <updated>2017-01-20T10:52:51.901Z</updated>
   <id>http://giscafer.com/</id>
   
   <author>
@@ -14,6 +14,133 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>React 与 Redux 实践 —— 城市筛选面板</title>
+    <link href="http://giscafer.com/2017/01/20/react-redux-cityfilter-demo/"/>
+    <id>http://giscafer.com/2017/01/20/react-redux-cityfilter-demo/</id>
+    <published>2017-01-20T10:51:20.000Z</published>
+    <updated>2017-01-20T10:52:51.901Z</updated>
+    
+    <content type="html"><![CDATA[<p>Redux 是 JavaScript <code>状态容器</code>，提供<code>可预测化</code>的状态管理。Redux的出现，可以让你构建一致化的应用，运行与不同的环境。</p>
+<p>要点</p>
+<ul>
+<li>应用中所有的 state 都以一个对象树的形式存储在一个单一的 store 中；</li>
+<li>唯一改变 store 的办法是触发 action，一个描述发生什么的对象；</li>
+<li>为了描述 action 如何改变 state 树，你需要编写 reducers；  </li>
+<li>为了UI组件 components 状态无关，你需要编写 containers 来负责管理数据和业务逻辑。</li>
+</ul>
+<p>所以，关于组件部分，明智的做法是在最外层上使用 Redux ，然后通过 <code>Props</code> 方式传值给内部子组件，使得components UI组件仅仅是<code>pure render</code>（纯展示）</p>
+<a id="more"></a>
+<p><strong>containers 与 components 区别对比</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align:center">containers（容器组件）</th>
+<th style="text-align:center">components（UI组件）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Location</strong></td>
+<td style="text-align:center">最顶层，路由处理</td>
+<td style="text-align:center">中间和子组件</td>
+</tr>
+<tr>
+<td><strong>与Redux联系</strong></td>
+<td style="text-align:center">是</td>
+<td style="text-align:center">否</td>
+</tr>
+<tr>
+<td><strong>读取数据</strong></td>
+<td style="text-align:center">从 Redux 获取 state</td>
+<td style="text-align:center">从 props 获取数据</td>
+</tr>
+<tr>
+<td><strong>修改数据</strong></td>
+<td style="text-align:center">从 Redux 派发 action</td>
+<td style="text-align:center">从 props 调用回调函数</td>
+</tr>
+</tbody>
+</table>
+<h2 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h2><p>通过一个城市筛选面板来理解 React + Redux 的使用</p>
+<p>示例demo：<a href="http://giscafer.com/react-demo-list/#/citypanel">http://giscafer.com/react-demo-list/#/citypanel</a></p>
+<p>源码：<a href="https://github.com/giscafer/react-demo-list" target="_blank" rel="external">https://github.com/giscafer/react-demo-list</a></p>
+<p><strong>编写 React 应用的时候，会有一个大致的开发步骤</strong>：</p>
+<ul>
+<li>构建应用状态树 state 结构</li>
+<li>编写 action （描述已发生事件的普通对象，所有修改 state 的操作都必须通过触发action）</li>
+<li>编写 reducers （描述 action 如何改变 state tree）</li>
+<li>编写 UI组件 components （纯组件，无状态，所有参数通过Props传，可复用性）</li>
+<li>编写 容器组件 containers （用来负责管理数据和业务逻辑，react-redux 链接components）</li>
+<li>通过 createStore 创建store，通过 Provider 包装根组件</li>
+</ul>
+<h2 id="Action-创建常量和函数"><a href="#Action-创建常量和函数" class="headerlink" title="Action 创建常量和函数"></a>Action 创建常量和函数</h2><p>定好<code>state tree</code>后，编写actions</p>
+<p><code>actions.jsx</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * citypanel actions</div><div class="line"> */</div><div class="line"><span class="keyword">export</span> <span class="keyword">const</span> SET_VISIBILITY_FILTER = <span class="string">'SET_VISIBILITY_FILTER'</span>;</div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">setVisibilityFilter</span>(<span class="params">filter</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> &#123; <span class="attr">type</span>: SET_VISIBILITY_FILTER, filter &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="Reducers"><a href="#Reducers" class="headerlink" title="Reducers"></a>Reducers</h2><p>当应用很大时，可以将它拆成多个小的 reducers，分别独立地操作 state tree 的不同部分，因为 reducer 只是函数，你可以控制它们被调用的顺序，传入附加数据，甚至编写可复用的 reducer 来处理一些通用任务，如分页器</p>
+<p><code>reducer 和 action 是好基友</code></p>
+<p><code>./reducers/cityList.jsx</code> </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">import</span> &#123; SET_VISIBILITY_FILTER &#125; <span class="keyword">from</span> <span class="string">'../../actions/citypanel/actions'</span>;</div><div class="line"><span class="keyword">import</span> &#123; cityData &#125; <span class="keyword">from</span> <span class="string">'./cityData.js'</span>;</div><div class="line"><span class="keyword">const</span> initialState = cityData.filter(<span class="function"><span class="params">item</span> =&gt;</span> item[<span class="string">'citynum'</span>])</div><div class="line"><span class="built_in">console</span>.log(initialState)</div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span> <span class="title">cityList</span>(<span class="params">state = initialState, action</span>) </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">switch</span> (action.type) &#123;</div><div class="line">        <span class="keyword">case</span> SET_VISIBILITY_FILTER:</div><div class="line">            <span class="keyword">return</span> cityFilter(action.filter)</div><div class="line">        <span class="keyword">default</span>:</div><div class="line">            <span class="keyword">return</span> state</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">cityFilter</span>(<span class="params">filter</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> cityData.map(<span class="function">(<span class="params">item</span>) =&gt;</span> &#123;</div><div class="line">        <span class="keyword">if</span> (filter === <span class="string">'特大'</span> || !filter) &#123;</div><div class="line">            <span class="keyword">if</span> (item[<span class="string">'citynum'</span>]) &#123;</div><div class="line">                <span class="keyword">return</span> item;</div><div class="line">            &#125;</div><div class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (item[<span class="string">'pinyin'</span>][<span class="number">0</span>].toLocaleUpperCase() === filter &amp;&amp; !item[<span class="string">'citynum'</span>]) &#123;</div><div class="line">            <span class="keyword">return</span> item;</div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            <span class="built_in">console</span>.log(filter)</div><div class="line">        &#125;</div><div class="line">    &#125;)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><code>./reducers/index.jsx</code> 组合所有reducers （多个的时候用）</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">import</span> &#123; combineReducers &#125; <span class="keyword">from</span> <span class="string">'redux'</span></div><div class="line"><span class="keyword">import</span> cityList <span class="keyword">from</span> <span class="string">'./cityList'</span></div><div class="line"></div><div class="line"><span class="comment">//使用redux的combineReducers方法将所有reducer打包起来</span></div><div class="line"><span class="keyword">const</span> rootReducer = combineReducers(&#123;</div><div class="line">    cityList</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> rootReducer</div></pre></td></tr></table></figure>
+<h2 id="UI组件components"><a href="#UI组件components" class="headerlink" title="UI组件components"></a>UI组件components</h2><p>宗旨就是<code>pure function</code></p>
+<p><code>./components/cityList.jsx</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> (&#123;cityList = []&#125;) =&gt; &#123;</div><div class="line">    <span class="keyword">return</span> (</div><div class="line">        <span class="xml"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">className</span>=<span class="string">'city-list'</span>&gt;</span></span></div><div class="line">            &#123;</div><div class="line">                cityList.map((city,index) =&gt; &#123;</div><div class="line">                    if(city)&#123;</div><div class="line">                        return <span class="tag">&lt;<span class="name">li</span> <span class="attr">className</span>=<span class="string">'left textCenter'</span> <span class="attr">key</span>=<span class="string">&#123;index&#125;</span> <span class="attr">data-name</span>=<span class="string">&#123;city.name&#125;</span>&gt;</span>&#123;city.name&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">                    &#125;</div><div class="line">                &#125;)</div><div class="line">            &#125;</div><div class="line">        <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div><div class="line">    );</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><code>./components/letterFilter.jsx</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> (&#123;onFilterChange&#125;) =&gt; &#123;</div><div class="line">    <span class="comment">// let letterArr = new Array(26);</span></div><div class="line">    <span class="comment">// for (var i = 0; i &lt; 26; i++) &#123;</span></div><div class="line">    <span class="comment">//     letterArr[i]=String.fromCharCode((65 + i));</span></div><div class="line">    <span class="comment">// &#125;</span></div><div class="line">    <span class="comment">// console.log(letterArr)</span></div><div class="line">    <span class="keyword">let</span> letterArr=[<span class="string">'特大'</span>,<span class="string">'A'</span>, <span class="string">'B'</span>, <span class="string">'C'</span>, <span class="string">'D'</span>, <span class="string">'E'</span>, <span class="string">'F'</span>, <span class="string">'G'</span>, <span class="string">'H'</span>, <span class="string">'I'</span>, <span class="string">'J'</span>, <span class="string">'K'</span>, <span class="string">'L'</span>, <span class="string">'M'</span>, <span class="string">'N'</span>, <span class="string">'O'</span>, <span class="string">'P'</span>, <span class="string">'Q'</span>, <span class="string">'R'</span>, <span class="string">'S'</span>, <span class="string">'T'</span>, <span class="string">'U'</span>, <span class="string">'V'</span>, <span class="string">'W'</span>, <span class="string">'X'</span>, <span class="string">'Y'</span>, <span class="string">'Z'</span>];</div><div class="line">    <span class="keyword">return</span> (</div><div class="line">        <span class="xml"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">className</span>=<span class="string">'city-index'</span>&gt;</span></span></div><div class="line">            &#123;</div><div class="line">                letterArr.map((letter,i) =&gt; &#123;</div><div class="line">                    return <span class="tag">&lt;<span class="name">li</span> <span class="attr">className</span>=<span class="string">'left textCenter on_mouseover'</span> <span class="attr">key</span>=<span class="string">&#123;i&#125;</span> <span class="attr">onClick</span>=<span class="string">&#123;()</span>=&gt;</span>&#123; onFilterChange(letter) &#125;&#125;&gt;&#123;letter&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">                &#125;)</div><div class="line">            &#125;</div><div class="line">        <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div><div class="line">    );</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>外层组件组合letterFilter与cityList子组件，<code>./components/index.jsx</code></p>
+<p>//此处的函数参数cityList与setVisibilityFilter是由容器组件传输</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</div><div class="line"><span class="keyword">import</span> LetterFilter <span class="keyword">from</span> <span class="string">'./letterFilter'</span>;</div><div class="line"><span class="keyword">import</span> CityList <span class="keyword">from</span> <span class="string">'./cityList'</span>;</div><div class="line"><span class="keyword">import</span> <span class="string">'../../styles/citypanel/index.less'</span>;</div><div class="line"><span class="keyword">import</span> Nav <span class="keyword">from</span> <span class="string">'../nav/Nav'</span>;</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> (&#123;cityList = [], setVisibilityFilter&#125;) =&gt; &#123;</div><div class="line">    <span class="keyword">return</span> (</div><div class="line">        &lt;div className='city-panel'&gt;</div><div class="line">             &lt;Nav /&gt;</div><div class="line">            &lt;CityList cityList=&#123;cityList&#125; /&gt;</div><div class="line">            &lt;LetterFilter onFilterChange=&#123;setVisibilityFilter&#125; /&gt;</div><div class="line">        &lt;/div&gt;</div><div class="line">    )</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="容器组件containers"><a href="#容器组件containers" class="headerlink" title="容器组件containers"></a>容器组件containers</h2><p>主要是通过<code>react-redux</code>中间件提供的<code>connect</code>方法来链接<code>containers</code>与<code>components</code>，而<code>connect</code> 方法提供了两个方法 <code>mapStateToProps</code> 与 <code>mapDispatchToProps</code>，它们定义了 UI 组件的业务逻辑。前者负责输入逻辑。<br><code>mapStateToProps</code>将 state 映射到 UI 组件的参数（Props），<code>mapDispatchToProps</code>负责输出逻辑，即将用户对 UI 组件的操作映射成 Action，也可以通过<code>bindActionCreators</code>方法将<code>action</code>的所有方法绑定到props上。</p>
+<p><code>./containers/App.jsx</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">import</span> &#123; bindActionCreators &#125; <span class="keyword">from</span> <span class="string">'redux'</span></div><div class="line"><span class="keyword">import</span> &#123; connect &#125; <span class="keyword">from</span> <span class="string">'react-redux'</span></div><div class="line"><span class="keyword">import</span> cityPanelIndex <span class="keyword">from</span> <span class="string">'../../components/citypanel/index'</span></div><div class="line"><span class="keyword">import</span> * <span class="keyword">as</span> ctiyActions <span class="keyword">from</span> <span class="string">'../../actions/citypanel/actions'</span></div><div class="line"></div><div class="line"><span class="comment">//将state.cityList绑定到props的cityList</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">mapStateToProps</span>(<span class="params">state</span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> &#123;</div><div class="line">        <span class="attr">cityList</span>:state.cityList</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//将action的所有方法绑定到props上</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">mapDispatchToProps</span>(<span class="params">dispatch</span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> bindActionCreators(ctiyActions,dispatch);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> connect(mapStateToProps,mapDispatchToProps)(cityPanelIndex)</div></pre></td></tr></table></figure>
+<h2 id="注册store"><a href="#注册store" class="headerlink" title="注册store"></a>注册store</h2><p>将 state 和 action 交给 redux 来管理</p>
+<p><code>./stores/createStore.jsx</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">import</span> &#123; createStore, applyMiddleware &#125; <span class="keyword">from</span> <span class="string">'redux'</span></div><div class="line"><span class="keyword">import</span> thunk <span class="keyword">from</span> <span class="string">'redux-thunk'</span></div><div class="line"><span class="keyword">import</span> reducer <span class="keyword">from</span> <span class="string">'../reducers/citypanel'</span></div><div class="line"><span class="comment">//applyMiddleware来自redux可以包装 store 的 dispatch</span></div><div class="line"><span class="comment">//thunk作用是使action创建函数可以返回一个function代替一个action对象</span></div><div class="line"><span class="keyword">const</span> createStoreWithMiddleware = applyMiddleware(</div><div class="line">  thunk</div><div class="line">)(createStore)</div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span> <span class="title">configureStore</span>(<span class="params">initialState</span>) </span>&#123;</div><div class="line">  <span class="keyword">const</span> store = createStoreWithMiddleware(reducer, initialState)</div><div class="line">  <span class="comment">//热替换选项</span></div><div class="line">  <span class="keyword">if</span> (<span class="built_in">module</span>.hot) &#123;</div><div class="line">    <span class="comment">// Enable Webpack hot module replacement for reducers</span></div><div class="line">    <span class="built_in">module</span>.hot.accept(<span class="string">'../reducers/citypanel'</span>, () =&gt; &#123;</div><div class="line">      <span class="keyword">const</span> nextReducer = <span class="built_in">require</span>(<span class="string">'../reducers/citypanel'</span>)</div><div class="line">      store.replaceReducer(nextReducer)</div><div class="line">    &#125;)</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> store</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="App主文件入口"><a href="#App主文件入口" class="headerlink" title="App主文件入口"></a>App主文件入口</h2><p>最终Provider包装主组件（containers）</p>
+<p><code>Main.jsx</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * citypanel主入口</div><div class="line"> */</div><div class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span></div><div class="line"><span class="keyword">import</span> &#123; Provider &#125; <span class="keyword">from</span> <span class="string">'react-redux'</span></div><div class="line"><span class="keyword">import</span> App <span class="keyword">from</span> <span class="string">'../../containers/citypanel/App'</span></div><div class="line"><span class="keyword">import</span> configureStore <span class="keyword">from</span> <span class="string">'../../stores/configureStore'</span></div><div class="line"><span class="keyword">const</span> store = configureStore()</div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> () =&gt; &#123;</div><div class="line">    <span class="keyword">return</span> (</div><div class="line">        <span class="xml"><span class="tag">&lt;<span class="name">Provider</span> <span class="attr">store</span>=<span class="string">&#123;store&#125;</span>&gt;</span></span></div><div class="line">            <span class="tag">&lt;<span class="name">App</span> /&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">Provider</span>&gt;</span></div><div class="line">    )</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>一个react + redux 应用完成了</p>
+<p>演示：<a href="http://giscafer.com/react-demo-list/#/citypanel">http://giscafer.com/react-demo-list/#/citypanel</a></p>
+<p>源码：<a href="https://github.com/giscafer/react-demo-list" target="_blank" rel="external">https://github.com/giscafer/react-demo-list</a></p>
+<p>（完）</p>
+<hr>
+<p><em>参考链接</em></p>
+<ul>
+<li><a href="http://www.jianshu.com/p/a83a99f68b5d" target="_blank" rel="external">http://www.jianshu.com/p/a83a99f68b5d</a></li>
+<li><a href="https://lewis617.github.io/2016/01/19/r2-counter/" target="_blank" rel="external">https://lewis617.github.io/2016/01/19/r2-counter/</a></li>
+<li><a href="http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_three_react-redux.html" target="_blank" rel="external">http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_three_react-redux.html</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Redux 是 JavaScript &lt;code&gt;状态容器&lt;/code&gt;，提供&lt;code&gt;可预测化&lt;/code&gt;的状态管理。Redux的出现，可以让你构建一致化的应用，运行与不同的环境。&lt;/p&gt;
+&lt;p&gt;要点&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;应用中所有的 state 都以一个对象树的形式存储在一个单一的 store 中；&lt;/li&gt;
+&lt;li&gt;唯一改变 store 的办法是触发 action，一个描述发生什么的对象；&lt;/li&gt;
+&lt;li&gt;为了描述 action 如何改变 state 树，你需要编写 reducers；  &lt;/li&gt;
+&lt;li&gt;为了UI组件 components 状态无关，你需要编写 containers 来负责管理数据和业务逻辑。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;所以，关于组件部分，明智的做法是在最外层上使用 Redux ，然后通过 &lt;code&gt;Props&lt;/code&gt; 方式传值给内部子组件，使得components UI组件仅仅是&lt;code&gt;pure render&lt;/code&gt;（纯展示）&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="http://giscafer.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="React" scheme="http://giscafer.com/categories/%E6%8A%80%E6%9C%AF/React/"/>
+    
+    
+      <category term="React" scheme="http://giscafer.com/tags/React/"/>
+    
+      <category term="redux" scheme="http://giscafer.com/tags/redux/"/>
+    
+      <category term="react-redux" scheme="http://giscafer.com/tags/react-redux/"/>
+    
+  </entry>
   
   <entry>
     <title>1.Two Sum</title>
@@ -994,56 +1121,6 @@ SyntaxError: Use of const in strict mode.
       <category term="NodeJS" scheme="http://giscafer.com/tags/NodeJS/"/>
     
       <category term="Q&amp;A" scheme="http://giscafer.com/tags/Q-A/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>bluebird(Promise/A+)介绍</title>
-    <link href="http://giscafer.com/2016/02/04/bluebird-api-study/"/>
-    <id>http://giscafer.com/2016/02/04/bluebird-api-study/</id>
-    <published>2016-02-04T06:58:29.000Z</published>
-    <updated>2016-12-14T16:40:02.157Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="一、Promises-A-规范"><a href="#一、Promises-A-规范" class="headerlink" title="一、Promises/A+规范"></a>一、Promises/A+规范</h2><h3 id="Promise"><a href="#Promise" class="headerlink" title="Promise"></a>Promise</h3><p>是一个拥有<code>then</code>方法的对象或函数，起行为符合本规范；</p>
-<h3 id="thenable"><a href="#thenable" class="headerlink" title="thenable"></a>thenable</h3><p>是一个定义了<code>then</code>方法的对象或函数，即<code>拥有then方法</code>；</p>
-<p>详情介绍见文章<a href="http://www.ituring.com.cn/article/66566" target="_blank" rel="external">《Promises/A+规范》</a></p>
-<h2 id="二、bluebird"><a href="#二、bluebird" class="headerlink" title="二、bluebird"></a>二、bluebird</h2><p>之前做node.js项目的时候一直使用朴灵的<code>eventproxy</code>来处理异步或者回调，<code>eventproxy</code>采用的是事件机制，使用也挺方便。<br>现在也了解一下备受欢迎的<code>bluebird</code>——<a href="http://bluebirdjs.com/" target="_blank" rel="external">官网</a>，bb的API文档很全很详细。<br><a id="more"></a></p>
-<h3 id="promisifyAll"><a href="#promisifyAll" class="headerlink" title=".promisifyAll"></a>.promisifyAll</h3><p>官方API说明：</p>
-<blockquote>
-<p>Promisifies the entire object by going through the object’s properties and creating an async equivalent of each function on the object and its prototype chain. The promisified method name will be the original method name suffixed with suffix (default is “Async”). Any class properties of the object (which is the case for the main export of many modules) are also promisified, both static and instance methods. Class property is a property with a function value that has a non-empty .prototype object. Returns the input object.</p>
-</blockquote>
-<p>大概意思就是，<code>Promise.promisifyAll</code>方法接收一个对象，会遍历对象中的方法并克隆该方法并在其后加上<code>Async</code>字符。也就是说会多出一样的方法，只不过都带<code>Async</code>（异步）的后缀。如果想将对象原型链上的方法也加上的话，则传入对象的原型即可，例如 <code>Promise.promisifyAll(obj.prototype)</code>，返回的是该对象。</p>
-<h3 id="then"><a href="#then" class="headerlink" title=".then"></a>.then</h3><p>类似原生Promise/A+规范的then方法：</p>
-<blockquote>
-<p>.then(<br>    [function(any value) fulfilledHandler],<br>    [function(any error) rejectedHandler]<br>    ) -&gt; Promise</p>
-</blockquote>
-<p><strong>例子：</strong>（then和promisifyAll的使用）<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">var</span> <span class="built_in">Promise</span>=<span class="built_in">require</span>(<span class="string">'bluebird'</span>);</div><div class="line"><span class="keyword">var</span> fs=<span class="built_in">Promise</span>.promisifyAll(<span class="built_in">require</span>(<span class="string">'fs'</span>));</div><div class="line"><span class="keyword">var</span> onFulfilled=<span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</div><div class="line">       <span class="built_in">console</span>.log(data)</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> onRejected=<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'报错啦--'</span>,e)</div><div class="line">&#125;</div><div class="line">fs.readFileAsync(<span class="string">'package.json'</span>, <span class="string">"utf8"</span>).then(onFulfilled,onRejected);</div></pre></td></tr></table></figure></p>
-<h3 id="catch"><a href="#catch" class="headerlink" title=".catch"></a>.catch</h3><p>更方便的是，<code>bluebird</code>提供了<code>.catch</code>方法，可以在”链式”的操作上捕获异常，如上边的例子可以改写为如下方式：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">fs.readFileAsync(<span class="string">'package.json'</span>, <span class="string">"utf8"</span>).then(<span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;<span class="comment">//只需要关注成功的时候</span></div><div class="line">    <span class="built_in">console</span>.log(data);</div><div class="line">&#125;).catch(<span class="function"><span class="keyword">function</span>(<span class="params">err</span>)</span>&#123;<span class="comment">//轻松处理所有出现的异常</span></div><div class="line">    <span class="built_in">console</span>.log(err);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
-<p>此外，还可以区别捕获不同的异常，分别处理，只需要指定异常的类型（如<code>TypeError</code>,<code>ReferenceError</code>,<code>NetworkError</code>等）即可（和java的异常类型处理类似吧？）</p>
-<p>例子1，区分不同错误类型捕捉：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">somePromise.then(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> a.b.c.d();</div><div class="line">&#125;).catch(<span class="built_in">TypeError</span>, <span class="built_in">ReferenceError</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</div><div class="line">    <span class="comment">//程序异常捕获</span></div><div class="line">&#125;).catch(NetworkError, TimeoutError, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</div><div class="line">    <span class="comment">//网络异常捕获</span></div><div class="line">&#125;).catch(<span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</div><div class="line">    <span class="comment">//捕获所有其他异常</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
-<p>例子2，捕捉找不到文件报错：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">fs.readFileAsync(<span class="string">'package.jsn'</span>, <span class="string">"utf8"</span>).then(<span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(data);</div><div class="line">&#125;).catch(&#123; <span class="attr">code</span>: <span class="string">'ENOENT'</span> &#125;, <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"file not found: "</span> + e.path);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
-<h3 id="集合相关的方法"><a href="#集合相关的方法" class="headerlink" title="集合相关的方法"></a>集合相关的方法</h3><p><code>.all</code>方法可以处理一个数组内的所有方法，处理完毕返回信息，如例子异步创建10个文件后，返回成功信息：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> files = [];</div><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; ++i) &#123;</div><div class="line">    files.push(fs.writeFileAsync(<span class="string">"file-"</span> + i + <span class="string">".txt"</span>, <span class="string">""</span>, <span class="string">"utf-8"</span>));</div><div class="line">&#125;</div><div class="line"><span class="built_in">Promise</span>.all(files).then(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"all the files were created"</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<p>还有其他好用的方法，需要的时候去了解一下API文档，根据实际情况使用即可。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;一、Promises-A-规范&quot;&gt;&lt;a href=&quot;#一、Promises-A-规范&quot; class=&quot;headerlink&quot; title=&quot;一、Promises/A+规范&quot;&gt;&lt;/a&gt;一、Promises/A+规范&lt;/h2&gt;&lt;h3 id=&quot;Promise&quot;&gt;&lt;a href=&quot;#Promise&quot; class=&quot;headerlink&quot; title=&quot;Promise&quot;&gt;&lt;/a&gt;Promise&lt;/h3&gt;&lt;p&gt;是一个拥有&lt;code&gt;then&lt;/code&gt;方法的对象或函数，起行为符合本规范；&lt;/p&gt;
-&lt;h3 id=&quot;thenable&quot;&gt;&lt;a href=&quot;#thenable&quot; class=&quot;headerlink&quot; title=&quot;thenable&quot;&gt;&lt;/a&gt;thenable&lt;/h3&gt;&lt;p&gt;是一个定义了&lt;code&gt;then&lt;/code&gt;方法的对象或函数，即&lt;code&gt;拥有then方法&lt;/code&gt;；&lt;/p&gt;
-&lt;p&gt;详情介绍见文章&lt;a href=&quot;http://www.ituring.com.cn/article/66566&quot;&gt;《Promises/A+规范》&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&quot;二、bluebird&quot;&gt;&lt;a href=&quot;#二、bluebird&quot; class=&quot;headerlink&quot; title=&quot;二、bluebird&quot;&gt;&lt;/a&gt;二、bluebird&lt;/h2&gt;&lt;p&gt;之前做node.js项目的时候一直使用朴灵的&lt;code&gt;eventproxy&lt;/code&gt;来处理异步或者回调，&lt;code&gt;eventproxy&lt;/code&gt;采用的是事件机制，使用也挺方便。&lt;br&gt;现在也了解一下备受欢迎的&lt;code&gt;bluebird&lt;/code&gt;——&lt;a href=&quot;http://bluebirdjs.com/&quot;&gt;官网&lt;/a&gt;，bb的API文档很全很详细。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="技术" scheme="http://giscafer.com/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-      <category term="开发手册" scheme="http://giscafer.com/categories/%E6%8A%80%E6%9C%AF/%E5%BC%80%E5%8F%91%E6%89%8B%E5%86%8C/"/>
-    
-    
-      <category term="promise" scheme="http://giscafer.com/tags/promise/"/>
-    
-      <category term="bluebird" scheme="http://giscafer.com/tags/bluebird/"/>
     
   </entry>
   
