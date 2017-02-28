@@ -1035,6 +1035,8 @@ a.article-title:hover {
 #toc-widget-fixed {
   background: #eee;
   position: fixed;
+  max-height: 650px;
+  overflow-y: auto;
   -webkit-box-shadow: 2px 3px 4px #ccc9c9;
   box-shadow: 2px 3px 4px #ccc9c9;
 }
