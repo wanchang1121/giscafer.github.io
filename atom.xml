@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://giscafer.com/"/>
-  <updated>2017-03-05T13:43:56.550Z</updated>
+  <updated>2017-03-05T13:47:35.499Z</updated>
   <id>http://giscafer.com/</id>
   
   <author>
@@ -20,11 +20,11 @@
     <link href="http://giscafer.com/2017/03/05/ife-course-demo/"/>
     <id>http://giscafer.com/2017/03/05/ife-course-demo/</id>
     <published>2017-03-05T13:34:53.000Z</published>
-    <updated>2017-03-05T13:43:56.550Z</updated>
+    <updated>2017-03-05T13:47:35.499Z</updated>
     
     <content type="html"><![CDATA[<p>百度前端技术学院提供了很多前端编程练习题，大概看了一些，觉得对于初学者是有很大帮助的，非初学者也可以学习巩固一下基础。毕竟书上的练习题可能比较乏味。</p>
 <p>在离职时间内，时间充裕的时候搭建了该SPA，无聊的时候刷刷题。访问地址：<a href="http://ife.giscafer.com" target="_blank" rel="external">http://ife.giscafer.com</a></p>
-<p><img src="./ife-course-demo.jpg" alt="PC端预览"></p>
+<p><img src="./static/img/ife-course-demo.jpg" alt="PC端预览"></p>
 <p>Github源码：<a href="https://github.com/giscafer/ife-course-demo" target="_blank" rel="external">https://github.com/giscafer/ife-course-demo</a></p>
 ]]></content>
     
