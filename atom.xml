@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://giscafer.com/"/>
-  <updated>2017-02-04T10:46:49.977Z</updated>
+  <updated>2017-03-05T13:43:56.550Z</updated>
   <id>http://giscafer.com/</id>
   
   <author>
@@ -14,6 +14,37 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>React搭建百度前端技术学院习题演示SPA</title>
+    <link href="http://giscafer.com/2017/03/05/ife-course-demo/"/>
+    <id>http://giscafer.com/2017/03/05/ife-course-demo/</id>
+    <published>2017-03-05T13:34:53.000Z</published>
+    <updated>2017-03-05T13:43:56.550Z</updated>
+    
+    <content type="html"><![CDATA[<p>百度前端技术学院提供了很多前端编程练习题，大概看了一些，觉得对于初学者是有很大帮助的，非初学者也可以学习巩固一下基础。毕竟书上的练习题可能比较乏味。</p>
+<p>在离职时间内，时间充裕的时候搭建了该SPA，无聊的时候刷刷题。访问地址：<a href="http://ife.giscafer.com" target="_blank" rel="external">http://ife.giscafer.com</a></p>
+<p><img src="./ife-course-demo.jpg" alt="PC端预览"></p>
+<p>Github源码：<a href="https://github.com/giscafer/ife-course-demo" target="_blank" rel="external">https://github.com/giscafer/ife-course-demo</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;百度前端技术学院提供了很多前端编程练习题，大概看了一些，觉得对于初学者是有很大帮助的，非初学者也可以学习巩固一下基础。毕竟书上的练习题可能比较乏味。&lt;/p&gt;
+&lt;p&gt;在离职时间内，时间充裕的时候搭建了该SPA，无聊的时候刷刷题。访问地址：&lt;a href=&quot;http://ife
+    
+    </summary>
+    
+      <category term="技术" scheme="http://giscafer.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="项目" scheme="http://giscafer.com/categories/%E6%8A%80%E6%9C%AF/%E9%A1%B9%E7%9B%AE/"/>
+    
+    
+      <category term="ife" scheme="http://giscafer.com/tags/ife/"/>
+    
+      <category term="前端习题" scheme="http://giscafer.com/tags/%E5%89%8D%E7%AB%AF%E4%B9%A0%E9%A2%98/"/>
+    
+  </entry>
   
   <entry>
     <title>react-ponitor</title>
@@ -445,9 +476,9 @@
       <category term="项目" scheme="http://giscafer.com/categories/%E6%8A%80%E6%9C%AF/%E9%A1%B9%E7%9B%AE/"/>
     
     
-      <category term="Hexo" scheme="http://giscafer.com/tags/Hexo/"/>
-    
       <category term="项目" scheme="http://giscafer.com/tags/%E9%A1%B9%E7%9B%AE/"/>
+    
+      <category term="Hexo" scheme="http://giscafer.com/tags/Hexo/"/>
     
       <category term="cafe" scheme="http://giscafer.com/tags/cafe/"/>
     
@@ -1024,52 +1055,6 @@
       <category term="alidayujs" scheme="http://giscafer.com/tags/alidayujs/"/>
     
       <category term="阿里大鱼sdk" scheme="http://giscafer.com/tags/%E9%98%BF%E9%87%8C%E5%A4%A7%E9%B1%BCsdk/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>mongoDB查询统计之Map-Reduce方法</title>
-    <link href="http://giscafer.com/2016/02/05/mongodb-map-reduce/"/>
-    <id>http://giscafer.com/2016/02/05/mongodb-map-reduce/</id>
-    <published>2016-02-05T08:44:56.000Z</published>
-    <updated>2016-12-14T16:45:54.674Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="0、说明"><a href="#0、说明" class="headerlink" title="0、说明"></a>0、说明</h3><a id="more"></a>
-<p>官方给的Map-Reduce的流程如下图：</p>
-<p><img src="https://docs.mongodb.org/manual/_images/map-reduce.png" alt="此处输入图片的描述"></p>
-<p>该函数接收三个参数：<code>map</code>,<code>reduce</code>,{<code>query</code>,<code>output</code>}；其中<code>map</code>,<code>reduce</code>是方法，最后一个参数是对象，<br>该对象可以使用<code>query</code>作为查询过滤条件，<code>output</code>的意思是将结果保存在临时的集合里边，最后用来查询。</p>
-<p>首先，数据库我存的订餐数据如下所示：</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">        <span class="attr">"_id"</span> : ObjectId(<span class="string">"56b45c45ad1434e863ea1406"</span>),</div><div class="line">        <span class="attr">"user_id"</span> : ObjectId(<span class="string">"568bbaa0e78f752802a65a7b"</span>),</div><div class="line">        <span class="attr">"dish_name"</span> : <span class="string">"韭菜鸡蛋"</span>,</div><div class="line">        <span class="attr">"deleted"</span> : <span class="literal">false</span>,</div><div class="line">        <span class="attr">"update_at"</span> : ISODate(<span class="string">"2016-02-05T08:24:37.761Z"</span>),</div><div class="line">        <span class="attr">"create_at"</span> : ISODate(<span class="string">"2016-02-05T08:24:37.761Z"</span>),</div><div class="line">        <span class="attr">"ispack"</span> : <span class="literal">false</span>,</div><div class="line">        <span class="attr">"dish_price"</span> : <span class="number">12</span>,</div><div class="line">        <span class="attr">"__v"</span> : <span class="number">0</span></div><div class="line">&#125;</div><div class="line">&#123;</div><div class="line">        <span class="attr">"_id"</span> : ObjectId(<span class="string">"56b45c5fad1434e863ea1407"</span>),</div><div class="line">        <span class="attr">"user_id"</span> : ObjectId(<span class="string">"568bbaa0e78f752802a65a7b"</span>),</div><div class="line">        <span class="attr">"dish_name"</span> : <span class="string">"红烧鸡块"</span>,</div><div class="line">        <span class="attr">"deleted"</span> : <span class="literal">false</span>,</div><div class="line">        <span class="attr">"update_at"</span> : ISODate(<span class="string">"2016-02-05T08:25:03.070Z"</span>),</div><div class="line">        <span class="attr">"create_at"</span> : ISODate(<span class="string">"2016-02-05T08:25:03.070Z"</span>),</div><div class="line">        <span class="attr">"ispack"</span> : <span class="literal">false</span>,</div><div class="line">        <span class="attr">"dish_price"</span> : <span class="number">15</span>,</div><div class="line">        <span class="attr">"__v"</span> : <span class="number">0</span></div><div class="line">&#125;</div><div class="line">&#123;</div><div class="line">        <span class="attr">"_id"</span> : ObjectId(<span class="string">"56b45c66ad1434e863ea1408"</span>),</div><div class="line">        <span class="attr">"user_id"</span> : ObjectId(<span class="string">"568bbaa0e78f752802a65a7b"</span>),</div><div class="line">        <span class="attr">"dish_name"</span> : <span class="string">"耗油生菜"</span>,</div><div class="line">        <span class="attr">"deleted"</span> : <span class="literal">false</span>,</div><div class="line">        <span class="attr">"update_at"</span> : ISODate(<span class="string">"2016-02-05T08:25:10.002Z"</span>),</div><div class="line">        <span class="attr">"create_at"</span> : ISODate(<span class="string">"2016-02-05T08:25:10.002Z"</span>),</div><div class="line">        <span class="attr">"ispack"</span> : <span class="literal">false</span>,</div><div class="line">        <span class="attr">"dish_price"</span> : <span class="number">13</span>,</div><div class="line">        <span class="attr">"__v"</span> : <span class="number">0</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>下边会介绍对这些数据进行查询统计！</p>
-<h3 id="1、map方法"><a href="#1、map方法" class="headerlink" title="1、map方法"></a>1、map方法</h3><p>先看代码：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> map=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> cate=<span class="keyword">this</span>.dish_name;<span class="comment">//以菜名进行统计</span></div><div class="line">    emit(cate,&#123;<span class="attr">price</span>:<span class="keyword">this</span>.dish_price&#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>map方法里面会调用<code>emit(key, value)</code>，mongodb集合会按照指定的<code>key</code>进行映射分组, 类似关系型数据库的<code>group by</code>,<br>目的是<code>group by</code>上面map后的结果，最终为：按照cate分组, 分组结果是{name: this.name}的list。</p>
-<h3 id="2、reduce方法"><a href="#2、reduce方法" class="headerlink" title="2、reduce方法"></a>2、reduce方法</h3><p>（遍历map的结果，统计订单中每种盖饭的总数和总价格）</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> reduce=<span class="function"><span class="keyword">function</span>(<span class="params">key,values</span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> sum=<span class="number">0</span>;</div><div class="line">    <span class="keyword">var</span> totalCost=<span class="number">0</span>;</div><div class="line">    values.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">order</span>)</span>&#123;</div><div class="line">        sum+=<span class="number">1</span></div><div class="line">        totalCost+=order.price;</div><div class="line">    &#125;);</div><div class="line">    <span class="keyword">return</span> &#123;<span class="attr">count</span>:sum,<span class="attr">cost</span>:totalCost&#125;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="3、执行mapReduce方法"><a href="#3、执行mapReduce方法" class="headerlink" title="3、执行mapReduce方法"></a>3、执行mapReduce方法</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">db.orders.mapReduce(map,reduce,&#123;<span class="attr">out</span>:<span class="string">"order_results"</span>&#125;);<span class="comment">//执行查询统计（这里没加query查询条件）</span></div><div class="line">db.order_results.find();<span class="comment">//查看结果，order_results就是out参数的写的临时集合</span></div></pre></td></tr></table></figure>
-<p>查询结果如下，最终的集合里边，<code>_id</code>就是<code>cate</code>,<code>value</code>就是统计的值了。</p>
-<blockquote>
-<p>{ “_id” : “红烧鸡块”, “value” : { “count” : 2, “cost” : 30 } }<br>{ “_id” : “耗油生菜”, “value” : { “count” : 2, “cost” : 26 } }</p>
-</blockquote>
-<p>统计示例见：<a href="http://vueorder.duapp.com/charts" target="_blank" rel="external">订餐统计</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;0、说明&quot;&gt;&lt;a href=&quot;#0、说明&quot; class=&quot;headerlink&quot; title=&quot;0、说明&quot;&gt;&lt;/a&gt;0、说明&lt;/h3&gt;
-    
-    </summary>
-    
-      <category term="技术" scheme="http://giscafer.com/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-      <category term="DataBase" scheme="http://giscafer.com/categories/%E6%8A%80%E6%9C%AF/DataBase/"/>
-    
-    
-      <category term="mongoDB" scheme="http://giscafer.com/tags/mongoDB/"/>
-    
-      <category term="mapReduce" scheme="http://giscafer.com/tags/mapReduce/"/>
-    
-      <category term="mongoDB统计" scheme="http://giscafer.com/tags/mongoDB%E7%BB%9F%E8%AE%A1/"/>
     
   </entry>
   
