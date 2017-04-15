@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://giscafer.com/"/>
-  <updated>2017-03-05T14:00:02.803Z</updated>
+  <updated>2017-04-15T16:52:10.000Z</updated>
   <id>http://giscafer.com/</id>
   
   <author>
@@ -14,6 +14,44 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Cafe主题v1.0发布</title>
+    <link href="http://giscafer.com/2017/04/16/cafe-release-1/"/>
+    <id>http://giscafer.com/2017/04/16/cafe-release-1/</id>
+    <published>2017-04-15T16:44:26.000Z</published>
+    <updated>2017-04-15T16:52:10.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>cafe主题发布v1.0版本，更新内容有：</p>
+<ul>
+<li><p>添加网易云跟帖插件系统  （<a href="http://cafe.giscafer.com/2017/04/14/gentie-test/" target="_blank" rel="external">查看使用方式</a>）</p>
+</li>
+<li><p>添加 mathjax(latex公式) 支持 （<a href="http://cafe.giscafer.com/2017/04/15/mathjax-test/" target="_blank" rel="external">查看文章演示</a>）</p>
+</li>
+<li><p>添加友情链接widget</p>
+</li>
+<li><p>修复已经样式问题</p>
+</li>
+</ul>
+<p>github:<a href="https://github.com/giscafer/hexo-theme-cafe" target="_blank" rel="external">https://github.com/giscafer/hexo-theme-cafe</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;cafe主题发布v1.0版本，更新内容有：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;添加网易云跟帖插件系统  （&lt;a href=&quot;http://cafe.giscafer.com/2017/04/14/gentie-test/&quot; target=&quot;_blank&quot; rel=&quot;exter
+    
+    </summary>
+    
+      <category term="技术" scheme="http://giscafer.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="Hexo" scheme="http://giscafer.com/categories/%E6%8A%80%E6%9C%AF/Hexo/"/>
+    
+    
+      <category term="cafe" scheme="http://giscafer.com/tags/cafe/"/>
+    
+  </entry>
   
   <entry>
     <title>React搭建百度前端技术学院习题演示SPA</title>
@@ -476,11 +514,11 @@
       <category term="项目&amp;Demo" scheme="http://giscafer.com/categories/%E6%8A%80%E6%9C%AF/%E9%A1%B9%E7%9B%AE-Demo/"/>
     
     
+      <category term="cafe" scheme="http://giscafer.com/tags/cafe/"/>
+    
       <category term="项目" scheme="http://giscafer.com/tags/%E9%A1%B9%E7%9B%AE/"/>
     
       <category term="Hexo" scheme="http://giscafer.com/tags/Hexo/"/>
-    
-      <category term="cafe" scheme="http://giscafer.com/tags/cafe/"/>
     
   </entry>
   
@@ -1021,40 +1059,6 @@
       <category term="diary" scheme="http://giscafer.com/tags/diary/"/>
     
       <category term="随笔" scheme="http://giscafer.com/tags/%E9%9A%8F%E7%AC%94/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>阿里大鱼JavaScript SDK插件alidayujs</title>
-    <link href="http://giscafer.com/2016/02/10/alidayujs-npm/"/>
-    <id>http://giscafer.com/2016/02/10/alidayujs-npm/</id>
-    <published>2016-02-10T13:11:06.000Z</published>
-    <updated>2016-12-14T16:38:55.261Z</updated>
-    
-    <content type="html"><![CDATA[<p><code>alidayujs</code>是学习nodejs以来写的第一个<code>npm</code>插件，目前实现了短信发送接口的封装，其余语音等有时间再拓展吧。使用介绍见以下链接：</p>
-<a id="more"></a>
-<p>github源码:<a href="https://github.com/giscafer/alidayujs" target="_blank" rel="external">https://github.com/giscafer/alidayujs</a></p>
-<p>npm地址：<a href="https://www.npmjs.com/package/alidayujs" target="_blank" rel="external">https://www.npmjs.com/package/alidayujs</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;code&gt;alidayujs&lt;/code&gt;是学习nodejs以来写的第一个&lt;code&gt;npm&lt;/code&gt;插件，目前实现了短信发送接口的封装，其余语音等有时间再拓展吧。使用介绍见以下链接：&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="技术" scheme="http://giscafer.com/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-      <category term="NodeJS" scheme="http://giscafer.com/categories/%E6%8A%80%E6%9C%AF/NodeJS/"/>
-    
-    
-      <category term="NodeJS" scheme="http://giscafer.com/tags/NodeJS/"/>
-    
-      <category term="npm" scheme="http://giscafer.com/tags/npm/"/>
-    
-      <category term="alidayujs" scheme="http://giscafer.com/tags/alidayujs/"/>
-    
-      <category term="阿里大鱼sdk" scheme="http://giscafer.com/tags/%E9%98%BF%E9%87%8C%E5%A4%A7%E9%B1%BCsdk/"/>
     
   </entry>
   
