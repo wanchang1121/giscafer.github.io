@@ -300,13 +300,6 @@ body {
 .widget dt {
   font-weight: bold;
 }
-.widget-title.categories:before,
-.widget-title.archive:before,
-.widget-title.tagcloud:before,
-.widget-title.tags:before,
-.widget-title.recent-posts:before,
-.widget-title.lastest-comments:before,
-.widget-title.hot-comment-posts:before,
 #categories ul.category-list-child li >a:before {
   font-family: FontAwesome;
   padding-right: 4px;
@@ -641,6 +634,7 @@ a.article-title:hover {
   font-size: 1.4em;
   margin: 1.6em 20px;
   padding: 0.5em 1em;
+  overflow: auto;
   border-left-style: solid;
   border-left-width: 10px;
   border-top-left-radius: 0.5em;
@@ -656,6 +650,12 @@ a.article-title:hover {
 .article-entry blockquote footer cite:before {
   content: "—";
   padding: 0 0.5em;
+}
+@media screen and (max-width: 479px) {
+  .article-entry blockquote {
+    font-size: 1em;
+    margin: 1.2em 0;
+  }
 }
 .article-entry .pullquote {
   text-align: left;
@@ -1636,6 +1636,28 @@ span.ua .location:before {
   cursor: pointer;
   background-color: #f5f5d5 /*#eee*/;
 }
+.wechat-widget {
+  text-align: center;
+  margin: 1px auto;
+  overflow: hidden;
+}
+.wechat-widget > img {
+  border-radius: 2em;
+  -webkit-transition: -webkit-transform 6s ease-out;
+  -moz-transition: -moz-transform 6s ease-out;
+  -o-transition: -o-transform 6s ease-out;
+  -ms-transition: -ms-transform 6s ease-out;
+}
+.wechat-widget > img:hover {
+  -webkit-transform: rotateZ(360deg);
+  -moz-transform: rotateZ(360deg);
+  -o-transform: rotateZ(360deg);
+  -ms-transform: rotateZ(360deg);
+  -webkit-transform: rotateZ(360deg);
+  -moz-transform: rotateZ(360deg);
+  -ms-transform: rotateZ(360deg);
+  transform: rotateZ(360deg);
+}
 @media screen and (min-width: 768px) {
   #sidebar {
     display: inline;
@@ -1646,27 +1668,6 @@ span.ua .location:before {
 }
 .widget-wrap {
   margin: 50px 0;
-}
-.widget-title.categories:before {
-  content: "\f0c6";
-}
-.widget-title.archive:before {
-  content: "\f03c";
-}
-.widget-title.tagcloud:before {
-  content: "\f02c";
-}
-.widget-title.tags:before {
-  content: "\f02b";
-}
-.widget-title.recent-posts:before {
-  content: "\f1ea";
-}
-.widget-title.lastest-comments:before {
-  content: "\f27b";
-}
-.widget-title.hot-comment-posts:before {
-  content: "\f075";
 }
 .widget {
   color: #777;
