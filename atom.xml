@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://giscafer.com/"/>
-  <updated>2017-04-15T16:52:10.000Z</updated>
+  <updated>2017-05-07T05:28:25.132Z</updated>
   <id>http://giscafer.com/</id>
   
   <author>
@@ -14,6 +14,54 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>angular实现IM聊天图片发送</title>
+    <link href="http://giscafer.com/2017/05/07/ng-im-sending-picture/"/>
+    <id>http://giscafer.com/2017/05/07/ng-im-sending-picture/</id>
+    <published>2017-05-07T03:49:39.000Z</published>
+    <updated>2017-05-07T05:28:25.132Z</updated>
+    
+    <content type="html"><![CDATA[<p>IM聊天图片发送有两种方式</p>
+<ul>
+<li>截图粘贴到信息框后点击发送</li>
+<li>选择本地图片发送</li>
+</ul>
+<p>图片剪切粘贴，使用QQ或者其他平台的截图功能，截图后粘贴<code>Ctrl+V</code>，这个过程需要获取粘贴板上的图片数据，并在页面中展示，也就是将图片数据创建一个img元素，就可以显示出来了。</p>
+<a id="more"></a>
+<h2 id="从粘贴面板中获取图片数据"><a href="#从粘贴面板中获取图片数据" class="headerlink" title="从粘贴面板中获取图片数据"></a>从粘贴面板中获取图片数据</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * 黏贴发送图片</div><div class="line"> * @param e</div><div class="line"> */</div><div class="line">pasteData(e) &#123;</div><div class="line">    e.preventDefault();</div><div class="line">    <span class="keyword">let</span> clipboardData = e.clipboardData;</div><div class="line">    <span class="keyword">if</span> (clipboardData) &#123; <span class="comment">//如果支持这个</span></div><div class="line">        <span class="keyword">let</span> items = clipboardData.items; <span class="comment">//获取黏贴里的对象</span></div><div class="line">        <span class="keyword">if</span> (!items) &#123;</div><div class="line">            <span class="keyword">return</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">let</span> item;</div><div class="line">        <span class="keyword">let</span> types = clipboardData.types || [];</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>, len = types.length; i&lt; len; i++) &#123;</div><div class="line">            <span class="keyword">if</span> (types[i] === <span class="string">'Files'</span>) &#123;</div><div class="line">                item = items[i];</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span> (item &amp;&amp; item.kind === <span class="string">'file'</span> &amp;&amp; item.type.match(<span class="regexp">/^image\//i</span>)) &#123;</div><div class="line">            imgReader(item);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">imgReader</span>(<span class="params">obj</span>) </span>&#123;</div><div class="line">      <span class="keyword">let</span> $messageBox=$(<span class="string">'#message-boxID'</span>);</div><div class="line">        <span class="keyword">let</span> file = obj.getAsFile(),</div><div class="line">            reader = <span class="keyword">new</span> FileReader();</div><div class="line">        <span class="comment">// 读取文件</span></div><div class="line">        reader.readAsDataURL(file);</div><div class="line">        reader.onload = <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</div><div class="line">            <span class="keyword">let</span> img = <span class="keyword">new</span> Image();</div><div class="line">            img.src = e.target[<span class="string">'result'</span>];</div><div class="line">            img.className = <span class="string">'chatImg'</span>;</div><div class="line"></div><div class="line">            $messageBox.append(img);</div><div class="line">            setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">                $messageBox.scrollTop($messageBox[<span class="number">0</span>].scrollHeight);</div><div class="line">            &#125;, <span class="number">0</span>)</div><div class="line">        &#125;;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="本地图片选择"><a href="#本地图片选择" class="headerlink" title="本地图片选择"></a>本地图片选择</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">id</span>=<span class="string">"upImg"</span>  <span class="attr">name</span>=<span class="string">"fileTrans"</span> <span class="attr">type</span>=<span class="string">"file"</span> (<span class="attr">change</span>)=<span class="string">"onFileSelect($event)"</span>/&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * 选择图片</div><div class="line"> * @param event</div><div class="line"> */</div><div class="line">files:any[]=[];</div><div class="line">onFileSelect(event) &#123;</div><div class="line">    <span class="keyword">this</span>.files=[];</div><div class="line">    <span class="keyword">let</span> files = event.dataTransfer ? event.dataTransfer.files : event.target.files;</div><div class="line">    <span class="keyword">let</span> file;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; files.length; i++) &#123;</div><div class="line">        file = files[i];</div><div class="line">        <span class="keyword">if</span> (<span class="keyword">this</span>.isImage(file)) &#123;</div><div class="line">            file.objectURL = <span class="keyword">this</span>.sanitizer.bypassSecurityTrustUrl((<span class="built_in">window</span>.URL.createObjectURL(files[i])));</div><div class="line">            <span class="keyword">this</span>.files.push(files[i]);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">let</span> fileUrl = file.objectURL.changingThisBreaksApplicationSecurity;</div><div class="line">    <span class="keyword">let</span> img = <span class="keyword">new</span> Image();</div><div class="line">    img.src = fileUrl;</div><div class="line">    img.className = <span class="string">'chatImg'</span>;</div><div class="line"></div><div class="line">    $(<span class="string">'#message-boxID'</span>).append(img);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="图片上传服务器"><a href="#图片上传服务器" class="headerlink" title="图片上传服务器"></a>图片上传服务器</h2><p>前端angular上传图片到服务器，必然是ajax请求的方式，将图片数据转成二进制流传给后端了。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">url:string=<span class="string">"http://localhost:8080/upload"</span>;</div><div class="line">progress:number=<span class="number">0</span>;<span class="comment">//进度</span></div><div class="line"></div><div class="line">uploadPic(formData):<span class="built_in">Promise</span>&lt;any&gt; &#123;</div><div class="line">      <span class="keyword">let</span> xhr = <span class="keyword">new</span> XMLHttpRequest(),</div><div class="line">      </div><div class="line">     </div><div class="line">      <span class="comment">//封装xhr请求</span></div><div class="line">      <span class="keyword">return</span> <span class="keyword">new</span> Pormise(resolve,reject)&#123;</div><div class="line">          xhr.upload.addEventListener(<span class="string">'progress'</span>, (e: ProgressEvent) =&gt; &#123;</div><div class="line">          <span class="keyword">if</span>(e.lengthComputable) &#123;</div><div class="line">            <span class="keyword">this</span>.progress = <span class="built_in">Math</span>.round((e.loaded * <span class="number">100</span>) / e.total);</div><div class="line">          &#125;</div><div class="line">          &#125;, <span class="literal">false</span>);</div><div class="line"></div><div class="line">          xhr.onreadystatechange = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">              <span class="keyword">if</span>(xhr.readyState == <span class="number">4</span>) &#123;</div><div class="line">                  <span class="keyword">this</span>.progress = <span class="number">0</span>;</div><div class="line">                  </div><div class="line">                  <span class="keyword">if</span>(xhr.status &gt;= <span class="number">200</span> &amp;&amp; xhr.status &lt; <span class="number">300</span>)</div><div class="line">                      resolve(&#123;<span class="attr">xhr</span>: xhr, <span class="attr">files</span>: <span class="keyword">this</span>.files&#125;);</div><div class="line">                  <span class="keyword">else</span></div><div class="line">                      reject(&#123;<span class="attr">xhr</span>: xhr, <span class="attr">files</span>: <span class="keyword">this</span>.files&#125;);</div><div class="line">              &#125;</div><div class="line">          &#125;;</div><div class="line">          </div><div class="line">          xhr.open(<span class="string">'POST'</span>, <span class="keyword">this</span>.url, <span class="literal">true</span>);</div><div class="line">          <span class="comment">//jwt后端验证，设置请求头部信息，解决跨域</span></div><div class="line">          xhr.setRequestHeader(<span class="string">"Authorization"</span>, <span class="string">"Basic "</span> + localStorage.getItem(<span class="string">'jwt'</span>));</div><div class="line">          </div><div class="line">          xhr.send(formData);</div><div class="line">      &#125;</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
+<p>将以上方法写到一个<code>upload-file.servie.ts</code>中。然后其他地方就可以使用<code>uploadFileService.uploadPic()</code>方法调用了。</p>
+<p>这里后端代码忽略，后端Java或者nodejs都很简单，接收文件二进制流保存，或者是上传到百度云与阿里云。</p>
+<h2 id="信息发送按钮处理"><a href="#信息发送按钮处理" class="headerlink" title="信息发送按钮处理"></a>信息发送按钮处理</h2><p>发送信息处理，需要处理好文本信息和图片信息两种。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * dataURL to blob, ref to https://gist.github.com/fupslot/5015897</div><div class="line"> * @param dataURI</div><div class="line"> * @returns &#123;Blob&#125;</div><div class="line"> */</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">dataURItoBlob</span>(<span class="params">dataURI</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> byteString = atob(dataURI.split(<span class="string">','</span>)[<span class="number">1</span>]);</div><div class="line">    <span class="keyword">var</span> mimeString = dataURI.split(<span class="string">','</span>)[<span class="number">0</span>].split(<span class="string">':'</span>)[<span class="number">1</span>].split(<span class="string">';'</span>)[<span class="number">0</span>];</div><div class="line">    <span class="keyword">var</span> ab = <span class="keyword">new</span> <span class="built_in">ArrayBuffer</span>(byteString.length);</div><div class="line">    <span class="keyword">var</span> ia = <span class="keyword">new</span> <span class="built_in">Uint8Array</span>(ab);</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; byteString.length; i++) &#123;</div><div class="line">        ia[i] = byteString.charCodeAt(i);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">new</span> Blob([ab], &#123;<span class="attr">type</span>: mimeString&#125;);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line">     * 发送消息</div><div class="line">     * @param taskValue</div><div class="line">     */</div><div class="line">    sendMessage() &#123;</div><div class="line">        <span class="keyword">let</span> dateTime = <span class="keyword">this</span>.dateFromat.FormatDate(<span class="keyword">new</span> <span class="built_in">Date</span>());</div><div class="line">        <span class="keyword">let</span> value = $(<span class="string">'#message-boxID'</span>).html();</div><div class="line">        <span class="keyword">let</span> isImg = value.includes(<span class="string">'&lt;img'</span>);</div><div class="line">        <span class="comment">//如果是图片信息</span></div><div class="line">        <span class="keyword">if</span> (isImg) &#123;</div><div class="line">            <span class="keyword">let</span> formData = <span class="keyword">new</span> FormData();</div><div class="line">            <span class="keyword">let</span> dataURL=<span class="string">""</span>;</div><div class="line">            <span class="keyword">let</span> src=$(value)[<span class="number">0</span>].src;</div><div class="line">            <span class="comment">//图片截图粘贴</span></div><div class="line">            <span class="keyword">if</span>(src.includes(<span class="string">'data:images'</span>))&#123;</div><div class="line">                dataURL=src;</div><div class="line">                <span class="keyword">let</span> blob = dataURItoBlob(dataURL);</div><div class="line">                formData.append(<span class="string">'file'</span>, blob);</div><div class="line">            </div><div class="line">            <span class="comment">//图片本地选择</span></div><div class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>(src.includes(<span class="string">'blob:http'</span>))&#123;</div><div class="line">                 <span class="comment">//files是图片选择时保存的图片文件对象，见onFileSelect方法</span></div><div class="line">                <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="keyword">this</span>.files.length; i++) &#123;</div><div class="line">                    formData.append(<span class="string">'file'</span>, <span class="keyword">this</span>.files[i], <span class="keyword">this</span>.files[i].name);</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">            <span class="comment">//调用上传图片方法</span></div><div class="line">            <span class="keyword">this</span>.uploadFileService.uploadPic(formData).then(<span class="function"><span class="params">result</span>=&gt;</span>&#123;</div><div class="line">                <span class="comment">//上传成功，do something</span></div><div class="line">                <span class="built_in">console</span>.log(result);</div><div class="line">                </div><div class="line">            &#125;).catch(<span class="function"><span class="params">err</span>=&gt;</span>&#123;</div><div class="line">                <span class="built_in">console</span>.log(<span class="string">'图片上传失败'</span>+err);</div><div class="line">            &#125;)</div><div class="line">        &#125;<span class="keyword">else</span>&#123;</div><div class="line">            <span class="comment">//非图片信息，文本发送</span></div><div class="line">            <span class="comment">//this.submitMessage(value);</span></div><div class="line">        &#125;</div><div class="line"></div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<p>&lt;完&gt;</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;IM聊天图片发送有两种方式&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;截图粘贴到信息框后点击发送&lt;/li&gt;
+&lt;li&gt;选择本地图片发送&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;图片剪切粘贴，使用QQ或者其他平台的截图功能，截图后粘贴&lt;code&gt;Ctrl+V&lt;/code&gt;，这个过程需要获取粘贴板上的图片数据，并在页面中展示，也就是将图片数据创建一个img元素，就可以显示出来了。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="http://giscafer.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="angular" scheme="http://giscafer.com/categories/%E6%8A%80%E6%9C%AF/angular/"/>
+    
+    
+      <category term="angular" scheme="http://giscafer.com/tags/angular/"/>
+    
+      <category term="im" scheme="http://giscafer.com/tags/im/"/>
+    
+  </entry>
   
   <entry>
     <title>Cafe主题v1.0发布</title>
@@ -516,9 +564,9 @@
     
       <category term="cafe" scheme="http://giscafer.com/tags/cafe/"/>
     
-      <category term="项目" scheme="http://giscafer.com/tags/%E9%A1%B9%E7%9B%AE/"/>
-    
       <category term="Hexo" scheme="http://giscafer.com/tags/Hexo/"/>
+    
+      <category term="项目" scheme="http://giscafer.com/tags/%E9%A1%B9%E7%9B%AE/"/>
     
   </entry>
   
@@ -1020,45 +1068,6 @@
       <category term="should" scheme="http://giscafer.com/tags/should/"/>
     
       <category term="BDD" scheme="http://giscafer.com/tags/BDD/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>工作一年半了</title>
-    <link href="http://giscafer.com/2016/02/11/diary-2016-02-11/"/>
-    <id>http://giscafer.com/2016/02/11/diary-2016-02-11/</id>
-    <published>2016-02-11T14:51:39.000Z</published>
-    <updated>2016-12-14T16:41:48.656Z</updated>
-    
-    <content type="html"><![CDATA[<p>2014年7月，毕业工作，成为了一名程序猿，我算是误打误撞的进了it行业；公司是做gis相关的，工作是做web开发，平时也就写写JavaScript和html\css……，慢慢的，觉得乏味，偶然关注了互联网前端开发，发现目前工作并不算是真正的前端开发，从此，开始学习互联网前端开发相关技术，并热衷无法自拔……</p>
-<a id="more"></a>
-<p>上学，由于学校本专业（gis)的研究方向是农业或土壤，个人觉得偏离了当时gis流行的云计算或者大数据可视化分析，课程也没多少有趣的；另外，教学专业编程能力相对其他院校来说应该是最弱的，要求也是最低的吧；在上学的日子里，我已经对GIS就业方向感到了迷茫，也不知道什么缘由，我觉得我只能去学习编程，毕业能找份工作。不管什么学校，什么专业，靠的是自己，教学多么好还是差，学霸和学渣都会有……</p>
-<p>大三，第二学期我做了考研的打算，当时也报了培训班；最后由于自己心态问题，定不下心复习看书，当我把高数课本换成编程书籍的时候，我竟然能看下一整天……就这样，我的考研之路已经终止了。</p>
-<p>大四，作为一个开发新入门的菜鸟，当时的我没什么要求，有份工作就行；有个环境能让我学习技术就好，我要逃出校园，因为校园太安逸，迷茫；学长学姐、老师也没和我说就业的严峻性，编程学习上，也没有人指导，一个班里，对编程感兴趣了可能就两人，这编程道路上也是孤独的。对去什么公司和做什么事情那会儿也没多少想法，有公司来校招就去应聘了，公司是北京的。（当时没想过什么北漂，也不清楚什么是北漂咯，天真其实也挺好）</p>
-<p>工作后，习惯总结了自身编程缺失的地方，晚上下班和周末的时候有时间就会留在公司学习，那时也有哥们一起上晚自习，有个伴确实好，学习过程中可以交流；（当时身边的同事总以为我们在加班，内心偷着乐呵呵的）。薪资上，作为一名985毕业的学生，工资算开发人员里边垫底的，我也清楚这是看技术水平开的，没计较什么，就惭愧一下，感叹一下自己大学都在干嘛了？然后就开始打鸡血励志了，瞬间就会充满学习的动力；因为喜欢编程，所以相信自己的技术肯定会越学越好。</p>
-<p>同事+舍友，公司里的同事总体都不错，项目经理和领导都很好，别人都说这是小公司比较好的情况，大公司就不一样了。舍友都是刚毕业一起实习最后一起工作的，一起住了单位宿舍，也一起合租过，相处的挺欢乐，有爱专研技术的，这个算是兴趣一样的地方，也有爱打篮球的伴。所以我觉得是幸运的，因为我是两者的受益者。一起玩的还有同部门的两个妹子（不过离职的比较早，但后边还偶尔联系着），总共7人，我们相处的不错，感觉就像大学同学般，这可能是刚毕业+第一份工作，大家遇到好玩的人吧，以后就难咯……</p>
-<p>北京生活，我是比较宅，在北京没怎么玩，工作一年半也就去了后海，天安门，王府井，西单，鸟巢，香山，几个校园。大多好玩的都没去，因为身边的舍友太尼玛宅了，感觉我起初是没那么宅的，后边可能受影响，越来越宅。公司有个别的同事在北京工作半年多还没去过天安门的……（原因估计是没妹子约）。总的来说，在北京，如果考虑到买房买车，或者是经济自由，那确实是压力大。</p>
-<p>2015年7月，我搬出来自己租房，顿时就感受到了经济上的一些压力。学习上，时间相对多点了，一方面公司的项目不多，另一方面，可能是租房环境比较安静，适合学习。后半年自己学习方向也越来越明确，也常逛开发社区，在github上更加活跃了；关注了很多大牛，作为学习的目标并超越。</p>
-<p>2015年终，拿了积极进取奖，并拿到了人生第一份年终奖；工资和刚入职比翻了倍。</p>
-<p>2015年学习使用的技术栈有：</p>
-<p><code>nodejs</code>,<code>bootstrap</code>,<code>vue.js</code>,<code>jfinal</code>,<code>jade</code>,<code>mongodb</code>……</p>
-<p>2016年，继续前端技术的学习；继续github；认识更多大牛和前辈；进军互联网！</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;2014年7月，毕业工作，成为了一名程序猿，我算是误打误撞的进了it行业；公司是做gis相关的，工作是做web开发，平时也就写写JavaScript和html\css……，慢慢的，觉得乏味，偶然关注了互联网前端开发，发现目前工作并不算是真正的前端开发，从此，开始学习互联网前端开发相关技术，并热衷无法自拔……&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="随笔" scheme="http://giscafer.com/categories/%E9%9A%8F%E7%AC%94/"/>
-    
-      <category term="胡思乱想" scheme="http://giscafer.com/categories/%E9%9A%8F%E7%AC%94/%E8%83%A1%E6%80%9D%E4%B9%B1%E6%83%B3/"/>
-    
-    
-      <category term="diary" scheme="http://giscafer.com/tags/diary/"/>
-    
-      <category term="随笔" scheme="http://giscafer.com/tags/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
