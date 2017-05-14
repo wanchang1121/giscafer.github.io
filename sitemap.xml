@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://giscafer.com/aboutme/cv.html</loc>
+    
+    <lastmod>2017-05-14T14:17:43.138Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://giscafer.com/aboutme/index.html</loc>
+    
+    <lastmod>2017-05-14T14:13:57.515Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://giscafer.com/2017/05/10/giser-just-do-it/</loc>
     
     <lastmod>2017-05-09T16:26:35.801Z</lastmod>
@@ -177,13 +191,6 @@
   </url>
   
   <url>
-    <loc>http://giscafer.com/aboutme/index.html</loc>
-    
-    <lastmod>2016-12-15T14:18:39.226Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://giscafer.com/2016/12/15/react-component-lifecycle/</loc>
     
     <lastmod>2016-12-15T14:16:26.246Z</lastmod>
@@ -313,13 +320,6 @@
     <loc>http://giscafer.com/2016/01/16/alidayu-sign-nodejs/</loc>
     
     <lastmod>2016-12-14T16:38:33.457Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://giscafer.com/aboutme/cv.html</loc>
-    
-    <lastmod>2016-11-30T14:04:08.934Z</lastmod>
     
   </url>
   
