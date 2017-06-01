@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://giscafer.com/2017/01/20/react-redux-cityfilter-demo/</loc>
+    
+    <lastmod>2017-06-01T15:34:52.309Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://giscafer.com/aboutme/cv.html</loc>
     
     <lastmod>2017-05-14T14:17:43.138Z</lastmod>
@@ -110,13 +117,6 @@
     <loc>http://giscafer.com/2016/08/28/project-git-batch-file-builder/</loc>
     
     <lastmod>2017-03-05T13:59:05.468Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://giscafer.com/2017/01/20/react-redux-cityfilter-demo/</loc>
-    
-    <lastmod>2017-01-20T10:58:55.616Z</lastmod>
     
   </url>
   
