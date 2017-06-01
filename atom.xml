@@ -837,15 +837,15 @@
     <link href="http://giscafer.com/2016/06/06/echarts-data-map-project/"/>
     <id>http://giscafer.com/2016/06/06/echarts-data-map-project/</id>
     <published>2016-06-06T03:32:47.000Z</published>
-    <updated>2017-03-05T14:00:40.977Z</updated>
+    <updated>2017-06-01T15:38:53.081Z</updated>
     
     <content type="html"><![CDATA[<h1 id="mapshaper-plus"><a href="#mapshaper-plus" class="headerlink" title="mapshaper-plus"></a>mapshaper-plus</h1><p>基于<a href="https://github.com/mbloch/mapshaper" target="_blank" rel="external">mapshaper</a>对geojson地图数据的坐标信息进行压缩编码，并提供可直接生成压缩编码后的echarts map数据格式</p>
 <a id="more"></a>
-<h2 id="Demo"><a href="#Demo" class="headerlink" title="Demo"></a>Demo</h2><p><a href="https://giscafer.github.io/mapshaper-plus/" target="_blank" rel="external">演示demo</a></p>
+<h2 id="Demo"><a href="#Demo" class="headerlink" title="Demo"></a>Demo</h2><p><a href="http://blog.giscafer.com/mapshaper-plus/" target="_blank" rel="external">演示demo</a></p>
 <h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p><strong>介绍</strong> ——<a href="https://github.com/mbloch/mapshaper" target="_blank" rel="external">mapshaper</a>可以将多种数据格式（Shapefile, GeoJSON, TopoJSON<br>和 Zip files）导入后，对地图的编辑和导出（Shapefile, GeoJSON, TopoJSON, DSV, SVG），功能强大和简单易用。</p>
 <p><code>mapshaper-plus</code>是在<code>mapshaper</code>基础上拓展对地图坐标信息的压缩编码，很大程度上减小了文件的代码行数和字节大小：譬如一个贵州省的数据，原始的<code>geojson</code>数据会在<code>30M</code>左右，但在对坐标信息压缩编码后，仅为<code>1.4M</code>。</p>
 <p><strong>背景</strong> ——在做echarts图表统计时，需要自制地图数据，但官方没有提供一个平台可以直接将<code>shp文件</code>转化为压缩后的<code>json</code>或<code>js</code>格式的地图文件，而<code>mapshaper</code>导出的json数据没有压缩，数据量过大。</p>
-<p>体验可以访问<a href="https://giscafer.github.io/mapshaper-plus/" target="_blank" rel="external">mapshaper-plus在线demo</a></p>
+<p>体验可以访问<a href="http://blog.giscafer.com/mapshaper-plus/" target="_blank" rel="external">mapshaper-plus在线demo</a></p>
 <h2 id="Screenshot"><a href="#Screenshot" class="headerlink" title="Screenshot"></a>Screenshot</h2><p><img src="https://raw.githubusercontent.com/giscafer/mapshaper-plus/master/images/echarts01.png" alt="导出压缩版的数据"></p>
 <h2 id="Github"><a href="#Github" class="headerlink" title="Github"></a>Github</h2><p><a href="https://github.com/giscafer/mapshaper-plus" target="_blank" rel="external">https://github.com/giscafer/mapshaper-plus</a></p>
 ]]></content>

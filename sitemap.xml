@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://giscafer.com/aboutme/index.html</loc>
+    
+    <lastmod>2017-06-01T15:39:05.110Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://giscafer.com/2016/06/06/echarts-data-map-project/</loc>
+    
+    <lastmod>2017-06-01T15:38:53.081Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://giscafer.com/2017/01/20/react-redux-cityfilter-demo/</loc>
     
     <lastmod>2017-06-01T15:34:52.309Z</lastmod>
@@ -12,13 +26,6 @@
     <loc>http://giscafer.com/aboutme/cv.html</loc>
     
     <lastmod>2017-05-14T14:17:43.138Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://giscafer.com/aboutme/index.html</loc>
-    
-    <lastmod>2017-05-14T14:13:57.515Z</lastmod>
     
   </url>
   
@@ -68,13 +75,6 @@
     <loc>http://giscafer.com/2015/10/15/fullcalendar-schedule-secondary-del/</loc>
     
     <lastmod>2017-03-05T14:00:46.667Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://giscafer.com/2016/06/06/echarts-data-map-project/</loc>
-    
-    <lastmod>2017-03-05T14:00:40.977Z</lastmod>
     
   </url>
   
