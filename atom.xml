@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://giscafer.com/"/>
-  <updated>2017-06-06T17:25:53.501Z</updated>
+  <updated>2017-06-06T17:34:04.281Z</updated>
   <id>http://giscafer.com/</id>
   
   <author>
@@ -20,14 +20,14 @@
     <link href="http://giscafer.com/2017/06/07/hexo-changyan/"/>
     <id>http://giscafer.com/2017/06/07/hexo-changyan/</id>
     <published>2017-06-06T17:12:16.000Z</published>
-    <updated>2017-06-06T17:25:53.501Z</updated>
+    <updated>2017-06-06T17:34:04.281Z</updated>
     
     <content type="html"><![CDATA[<p>深夜试了一下<code>畅言</code>评论插件，对Hexo博客主题<a href="https://github.com/giscafer/hexo-theme-cafe/" target="_blank" rel="external">Cafe</a>做了扩展，初略体验了一下，确实很不错。</p>
 <h3 id="评论插件社交化"><a href="#评论插件社交化" class="headerlink" title="评论插件社交化"></a>评论插件社交化</h3><p>畅言评论插件支持手机号，微信，微博，QQ登录，是国内主流社交平台，使用方便，更容易引流。相比网易云跟帖，只能网易账号登录就略坑了。</p>
 <h3 id="界面美观-个人主页"><a href="#界面美观-个人主页" class="headerlink" title="界面美观+个人主页"></a>界面美观+个人主页</h3><p>自适应网站界面，并能定制评论界面演示和文字提示等，还有盖章贴图，可以进入个人畅言中心</p>
 <p><img src="/static/img/hexo-changyan-demo.gif" alt="测试"></p>
-<h3 id="限制约束"><a href="#限制约束" class="headerlink" title="限制约束"></a>限制约束</h3><p>使用畅言必须要做的是备案，域名要备案，不然只能体验15天。本人的giscafer.com就没有备案，历史原因，因为gis520.com占用的个人主题在陕西备案了，目前人在广州，其他域名备案麻烦。域名还是建议备案的。</p>
-<p>&lt;完&gt;</p>
+<h3 id="限制约束"><a href="#限制约束" class="headerlink" title="限制约束"></a>限制约束</h3><p>使用畅言必须要做的是一件事——域名备案，不然只能体验15天。本人的<code>giscafer.com</code>域名没有备案，历史原因。因个人域名<code>gis520.com</code>在陕西备案了，占用了主体信息（每个人只能有一个域名主体信息），目前人在广州，如果要陕西主题信息备案域名比较麻烦，目前先不考虑。</p>
+<p>——&lt;完&gt;——</p>
 <p>如果你也喜欢<code>Cafe</code>主题，欢迎使用并提建议改善。<a href="https://github.com/giscafer/hexo-theme-cafe/" target="_blank" rel="external">https://github.com/giscafer/hexo-theme-cafe/</a></p>
 ]]></content>
     
