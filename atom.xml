@@ -121,7 +121,7 @@
     <link href="http://blog.giscafer.com/2017/05/07/ng-im-sending-picture/"/>
     <id>http://blog.giscafer.com/2017/05/07/ng-im-sending-picture/</id>
     <published>2017-05-07T03:49:39.000Z</published>
-    <updated>2017-05-07T06:08:03.770Z</updated>
+    <updated>2017-05-07T06:08:03.771Z</updated>
     
     <content type="html"><![CDATA[<p>IM聊天图片发送有两种方式</p>
 <ul>
@@ -268,7 +268,7 @@
     <link href="http://blog.giscafer.com/2017/01/20/react-redux-cityfilter-demo/"/>
     <id>http://blog.giscafer.com/2017/01/20/react-redux-cityfilter-demo/</id>
     <published>2017-01-20T10:51:20.000Z</published>
-    <updated>2017-06-01T15:34:52.309Z</updated>
+    <updated>2017-06-01T15:34:52.310Z</updated>
     
     <content type="html"><![CDATA[<p>Redux 是 JavaScript <code>状态容器</code>，提供<code>可预测化</code>的状态管理。Redux的出现，可以让你构建一致化的应用，运行与不同的环境。</p>
 <p>要点</p>
@@ -314,7 +314,7 @@
 </table>
 <h2 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h2><p>通过一个城市筛选面板来理解 React + Redux 的使用</p>
 <p><img src="/static/img/react-redux-cityfilter-demo.gif" alt=""></p>
-<p>示例demo：<a href="http://blog.giscafer.com/react-demo-list/#/citypanel" target="_blank" rel="external">http://blog.giscafer.com/react-demo-list/#/citypanel</a></p>
+<p>示例demo：<a href="http://blog.giscafer.com/react-demo-list/#/citypanel">http://blog.giscafer.com/react-demo-list/#/citypanel</a></p>
 <p>源码：<a href="https://github.com/giscafer/react-demo-list" target="_blank" rel="external">https://github.com/giscafer/react-demo-list</a></p>
 <p><strong>编写 React 应用的时候，会有一个大致的开发步骤</strong>：</p>
 <ul>
@@ -352,7 +352,7 @@
 <p><code>Main.jsx</code></p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * citypanel主入口</div><div class="line"> */</div><div class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span></div><div class="line"><span class="keyword">import</span> &#123; Provider &#125; <span class="keyword">from</span> <span class="string">'react-redux'</span></div><div class="line"><span class="keyword">import</span> App <span class="keyword">from</span> <span class="string">'../../containers/citypanel/App'</span></div><div class="line"><span class="keyword">import</span> configureStore <span class="keyword">from</span> <span class="string">'../../stores/configureStore'</span></div><div class="line"><span class="keyword">const</span> store = configureStore()</div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> () =&gt; &#123;</div><div class="line">    <span class="keyword">return</span> (</div><div class="line">        <span class="xml"><span class="tag">&lt;<span class="name">Provider</span> <span class="attr">store</span>=<span class="string">&#123;store&#125;</span>&gt;</span></span></div><div class="line">            <span class="tag">&lt;<span class="name">App</span> /&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">Provider</span>&gt;</span></div><div class="line">    )</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>一个react + redux 应用完成了</p>
-<p>演示：<a href="http://blog.giscafer.com/react-demo-list/#/citypanel" target="_blank" rel="external">http://blog.giscafer.com/react-demo-list/#/citypanel</a></p>
+<p>演示：<a href="http://blog.giscafer.com/react-demo-list/#/citypanel">http://blog.giscafer.com/react-demo-list/#/citypanel</a></p>
 <p>源码：<a href="https://github.com/giscafer/react-demo-list" target="_blank" rel="external">https://github.com/giscafer/react-demo-list</a></p>
 <p>（完）</p>
 <hr>
@@ -436,7 +436,7 @@
     <link href="http://blog.giscafer.com/2017/01/10/modularization-webgis/"/>
     <id>http://blog.giscafer.com/2017/01/10/modularization-webgis/</id>
     <published>2017-01-10T15:09:31.000Z</published>
-    <updated>2017-01-12T14:04:06.378Z</updated>
+    <updated>2017-01-12T14:04:06.379Z</updated>
     
     <content type="html"><![CDATA[<h3 id="啰嗦两句"><a href="#啰嗦两句" class="headerlink" title="啰嗦两句"></a>啰嗦两句</h3><p>前面聊过<a href="https://zhuanlan.zhihu.com/p/24780835?refer=viseye" target="_blank" rel="external">《探讨如何使用流行的前端技术开发WebGIS系统》</a>，本篇基于此继续介绍。</p>
 <p><em>不用再讨论兼容IE6，7了，2017年，没人再用了。。。。哈哈哈</em></p>
@@ -500,7 +500,7 @@
     <link href="http://blog.giscafer.com/2016/12/23/2016-year-end-summary/"/>
     <id>http://blog.giscafer.com/2016/12/23/2016-year-end-summary/</id>
     <published>2016-12-23T12:55:29.000Z</published>
-    <updated>2017-03-05T14:09:13.665Z</updated>
+    <updated>2017-03-05T14:09:13.666Z</updated>
     
     <content type="html"><![CDATA[<p>年底了，毕业两年半，也就是工作2年半了，times flying！！！</p>
 <p>2016年，变化比较大的有三方面：工作地点由北京换到广州、脱离单身dog、gis行业转互联网（勉强算，都是做编程开发）。</p>
@@ -556,7 +556,7 @@
     <link href="http://blog.giscafer.com/2016/12/15/react-component-lifecycle/"/>
     <id>http://blog.giscafer.com/2016/12/15/react-component-lifecycle/</id>
     <published>2016-12-14T16:30:30.000Z</published>
-    <updated>2016-12-15T14:16:26.246Z</updated>
+    <updated>2016-12-15T14:16:26.247Z</updated>
     
     <content type="html"><![CDATA[<h2 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h2><p>React Component整个生命周期分为三大块：<strong>初始化——存在期（更新）——销毁清理</strong></p>
 <h3 id="首次实例化-调用方法"><a href="#首次实例化-调用方法" class="headerlink" title="首次实例化 调用方法"></a>首次实例化 调用方法</h3><ul>
@@ -647,7 +647,7 @@
     <link href="http://blog.giscafer.com/2016/12/11/hexo-theme-cafe/"/>
     <id>http://blog.giscafer.com/2016/12/11/hexo-theme-cafe/</id>
     <published>2016-12-11T03:40:35.000Z</published>
-    <updated>2017-03-05T13:59:52.031Z</updated>
+    <updated>2017-03-05T13:59:52.032Z</updated>
     
     <content type="html"><![CDATA[<p>尝试自己定制一个Hexo博客主题<code>Cafe</code>，Cafe 主题旨在追求简约、操作简单、阅读舒适度，详细介绍和源码见<a href="https://github.com/giscafer/hexo-theme-cafe" target="_blank" rel="external">https://github.com/giscafer/hexo-theme-cafe</a></p>
 ]]></content>
@@ -663,9 +663,9 @@
       <category term="项目&amp;Demo" scheme="http://blog.giscafer.com/categories/%E6%8A%80%E6%9C%AF/%E9%A1%B9%E7%9B%AE-Demo/"/>
     
     
-      <category term="cafe" scheme="http://blog.giscafer.com/tags/cafe/"/>
-    
       <category term="项目" scheme="http://blog.giscafer.com/tags/%E9%A1%B9%E7%9B%AE/"/>
+    
+      <category term="cafe" scheme="http://blog.giscafer.com/tags/cafe/"/>
     
       <category term="Hexo" scheme="http://blog.giscafer.com/tags/Hexo/"/>
     
@@ -676,7 +676,7 @@
     <link href="http://blog.giscafer.com/2016/10/16/webglearth-typhoon-project/"/>
     <id>http://blog.giscafer.com/2016/10/16/webglearth-typhoon-project/</id>
     <published>2016-10-16T01:14:39.000Z</published>
-    <updated>2017-03-05T14:01:12.047Z</updated>
+    <updated>2017-03-05T14:01:12.048Z</updated>
     
     <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>花了一天时间，开发了一个基于<strong>WebGL Eerth</strong>的台风监测系统，写这个web应用的目的有两个：</p>
 <p>1、我在github上创建了<a href="https://github.com/viseye" target="_blank" rel="external">@viseye</a>组织已经一段时间，但是迟迟没有项目，于是近期打算写一个</p>
@@ -770,7 +770,7 @@
     <link href="http://blog.giscafer.com/2016/08/28/project-git-batch-file-builder/"/>
     <id>http://blog.giscafer.com/2016/08/28/project-git-batch-file-builder/</id>
     <published>2016-08-28T14:44:18.000Z</published>
-    <updated>2017-03-05T13:59:05.468Z</updated>
+    <updated>2017-03-05T13:59:05.469Z</updated>
     
     <content type="html"><![CDATA[<p>编写此工具的原因是工作上遇到数十个工程，需要一个个git clone到本地，所以想使用工具替代重复的操作。</p>
 <p>在<code>生成bat文件</code>时，需要允许浏览器弹窗下载文件，如下图：</p>
@@ -806,7 +806,7 @@
     <link href="http://blog.giscafer.com/2016/08/10/the-interveiw-for-a-second-job/"/>
     <id>http://blog.giscafer.com/2016/08/10/the-interveiw-for-a-second-job/</id>
     <published>2016-08-10T09:02:41.000Z</published>
-    <updated>2016-12-14T16:48:30.874Z</updated>
+    <updated>2016-12-14T16:48:30.875Z</updated>
     
     <content type="html"><![CDATA[<p>面试邀请很多，最后只面试了4个，一方面心累了，一方面想通过新的平台再加强一下自己，今后再次去尝试。<br><a id="more"></a></p>
 <h3 id="2016-8-4-下午"><a href="#2016-8-4-下午" class="headerlink" title="2016-8-4 下午"></a>2016-8-4 下午</h3><p>下午，面试了本周第一家公司（这也是两年以来，第二次面对面的面试，第一次是北京的老东家，一干就干了2年整），这次面试的是一家做闪购的公司，公司办公地理位置好，环境不错，主要做的是App产品，去了才知道招聘的前端就主要是App的前端，这也是我最弱的地方了，一直做PC端的前端，在今年的6月份，离职前两个月，才接手一个ionic+angularjs相关的H5 App开发，功能模块的开发，当时时间紧张，所有的时间都花费在功能模块的开发，界面UI这些都是用现成的ionic的样式或者bootstrap样式；也就是没有设计美化UI，直接开发功能。<br>这是传统行业的特点，开发的时候都优先功能第一。</p>
@@ -874,11 +874,11 @@
     
     <content type="html"><![CDATA[<h1 id="mapshaper-plus"><a href="#mapshaper-plus" class="headerlink" title="mapshaper-plus"></a>mapshaper-plus</h1><p>基于<a href="https://github.com/mbloch/mapshaper" target="_blank" rel="external">mapshaper</a>对geojson地图数据的坐标信息进行压缩编码，并提供可直接生成压缩编码后的echarts map数据格式</p>
 <a id="more"></a>
-<h2 id="Demo"><a href="#Demo" class="headerlink" title="Demo"></a>Demo</h2><p><a href="http://blog.giscafer.com/mapshaper-plus/" target="_blank" rel="external">演示demo</a></p>
+<h2 id="Demo"><a href="#Demo" class="headerlink" title="Demo"></a>Demo</h2><p><a href="http://blog.giscafer.com/mapshaper-plus/">演示demo</a></p>
 <h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p><strong>介绍</strong> ——<a href="https://github.com/mbloch/mapshaper" target="_blank" rel="external">mapshaper</a>可以将多种数据格式（Shapefile, GeoJSON, TopoJSON<br>和 Zip files）导入后，对地图的编辑和导出（Shapefile, GeoJSON, TopoJSON, DSV, SVG），功能强大和简单易用。</p>
 <p><code>mapshaper-plus</code>是在<code>mapshaper</code>基础上拓展对地图坐标信息的压缩编码，很大程度上减小了文件的代码行数和字节大小：譬如一个贵州省的数据，原始的<code>geojson</code>数据会在<code>30M</code>左右，但在对坐标信息压缩编码后，仅为<code>1.4M</code>。</p>
 <p><strong>背景</strong> ——在做echarts图表统计时，需要自制地图数据，但官方没有提供一个平台可以直接将<code>shp文件</code>转化为压缩后的<code>json</code>或<code>js</code>格式的地图文件，而<code>mapshaper</code>导出的json数据没有压缩，数据量过大。</p>
-<p>体验可以访问<a href="http://blog.giscafer.com/mapshaper-plus/" target="_blank" rel="external">mapshaper-plus在线demo</a></p>
+<p>体验可以访问<a href="http://blog.giscafer.com/mapshaper-plus/">mapshaper-plus在线demo</a></p>
 <h2 id="Screenshot"><a href="#Screenshot" class="headerlink" title="Screenshot"></a>Screenshot</h2><p><img src="https://raw.githubusercontent.com/giscafer/mapshaper-plus/master/images/echarts01.png" alt="导出压缩版的数据"></p>
 <h2 id="Github"><a href="#Github" class="headerlink" title="Github"></a>Github</h2><p><a href="https://github.com/giscafer/mapshaper-plus" target="_blank" rel="external">https://github.com/giscafer/mapshaper-plus</a></p>
 ]]></content>
@@ -942,7 +942,7 @@
     <link href="http://blog.giscafer.com/2016/04/13/node-oracledb-demo/"/>
     <id>http://blog.giscafer.com/2016/04/13/node-oracledb-demo/</id>
     <published>2016-04-13T03:30:17.000Z</published>
-    <updated>2017-01-10T15:41:32.803Z</updated>
+    <updated>2017-01-10T15:41:32.804Z</updated>
     
     <content type="html"><![CDATA[<h2 id="windows下node-oracledb环境"><a href="#windows下node-oracledb环境" class="headerlink" title="windows下node-oracledb环境"></a>windows下node-oracledb环境</h2><p>在windows环境下， oracle一直是个麻烦事情，参考官方<a href="https://github.com/oracle/node-oracledb/blob/master/INSTALL.md#instwin" target="_blank" rel="external">环境搭建说明</a><br><a id="more"></a><br>原本就在电脑上安装了<code>oracle11g</code>数据库,<code>VS2013</code>,<code>python2.7</code>，所以，我在环境变量下只需要再添加以下两个变量：<br><figure class="highlight taggerscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">set OCI_LIB_DIR=D:<span class="symbol">\a</span>pp<span class="symbol">\g</span>iscafer<span class="symbol">\p</span>roduct<span class="symbol">\1</span>1.2.0<span class="symbol">\d</span>bhome_1<span class="symbol">\O</span>CI<span class="symbol">\l</span>ib<span class="symbol">\M</span>SVC</div><div class="line">set OCI_INC_DIR=D:<span class="symbol">\a</span>pp<span class="symbol">\g</span>iscafer<span class="symbol">\p</span>roduct<span class="symbol">\1</span>1.2.0<span class="symbol">\d</span>bhome_1<span class="symbol">\O</span>CI<span class="symbol">\i</span>nclude</div></pre></td></tr></table></figure></p>
 <pre><code>npm install --save oracle

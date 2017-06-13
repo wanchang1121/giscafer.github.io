@@ -113,13 +113,13 @@
 <p><strong>代码如下：</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">   (<span class="function"><span class="keyword">function</span>(<span class="params">$</span>)</span>&#123;</div><div class="line">$(<span class="string">'#archive_list_button'</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="keyword">if</span>($(<span class="keyword">this</span>).hasClass(<span class="string">"list_closed"</span>))&#123;</div><div class="line">		$(<span class="string">"#archivelist_display"</span>).show();</div><div class="line">		$(<span class="string">"#archive_list_button"</span>).html(<span class="string">'收起'</span>);</div><div class="line">		$(<span class="keyword">this</span>).removeClass(<span class="string">"list_closed"</span>).addClass(<span class="string">"list_opended"</span>);</div><div class="line">		</div><div class="line">	&#125;<span class="keyword">else</span>&#123;</div><div class="line">		$(<span class="string">"#archivelist_display"</span>).hide();</div><div class="line">		$(<span class="string">"#archive_list_button"</span>).html(<span class="string">'展开'</span>);</div><div class="line">		$(<span class="keyword">this</span>).removeClass(<span class="string">"list_opended"</span>).addClass(<span class="string">"list_closed"</span>);</div><div class="line">	&#125;</div><div class="line">&#125;);</div><div class="line">   &#125;)(jQuery);</div></pre></td></tr></table></figure></p>
 <h3 id="5、结束"><a href="#5、结束" class="headerlink" title="5、结束"></a>5、结束</h3><p><code>hexo s</code>启动项目，本地localhost:4000就可以看到效果了。如图：</p>
 <p><img src="/static/img/hexo-archive-setting01.png" alt="展开"><br><img src="/static/img/hexo-archive-setting02.png" alt="收起"></p>
-<p>具体效果见<a href="http://giscafer.com">博客站点</a>右侧归档</p>
+<p>具体效果见<a href="http://giscafer.com" target="_blank" rel="external">博客站点</a>右侧归档</p>
 <p>总结：了解NodeJS和EJS模板引擎，以及Hexo的工作原理，就会发现简单的多了。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.giscafer.com/2015/09/03/hexo-archive-setting/" data-id="cj3lu6v7h000ro4z5eld15y9c" class="article-share-link">分享</a>
+      <a data-url="http://blog.giscafer.com/2015/09/03/hexo-archive-setting/" data-id="cj3vsv9k400110wz5rz7h6jsg" class="article-share-link">分享</a>
       
       
       
@@ -156,8 +156,6 @@
     
      
        
-      <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
-    
   </div>
  
   
@@ -238,16 +236,6 @@ window.onload = function() {
       
 
   
-    <script>
-      var cloudTieConfig = {
-        url: document.location.href, 
-        sourceId: "",
-        productKey: "e2fb4051c49842688ce669e634bc983f",
-        target: "cloud-tie-wrapper"
-      };
-    </script>
-    <script src="https://img1.ws.126.net/f2e/tie/yun/sdk/loader.js"></script>
-    
 
   
 
