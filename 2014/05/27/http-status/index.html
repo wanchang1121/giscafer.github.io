@@ -189,10 +189,9 @@ HTTP状态码（HTTP Status Code）是用以表示网页服务器HTTP响应状�
               for(var j=0;j<arr.length;j++){
                 var item=arr[j];
                 html += '<li><strong>' + 
-                item.date + ':&nbsp;&nbsp;<a href="' + item.path + '">' + 
+                item.date + ':&nbsp;&nbsp;<a href="' + (site.BASE_URI+item.uri) + '">' + 
                 (item.title || item.uri) + '</a></strong>'+
-                '<div class="post-excerpt">'+item.excerpt+'</div>'+
-                ' </li>';
+                '<div class="post-excerpt">'+item.excerpt+'</div></li>';
               }
               $(obj).html(html + '</ul>');
           }
