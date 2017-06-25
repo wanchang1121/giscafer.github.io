@@ -168,7 +168,7 @@ define(&apos;app&apos;, [&apos;script/b&apos;], function (require, exports, modu
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.giscafer.com/2015/12/02/amd-optimize-gulp/" data-id="cj447yxr2001oj4z5l3t8ah05" class="article-share-link">分享</a>
+      <a data-url="http://blog.giscafer.com/2015/12/02/amd-optimize-gulp/" data-id="cj4cyjmvq0007u8z5re1r2nv3" class="article-share-link">分享</a>
       
       
       
@@ -178,46 +178,41 @@ define(&apos;app&apos;, [&apos;script/b&apos;], function (require, exports, modu
   </div>
   
     
+ <script src="/jquery/jquery.min.js"></script>
   <div id="random_posts">
     <h2>推荐文章</h2>
-    <div>
-      <ul>
-      
-      
-      
-      
-        
-          <li>
-           <strong>2016.02.10:&nbsp;&nbsp;<a href="/2016/02/10/alidayujs-npm/">阿里大鱼JavaScript SDK插件alidayujs</a></strong> 
-           <div class="post-excerpt">
-               <p><code>alidayujs</code>是学习nodejs以来写的第一个<code>npm</code>插件，目前实现了短信发送接口的封装，其余语音等有时间再拓展吧。使用介绍见以下链接：</p>
-           </div>
-          </li>
-        
-          <li>
-           <strong>2016.01.16:&nbsp;&nbsp;<a href="/2016/01/16/alidayu-sign-nodejs/">NodeJS实现阿里大鱼短信通知发送</a></strong> 
-           <div class="post-excerpt">
-               <h3 id="1、说明"><a href="#1、说明" class="headerlink" title="1、说明"></a>1、说明</h3><p>阿里大鱼提供了验证码，短信通知，语音等服务，在使用后感觉挺方便，不愧是阿里旗下的产品。</p>
-<p>最近想搞个NodeJS发送短信通知的功能，
-           </div>
-          </li>
-        
-          <li>
-           <strong>2017.04.16:&nbsp;&nbsp;<a href="/2017/04/16/cafe-release-1/">Cafe主题v1.0发布</a></strong> 
-           <div class="post-excerpt">
-               
-           </div>
-          </li>
-        
-          <li>
-           <strong>2016.12.23:&nbsp;&nbsp;<a href="/2016/12/23/2016-year-end-summary/">2016年末总结</a></strong> 
-           <div class="post-excerpt">
-               <p>年底了，毕业两年半，也就是工作2年半了，times flying！！！</p>
-<p>2016年，变化比较大的有三方面：工作地点由北京换到广州、脱离单身dog、gis行业转互联网（勉强算，都是做编程开发）。</p>
-           </div>
-          </li>
-        
-      </ul>
+    <div class="random_posts_ul">
+      <script>
+          var random_count =4
+          var site = {BASE_URI:'/'};
+          function load_random_posts(obj) {
+              var arr=site.posts;
+              if (!obj) return;
+              // var count = $(obj).attr('data-count') || 6;
+              for (var i, tmp, n = arr.length; n; i = Math.floor(Math.random() * n), tmp = arr[--n], arr[n] = arr[i], arr[i] = tmp);
+              arr = arr.slice(0, random_count);
+              var html = '<ul>';
+            
+              for(var j=0;j<arr.length;j++){
+                var item=arr[j];
+                html += '<li><strong>' + 
+                item.date + ':&nbsp;&nbsp;<a href="' + item.path + '">' + 
+                (item.title || item.uri) + '</a></strong>'+
+                '<div class="post-excerpt">'+item.excerpt+'</div>'+
+                ' </li>';
+              }
+              $(obj).html(html + '</ul>');
+          }
+          $('.random_posts_ul').each(function () {
+              var c = this;
+              if (!site.posts || !site.posts.length){
+                  $.getJSON(site.BASE_URI + 'js/posts.js',function(json){site.posts = json;load_random_posts(c)});
+              } 
+               else{
+                load_random_posts(c);
+              }
+          });
+      </script>
     </div>
   </div>
 
