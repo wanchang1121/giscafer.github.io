@@ -70,6 +70,58 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-ionic3-question-answer" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/06/29/ionic3-question-answer/" class="article-date">
+  <time datetime="2017-06-29T14:06:54.000Z" itemprop="datePublished">2017-06-29</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/Ionic/">Ionic</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/29/ionic3-question-answer/">ionic3开发遇到的一些问题及解决方法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>两年前，第一家公司用过ionic1开发过APP，当时对ionic1了解的不是很熟，加上是ng1的开发。今年公司重写APP更换技术框架为ionic3，配合ng4的开发，个人感觉开发上效率比较高。</p>
+<h3 id="不能使用组件名称作为条件判断依据"><a href="#不能使用组件名称作为条件判断依据" class="headerlink" title="不能使用组件名称作为条件判断依据"></a>不能使用组件名称作为条件判断依据</h3><p>为了实现token失效或超时登录，接口拦截请求跳转登录页面，起初我用了组件名称LoginPage作为判断，因为首页请求三个接口，进入首页的时候，三次请求都会判断为token失效，都会跳转登录页面，如果不做当前是否为登录页面判断，都跳转登录页面的话，会出现三次登录页面的重复跳转。</p>
+<p>最开始代码为：<code>代码片段1</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//登录失效，自动跳转登录页面</span></div><div class="line">  <span class="keyword">if</span> (json[<span class="string">"code"</span>] === <span class="number">-9999</span>) &#123;</div><div class="line">       <span class="keyword">let</span> curActiveView = <span class="keyword">this</span>.nav.getActive();</div><div class="line">        <span class="comment">//根据登录页面组件名称为LoginPage判断</span></div><div class="line">       <span class="keyword">if</span> (curActiveView &amp;&amp; curActiveView.component.name!==<span class="string">'LoginPage'</span>) &#123;</div><div class="line">          <span class="keyword">this</span>.nav.push(LoginPage);</div><div class="line">       &#125;</div><div class="line">   &#125;</div></pre></td></tr></table></figure>
+        
+          <p class="article-more-link">
+            <a href="/2017/06/29/ionic3-question-answer/#more">继续阅读全文 »</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.giscafer.com/2017/06/29/ionic3-question-answer/" data-id="cj4iiape10037b8z5x1d3nhon" class="article-share-link">分享</a>
+      
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ionic/">ionic</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+ 
+
+
+  
     <article id="post-ionic3-tab-custom-icon" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/06/27/ionic3-tab-custom-icon/" class="article-date">
@@ -107,7 +159,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.giscafer.com/2017/06/27/ionic3-tab-custom-icon/" data-id="cj4fnm96x001twwz5gfkberpo" class="article-share-link">分享</a>
+      <a data-url="http://blog.giscafer.com/2017/06/27/ionic3-tab-custom-icon/" data-id="cj4iiape00034b8z5514na55y" class="article-share-link">分享</a>
       
       
       
@@ -157,7 +209,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.giscafer.com/2017/06/19/ionic-md-action-sheet/" data-id="cj4fnm97b002bwwz5zzzw84mp" class="article-share-link">分享</a>
+      <a data-url="http://blog.giscafer.com/2017/06/19/ionic-md-action-sheet/" data-id="cj4iiape7003fb8z5fqfdrhmd" class="article-share-link">分享</a>
       
       
       
@@ -210,7 +262,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.giscafer.com/2017/06/07/hexo-changyan/" data-id="cj4fnm96c0018wwz5531mysj5" class="article-share-link">分享</a>
+      <a data-url="http://blog.giscafer.com/2017/06/07/hexo-changyan/" data-id="cj4iiapdl002ob8z5pz4blamw" class="article-share-link">分享</a>
       
       
       
@@ -263,65 +315,11 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.giscafer.com/2017/05/10/giser-just-do-it/" data-id="cj4fnm95n000owwz5u18tt1t5" class="article-share-link">分享</a>
+      <a data-url="http://blog.giscafer.com/2017/05/10/giser-just-do-it/" data-id="cj4iiapcy0026b8z5lp98bx4p" class="article-share-link">分享</a>
       
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/giscafer/">giscafer</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
- 
-
-
-  
-    <article id="post-ng-im-sending-picture" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/05/07/ng-im-sending-picture/" class="article-date">
-  <time datetime="2017-05-07T03:49:39.000Z" itemprop="datePublished">2017-05-07</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/Angular/">Angular</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/05/07/ng-im-sending-picture/">angular实现IM聊天图片发送</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>IM聊天图片发送有两种方式</p>
-<ul>
-<li>截图粘贴到信息框后点击发送</li>
-<li>选择本地图片发送</li>
-</ul>
-<p>图片剪切粘贴，使用QQ或者其他平台的截图功能，截图后粘贴<code>Ctrl+V</code>，这个过程需要获取粘贴板上的图片数据，并在页面中展示，也就是将图片数据创建一个img元素，就可以显示出来了。</p>
-        
-          <p class="article-more-link">
-            <a href="/2017/05/07/ng-im-sending-picture/#more">继续阅读全文 »</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://blog.giscafer.com/2017/05/07/ng-im-sending-picture/" data-id="cj4fnm97q002vwwz5e9cs6hjr" class="article-share-link">分享</a>
-      
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Angular/">Angular</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/im/">im</a></li></ul>
 
     </footer>
   </div>
@@ -369,7 +367,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title categories">分类</h3>
     <div class="widget" id="categories">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/技术/">技术</a><span class="category-list-count">42</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/技术/Angular/">Angular</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/DataBase/">DataBase</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/GIS/">GIS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/Hexo/">Hexo</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/Ionic/">Ionic</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/Java/">Java</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/Javascript/">Javascript</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/LeetCode/">LeetCode</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/NodeJS/">NodeJS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/React/">React</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/WebGIS/">WebGIS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/开发手册/">开发手册</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/性能优化/">性能优化</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/项目-Demo/">项目&Demo</a><span class="category-list-count">10</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/随笔/">随笔</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/随笔/工作/">工作</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/随笔/总结/">总结</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/随笔/胡思乱想/">胡思乱想</a><span class="category-list-count">2</span></li></ul></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/技术/">技术</a><span class="category-list-count">43</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/技术/Angular/">Angular</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/DataBase/">DataBase</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/GIS/">GIS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/Hexo/">Hexo</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/Ionic/">Ionic</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/Java/">Java</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/Javascript/">Javascript</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/LeetCode/">LeetCode</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/NodeJS/">NodeJS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/React/">React</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/WebGIS/">WebGIS</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/开发手册/">开发手册</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/性能优化/">性能优化</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/项目-Demo/">项目&Demo</a><span class="category-list-count">10</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/随笔/">随笔</a><span class="category-list-count">5</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/随笔/工作/">工作</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/随笔/总结/">总结</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/随笔/胡思乱想/">胡思乱想</a><span class="category-list-count">2</span></li></ul></li></ul>
     </div>
   </div>
 
@@ -379,7 +377,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title tagcloud">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/AMD/" style="font-size: 17.67px;">AMD</a> <a href="/tags/Angular/" style="font-size: 14px;">Angular</a> <a href="/tags/BDD/" style="font-size: 14px;">BDD</a> <a href="/tags/GeoTools/" style="font-size: 14px;">GeoTools</a> <a href="/tags/Hexo/" style="font-size: 25px;">Hexo</a> <a href="/tags/Hexo教程/" style="font-size: 14px;">Hexo教程</a> <a href="/tags/Http/" style="font-size: 14px;">Http</a> <a href="/tags/Ionic/" style="font-size: 14px;">Ionic</a> <a href="/tags/JFinal/" style="font-size: 14px;">JFinal</a> <a href="/tags/Java/" style="font-size: 14px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 17.67px;">JavaScript</a> <a href="/tags/Javascript/" style="font-size: 14px;">Javascript</a> <a href="/tags/Jquery/" style="font-size: 14px;">Jquery</a> <a href="/tags/Node-js/" style="font-size: 14px;">Node.js</a> <a href="/tags/NodeJS/" style="font-size: 17.67px;">NodeJS</a> <a href="/tags/Project/" style="font-size: 14px;">Project</a> <a href="/tags/Q-A/" style="font-size: 14px;">Q&A</a> <a href="/tags/React/" style="font-size: 17.67px;">React</a> <a href="/tags/React组件/" style="font-size: 14px;">React组件</a> <a href="/tags/React组件生命周期/" style="font-size: 14px;">React组件生命周期</a> <a href="/tags/SeaJS/" style="font-size: 14px;">SeaJS</a> <a href="/tags/WebGIS/" style="font-size: 17.67px;">WebGIS</a> <a href="/tags/WebGL/" style="font-size: 14px;">WebGL</a> <a href="/tags/actionsheet/" style="font-size: 14px;">actionsheet</a> <a href="/tags/alidayujs/" style="font-size: 14px;">alidayujs</a> <a href="/tags/angluar/" style="font-size: 14px;">angluar</a> <a href="/tags/bluebird/" style="font-size: 14px;">bluebird</a> <a href="/tags/cafe/" style="font-size: 17.67px;">cafe</a> <a href="/tags/diary/" style="font-size: 17.67px;">diary</a> <a href="/tags/echarts地图/" style="font-size: 14px;">echarts地图</a> <a href="/tags/fullCalendar/" style="font-size: 14px;">fullCalendar</a> <a href="/tags/gis/" style="font-size: 14px;">gis</a> <a href="/tags/giscafer/" style="font-size: 14px;">giscafer</a> <a href="/tags/git批处理/" style="font-size: 14px;">git批处理</a> <a href="/tags/gulp/" style="font-size: 17.67px;">gulp</a> <a href="/tags/ife/" style="font-size: 14px;">ife</a> <a href="/tags/im/" style="font-size: 14px;">im</a> <a href="/tags/ionic/" style="font-size: 14px;">ionic</a> <a href="/tags/jmp3/" style="font-size: 14px;">jmp3</a> <a href="/tags/leetcode/" style="font-size: 14px;">leetcode</a> <a href="/tags/mapReduce/" style="font-size: 14px;">mapReduce</a> <a href="/tags/mapshaper/" style="font-size: 14px;">mapshaper</a> <a href="/tags/mocha/" style="font-size: 14px;">mocha</a> <a href="/tags/mongoDB/" style="font-size: 14px;">mongoDB</a> <a href="/tags/mongoDB统计/" style="font-size: 14px;">mongoDB统计</a> <a href="/tags/node-oracledb/" style="font-size: 14px;">node-oracledb</a> <a href="/tags/node-js/" style="font-size: 14px;">node.js</a> <a href="/tags/node-js链接oracle/" style="font-size: 14px;">node.js链接oracle</a> <a href="/tags/npm/" style="font-size: 21.33px;">npm</a> <a href="/tags/promise/" style="font-size: 14px;">promise</a> <a href="/tags/react-redux/" style="font-size: 14px;">react-redux</a> <a href="/tags/redux/" style="font-size: 17.67px;">redux</a> <a href="/tags/should/" style="font-size: 14px;">should</a> <a href="/tags/swiftype/" style="font-size: 14px;">swiftype</a> <a href="/tags/tabs图标/" style="font-size: 14px;">tabs图标</a> <a href="/tags/vue/" style="font-size: 14px;">vue</a> <a href="/tags/webpack/" style="font-size: 14px;">webpack</a> <a href="/tags/webuploader/" style="font-size: 14px;">webuploader</a> <a href="/tags/前端习题/" style="font-size: 14px;">前端习题</a> <a href="/tags/前端优化/" style="font-size: 14px;">前端优化</a> <a href="/tags/前端构建/" style="font-size: 17.67px;">前端构建</a> <a href="/tags/前端面试/" style="font-size: 14px;">前端面试</a> <a href="/tags/排班管理/" style="font-size: 14px;">排班管理</a> <a href="/tags/日记/" style="font-size: 14px;">日记</a> <a href="/tags/畅言/" style="font-size: 14px;">畅言</a> <a href="/tags/短信发送/" style="font-size: 14px;">短信发送</a> <a href="/tags/算法/" style="font-size: 14px;">算法</a> <a href="/tags/考勤签到/" style="font-size: 14px;">考勤签到</a> <a href="/tags/阿里大鱼/" style="font-size: 14px;">阿里大鱼</a> <a href="/tags/阿里大鱼sdk/" style="font-size: 14px;">阿里大鱼sdk</a> <a href="/tags/随笔/" style="font-size: 14px;">随笔</a> <a href="/tags/项目/" style="font-size: 17.67px;">项目</a>
+      <a href="/tags/AMD/" style="font-size: 17.67px;">AMD</a> <a href="/tags/Angular/" style="font-size: 14px;">Angular</a> <a href="/tags/BDD/" style="font-size: 14px;">BDD</a> <a href="/tags/GeoTools/" style="font-size: 14px;">GeoTools</a> <a href="/tags/Hexo/" style="font-size: 25px;">Hexo</a> <a href="/tags/Hexo教程/" style="font-size: 14px;">Hexo教程</a> <a href="/tags/Http/" style="font-size: 14px;">Http</a> <a href="/tags/Ionic/" style="font-size: 14px;">Ionic</a> <a href="/tags/JFinal/" style="font-size: 14px;">JFinal</a> <a href="/tags/Java/" style="font-size: 14px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 17.67px;">JavaScript</a> <a href="/tags/Javascript/" style="font-size: 14px;">Javascript</a> <a href="/tags/Jquery/" style="font-size: 14px;">Jquery</a> <a href="/tags/Node-js/" style="font-size: 14px;">Node.js</a> <a href="/tags/NodeJS/" style="font-size: 17.67px;">NodeJS</a> <a href="/tags/Project/" style="font-size: 14px;">Project</a> <a href="/tags/Q-A/" style="font-size: 14px;">Q&A</a> <a href="/tags/React/" style="font-size: 17.67px;">React</a> <a href="/tags/React组件/" style="font-size: 14px;">React组件</a> <a href="/tags/React组件生命周期/" style="font-size: 14px;">React组件生命周期</a> <a href="/tags/SeaJS/" style="font-size: 14px;">SeaJS</a> <a href="/tags/WebGIS/" style="font-size: 17.67px;">WebGIS</a> <a href="/tags/WebGL/" style="font-size: 14px;">WebGL</a> <a href="/tags/actionsheet/" style="font-size: 14px;">actionsheet</a> <a href="/tags/alidayujs/" style="font-size: 14px;">alidayujs</a> <a href="/tags/angluar/" style="font-size: 14px;">angluar</a> <a href="/tags/bluebird/" style="font-size: 14px;">bluebird</a> <a href="/tags/cafe/" style="font-size: 17.67px;">cafe</a> <a href="/tags/diary/" style="font-size: 17.67px;">diary</a> <a href="/tags/echarts地图/" style="font-size: 14px;">echarts地图</a> <a href="/tags/fullCalendar/" style="font-size: 14px;">fullCalendar</a> <a href="/tags/gis/" style="font-size: 14px;">gis</a> <a href="/tags/giscafer/" style="font-size: 14px;">giscafer</a> <a href="/tags/git批处理/" style="font-size: 14px;">git批处理</a> <a href="/tags/gulp/" style="font-size: 17.67px;">gulp</a> <a href="/tags/ife/" style="font-size: 14px;">ife</a> <a href="/tags/im/" style="font-size: 14px;">im</a> <a href="/tags/ionic/" style="font-size: 17.67px;">ionic</a> <a href="/tags/jmp3/" style="font-size: 14px;">jmp3</a> <a href="/tags/leetcode/" style="font-size: 14px;">leetcode</a> <a href="/tags/mapReduce/" style="font-size: 14px;">mapReduce</a> <a href="/tags/mapshaper/" style="font-size: 14px;">mapshaper</a> <a href="/tags/mocha/" style="font-size: 14px;">mocha</a> <a href="/tags/mongoDB/" style="font-size: 14px;">mongoDB</a> <a href="/tags/mongoDB统计/" style="font-size: 14px;">mongoDB统计</a> <a href="/tags/node-oracledb/" style="font-size: 14px;">node-oracledb</a> <a href="/tags/node-js/" style="font-size: 14px;">node.js</a> <a href="/tags/node-js链接oracle/" style="font-size: 14px;">node.js链接oracle</a> <a href="/tags/npm/" style="font-size: 21.33px;">npm</a> <a href="/tags/promise/" style="font-size: 14px;">promise</a> <a href="/tags/react-redux/" style="font-size: 14px;">react-redux</a> <a href="/tags/redux/" style="font-size: 17.67px;">redux</a> <a href="/tags/should/" style="font-size: 14px;">should</a> <a href="/tags/swiftype/" style="font-size: 14px;">swiftype</a> <a href="/tags/tabs图标/" style="font-size: 14px;">tabs图标</a> <a href="/tags/vue/" style="font-size: 14px;">vue</a> <a href="/tags/webpack/" style="font-size: 14px;">webpack</a> <a href="/tags/webuploader/" style="font-size: 14px;">webuploader</a> <a href="/tags/前端习题/" style="font-size: 14px;">前端习题</a> <a href="/tags/前端优化/" style="font-size: 14px;">前端优化</a> <a href="/tags/前端构建/" style="font-size: 17.67px;">前端构建</a> <a href="/tags/前端面试/" style="font-size: 14px;">前端面试</a> <a href="/tags/排班管理/" style="font-size: 14px;">排班管理</a> <a href="/tags/日记/" style="font-size: 14px;">日记</a> <a href="/tags/畅言/" style="font-size: 14px;">畅言</a> <a href="/tags/短信发送/" style="font-size: 14px;">短信发送</a> <a href="/tags/算法/" style="font-size: 14px;">算法</a> <a href="/tags/考勤签到/" style="font-size: 14px;">考勤签到</a> <a href="/tags/阿里大鱼/" style="font-size: 14px;">阿里大鱼</a> <a href="/tags/阿里大鱼sdk/" style="font-size: 14px;">阿里大鱼sdk</a> <a href="/tags/随笔/" style="font-size: 14px;">随笔</a> <a href="/tags/项目/" style="font-size: 17.67px;">项目</a>
     </div>
   </div>
 
@@ -389,6 +387,10 @@
     <h3 class="widget-title recent-posts">最新文章</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2017/06/29/ionic3-question-answer/">ionic3开发遇到的一些问题及解决方法</a>
+          </li>
         
           <li>
             <a href="/2017/06/27/ionic3-tab-custom-icon/">ionic3之自定义tabs菜单图标</a>
@@ -406,10 +408,6 @@
             <a href="/2017/05/10/giser-just-do-it/">从GISer到互联网前端工程师，JUST DO IT</a>
           </li>
         
-          <li>
-            <a href="/2017/05/07/ng-im-sending-picture/">angular实现IM聊天图片发送</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -419,7 +417,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title archive">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">二月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">二月 2016</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">一月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">十二月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">十一月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">十月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">九月 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">八月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">十月 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">五月 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">四月 2014</a><span class="archive-list-count">4</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">二月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">二月 2016</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">一月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">十二月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">十一月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">十月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">九月 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">八月 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">十月 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">五月 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">四月 2014</a><span class="archive-list-count">4</span></li></ul>
     </div>
   </div>
 
