@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.giscafer.com/"/>
-  <updated>2017-07-03T13:56:28.179Z</updated>
+  <updated>2017-07-04T15:50:16.379Z</updated>
   <id>http://blog.giscafer.com/</id>
   
   <author>
@@ -14,6 +14,53 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ionic3之图片选择插件com.synconset.imagepicker</title>
+    <link href="http://blog.giscafer.com/2017/07/04/ionic-imagepicker/"/>
+    <id>http://blog.giscafer.com/2017/07/04/ionic-imagepicker/</id>
+    <published>2017-07-04T15:48:04.000Z</published>
+    <updated>2017-07-04T15:50:16.379Z</updated>
+    
+    <content type="html"><![CDATA[<p><code>com.synconset.imagepicker</code>插件是telerik团队开发提供。</p>
+<ul>
+<li>官网：<a href="http://plugins.telerik.com/cordova/plugin/imagepicker" target="_blank" rel="external">http://plugins.telerik.com/cordova/plugin/imagepicker</a></li>
+<li>github:<a href="https://github.com/Telerik-Verified-Plugins/ImagePicker" target="_blank" rel="external">https://github.com/Telerik-Verified-Plugins/ImagePicker</a></li>
+</ul>
+<p>使用命令安装 <code>ionic cordova plugin add cordova-plugin-image-picker</code></p>
+<p>安装后需要修改中文支持。</p>
+<a id="more"></a>
+<h2 id="multiimagechooser-strings-en-xml文件修改"><a href="#multiimagechooser-strings-en-xml文件修改" class="headerlink" title="multiimagechooser_strings_en.xml文件修改"></a>multiimagechooser_strings_en.xml文件修改</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="php"><span class="meta">&lt;?</span>xml version=<span class="string">"1.0"</span> encoding=<span class="string">"utf-8"</span><span class="meta">?&gt;</span></span></div><div class="line"><span class="tag">&lt;<span class="name">resources</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">string</span> <span class="attr">name</span>=<span class="string">"multi_app_name"</span>&gt;</span>图片选择器<span class="tag">&lt;/<span class="name">string</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">string</span> <span class="attr">name</span>=<span class="string">"free_version_label"</span>&gt;</span>还可以选择 %d 张图片<span class="tag">&lt;/<span class="name">string</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">string</span> <span class="attr">name</span>=<span class="string">"error_database"</span>&gt;</span>打开图像数据库时出错,请反馈问题.<span class="tag">&lt;/<span class="name">string</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">string</span> <span class="attr">name</span>=<span class="string">"requesting_thumbnails"</span>&gt;</span>请求缩略图，请耐心等待<span class="tag">&lt;/<span class="name">string</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">string</span> <span class="attr">name</span>=<span class="string">"multi_image_picker_processing_images_title"</span>&gt;</span>正在处理...<span class="tag">&lt;/<span class="name">string</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">string</span> <span class="attr">name</span>=<span class="string">"multi_image_picker_processing_images_message"</span>&gt;</span>请稍等...<span class="tag">&lt;/<span class="name">string</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">string</span> <span class="attr">name</span>=<span class="string">"discard"</span> <span class="attr">translatable</span>=<span class="string">"false"</span>&gt;</span>取消<span class="tag">&lt;/<span class="name">string</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">string</span> <span class="attr">name</span>=<span class="string">"done"</span> <span class="attr">translatable</span>=<span class="string">"false"</span>&gt;</span>确定<span class="tag">&lt;/<span class="name">string</span>&gt;</span></div><div class="line"> <span class="tag">&lt;/<span class="name">resources</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>直接用上边代码覆盖<code>xx_project\plugins\com.synconset.imagepicker\src\android\Library\res\values\multiimagechooser_strings_en.xml</code>文件中的东西。</p>
+<h2 id="MultiImageChooserActivity-java-弹窗汉化修改"><a href="#MultiImageChooserActivity-java-弹窗汉化修改" class="headerlink" title="MultiImageChooserActivity.java 弹窗汉化修改"></a>MultiImageChooserActivity.java 弹窗汉化修改</h2><p><code>工程\plugins\com.synconset.imagepicker\src\android\Library\src\MultiImageChooserActivity.java</code></p>
+<p>用下边代码覆盖方法<code>onItemClick</code>中的对应代码（Line 199）：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">new</span> AlertDialog.Builder(<span class="keyword">this</span>)</div><div class="line">                .setTitle(<span class="string">"提示"</span>)</div><div class="line">                .setMessage(<span class="string">"您只能选择"</span> + maxImageCount + <span class="string">" 张图片"</span>)</div><div class="line">                .setPositiveButton(<span class="string">"知道了"</span>, <span class="keyword">new</span> DialogInterface.OnClickListener() &#123;</div><div class="line">                    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(DialogInterface dialog, <span class="keyword">int</span> which)</span> </span>&#123;</div><div class="line">                        dialog.cancel();</div><div class="line">                    &#125;</div><div class="line">                &#125;)</div><div class="line">                .create()</div><div class="line">                .show();</div></pre></td></tr></table></figure>
+<p>注意的是每次移除plugins重新安装插件的话都要修改一次。比较麻烦。其实可以将插件源码修改自己发布插件，这样就不用每次修改了。</p>
+<p>github可以搜到别人汉化重新发布的插件，但是是两年前的，一直未更新，质量不敢保证，不怕麻烦就自己动手了。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;code&gt;com.synconset.imagepicker&lt;/code&gt;插件是telerik团队开发提供。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;官网：&lt;a href=&quot;http://plugins.telerik.com/cordova/plugin/imagepicker&quot;&gt;http://plugins.telerik.com/cordova/plugin/imagepicker&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;github:&lt;a href=&quot;https://github.com/Telerik-Verified-Plugins/ImagePicker&quot;&gt;https://github.com/Telerik-Verified-Plugins/ImagePicker&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;使用命令安装 &lt;code&gt;ionic cordova plugin add cordova-plugin-image-picker&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;安装后需要修改中文支持。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="http://blog.giscafer.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="Ionic" scheme="http://blog.giscafer.com/categories/%E6%8A%80%E6%9C%AF/Ionic/"/>
+    
+    
+      <category term="ionic" scheme="http://blog.giscafer.com/tags/ionic/"/>
+    
+      <category term="imagepicker" scheme="http://blog.giscafer.com/tags/imagepicker/"/>
+    
+  </entry>
   
   <entry>
     <title>ionic3开发遇到的一些问题及解决方法</title>
@@ -1052,43 +1099,6 @@
       <category term="mapshaper" scheme="http://blog.giscafer.com/tags/mapshaper/"/>
     
       <category term="echarts地图" scheme="http://blog.giscafer.com/tags/echarts%E5%9C%B0%E5%9B%BE/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>图片上传控件angluar-webuploader</title>
-    <link href="http://blog.giscafer.com/2016/04/23/project-angluar-webuploader/"/>
-    <id>http://blog.giscafer.com/2016/04/23/project-angluar-webuploader/</id>
-    <published>2016-04-23T14:47:13.000Z</published>
-    <updated>2017-03-05T13:59:36.541Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="简述"><a href="#简述" class="headerlink" title="简述"></a>简述</h2><p>最近公司做个项目需要使用AngularJS重新封装图片上传控件，支持IE低版本等，之间看过<code>JQuery-File-Upload</code>，尝试使用了一些，觉得文件太多，不好修改；最后使用<a href="http://fex.baidu.com/webuploader" target="_blank" rel="external">webuploader</a>时因为其简洁的界面和使用方便；</p>
-<p><code>angluar-webuploader</code>是使用angular指令封装的webuploader demo，弹窗上传图片，缩略图展示列表，翻页效果；支持点击缩略图查看大图详情；</p>
-<a id="more"></a>
-<h2 id="截图"><a href="#截图" class="headerlink" title="截图"></a>截图</h2><p><img src="https://raw.githubusercontent.com/giscafer/angular-webuploader/master/images/screenshot.png" alt="screenshot0"></p>
-<p><img src="https://raw.githubusercontent.com/giscafer/angular-webuploader/master/images/screenshot2.png" alt="screenshot1"></p>
-<p><img src="https://raw.githubusercontent.com/giscafer/angular-webuploader/master/images/screenshot1.png" alt="screenshot2"></p>
-<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>本demo没有给出java后台代码，后台代码也简单，一个文件读写+图片压缩，返回结果参考以下<code>json</code>格式；<br>然后将图片上传接口请求地址在<code>app.js</code>配置后即可。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">&#123;</div><div class="line">	<span class="string">"status"</span>:<span class="literal">true</span>,<span class="comment">//上传成功状态</span></div><div class="line">	<span class="string">"newName"</span>:<span class="string">"/test/temp/upload/picture/20160422/c0c0b8f7bc574ec88f891ff834b79bab.jpg"</span>,<span class="comment">//原图片路径</span></div><div class="line">	<span class="string">"thumbName"</span>:<span class="string">"/test/temp/upload/picture/20160422/thumb/c0c0b8f7bc574ec88f891ff834b79bab.jpg"</span><span class="comment">//缩略图路径</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<hr>
-<p>源码地址，欢迎学习交流<br><a href="https://github.com/giscafer/angular-webuploader" target="_blank" rel="external">https://github.com/giscafer/angular-webuploader</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;简述&quot;&gt;&lt;a href=&quot;#简述&quot; class=&quot;headerlink&quot; title=&quot;简述&quot;&gt;&lt;/a&gt;简述&lt;/h2&gt;&lt;p&gt;最近公司做个项目需要使用AngularJS重新封装图片上传控件，支持IE低版本等，之间看过&lt;code&gt;JQuery-File-Upload&lt;/code&gt;，尝试使用了一些，觉得文件太多，不好修改；最后使用&lt;a href=&quot;http://fex.baidu.com/webuploader&quot;&gt;webuploader&lt;/a&gt;时因为其简洁的界面和使用方便；&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;angluar-webuploader&lt;/code&gt;是使用angular指令封装的webuploader demo，弹窗上传图片，缩略图展示列表，翻页效果；支持点击缩略图查看大图详情；&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="技术" scheme="http://blog.giscafer.com/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-      <category term="项目&amp;Demo" scheme="http://blog.giscafer.com/categories/%E6%8A%80%E6%9C%AF/%E9%A1%B9%E7%9B%AE-Demo/"/>
-    
-    
-      <category term="webuploader" scheme="http://blog.giscafer.com/tags/webuploader/"/>
-    
-      <category term="angluar" scheme="http://blog.giscafer.com/tags/angluar/"/>
     
   </entry>
   
