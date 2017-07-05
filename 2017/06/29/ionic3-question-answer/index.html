@@ -16,7 +16,8 @@
 <meta property="og:image" content="http://blog.giscafer.com/static/img/ionic3-question-answer1.png">
 <meta property="og:image" content="http://blog.giscafer.com/static/img/ionic3-question-answer2.gif">
 <meta property="og:image" content="http://blog.giscafer.com/static/img/ionic3-question-answer3.png">
-<meta property="og:updated_time" content="2017-07-03T13:56:28.179Z">
+<meta property="og:image" content="http://blog.giscafer.com/static/images/qrcode_giscafer.jpg">
+<meta property="og:updated_time" content="2017-07-05T13:29:15.368Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ionic3开发遇到的一些问题及解决方法">
 <meta name="twitter:description" content="两年前，第一家公司用过ionic1开发过APP，当时对ionic1了解的不是很熟，今年公司重写APP更换技术框架为ionic3，配合ng4的开发，重新接触ionic app开发后，个人感觉开发上效率比较高，日后有时间会深入研究。下边是APP重写时遇到的一些问题总结。
@@ -155,12 +156,20 @@
 <ul>
 <li>参考文章: <a href="http://www.jianshu.com/p/6aa5a8318092" target="_blank" rel="external">http://www.jianshu.com/p/6aa5a8318092</a></li>
 </ul>
+<h2 id="IOS-真机click事件不灵敏问题"><a href="#IOS-真机click事件不灵敏问题" class="headerlink" title="IOS 真机click事件不灵敏问题"></a>IOS 真机click事件不灵敏问题</h2><p>点击的标签加上<code>tappable</code>属性</p>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;ion-item tappable *ngFor=<span class="string">"let page of pages"</span> (<span class="name">click</span>)=<span class="string">"openMenuPage(page)"</span>&gt;</div></pre></td></tr></table></figure>
+<p>参考文献</p>
+<ul>
+<li><a href="http://www.codingandclimbing.co.uk/blog/ionic-2-fix-ios-side-menu-double-tap-bug" target="_blank" rel="external">http://www.codingandclimbing.co.uk/blog/ionic-2-fix-ios-side-menu-double-tap-bug</a></li>
+<li><a href="https://github.com/ionic-team/ionic/issues/11616" target="_blank" rel="external">https://github.com/ionic-team/ionic/issues/11616</a></li>
+</ul>
+<h2 id="微信公众号"><a href="#微信公众号" class="headerlink" title="微信公众号"></a>微信公众号</h2><p><img src="http://blog.giscafer.com/static/images/qrcode_giscafer.jpg" alt="giscafer"></p>
 <p><em>未完待续……</em></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.giscafer.com/2017/06/29/ionic3-question-answer/" data-id="cj4pr4a70002vkoz59u1rschv" class="article-share-link">分享</a>
+      <a data-url="http://blog.giscafer.com/2017/06/29/ionic3-question-answer/" data-id="cj4r21xuq002fxgz53h0to4ly" class="article-share-link">分享</a>
       
       
       
@@ -262,7 +271,7 @@
       
         <strong class="toc-title">文章目录</strong>
         <div class="toc-widget-list">
-              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#不能使用组件名称作为条件判断依据"><span class="toc-number">1.</span> <span class="toc-text">不能使用组件名称作为条件判断依据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#图片的相对路径问题"><span class="toc-number">2.</span> <span class="toc-text">图片的相对路径问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ionic3新增了懒加载机制，-IonicPage"><span class="toc-number">3.</span> <span class="toc-text">ionic3新增了懒加载机制，@IonicPage()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ModalController自定义弹窗"><span class="toc-number">4.</span> <span class="toc-text">ModalController自定义弹窗</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#产品模式下，去掉所有无关功能的代码"><span class="toc-number">5.</span> <span class="toc-text">产品模式下，去掉所有无关功能的代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#图片组件删除缓冲域"><span class="toc-number">6.</span> <span class="toc-text">图片组件删除缓冲域</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#this-platform-ready-理解"><span class="toc-number">7.</span> <span class="toc-text">this.platform.ready()理解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#打包启动页卡住，需要按HOME键"><span class="toc-number">8.</span> <span class="toc-text">打包启动页卡住，需要按HOME键</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安卓物理返回键监听"><span class="toc-number">9.</span> <span class="toc-text">安卓物理返回键监听</span></a></li></ol>
+              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#不能使用组件名称作为条件判断依据"><span class="toc-number">1.</span> <span class="toc-text">不能使用组件名称作为条件判断依据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#图片的相对路径问题"><span class="toc-number">2.</span> <span class="toc-text">图片的相对路径问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ionic3新增了懒加载机制，-IonicPage"><span class="toc-number">3.</span> <span class="toc-text">ionic3新增了懒加载机制，@IonicPage()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ModalController自定义弹窗"><span class="toc-number">4.</span> <span class="toc-text">ModalController自定义弹窗</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#产品模式下，去掉所有无关功能的代码"><span class="toc-number">5.</span> <span class="toc-text">产品模式下，去掉所有无关功能的代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#图片组件删除缓冲域"><span class="toc-number">6.</span> <span class="toc-text">图片组件删除缓冲域</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#this-platform-ready-理解"><span class="toc-number">7.</span> <span class="toc-text">this.platform.ready()理解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#打包启动页卡住，需要按HOME键"><span class="toc-number">8.</span> <span class="toc-text">打包启动页卡住，需要按HOME键</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安卓物理返回键监听"><span class="toc-number">9.</span> <span class="toc-text">安卓物理返回键监听</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#IOS-真机click事件不灵敏问题"><span class="toc-number">10.</span> <span class="toc-text">IOS 真机click事件不灵敏问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#微信公众号"><span class="toc-number">11.</span> <span class="toc-text">微信公众号</span></a></li></ol>
           </div>
       </div>
     </div>

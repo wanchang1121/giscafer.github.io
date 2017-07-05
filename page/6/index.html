@@ -70,6 +70,59 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-npm-registry" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/03/08/npm-registry/" class="article-date">
+  <time datetime="2016-03-08T15:36:18.000Z" itemprop="datePublished">2016-03-08</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/开发手册/">开发手册</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/08/npm-registry/">npm设置淘宝镜像</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!-- Table of Contents -->
+        
+        <p>今晚使用npm下载<code>webpack</code>和其他插件时巨慢，这是以前从未遇到过的，所以就换了淘宝镜像，快了很多</p>
+<p>更换镜像方式很多种，参考官方<a href="http://npm.taobao.org/" target="_blank" rel="external">文档说明</a></p>
+<p>更方便的方式是，在c盘用户目录下，找到<code>.npmrc</code>文件，加入如下代码即可。</p>
+<figure class="highlight tcl"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">registry</span> = <span class="keyword">http</span>://<span class="keyword">registry</span>.npm.taobao.org</div></pre></td></tr></table></figure>
+<p>或者手动设置</p>
+<pre><code>npm config set registry http://registry.npm.taobao.org/
+</code></pre><p>但是这样做有个问题，发布npm插件的时候需要<code>npm adduser</code>，如果<code>.npmrc</code>文件填了这个的话，是登录不上的，<br>所以记得发布插件的时候删除了，或者是通过上边<code>文档说明</code>提供的其他方式解决。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.giscafer.com/2016/03/08/npm-registry/" data-id="cj4r21xvn003txgz5xig6guhe" class="article-share-link">分享</a>
+      
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/npm/">npm</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+ 
+
+
+  
     <article id="post-nodejs-mocha-test" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/02/12/nodejs-mocha-test/" class="article-date">
@@ -108,7 +161,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.giscafer.com/2016/02/12/nodejs-mocha-test/" data-id="cj4pr4a88003zkoz50i11860m" class="article-share-link">分享</a>
+      <a data-url="http://blog.giscafer.com/2016/02/12/nodejs-mocha-test/" data-id="cj4r21xvs0040xgz5hxkxhr0l" class="article-share-link">分享</a>
       
       
       
@@ -157,7 +210,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.giscafer.com/2016/02/11/diary-2016-02-11/" data-id="cj4pr4a5r001rkoz5ls064fob" class="article-share-link">分享</a>
+      <a data-url="http://blog.giscafer.com/2016/02/11/diary-2016-02-11/" data-id="cj4r21xq8000sxgz550w6zbk0" class="article-share-link">分享</a>
       
       
       
@@ -206,7 +259,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.giscafer.com/2016/02/10/alidayujs-npm/" data-id="cj4pr454l0002koz5qgl0xcng" class="article-share-link">分享</a>
+      <a data-url="http://blog.giscafer.com/2016/02/10/alidayujs-npm/" data-id="cj4r21x4m0001xgz53c3s1r6h" class="article-share-link">分享</a>
       
       
       
@@ -255,66 +308,11 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.giscafer.com/2016/02/05/mongodb-map-reduce/" data-id="cj4pr4a7y003jkoz5aqpx7dx4" class="article-share-link">分享</a>
+      <a data-url="http://blog.giscafer.com/2016/02/05/mongodb-map-reduce/" data-id="cj4r21xv80039xgz5c35iaf7y" class="article-share-link">分享</a>
       
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mapReduce/">mapReduce</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mongoDB/">mongoDB</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mongoDB统计/">mongoDB统计</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
- 
-
-
-  
-    <article id="post-nodejs-overflow-question" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/02/05/nodejs-overflow-question/" class="article-date">
-  <time datetime="2016-02-05T06:18:08.000Z" itemprop="datePublished">2016-02-05</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/开发手册/">开发手册</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/05/nodejs-overflow-question/">NodeJS开发常见错误A&amp;Q</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="0、NodeJS调试介绍"><a href="#0、NodeJS调试介绍" class="headerlink" title="0、NodeJS调试介绍"></a>0、NodeJS调试介绍</h2><p>级别从高到低，推荐到不推荐：</p>
-<ol>
-<li>ttd/bdd测试驱动</li>
-<li>node-inspector，vsc编辑器，webstrom；</li>
-<li>node-debug</li>
-<li>console.log</li>
-</ol>
-        
-          <p class="article-more-link">
-            <a href="/2016/02/05/nodejs-overflow-question/#more">继续阅读全文 »</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://blog.giscafer.com/2016/02/05/nodejs-overflow-question/" data-id="cj4pr4a8h004akoz589o6qmtr" class="article-share-link">分享</a>
-      
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/NodeJS/">NodeJS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Q-A/">Q&A</a></li></ul>
 
     </footer>
   </div>
@@ -350,6 +348,10 @@
       <ul>
         
           <li>
+            <a href="/2017/07/05/ionic-custom-component/">ionic-custom-component</a>
+          </li>
+        
+          <li>
             <a href="/2017/07/04/ionic-imagepicker/">ionic3之图片选择插件com.synconset.imagepicker</a>
           </li>
         
@@ -363,10 +365,6 @@
         
           <li>
             <a href="/2017/06/19/ionic-md-action-sheet/">ionic3 之Android的actionsheet渲染和ios一致</a>
-          </li>
-        
-          <li>
-            <a href="/2017/06/07/hexo-changyan/">Hexo博客畅言评论插件试用</a>
           </li>
         
       </ul>
