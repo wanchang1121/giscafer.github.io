@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.giscafer.com/"/>
-  <updated>2017-07-05T13:56:20.301Z</updated>
+  <updated>2017-07-06T15:33:47.509Z</updated>
   <id>http://blog.giscafer.com/</id>
   
   <author>
@@ -20,10 +20,10 @@
     <link href="http://blog.giscafer.com/2017/07/05/ionic-custom-component/"/>
     <id>http://blog.giscafer.com/2017/07/05/ionic-custom-component/</id>
     <published>2017-07-05T13:30:04.000Z</published>
-    <updated>2017-07-05T13:56:20.301Z</updated>
+    <updated>2017-07-06T15:33:47.509Z</updated>
     
     <content type="html"><![CDATA[<p>ionic3官方提供了较多好用的组件和API。但是有些时候，我们用到的交互方式，官方的组件不是全都满足的。比如类似网易新闻APP，菜单的滑动效果。或者一些和业务接口紧密联系的组件。</p>
-<h2 id="滑动菜单效果实现"><a href="#滑动菜单效果实现" class="headerlink" title="滑动菜单效果实现"></a>滑动菜单效果实现</h2><p>网上有<code>tabs + slides</code>封装的，但是不满足我们的业务需求，原因是tabs是用来做菜单，不支持多个的时候滑动效果，当分类超过6个以上，大于屏幕宽度后，就不行了。所以只能是<code>slides + slides</code>组合。</p>
+<h2 id="滑动菜单效果实现"><a href="#滑动菜单效果实现" class="headerlink" title="滑动菜单效果实现"></a>滑动菜单效果实现</h2><p> 推荐使用插件<a href="https://github.com/zyra/ionic2-super-tabs" target="_blank" rel="external">ionic2-super-tabs</a>，功能强大。下边是<code>slides + slides</code>组合挖坑尝试</p>
 <p>最终效果如下：</p>
 <p><img src="/static/img/ionic3-custom-component1.gif" alt="slides+slides实现菜单滑动"></p>
 <a id="more"></a>
@@ -61,7 +61,7 @@
     <summary type="html">
     
       &lt;p&gt;ionic3官方提供了较多好用的组件和API。但是有些时候，我们用到的交互方式，官方的组件不是全都满足的。比如类似网易新闻APP，菜单的滑动效果。或者一些和业务接口紧密联系的组件。&lt;/p&gt;
-&lt;h2 id=&quot;滑动菜单效果实现&quot;&gt;&lt;a href=&quot;#滑动菜单效果实现&quot; class=&quot;headerlink&quot; title=&quot;滑动菜单效果实现&quot;&gt;&lt;/a&gt;滑动菜单效果实现&lt;/h2&gt;&lt;p&gt;网上有&lt;code&gt;tabs + slides&lt;/code&gt;封装的，但是不满足我们的业务需求，原因是tabs是用来做菜单，不支持多个的时候滑动效果，当分类超过6个以上，大于屏幕宽度后，就不行了。所以只能是&lt;code&gt;slides + slides&lt;/code&gt;组合。&lt;/p&gt;
+&lt;h2 id=&quot;滑动菜单效果实现&quot;&gt;&lt;a href=&quot;#滑动菜单效果实现&quot; class=&quot;headerlink&quot; title=&quot;滑动菜单效果实现&quot;&gt;&lt;/a&gt;滑动菜单效果实现&lt;/h2&gt;&lt;p&gt; 推荐使用插件&lt;a href=&quot;https://github.com/zyra/ionic2-super-tabs&quot;&gt;ionic2-super-tabs&lt;/a&gt;，功能强大。下边是&lt;code&gt;slides + slides&lt;/code&gt;组合挖坑尝试&lt;/p&gt;
 &lt;p&gt;最终效果如下：&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;/static/img/ionic3-custom-component1.gif&quot; alt=&quot;slides+slides实现菜单滑动&quot;&gt;&lt;/p&gt;
     

@@ -6,21 +6,24 @@
   <title>ionic3之组件封装篇 | Giscafer&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="ionic3官方提供了较多好用的组件和API。但是有些时候，我们用到的交互方式，官方的组件不是全都满足的。比如类似网易新闻APP，菜单的滑动效果。或者一些和业务接口紧密联系的组件。
-滑动菜单效果实现网上有tabs + slides封装的，但是不满足我们的业务需求，原因是tabs是用来做菜单，不支持多个的时候滑动效果，当分类超过6个以上，大于屏幕宽度后，就不行了。所以只能是slides + slid">
+滑动菜单效果实现 推荐使用插件ionic2-super-tabs，功能强大。下边是slides + slides组合挖坑尝试
+最终效果如下：">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ionic3之组件封装篇">
 <meta property="og:url" content="http://blog.giscafer.com/2017/07/05/ionic-custom-component/index.html">
 <meta property="og:site_name" content="Giscafer's blog">
 <meta property="og:description" content="ionic3官方提供了较多好用的组件和API。但是有些时候，我们用到的交互方式，官方的组件不是全都满足的。比如类似网易新闻APP，菜单的滑动效果。或者一些和业务接口紧密联系的组件。
-滑动菜单效果实现网上有tabs + slides封装的，但是不满足我们的业务需求，原因是tabs是用来做菜单，不支持多个的时候滑动效果，当分类超过6个以上，大于屏幕宽度后，就不行了。所以只能是slides + slid">
+滑动菜单效果实现 推荐使用插件ionic2-super-tabs，功能强大。下边是slides + slides组合挖坑尝试
+最终效果如下：">
 <meta property="og:image" content="http://blog.giscafer.com/static/img/ionic3-custom-component1.gif">
 <meta property="og:image" content="http://blog.giscafer.com/static/img/ionic3-custom-component2.gif">
 <meta property="og:image" content="http://blog.giscafer.com/static/images/qrcode_giscafer.jpg">
-<meta property="og:updated_time" content="2017-07-05T13:56:20.301Z">
+<meta property="og:updated_time" content="2017-07-06T15:33:47.509Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ionic3之组件封装篇">
 <meta name="twitter:description" content="ionic3官方提供了较多好用的组件和API。但是有些时候，我们用到的交互方式，官方的组件不是全都满足的。比如类似网易新闻APP，菜单的滑动效果。或者一些和业务接口紧密联系的组件。
-滑动菜单效果实现网上有tabs + slides封装的，但是不满足我们的业务需求，原因是tabs是用来做菜单，不支持多个的时候滑动效果，当分类超过6个以上，大于屏幕宽度后，就不行了。所以只能是slides + slid">
+滑动菜单效果实现 推荐使用插件ionic2-super-tabs，功能强大。下边是slides + slides组合挖坑尝试
+最终效果如下：">
 <meta name="twitter:image" content="http://blog.giscafer.com/static/img/ionic3-custom-component1.gif">
   
     <link rel="alternate" href="/atom.xml" title="Giscafer&#39;s blog" type="application/atom+xml">
@@ -105,7 +108,7 @@
         <!-- Table of Contents -->
         
         <p>ionic3官方提供了较多好用的组件和API。但是有些时候，我们用到的交互方式，官方的组件不是全都满足的。比如类似网易新闻APP，菜单的滑动效果。或者一些和业务接口紧密联系的组件。</p>
-<h2 id="滑动菜单效果实现"><a href="#滑动菜单效果实现" class="headerlink" title="滑动菜单效果实现"></a>滑动菜单效果实现</h2><p>网上有<code>tabs + slides</code>封装的，但是不满足我们的业务需求，原因是tabs是用来做菜单，不支持多个的时候滑动效果，当分类超过6个以上，大于屏幕宽度后，就不行了。所以只能是<code>slides + slides</code>组合。</p>
+<h2 id="滑动菜单效果实现"><a href="#滑动菜单效果实现" class="headerlink" title="滑动菜单效果实现"></a>滑动菜单效果实现</h2><p> 推荐使用插件<a href="https://github.com/zyra/ionic2-super-tabs" target="_blank" rel="external">ionic2-super-tabs</a>，功能强大。下边是<code>slides + slides</code>组合挖坑尝试</p>
 <p>最终效果如下：</p>
 <p><img src="/static/img/ionic3-custom-component1.gif" alt="slides+slides实现菜单滑动"></p>
 <a id="more"></a>
