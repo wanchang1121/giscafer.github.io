@@ -133,7 +133,7 @@
     <link href="http://blog.giscafer.com/2017/06/29/ionic3-question-answer/"/>
     <id>http://blog.giscafer.com/2017/06/29/ionic3-question-answer/</id>
     <published>2017-06-29T14:06:54.000Z</published>
-    <updated>2017-07-05T13:29:15.368Z</updated>
+    <updated>2017-07-12T15:05:29.956Z</updated>
     
     <content type="html"><![CDATA[<p>两年前，第一家公司用过ionic1开发过APP，当时对ionic1了解的不是很熟，今年公司重写APP更换技术框架为ionic3，配合ng4的开发，重新接触ionic app开发后，个人感觉开发上效率比较高，日后有时间会深入研究。下边是APP重写时遇到的一些问题总结。</p>
 <h2 id="不能使用组件名称作为条件判断依据"><a href="#不能使用组件名称作为条件判断依据" class="headerlink" title="不能使用组件名称作为条件判断依据"></a>不能使用组件名称作为条件判断依据</h2><p>为了实现token失效或超时登录，接口拦截请求跳转登录页面，起初我用了组件名称LoginPage作为判断，因为首页请求三个接口，进入首页的时候，三次请求都会判断为token失效，都会跳转登录页面，如果不做当前是否为登录页面判断，都跳转登录页面的话，会出现三次登录页面的重复跳转。</p>
@@ -193,6 +193,7 @@
 <li><a href="http://www.codingandclimbing.co.uk/blog/ionic-2-fix-ios-side-menu-double-tap-bug" target="_blank" rel="external">http://www.codingandclimbing.co.uk/blog/ionic-2-fix-ios-side-menu-double-tap-bug</a></li>
 <li><a href="https://github.com/ionic-team/ionic/issues/11616" target="_blank" rel="external">https://github.com/ionic-team/ionic/issues/11616</a></li>
 </ul>
+<h2 id="魅族手机cordova-plugin-camera"><a href="#魅族手机cordova-plugin-camera" class="headerlink" title="魅族手机cordova-plugin-camera"></a>魅族手机cordova-plugin-camera</h2><p><code>cordova-plugin-camera</code>插件allowEdit属性设置,在魅族手机进入相册选择图片的时候会卡着不动。去掉就可以了。<br>拍照则是正常的。</p>
 <h2 id="微信公众号"><a href="#微信公众号" class="headerlink" title="微信公众号"></a>微信公众号</h2><p><img src="http://blog.giscafer.com/static/images/qrcode_giscafer.jpg" alt="giscafer"></p>
 <p><em>未完待续……</em></p>
 ]]></content>

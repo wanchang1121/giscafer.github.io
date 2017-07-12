@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.giscafer.com/2017/06/29/ionic3-question-answer/</loc>
+    
+    <lastmod>2017-07-12T15:05:29.956Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blog.giscafer.com/2017/07/04/ionic-imagepicker/</loc>
     
     <lastmod>2017-07-07T13:41:33.775Z</lastmod>
@@ -12,13 +19,6 @@
     <loc>http://blog.giscafer.com/2017/07/05/ionic-custom-component/</loc>
     
     <lastmod>2017-07-06T15:33:47.509Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.giscafer.com/2017/06/29/ionic3-question-answer/</loc>
-    
-    <lastmod>2017-07-05T13:29:15.368Z</lastmod>
     
   </url>
   
