@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.giscafer.com/aboutme/cv.html</loc>
+    
+    <lastmod>2017-10-09T12:42:47.244Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blog.giscafer.com/2017/10/09/gis520-close-site/</loc>
     
-    <lastmod>2017-10-09T12:31:42.177Z</lastmod>
+    <lastmod>2017-10-09T12:38:39.385Z</lastmod>
     
   </url>
   
@@ -75,13 +82,6 @@
     <loc>http://blog.giscafer.com/2017/01/20/react-redux-cityfilter-demo/</loc>
     
     <lastmod>2017-06-01T15:34:52.310Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.giscafer.com/aboutme/cv.html</loc>
-    
-    <lastmod>2017-05-14T14:17:43.138Z</lastmod>
     
   </url>
   
