@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.giscafer.com/"/>
-  <updated>2017-07-06T15:33:47.509Z</updated>
+  <updated>2017-10-09T12:31:42.177Z</updated>
   <id>http://blog.giscafer.com/</id>
   
   <author>
@@ -14,6 +14,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>GIS520论坛关闭停止运营</title>
+    <link href="http://blog.giscafer.com/2017/10/09/gis520-close-site/"/>
+    <id>http://blog.giscafer.com/2017/10/09/gis520-close-site/</id>
+    <published>2017-10-09T12:13:59.000Z</published>
+    <updated>2017-10-09T12:31:42.177Z</updated>
+    
+    <content type="html"><![CDATA[<p>网址从2013年4月24日运营到2017年10月8日，会员数约4W左右，PV后期并不是很活跃。起初搭建GIS520论坛的初衷是，国内GIS论坛并不活跃，都是冷淡或者放养没人管的；当初是学生，拥有这理想和激情，想通过自己搭建一个论坛，定位为GIS学习交流平台，GIS爱好者联盟，提升业界专业互联网社区活跃度，让广大同学有一个可以更好学习和交流的地方。</p>
+<p>然而，理想和现实差距比较大，最后还没能达到自己理想的目标，所以关站是必然的。</p>
+<p>最后，尽管GIS520社区没了，有机会我还会通过其他平台，视频或者文章的方式，分享一些自己的经验和技术。最后最后，感谢大家！</p>
+<p><img src="./static/img/20171009200748.png" alt=""></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;网址从2013年4月24日运营到2017年10月8日，会员数约4W左右，PV后期并不是很活跃。起初搭建GIS520论坛的初衷是，国内GIS论坛并不活跃，都是冷淡或者放养没人管的；当初是学生，拥有这理想和激情，想通过自己搭建一个论坛，定位为GIS学习交流平台，GIS爱好者联盟
+    
+    </summary>
+    
+      <category term="技术" scheme="http://blog.giscafer.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+      <category term="网站运营" scheme="http://blog.giscafer.com/categories/%E6%8A%80%E6%9C%AF/%E7%BD%91%E7%AB%99%E8%BF%90%E8%90%A5/"/>
+    
+    
+      <category term="gis520" scheme="http://blog.giscafer.com/tags/gis520/"/>
+    
+  </entry>
   
   <entry>
     <title>ionic3之组件封装篇</title>
@@ -91,7 +119,7 @@
 <p>使用命令安装 <code>ionic cordova plugin add cordova-plugin-image-picker</code></p>
 <p>安装后需要修改中文支持。</p>
 <a id="more"></a>
-<h2 id="Android"><a href="#Android" class="headerlink" title="Android"></a>Android</h2><h3 id="multiimagechooser-strings-en-xml文件修改"><a href="#multiimagechooser-strings-en-xml文件修改" class="headerlink" title="multiimagechooser_strings_en.xml文件修改"></a>multiimagechooser_strings_en.xml文件修改</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">&lt;?xml version="1.0" encoding="utf-8"?&gt;</div><div class="line"><span class="tag">&lt;<span class="name">resources</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">string</span> <span class="attr">name</span>=<span class="string">"multi_app_name"</span>&gt;</span>图片选择器<span class="tag">&lt;/<span class="name">string</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">string</span> <span class="attr">name</span>=<span class="string">"free_version_label"</span>&gt;</span>还可以选择 %d 张图片<span class="tag">&lt;/<span class="name">string</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">string</span> <span class="attr">name</span>=<span class="string">"error_database"</span>&gt;</span>打开图像数据库时出错,请反馈问题.<span class="tag">&lt;/<span class="name">string</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">string</span> <span class="attr">name</span>=<span class="string">"requesting_thumbnails"</span>&gt;</span>请求缩略图，请耐心等待<span class="tag">&lt;/<span class="name">string</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">string</span> <span class="attr">name</span>=<span class="string">"multi_image_picker_processing_images_title"</span>&gt;</span>正在处理...<span class="tag">&lt;/<span class="name">string</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">string</span> <span class="attr">name</span>=<span class="string">"multi_image_picker_processing_images_message"</span>&gt;</span>请稍等...<span class="tag">&lt;/<span class="name">string</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">string</span> <span class="attr">name</span>=<span class="string">"discard"</span> <span class="attr">translatable</span>=<span class="string">"false"</span>&gt;</span>取消<span class="tag">&lt;/<span class="name">string</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">string</span> <span class="attr">name</span>=<span class="string">"done"</span> <span class="attr">translatable</span>=<span class="string">"false"</span>&gt;</span>确定<span class="tag">&lt;/<span class="name">string</span>&gt;</span></div><div class="line"> <span class="tag">&lt;/<span class="name">resources</span>&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="Android"><a href="#Android" class="headerlink" title="Android"></a>Android</h2><h3 id="multiimagechooser-strings-en-xml文件修改"><a href="#multiimagechooser-strings-en-xml文件修改" class="headerlink" title="multiimagechooser_strings_en.xml文件修改"></a>multiimagechooser_strings_en.xml文件修改</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="php"><span class="meta">&lt;?</span>xml version=<span class="string">"1.0"</span> encoding=<span class="string">"utf-8"</span><span class="meta">?&gt;</span></span></div><div class="line"><span class="tag">&lt;<span class="name">resources</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">string</span> <span class="attr">name</span>=<span class="string">"multi_app_name"</span>&gt;</span>图片选择器<span class="tag">&lt;/<span class="name">string</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">string</span> <span class="attr">name</span>=<span class="string">"free_version_label"</span>&gt;</span>还可以选择 %d 张图片<span class="tag">&lt;/<span class="name">string</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">string</span> <span class="attr">name</span>=<span class="string">"error_database"</span>&gt;</span>打开图像数据库时出错,请反馈问题.<span class="tag">&lt;/<span class="name">string</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">string</span> <span class="attr">name</span>=<span class="string">"requesting_thumbnails"</span>&gt;</span>请求缩略图，请耐心等待<span class="tag">&lt;/<span class="name">string</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">string</span> <span class="attr">name</span>=<span class="string">"multi_image_picker_processing_images_title"</span>&gt;</span>正在处理...<span class="tag">&lt;/<span class="name">string</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">string</span> <span class="attr">name</span>=<span class="string">"multi_image_picker_processing_images_message"</span>&gt;</span>请稍等...<span class="tag">&lt;/<span class="name">string</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">string</span> <span class="attr">name</span>=<span class="string">"discard"</span> <span class="attr">translatable</span>=<span class="string">"false"</span>&gt;</span>取消<span class="tag">&lt;/<span class="name">string</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">string</span> <span class="attr">name</span>=<span class="string">"done"</span> <span class="attr">translatable</span>=<span class="string">"false"</span>&gt;</span>确定<span class="tag">&lt;/<span class="name">string</span>&gt;</span></div><div class="line"> <span class="tag">&lt;/<span class="name">resources</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>直接用上边代码覆盖<code>xx_project\plugins\com.synconset.imagepicker\src\android\Library\res\values\multiimagechooser_strings_en.xml</code>文件中的东西。</p>
 <h3 id="MultiImageChooserActivity-java-弹窗汉化修改"><a href="#MultiImageChooserActivity-java-弹窗汉化修改" class="headerlink" title="MultiImageChooserActivity.java 弹窗汉化修改"></a>MultiImageChooserActivity.java 弹窗汉化修改</h3><p><code>工程\plugins\com.synconset.imagepicker\src\android\Library\src\MultiImageChooserActivity.java</code></p>
 <p>用下边代码覆盖方法<code>onItemClick</code>中的对应代码（Line 199）：</p>
@@ -948,9 +976,9 @@
     
       <category term="cafe" scheme="http://blog.giscafer.com/tags/cafe/"/>
     
-      <category term="Hexo" scheme="http://blog.giscafer.com/tags/Hexo/"/>
-    
       <category term="项目" scheme="http://blog.giscafer.com/tags/%E9%A1%B9%E7%9B%AE/"/>
+    
+      <category term="Hexo" scheme="http://blog.giscafer.com/tags/Hexo/"/>
     
   </entry>
   
@@ -1081,70 +1109,6 @@
     
     
       <category term="git批处理" scheme="http://blog.giscafer.com/tags/git%E6%89%B9%E5%A4%84%E7%90%86/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>前端面试笔记</title>
-    <link href="http://blog.giscafer.com/2016/08/10/the-interveiw-for-a-second-job/"/>
-    <id>http://blog.giscafer.com/2016/08/10/the-interveiw-for-a-second-job/</id>
-    <published>2016-08-10T09:02:41.000Z</published>
-    <updated>2016-12-14T16:48:30.875Z</updated>
-    
-    <content type="html"><![CDATA[<p>面试邀请很多，最后只面试了4个，一方面心累了，一方面想通过新的平台再加强一下自己，今后再次去尝试。<br><a id="more"></a></p>
-<h3 id="2016-8-4-下午"><a href="#2016-8-4-下午" class="headerlink" title="2016-8-4 下午"></a>2016-8-4 下午</h3><p>下午，面试了本周第一家公司（这也是两年以来，第二次面对面的面试，第一次是北京的老东家，一干就干了2年整），这次面试的是一家做闪购的公司，公司办公地理位置好，环境不错，主要做的是App产品，去了才知道招聘的前端就主要是App的前端，这也是我最弱的地方了，一直做PC端的前端，在今年的6月份，离职前两个月，才接手一个ionic+angularjs相关的H5 App开发，功能模块的开发，当时时间紧张，所有的时间都花费在功能模块的开发，界面UI这些都是用现成的ionic的样式或者bootstrap样式；也就是没有设计美化UI，直接开发功能。<br>这是传统行业的特点，开发的时候都优先功能第一。</p>
-<p>一直以来，我的App前端UI方向可以说是没有实践过的，给出一个设计图，通过HTML/CSS来仿真出来是有点困难，因为在老东家，这些都被美工、UI设计师包揽了。我能做的是在他们设计好的成品上进行简单的修改和调整，我是属<code>于偏JS方向的前端开发工程师</code></p>
-<p><strong>面试过程：</strong><br>一、首先，填写个人资料，然后可能有笔试（前台给我拿了Linux运维的笔试题，猜想可能没准备前端笔试题目，所以我就没有参加笔试吧）。</p>
-<p>二、然后，来了两人面试，一个负责技术提问，问了一些前端相关的问题，还有一些页面适配等问题；问的前端问题我是都会的，答得可能不好而已吧，我属于一个不善于表述的……但是问了手机端的页面适配，CSS相关的问题的话，我就捉急了，简单的可以，再深一点那就不行了，毕竟实践少，也没机会，业余学习也没注重。</p>
-<p><strong>其他问题：</strong><br>1、JavaScript实现继承的方式有哪些；<br>2、call/apply的区别；<br>3、闭包了解；<br>4、对AMD、CMD规范的认识和区别；</p>
-<p>三、最后，来了一个人，可能是技术负责相关人员，进来叫我简单的自我介绍一下，我就两句话就介绍完了，o(╯□╰)o，说了自己的意图而已。<br>这个面试官有3个问题：<br>1、一个网页打开比较慢的时候，你怎么去排除问题，会怀疑哪里出了问题？怎么解决这些问题？<br>2、如何清除浏览器的脏缓存？<br>3、你觉得你比别人优越在哪？</p>
-<p>四、最终，hr进来大致了解一下情况，问一下以前的薪资，目前期望的薪资，个人情况和以前公司的大致情况等内容。</p>
-<p><strong>总结：</strong><br>面试体验：怎个面试过程比较友善，面试官态度很好，最后都会问一下有没有想了解的问题<br>个人方面缺陷总结：<br>1、切片相关的技能，要加强，加强CSS技能<br>2、手机端相关的规范，布局、排版加强了解，最好是通过开发实践去学习<br>3、加强面试技巧，让自己会的都能表达出来，展示自己与别人不同的一面</p>
-<h3 id="2016-8-5-下午"><a href="#2016-8-5-下午" class="headerlink" title="2016-8-5 下午"></a>2016-8-5 下午</h3><p>满满的面试安排，都推掉了，周二台风，一周就两个面试，早上都睡懒觉了，明天周末，又要休息两天；这不紧不慢的找工作，没谁了。。。<br>今天下午14:00面试，是一家做政务相关OA产品的公司，和老东家很详细啊，去了才清楚是做传统软件的。</p>
-<p>面试流程：<br>一、填写表格；</p>
-<p>二、hr面试，简单了解一下情况；</p>
-<p>三、1道题上机，递归实现一个无限层级菜单（做不出来，囧~~，CSS实现样式效果是很大的硬伤，瞬间没心情了）</p>
-<p>四、没做出来也继续和前端小组负责人面试，大致说了一些他们公司目前的工作情况，问了好几次我有没有要了解的问题，我都说没有。。。。</p>
-<p>因为没有心情了，也没想问什么问题，最后问了几个简单的JavaScript基础问题；</p>
-<p>1、js继承，call,apply使用</p>
-<p>2、jquery的$.click和$.on(‘click’)方式绑定的区别，html的onclick属性和addEventListener绑定点击事件的区别；</p>
-<p>3、jquery源码中的$.extend和fn.extend两者区别和$.extend是如何接收参数的。</p>
-<p>4、如何对一篇文章全文检索某个字并高亮；</p>
-<p>5、有没有使用过jquery的$.proxy方法，此方法的作用</p>
-<p>五、技术负责人面完，我直接走了，我以为可以走了。都说好通知联系的；座上地铁后，HR打电话来说，经理想对我面试，可以商量一下薪资问题，能不能回来？我说不回去了……如果薪资不能满足简历要求，那就不联系了吧。。。其实按理还是回去比较好，出于礼貌，或者可以说是技术人员面试完，没说让我再坐一下，已经和我说如果可以，考虑什么时间入职，我说下下周一，然后就走了，挂我咯，主要还是不想回去，因为工作内容太像老东家，想换种工作模式。。。（完）</p>
-<h3 id="2016-8-8-上午"><a href="#2016-8-8-上午" class="headerlink" title="2016-8-8 上午"></a>2016-8-8 上午</h3><p>今天是周一，上午去面试一家做汽车相关App的公司，办公环境很好，只是位置交通和宿舍之间交通不方便，步行很久。这家公司招聘的前端主要是做App页面和一些活动展示页，要求是CSS+JQuery+HTML5精通，能随手写出一个jquery插件，比如照片轮播插件等，这也完全是我的弱项。面试随意问了一些，看简历情况提问，问了如何设计一个照片轮播插件；apply/call区别，promise最后的处理，如何判断一个方法是否属于这个类等。然后就没然后了……叫我回来好好补一下CSS+HTML5这些，才能转前端，终归到底，还是要求偏向CSS的前端工程师……</p>
-<h3 id="2016-8-8-下午"><a href="#2016-8-8-下午" class="headerlink" title="2016-8-8 下午"></a>2016-8-8 下午</h3><p>下午面试，是一家北京公司，广州分公司和亿迅合作做项目的，去了亿迅工作大厦面试，工作环境一般；流程是先笔试后面试；<br>笔试大概题目（以下就大概描述方向）：<br><strong>JavaScript基础问题：</strong><br>1、JavaScript操作CSS的float属性left（注意IE的区别）<br>2、正则判断一个字符串是否是Email<br>3、一道JavaScript题目，写出执行结果（考点主要是一些变量域+语句执行顺序等）<br>4、什么是闭包？写出一个闭包的例子。<br>5、add(2)(3)(4)的执行结果为9，写出函数体。<br><strong>JQuery问题：</strong><br>6、你是否了解jquery的$.ready方法？它是如何实现的？</p>
-<p>7、你是否了解jquery的$.Deferred对象？它是用来解决什么问题？</p>
-<p>8、一道插件题，说设计一个tab标签的话，你会提供是吗接口，给出什么功能，如果用户频繁的切换，会造成什么问题？怎么解决？<br><strong>Angular问题</strong><br>9、MVVM是什么？</p>
-<p>10、谈谈Controller、Factory/Service、Filter的作用和区别？</p>
-<p>11、不同的Controller直接是如何通信（传值）的？</p>
-<p>12、请写出你Angular项目的目录结构？</p>
-<p><strong>扩展题</strong></p>
-<p>13、你还关注什么前沿的技术？谈谈他们的优势。</p>
-<p>以上是笔试的大概内容，一共是三页题目，如果JavaScript基础牢，jquery熟悉，然后源码研究了解过的话，题目是不难的。angular考点也是基础问题。<br>面试官面试很快，估计是比较忙，赶时间。过来叫我自我介绍一下，然后问做过什么项目，简单说一下。问GET/POST在Restful中的区别，angular的MVVM的理解，<br>然后就没问多少，问一下期待薪资，然后就结束了。</p>
-<h3 id="个人总结："><a href="#个人总结：" class="headerlink" title="个人总结："></a>个人总结：</h3><p>1、首先，离开帝都回广州发展，个人是裸辞，加上广州这边没认识的人，更没有程序猿的人脉；完全是靠自己回来闯，主要还是带着女票回来。来广州的时候，先主要解决租房子问题，租房子的过程，女朋友也一边去面试，两次面试两次都通过，实在厉害，最后确定了一家公司。最后我们用四天的时间找到了房子租，每个月1700的房租，找到房子后，我就开始网上投简历……</p>
-<p>2、简历我选择了在拉勾网和前程无忧上放，拉钩的简历投过去反应太慢，有反应了等回复也需要好几天（所以建议简历提前投），那这样我就放更长的假期了；<br>前程无忧我大概投了5、6个公司，然后等消息，最终情况是，我选择投简历的公司都没有回应。但是，在前程无忧上刚放简历一天，就每天有十多个HR电话打过来， 前面的几天都在接电话，安排面试时间，主要的问题是，HR通过简单的公司介绍我都没能了解完全是个什么样子的公司，我不想不清楚是什么公司就去面试，避免浪费时间，迫不得已，我把前程无忧上的简历关闭掉了。</p>
-<p>3、一共可能有20多个面试电话，GIS的也有好些个，GIS的面试邀请我是直接拒绝的，理由是不想再做GIS方向，因为传统的GIS行业+给政府做的项目、系统，都很随意，有点像堆功能似得，和个人追求相悖。刚开始面试也是有点懒散，起初安排早上的面试都没去，原因是睡懒觉+下大雨+有点远。于是我第一周面试只面试了一家……</p>
-<p>4、第二周，我觉得不应该那么任性了，已经无业好几周了，觉得无聊，最终尝试了几个互联网前端岗位后，都要求CSS+HTML5比较高，高强度还原PS页面+兼容各个终端，自己胜任不了，以前关注重点都在JavaScript上了，CSS太弱，偏JavaScript，但是没接到偏JS前端的面试邀请呀。</p>
-<p>5、目前的公司是用Angular+ES6的开发模式，用到Nodejs等，和自己之前学习的有共同部分，只是前端岗位没有要求去做CSS+HTML5那种高还原PS美工页面，打算先干着然后业余加技能，学精。</p>
-<p><strong>6、学习目标：在现有工作胜任后，加强CSS+HTML5，以及精通JQuery插件书写，能手写CSS，高强度还原PS设计稿，兼容各个终端，加强HTML5 APP方向（这是理想的计划，目前自己还是偏向JS的前端开发,JS这边也要加强）</strong></p>
-<h3 id="给跳槽的前端同学们建议："><a href="#给跳槽的前端同学们建议：" class="headerlink" title="给跳槽的前端同学们建议："></a>给跳槽的前端同学们建议：</h3><p>1、能不裸辞尽量别裸辞，提前投简历</p>
-<p>2、简历不需要太多的装饰，只需要列出自己熟练掌握的技能，工作经验内容+项目列表，最重要的是，能提供项目或者作品展示最后（起码前端来说是最好的）</p>
-<p>3、基础要牢固，框架的源码要了解</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;面试邀请很多，最后只面试了4个，一方面心累了，一方面想通过新的平台再加强一下自己，今后再次去尝试。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="随笔" scheme="http://blog.giscafer.com/categories/%E9%9A%8F%E7%AC%94/"/>
-    
-      <category term="工作" scheme="http://blog.giscafer.com/categories/%E9%9A%8F%E7%AC%94/%E5%B7%A5%E4%BD%9C/"/>
-    
-    
-      <category term="前端面试" scheme="http://blog.giscafer.com/tags/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95/"/>
     
   </entry>
   
