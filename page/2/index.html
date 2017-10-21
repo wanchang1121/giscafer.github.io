@@ -70,6 +70,57 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-ionic3-tab-custom-icon" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/06/27/ionic3-tab-custom-icon/" class="article-date">
+  <time datetime="2017-06-27T14:08:02.000Z" itemprop="datePublished">2017-06-27</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/Ionic/">Ionic</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/27/ionic3-tab-custom-icon/">ionic3之自定义tabs菜单图标</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>ionic的tabs组件默认图标更换方式可以通过自定义图标样式来替换。自定义图标可以是图标字体库，也可以是png图标等。</p>
+<p>在tabs.scss文件（组件作用域），或者全局app.scss覆盖都行。下边是菜单覆盖代码：</p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">page-tabs &#123;</div><div class="line">    <span class="selector-class">.ion-tab-icon-base</span> &#123;</div><div class="line">        <span class="attribute">width</span>: <span class="number">32px</span> <span class="meta">!important</span>;</div><div class="line">        <span class="attribute">height</span>: <span class="number">32px</span> <span class="meta">!important</span>;</div><div class="line">        <span class="attribute">padding</span>: <span class="number">4px</span> <span class="number">4px</span> <span class="number">2px</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="selector-class">.ion-tab-icon-md-base</span> &#123;</div><div class="line">        <span class="attribute">min-width</span>: <span class="number">0</span> <span class="meta">!important</span>;</div><div class="line">        <span class="attribute">height</span>: <span class="number">32px</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="variable">$tabImageName</span>: <span class="string">'home'</span> <span class="string">'task'</span> <span class="string">'master'</span> <span class="string">'my'</span>;</div><div class="line">    @<span class="keyword">for</span> <span class="variable">$i</span> from 1 to 5 &#123;</div><div class="line">        <span class="comment">//for ios</span></div><div class="line">        <span class="selector-class">.ion-ios-tab-</span>#&#123;nth(<span class="variable">$tabImageName</span>, <span class="variable">$i</span>)&#125; &#123;</div><div class="line">            @<span class="keyword">extend</span> .ion-tab-icon-base;</div><div class="line">            <span class="attribute">content</span>: url(<span class="string">"../../assets/ui/tabs/icon_#&#123;nth($tabImageName, $i)&#125;_on.png"</span>);</div><div class="line">        &#125;</div><div class="line">        <span class="selector-class">.ion-ios-tab-</span>#&#123;nth(<span class="variable">$tabImageName</span>, <span class="variable">$i</span>)&#125;-<span class="attribute">outline</span> &#123;</div><div class="line">            @<span class="keyword">extend</span> .ion-tab-icon-base;</div><div class="line">            <span class="attribute">content</span>: url(<span class="string">"../../assets/ui/tabs/icon_#&#123;nth($tabImageName, $i)&#125;_off.png"</span>);</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="comment">// for android</span></div><div class="line">        <span class="selector-class">.tabs-md</span> <span class="selector-class">.tab-button</span><span class="selector-attr">[aria-selected=true]</span> &#123;</div><div class="line">            <span class="selector-class">.ion-md-tab-</span>#&#123;nth(<span class="variable">$tabImageName</span>, <span class="variable">$i</span>)&#125; &#123;</div><div class="line">                @<span class="keyword">extend</span> .ion-tab-icon-md-base;</div><div class="line">                <span class="attribute">content</span>: url(<span class="string">"../../assets/ui/tabs/icon_#&#123;nth($tabImageName, $i)&#125;_on.png"</span>);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="selector-class">.tabs-md</span> <span class="selector-class">.tab-button</span><span class="selector-attr">[aria-selected=false]</span> &#123;</div><div class="line">            <span class="selector-class">.ion-md-tab-</span>#&#123;nth(<span class="variable">$tabImageName</span>, <span class="variable">$i</span>)&#125; &#123;</div><div class="line">                @<span class="keyword">extend</span> .ion-tab-icon-md-base;</div><div class="line">                <span class="attribute">content</span>: url(<span class="string">"../../assets/ui/tabs/icon_#&#123;nth($tabImageName, $i)&#125;_off.png"</span>);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="selector-class">.ion-ios-tab-task</span>,<span class="selector-class">.ion-ios-tab-task-outline</span>,<span class="selector-class">.ion-ios-tab-master</span>,<span class="selector-class">.ion-ios-tab-master-outline</span>&#123;</div><div class="line">        <span class="attribute">width</span>: <span class="number">30px</span> <span class="meta">!important</span>;</div><div class="line">        <span class="attribute">height</span>: <span class="number">32px</span> <span class="meta">!important</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+        
+          <p class="article-more-link">
+            <a href="/2017/06/27/ionic3-tab-custom-icon/#more">继续阅读全文 »</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.giscafer.com/2017/06/27/ionic3-tab-custom-icon/" data-id="cj90s5him005q6wu96l9coktz" class="article-share-link">分享</a>
+      
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ionic/">Ionic</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tabs图标/">tabs图标</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+ 
+
+
+  
     <article id="post-ionic-md-action-sheet" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/06/19/ionic-md-action-sheet/" class="article-date">
@@ -106,7 +157,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.giscafer.com/2017/06/19/ionic-md-action-sheet/" data-id="cj8k5hha4001wbgu9offemoie" class="article-share-link">分享</a>
+      <a data-url="http://blog.giscafer.com/2017/06/19/ionic-md-action-sheet/" data-id="cj90s5hhz005h6wu9jy4p7e41" class="article-share-link">分享</a>
       
       
       
@@ -159,7 +210,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.giscafer.com/2017/06/07/hexo-changyan/" data-id="cj8k5hh9j0015bgu9wmoauna5" class="article-share-link">分享</a>
+      <a data-url="http://blog.giscafer.com/2017/06/07/hexo-changyan/" data-id="cj90s5hda00176wu9w6x3tdhj" class="article-share-link">分享</a>
       
       
       
@@ -212,7 +263,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.giscafer.com/2017/05/10/giser-just-do-it/" data-id="cj8k5hh97000obgu996jz15mj" class="article-share-link">分享</a>
+      <a data-url="http://blog.giscafer.com/2017/05/10/giser-just-do-it/" data-id="cj90s5hck000i6wu9omwvp9fw" class="article-share-link">分享</a>
       
       
       
@@ -266,69 +317,11 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.giscafer.com/2017/05/07/ng-im-sending-picture/" data-id="cj8k5hhaq002ybgu9f9806qrz" class="article-share-link">分享</a>
+      <a data-url="http://blog.giscafer.com/2017/05/07/ng-im-sending-picture/" data-id="cj90s5hiz006a6wu9h8j23f6r" class="article-share-link">分享</a>
       
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Angular/">Angular</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/im/">im</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
- 
-
-
-  
-    <article id="post-cafe-release-1" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/04/16/cafe-release-1/" class="article-date">
-  <time datetime="2017-04-15T16:44:26.000Z" itemprop="datePublished">2017-04-16</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/技术/">技术</a>►<a class="article-category-link" href="/categories/技术/Hexo/">Hexo</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/04/16/cafe-release-1/">Cafe主题v1.0发布</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <!-- Table of Contents -->
-        
-        <p>cafe主题发布v1.0版本，更新内容有：</p>
-<ul>
-<li><p>添加网易云跟帖插件系统  （<a href="http://cafe.giscafer.com/2017/04/14/gentie-test/" target="_blank" rel="external">查看使用方式</a>）</p>
-</li>
-<li><p>添加 mathjax(latex公式) 支持 （<a href="http://cafe.giscafer.com/2017/04/15/mathjax-test/" target="_blank" rel="external">查看文章演示</a>）</p>
-</li>
-<li><p>添加友情链接widget</p>
-</li>
-<li><p>修复已经样式问题</p>
-</li>
-</ul>
-<p>github:<a href="https://github.com/giscafer/hexo-theme-cafe" target="_blank" rel="external">https://github.com/giscafer/hexo-theme-cafe</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://blog.giscafer.com/2017/04/16/cafe-release-1/" data-id="cj8k5hh8t000bbgu9kxz9x129" class="article-share-link">分享</a>
-      
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/cafe/">cafe</a></li></ul>
 
     </footer>
   </div>
@@ -364,6 +357,10 @@
       <ul>
         
           <li>
+            <a href="/2017/10/21/exploring-angular-dom-abstractions/">使用 ViewContainerRef 探索Angular DOM操作</a>
+          </li>
+        
+          <li>
             <a href="/2017/10/09/gis520-close-site/">GIS520论坛关闭停止运营</a>
           </li>
         
@@ -377,10 +374,6 @@
         
           <li>
             <a href="/2017/06/29/ionic3-question-answer/">ionic3开发遇到的一些问题及解决方法</a>
-          </li>
-        
-          <li>
-            <a href="/2017/06/27/ionic3-tab-custom-icon/">ionic3之自定义tabs菜单图标</a>
           </li>
         
       </ul>
