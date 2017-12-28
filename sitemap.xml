@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.giscafer.com/aboutme/index.html</loc>
+    
+    <lastmod>2017-12-28T16:17:53.072Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blog.giscafer.com/aboutme/cv.html</loc>
     
     <lastmod>2017-12-12T13:36:01.092Z</lastmod>
@@ -33,13 +40,6 @@
     <loc>http://blog.giscafer.com/2015/11/30/gulp-front-end-automated-builds/</loc>
     
     <lastmod>2017-10-09T12:15:34.205Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.giscafer.com/aboutme/index.html</loc>
-    
-    <lastmod>2017-10-09T12:09:53.214Z</lastmod>
     
   </url>
   
